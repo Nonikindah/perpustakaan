@@ -1,457 +1,212 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>SIPUT&mdash; Sistem Informasi Perpustakaan Daerah Wakatobi</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
-  <meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-  <meta name="author" content="freehtml5.co" />
-
-<!--
-	//////////////////////////////////////////////////////
-
-	FREE HTML5 TEMPLATE
-	DESIGNED & DEVELOPED by FreeHTML5.co
-
-	Website: 		http://freehtml5.co/
-	Email: 			info@freehtml5.co
-	Twitter: 		http://twitter.com/fh5co
-	Facebook: 		https://www.facebook.com/fh5co
-
-	//////////////////////////////////////////////////////
-	 -->
-
-  <!-- Facebook and Twitter integration -->
-  <meta property="og:title" content=""/>
-  <meta property="og:image" content=""/>
-  <meta property="og:url" content=""/>
-  <meta property="og:site_name" content=""/>
-  <meta property="og:description" content=""/>
-  <meta name="twitter:title" content="" />
-  <meta name="twitter:image" content="" />
-  <meta name="twitter:url" content="" />
-  <meta name="twitter:card" content="" />
-
-  <!-- <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">	 -->
-  <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
-
-  <!-- Animate.css -->
-  <link rel="stylesheet" href="{{asset('css/animate.css')}}">
-  <!-- Icomoon Icon Fonts-->
-  <link rel="stylesheet" href="{{asset('css/icomoon.css')}}">
-  <!-- Bootstrap  -->
-  <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
-  <!-- Flexslider  -->
-  <link rel="stylesheet" href="{{asset('css/flexslider.css')}}">
-
-  <!-- Theme style  -->
-  <link rel="stylesheet" href="{{asset('css/style.css')}}">
-
-  <!-- Modernizr JS -->
-  <script src="{{asset('js/modernizr-2.6.2.min.js')}}"></script>
-  <!-- FOR IE9 below -->
-  <!--[if lt IE 9]>
-  <script src="{{asset('js/respond.min.js')}}"></script>
-  <![endif]-->
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SIPUT</title>
+    <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
+    <meta name="keywords"
+          content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+    <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Roboto:400,300|Raleway:300,400,900,700italic,700,300,600">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/jquery.bxslider.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/font-awesome.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/animate.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
 </head>
 <body>
-
-<div class="fh5co-loader"></div>
-
-<div id="page">
-  <nav class="fh5co-nav" role="navigation">
-    <div class="top-menu">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-2">
-            <div id="fh5co-logo"><a href="index.html">SIPUT</a></div>
-          </div>
-          <div class="col-xs-10 text-right menu-1">
-            <ul>
-              {{--<li class="active"><a href="index.html">Home</a></li>--}}
-              {{--<li><a href="portfolio.html">Portfolio</a></li>--}}
-              {{--<li class="has-dropdown">--}}
-                {{--<a href="blog.html">Blog</a>--}}
-                {{--<ul class="dropdown">--}}
-                  {{--<li><a href="#">Web Design</a></li>--}}
-                  {{--<li><a href="#">eCommerce</a></li>--}}
-                  {{--<li><a href="#">Branding</a></li>--}}
-                  {{--<li><a href="#">API</a></li>--}}
-                {{--</ul>--}}
-              {{--</li>--}}
-              {{--<li><a href="about.html">About</a></li>--}}
-              {{--<li><a href="contact.html">Contact</a></li>--}}
-              <li class="btn-cta"><a href="#"><span>Registrasi</span></a></li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </nav>
-
-  <header id="fh5co-header" class="fh5co-cover js-fullheight" role="banner">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2 text-center">
-          <div class="display-t js-fullheight">
-            <div class="display-tc js-fullheight animate-box" data-animate-effect="fadeIn">
-              <h1>Masukkan Pencarian Buku yang Diinginkan</h1>
-              <form>
-                <div class="form-row">
-                  <div class="col-12 col-md-9 mb-2 mb-md-0">
-                    <input type="email" class="form-control form-control-lg" placeholder="Masukkan informasi buku ..">
-                  </div>
-                  <div class="col-12 col-md-3">
-                    {{--<a class="btn btn-primary btn-lg btn-demo" href="#"></i>Cari</a>--}}
-                    <button type="submit" class="btn btn-block btn-lg btn-primary">Cari</button>
-                  </div>
+<div class="loader"></div>
+<div id="myDiv">
+    <div class="header">
+        <div class="bg-color">
+            <header id="main-header">
+                <nav class="navbar navbar-default navbar-fixed-top">
+                    <div class="container">
+                        <div class="navbar-header" style="width:100%">
+                            <a class="navbar-brand" href="#">SIPUT<span style="color: #67696c"> | </span><span class="logo-dec">Sistem Informasi Perpustakaan Daerah</span></a>
+                            <a class="btn btn-download" href="#" style="float: right;">Registrasi</a>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <div class="wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="banner-info text-center wow fadeIn delay-05s">
+                            <h2 class="bnr-sub-title">Cari</h2>
+                            <h4 class="bnr-para">Masukkan kata kunci dari judul, pengarang atau subyek buku</h4><br>
+                            <div class="input-group col-md-6 col-md-offset-3">
+                                <input type="text" class="form-control" id="text" placeholder="Masukkan pencarian Anda">
+                                <a class="btn btn-download" href="#">Cari</a>
+                            </div>
+                            <div class="overlay-detail">
+                                <a href="#feature"><i class="fa fa-angle-down"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </form>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </header>
-
-  <div id="fh5co-features">
-    <div class="container">
-      <div class="services-padding">
-        <div class="row">
-          <div class="col-md-4 animate-box">
-            <div class="feature-left">
-							<span class="icon">
-								<i class="icon-hotairballoon"></i>
-							</span>
-              <div class="feature-copy">
-                <h3>Marketing</h3>
-                <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-                <p><a href="#">Learn More <i class="icon-arrow-right22"></i></a></p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 animate-box">
-            <div class="feature-left">
-							<span class="icon">
-								<i class="icon-search"></i>
-							</span>
-              <div class="feature-copy">
-                <h3>Search Engine</h3>
-                <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-                <p><a href="#">Learn More <i class="icon-arrow-right22"></i></a></p>
-              </div>
-            </div>
-
-          </div>
-          <div class="col-md-4 animate-box">
-            <div class="feature-left">
-							<span class="icon">
-								<i class="icon-wallet"></i>
-							</span>
-              <div class="feature-copy">
-                <h3>Earn Money</h3>
-                <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-                <p><a href="#">Learn More <i class="icon-arrow-right22"></i></a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="row">
-          <div class="col-md-4 animate-box">
-
-            <div class="feature-left">
-							<span class="icon">
-								<i class="icon-wine"></i>
-							</span>
-              <div class="feature-copy">
-                <h3>Entrepreneur</h3>
-                <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-                <p><a href="#">Learn More <i class="icon-arrow-right22"></i></a></p>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="col-md-4 animate-box">
-            <div class="feature-left">
-							<span class="icon">
-								<i class="icon-genius"></i>
-							</span>
-              <div class="feature-copy">
-                <h3>Stragic Plan</h3>
-                <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-                <p><a href="#">Learn More <i class="icon-arrow-right22"></i></a></p>
-              </div>
-            </div>
-
-          </div>
-          <div class="col-md-4 animate-box">
-            <div class="feature-left">
-							<span class="icon">
-								<i class="icon-chat"></i>
-							</span>
-              <div class="feature-copy">
-                <h3>Support</h3>
-                <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-                <p><a href="#">Learn More <i class="icon-arrow-right22"></i></a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="fh5co-wireframe">
-    <div class="container">
-      <div class="row animate-box">
-        <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-          <h2>Wireframe Connects the Underlying Conceptual Structure</h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-5 animate-box">
-          <div class="user-frame">
-            <h3>Wireframe Connects the Underlying Conceptual Structure</h3>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-            <span>Louie Jie Mahusay</span><br>
-            <small>CEO, Founder</small>
-          </div>
-        </div>
-        <div class="col-md-7 animate-box">
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-          <blockquote>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-          </blockquote>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="fh5co-slider">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 animate-box">
-          <div class="heading">
-            <h2>Download Our Latest Free HTML5 Bootstrap Template</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-md-push-1 animate-box">
-          <aside id="fh5co-hero">
-            <div class="flexslider">
-              <ul class="slides">
-                <li style="background-image: url(images/img_bg_1.jpg);">
-                  <div class="overlay-gradient"></div>
-                  <div class="container-fluid">
-                    <div class="row">
-                      <div class="col-md-12 col-md-offset-0 col-md-pull-10 slider-text slider-text-bg">
-                        <div class="slider-text-inner">
-                          <div class="desc">
-                            <h2>Air Free HTML5 Bootstrap Template</h2>
-                            <p>Ink is a free html5 bootstrap and a multi-purpose template perfect for any type of websites. A combination of a minimal and modern design template. The features are big slider on homepage, smooth animation, product listing and many more</p>
-                          </div>
+    <section id="feature" class="section-padding wow fadeIn delay-05s">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="wrap-item text-center">
+                        <div class="item-img">
+                            <img style="width: 80px; height: 80px" src="{{asset('img/icon/search.png')}}">
                         </div>
-                      </div>
+                        <h3 class="pad-bt15">Pencarian</h3>
+                        <p>Cari buku yang kamu inginkan dengan referensi yang tersedia di katalog perpustakaan kami.</p>
                     </div>
-                  </div>
-                </li>
-                <li style="background-image: url(images/img_bg_2.jpg);">
-                  <div class="overlay-gradient"></div>
-                  <div class="container-fluid">
-                    <div class="row">
-                      <div class="col-md-12 col-md-offset-0 col-md-pull-10 slider-text slider-text-bg">
-                        <div class="slider-text-inner">
-                          <div class="desc">
-                            <h2>Ink Free HTML5 Bootstrap Template</h2>
-                            <p>Ink is a free html5 bootstrap and a multi-purpose template perfect for any type of websites. A combination of a minimal and modern design template. The features are big slider on homepage, smooth animation, product listing and many more</p>
-                          </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="wrap-item text-center">
+                        <div class="item-img">
+                            <img style="width: 80px; height: 80px"  src="{{asset('img/icon/id-card.png')}}">
                         </div>
-                      </div>
+                        <h3 class="pad-bt15">Kartu Anggota</h3>
+                        <p>Daftarkan diri Anda untuk mendapatkan fasilitas yang ada di perpustakaan kami.</p>
                     </div>
-                  </div>
-                </li>
-                <li style="background-image: url(images/img_bg_3.jpg);">
-                  <div class="overlay-gradient"></div>
-                  <div class="container-fluid">
-                    <div class="row">
-                      <div class="col-md-12 col-md-offset-0 col-md-pull-10 slider-text slider-text-bg">
-                        <div class="slider-text-inner">
-                          <div class="desc">
-                            <h2>Travel Free HTML5 Bootstrap Template</h2>
-                            <p>Ink is a free html5 bootstrap and a multi-purpose template perfect for any type of websites. A combination of a minimal and modern design template. The features are big slider on homepage, smooth animation, product listing and many more</p>
-                          </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="wrap-item text-center">
+                        <div class="item-img">
+                            <img style="width: 80px; height: 80px"  src="{{asset('img/icon/bussiness.png')}}">
                         </div>
-                      </div>
+                        <h3 class="pad-bt15">Peminjaman Buku</h3>
+                        <p>Pastikan buku tersedia diperpustakaan sebelum Anda meminjamnya.</p>
                     </div>
-                  </div>
-                </li>
-              </ul>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="wrap-item text-center">
+                        <div class="item-img">
+                            <img style="width: 80px; height: 80px" src="{{asset('img/icon/return.png')}}">
+                        </div>
+                        <h3 class="pad-bt15">Pengembalian Buku</h3>
+                        <p>Ingatlah tanggal pengembalian buku agar terhindar dari denda.</p>
+                    </div>
+                </div>
             </div>
-          </aside>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="fh5co-blog">
-    <div class="container">
-      <div class="row animate-box">
-        <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-          <h2>Recent Post</h2>
-          <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="fh5co-blog animate-box">
-            <a href="#" class="blog-bg" style="background-image: url(images/blog-1.jpg);"></a>
-            <div class="blog-text">
-              <span class="posted_on">Feb. 15th 2016</span>
-              <h3><a href="#">Photoshoot On The Street</a></h3>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-              <ul class="stuff">
-                <li><i class="icon-heart2"></i>249</li>
-                <li><i class="icon-eye2"></i>1,308</li>
-                <li><a href="#">Read More<i class="icon-arrow-right22"></i></a></li>
-              </ul>
+    </section>
+    <section id="testimonial" class="wow fadeInUp delay-05s">
+        <div class="bg-testicolor">
+            <div class="container section-padding">
+                <div class="row">
+                    <div class="testimonial-item" style="margin-top: 80px">
+                        <ul class="bxslider">
+                            <li>
+                                <blockquote>
+                                    <p>Aku rela di penjara asalkan bersama buku, karena dengan buku aku bebas.</p>
+                                </blockquote>
+                                <small>Mohammad Hatta</small>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <p>Perpustakaan adalah tempat untuk memenuhi dahaga ilmu pengetahuan.</p>
+                                </blockquote>
+                                <small>Abdurrahman Wahid</small>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <p>Jangan bergabung dengan para pebakar buku. Jangan takut untuk pergi ke perpustakaan dan membaca buku apa pun.</p>
+                                </blockquote>
+                                <small>Dwight D. Eisenhower</small>
+                            </li>
+                            <li>
+                                <blockquote>
+                                    <p>Ada banyak cara kecil untuk meluaskan dunia anak-anak. Cinta buku adalah yang terbaik dari segalanya.</p>
+                                </blockquote>
+                                <small>Jacqueline Kennedy</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="col-md-4">
-          <div class="fh5co-blog animate-box">
-            <a href="#" class="blog-bg" style="background-image: url(images/blog-2.jpg);"></a>
-            <div class="blog-text">
-              <span class="posted_on">Feb. 15th 2016</span>
-              <h3><a href="#">Surfing at Philippines</a></h3>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-              <ul class="stuff">
-                <li><i class="icon-heart2"></i>249</li>
-                <li><i class="icon-eye2"></i>1,308</li>
-                <li><a href="#">Read More<i class="icon-arrow-right22"></i></a></li>
-              </ul>
+    </section>
+    <section id="blog" class="section-padding wow fadeInUp delay-05s">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2 class="service-title pad-bt15">Koleksi Terbaru</h2>
+                    <p class="sub-title pad-bt15">Tingkatkan Pengetahuanmu dengan Membaca Koleksi Terbaru di Perpustakaan Kami.</p>
+                    <hr class="bottom-line">
+                </div>
+                <div class="col-md-3">
+                    <div class="blog-sec">
+                        <div class="blog-img">
+                            <a href="">
+                                <img src="{{asset('img/book4.jpg')}}" class="img-responsive; -align-center" style="width: 50%; height: 50%">
+                            </a>
+                        </div>
+                        <div class="blog-info">
+                            <h2>This is Lorem ipsum heading.</h2>
+                            <a href="" class="read-more">Selengkapnya →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="blog-sec">
+                        <div class="blog-img">
+                            <a href="">
+                                <img src="{{asset('img/book2.jpg')}}" class="img-responsive" style="width: 50%; height: 50%">
+                            </a>
+                        </div>
+                        <div class="blog-info">
+                            <h2>This is Lorem ipsum heading.</h2>
+                            <a href="" class="read-more">Selengkapnya →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="blog-sec">
+                        <div class="blog-img">
+                            <a href="">
+                                <img src="{{asset('img/book1.jpg')}}" class="img-responsive" style="width: 50%; height: 50%">
+                            </a>
+                        </div>
+                        <div class="blog-info">
+                            <h2>This is Lorem ipsum heading.</h2>
+                            <a href="" class="read-more">Selengkapnya →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="blog-sec">
+                        <div class="blog-img">
+                            <a href="">
+                                <img src="{{asset('img/book3.jpg')}}" class="img-responsive" style="width: 50%; height: 50%">
+                            </a>
+                        </div>
+                        <div class="blog-info">
+                            <h2>This is Lorem ipsum heading.</h2>
+                            <a href="" class="read-more">Selengkapnya →</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="col-md-4">
-          <div class="fh5co-blog animate-box">
-            <a href="#" class="blog-bg" style="background-image: url(images/blog-3.jpg);"></a>
-            <div class="blog-text">
-              <span class="posted_on">Feb. 15th 2016</span>
-              <h3><a href="#">Focus On Uderwater</a></h3>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-              <ul class="stuff">
-                <li><i class="icon-heart2"></i>249</li>
-                <li><i class="icon-eye2"></i>1,308</li>
-                <li><a href="#">Read More<i class="icon-arrow-right22"></i></a></li>
-              </ul>
+    </section>
+    <footer id="footer">
+        <div class="container">
+            <div class="row text-center">
+                <p>Sistem Informasi Perputakaan Daerah</p>
+                <div class="credits">
+                    Designed by <a href="https://bootstrapmade.com/">SIPUT.com</a>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="fh5co-started">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row animate-box">
-        <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-          <h2>Hire Us!</h2>
-          <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
-          <p><a href="#" class="btn btn-default btn-lg">Contact Us</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <footer id="fh5co-footer" role="contentinfo">
-    <div class="container">
-      <div class="row row-pb-md">
-        <div class="col-md-4 fh5co-widget">
-          <h4>Air</h4>
-          <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
-        </div>
-        <div class="col-md-2 col-md-push-1 fh5co-widget">
-          <h4>Links</h4>
-          <ul class="fh5co-footer-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">About</a></li>
-          </ul>
-        </div>
-
-        <div class="col-md-2 col-md-push-1 fh5co-widget">
-          <h4>Categories</h4>
-          <ul class="fh5co-footer-links">
-            <li><a href="#">Landing Page</a></li>
-            <li><a href="#">Real Estate</a></li>
-            <li><a href="#">Personal</a></li>
-            <li><a href="#">Business</a></li>
-            <li><a href="#">e-Commerce</a></li>
-          </ul>
-        </div>
-
-        <div class="col-md-4 col-md-push-1 fh5co-widget">
-          <h4>Contact Information</h4>
-          <ul class="fh5co-footer-links">
-            <li>198 West 21th Street, <br> Suite 721 New York NY 10016</li>
-            <li><a href="tel://1234567920">+ 1235 2355 98</a></li>
-            <li><a href="mailto:info@yoursite.com">info@yoursite.com</a></li>
-            <li><a href="http://https://freehtml5.co">freehtml5.co</a></li>
-          </ul>
-        </div>
-
-      </div>
-
-      <div class="row copyright">
-        <div class="col-md-12 text-center">
-          <p>
-            <small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small>
-            <small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
-          </p>
-          <p>
-          <ul class="fh5co-social-icons">
-            <li><a href="#"><i class="icon-twitter"></i></a></li>
-            <li><a href="#"><i class="icon-facebook"></i></a></li>
-            <li><a href="#"><i class="icon-linkedin"></i></a></li>
-            <li><a href="#"><i class="icon-dribbble"></i></a></li>
-          </ul>
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </footer>
+    </footer>
 </div>
-
-<div class="gototop js-top">
-  <a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>
-</div>
-
-<!-- jQuery -->
 <script src="{{asset('js/jquery.min.js')}}"></script>
-<!-- jQuery Easing -->
-<script src="{{asset('js/jquery.easing.1.3.js')}}"></script>
-<!-- Bootstrap -->
+<script src="{{asset('js/jquery.easing.min.js')}}js/jquery.easing.min.js"></script>
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
-<!-- Waypoints -->
-<script src="{{asset('js/jquery.waypoints.min.js')}}"></script>
-<!-- Flexslider -->
-<script src="{{asset('js/jquery.flexslider-min.js')}}"></script>
-<!-- Main -->
-<script src="{{asset('js/main.js')}}"></script>
-
+<script src="{{asset('js/wow.js')}}"></script>
+<script src="{{asset('js/jquery.bxslider.min.js')}}"></script>
+<script src="{{asset('js/custom.js')}}"></script>
+<script src="{{asset('contactform/contactform.js')}}"></script>
 </body>
 </html>
-
