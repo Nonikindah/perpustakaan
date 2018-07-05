@@ -144,7 +144,7 @@
                         </div>
                         <div class="blog-info">
                             <h2>This is Lorem ipsum heading.</h2>
-                            <a href="" class="read-more">Selengkapnya →</a>
+                            <a href="" class="read-more">Selengkapnya</a>
                         </div>
                     </div>
                 </div>
@@ -157,7 +157,7 @@
                         </div>
                         <div class="blog-info">
                             <h2>This is Lorem ipsum heading.</h2>
-                            <a href="" class="read-more">Selengkapnya →</a>
+                            <a href="" class="read-more">Selengkapnya</a>
                         </div>
                     </div>
                 </div>
@@ -183,7 +183,7 @@
                         </div>
                         <div class="blog-info">
                             <h2>This is Lorem ipsum heading.</h2>
-                            <a href="" class="read-more">Selengkapnya →</a>
+                            <a href="" class="read-more">Selengkapnya</a>
                         </div>
                     </div>
                 </div>
