@@ -397,7 +397,7 @@ ul.service-list li i {
 }
 
 .bx-wrapper {
-  margin: 0 auto 35px;
+  margin: 0 10px 35px;
 }
 
 .portfolio-item {
@@ -489,12 +489,12 @@ TESTIMONIAL
 #testimonial {
   background: url('../img/bg.jpg') no-repeat;
   background-size: cover;
-  min-height: 390px;
+  min-height: 300px;
 }
 
 .bg-testicolor {
   background-color: RGBA(73, 84, 105, 0.61);
-  min-height: 390px;
+  min-height: 50px;
 }
 
 .white {
@@ -527,7 +527,7 @@ TESTIMONIAL
 }
 
 .bx-viewport {
-  height: 235px !important;
+  height: 150px !important;
   background-color: transparent !important;
   border: 0px none !important;
   box-shadow: none !important;

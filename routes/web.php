@@ -23,3 +23,13 @@ Route::get('/katalog', function () {
 Route::get('/detail', function () {
     return view('detail');
 });
+Route::get('/register', function () {
+    return view('register');
+});
+Route::get('/login', function () {
+    return view('login');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

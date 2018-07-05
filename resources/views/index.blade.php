@@ -95,7 +95,7 @@
         <div class="bg-testicolor">
             <div class="container section-padding">
                 <div class="row">
-                    <div class="testimonial-item" style="margin-top: 80px">
+                    <div class="testimonial-item" >
                         <ul class="bxslider">
                             <li>
                                 <blockquote>
