@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SIPUT</title>
+    <title>SIPUT | Sistem Informasi Perpustakaan Daerah</title>
     <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
     <meta name="keywords"
           content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
@@ -193,7 +193,7 @@
     <footer id="footer">
         <div class="container">
             <div class="row text-center">
-                <p>Sistem Informasi Perputakaan Daerah</p>
+                <p>Sistem Informasi Perpustakaan Daerah</p>
                 <div class="credits">
                     Designed by <a href="https://bootstrapmade.com/">SIPUT.com</a>
                 </div>

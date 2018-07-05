@@ -17,3 +17,9 @@
 Route::get('/', function () {
     return view('index');
 });
+Route::get('/katalog', function () {
+    return view('katalog');
+});
+Route::get('/detail', function () {
+    return view('detail');
+});
