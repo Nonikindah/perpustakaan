@@ -32,7 +32,25 @@ Route::get('/login', function () {
 
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
-});
+})->name('admin.dashboard');
+Route::get('/dataadmin', function () {
+    return view('admin.dataadmin');
+})->name('admin.admin');
+Route::get('/tambahadmin', function () {
+    return view('admin.tambahadmin');
+})->name('admin.admin');
+Route::get('/editadmin', function () {
+    return view('admin.editadmin');
+})->name('admin.admin');
+Route::get('/datapinjam', function () {
+    return view('admin.datapinjam');
+})->name('admin.pinjam');
+Route::get('/tambahpinjam', function () {
+    return view('admin.tambahpinjam');
+})->name('admin.pinjam');
+Route::get('/kembali', function () {
+    return view('admin.kembali');
+})->name('admin.pinjam');
 
 Auth::routes();
 
