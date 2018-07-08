@@ -52,6 +52,25 @@ Route::get('/kembali', function () {
     return view('admin.kembali');
 })->name('admin.pinjam');
 
+Route::get('/dashboard/daftaranggota', function () {
+    return view('admin.daftaranggota');
+});
+
+Route::get('/dashboard/daftarbuku', function () {
+    return view('admin.daftarbuku');
+});
+
+Route::get('/dashboard/dbuku', function () {
+    return view('admin.dbuku');
+});
+
+Route::get('/dashboard/danggota', function () {
+    return view('admin.danggota');
+});
+
+Route::get('/dashboard/detailanggota', function () {
+    return view('admin.detailanggota');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
