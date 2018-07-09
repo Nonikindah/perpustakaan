@@ -19,7 +19,7 @@
                         <div class="blog-info">
                             <h2>Judul Buku</h2>
                             <p>Pengarang</p>
-                            <a href="" class="read-more">Sebelumnya</a>
+                            <a href="/" class="read-more">Sebelumnya</a>
                         </div>
                     </div>
                 </div>

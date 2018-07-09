@@ -19,10 +19,10 @@ Route::get('/', function () {
 });
 Route::get('/katalog', function () {
     return view('katalog');
-});
+})->name('katalog');
 Route::get('/detail', function () {
     return view('detail');
-});
+})->name('detail');
 Route::get('/register', function () {
     return view('register');
 });
@@ -32,45 +32,51 @@ Route::get('/login', function () {
 
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
-})->name('admin.dashboard');
-Route::get('/dataadmin', function () {
-    return view('admin.dataadmin');
-})->name('admin.admin');
+})->name('admin/dashboard');
+
 Route::get('/tambahadmin', function () {
     return view('admin.tambahadmin');
-})->name('admin.admin');
+})->name('admin/tambahadmin');
 Route::get('/editadmin', function () {
     return view('admin.editadmin');
-})->name('admin.admin');
-Route::get('/datapinjam', function () {
-    return view('admin.datapinjam');
-})->name('admin.pinjam');
+})->name('admin/editadmin');
+Route::get('/dataadmin', function () {
+    return view('admin.dataadmin');
+})->name('admin/admin');
+
 Route::get('/tambahpinjam', function () {
     return view('admin.tambahpinjam');
-})->name('admin.pinjam');
+})->name('admin/tambahpinjam');
 Route::get('/kembali', function () {
     return view('admin.kembali');
-})->name('admin.pinjam');
+})->name('admin/editpinjam');
+Route::get('/datapinjam', function () {
+    return view('admin.datapinjam');
+})->name('admin/pinjam');
 
-Route::get('/dashboard/daftaranggota', function () {
+Route::get('/daftaranggota', function () {
     return view('admin.daftaranggota');
-});
-
-Route::get('/dashboard/daftarbuku', function () {
-    return view('admin.daftarbuku');
-});
-
-Route::get('/dashboard/dbuku', function () {
-    return view('admin.dbuku');
-});
-
-Route::get('/dashboard/danggota', function () {
-    return view('admin.danggota');
-});
-
-Route::get('/dashboard/detailanggota', function () {
+})->name('admin/daftaranggota');
+Route::get('/detailanggota', function () {
     return view('admin.detailanggota');
-});
+})->name('admin/detailanggota');
+Route::get('/editanggota', function () {
+    return view('admin.editanggota');
+})->name('admin/editanggota');
+Route::get('/danggota', function () {
+    return view('admin.danggota');
+})->name('admin/anggota');
+
+Route::get('daftarbuku', function () {
+    return view('admin.daftarbuku');
+})->name('admin/daftarbuku');
+Route::get('dbuku', function () {
+    return view('admin.dbuku');
+})->name('admin/buku');
+
+
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -34,32 +34,32 @@
                 </a>
             </div>
             <ul class="nav">
-                <li class="nav-item {{Route::currentRouteName() === 'admin.dashboard' ? 'active' : ''}}">
-                    <a class="nav-link" href="dashboard.blade.php">
+                <li class="nav-item {{Route::currentRouteName() === 'admin/dashboard' ? 'active' : ''}}">
+                    <a class="nav-link" href="{{route('admin/dashboard')}}">
                         <i class="nc-icon nc-chart-pie-35"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li>
-                    <a class="nav-link" href="./user.html">
+                <li class="{{Route::currentRouteName() === 'admin/buku' ? 'active' : ''}}">
+                    <a class="nav-link" href="{{route('admin/buku')}}">
                         <i class="nc-icon nc-notes"></i>
                         <p>Daftar Buku</p>
                     </a>
                 </li>
-                <li>
-                    <a class="nav-link" href="./table.html">
+                <li class="{{Route::currentRouteName() === 'admin/anggota' ? 'active' : ''}}">
+                    <a class="nav-link" href="{{route('admin/anggota')}}">
                         <i class="nc-icon nc-circle-09"></i>
                         <p>Data Anggota</p>
                     </a>
                 </li>
-                <li class="{{Route::currentRouteName() === 'admin.admin' ? 'active' : ''}}">
-                    <a class="nav-link" href="dataadmin.blade.php">
+                <li class="{{Route::currentRouteName() === 'admin/admin' ? 'active' : ''}}">
+                    <a class="nav-link" href="{{route('admin/admin')}}">
                         <i class="nc-icon nc-paper-2"></i>
                         <p>Data Admin</p>
                     </a>
                 </li>
-                <li class="{{Route::currentRouteName() === 'admin.pinjam' ? 'active' : ''}}">
-                    <a class="nav-link" href="./icons.html">
+                <li class="{{Route::currentRouteName() === 'admin/pinjam' ? 'active' : ''}}">
+                    <a class="nav-link" href="{{route('admin/pinjam')}}">
                         <i class="nc-icon nc-atom"></i>
                         <p>Data Peminjaman</p>
                     </a>
@@ -108,7 +108,7 @@
                     </ul>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#pablo">
+                            <a class="nav-link" href="{{route('admin/editadmin')}}">
                                 <span class="no-icon">Account</span>
                             </a>
                         </li>

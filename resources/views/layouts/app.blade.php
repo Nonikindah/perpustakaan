@@ -71,7 +71,7 @@
         <div class="row text-center">
             <p>Sistem Informasi Perpustakaan Daerah</p>
             <div class="credits">
-                Designed by <a href="https://bootstrapmade.com/">SIPUT.com</a>
+                Designed by <a href="#">SIPUT.com</a>
             </div>
         </div>
     </div>

@@ -81,8 +81,7 @@
 
                                 </tbody>
                             </table>
-                            <button type="submit" class="btn btn-info btn-fill btn-warning pull-right" style="margin-right: 10px">Refresh</button>
-                            <button type="submit" class="btn btn-info btn-fill pull-right" style="margin-right: 10px">Tambah</button>
+                            <a href="{{route('admin/tambahpinjam')}}" type="submit" class="btn btn-info btn-fill pull-right" style="margin-right: 10px">Tambah</a>
                         </div>
                     </div>
                 </div>

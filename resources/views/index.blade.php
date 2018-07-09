@@ -10,7 +10,7 @@
                     <div class="container">
                         <div class="navbar-header" style="width:100%">
                             <a class="navbar-brand" href="#">SIPUT<span style="color: #67696c"> | </span><span class="logo-dec">Sistem Informasi Perpustakaan Daerah</span></a>
-                            <a class="btn btn-download" href="#" style="float: right;">Registrasi</a>
+                            <a class="btn btn-download" href="register" style="float: right;">Registrasi</a>
                         </div>
                     </div>
                 </nav>
@@ -23,7 +23,7 @@
                             <h4 class="bnr-para">Masukkan kata kunci dari judul, pengarang atau subyek buku</h4><br>
                             <div class="input-group col-md-6 col-md-offset-3">
                                 <input type="text" class="form-control" id="text" placeholder="Masukkan pencarian Anda">
-                                <a class="btn btn-download" href="#">Cari</a>
+                                <a class="btn btn-download" href="katalog">Cari</a>
                             </div>
                             <div class="overlay-detail">
                                 <a href="#feature"><i class="fa fa-angle-down"></i></a>
@@ -129,7 +129,7 @@
                         </div>
                         <div class="blog-info">
                             <h2>This is Lorem ipsum heading.</h2>
-                            <a href="" class="read-more">Selengkapnya</a>
+                            <a href="detail" class="read-more">Selengkapnya</a>
                         </div>
                     </div>
                 </div>

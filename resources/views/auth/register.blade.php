@@ -5,10 +5,10 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2" style="margin-top: 100px">
             <div class="panel panel-default">
-                <div class="panel-heading"style="background: #67696c;color: #fff">Pendaftaran Anggota Perpustakaan</div>
+                <div class="panel-heading"style="background: #67696c">Pendaftaran Anggota Perpustakaan</div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+                    <form class="form-horizontal" method="#" action="">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -88,7 +88,7 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <a type="submit" style="background-color: #be9e21" class="btn btn-primary">
+                                <a href="/" type="submit" style="background-color: #be9e21" class="btn btn-primary">
                                     Register
                                 </a>
                             </div>

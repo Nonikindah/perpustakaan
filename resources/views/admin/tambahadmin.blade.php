@@ -66,7 +66,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-info btn-fill pull-right">Tambah</button>
+                                    <a href="{{route('admin/admin')}}" type="submit" class="btn btn-info btn-fill pull-right">Tambah</a>
                                     <div class="clearfix"></div>
                                 </form>
                             </div>

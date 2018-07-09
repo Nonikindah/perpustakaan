@@ -14,19 +14,15 @@
                                     <thead>
                                     <th>ID</th>
                                     <th>Username</th>
-                                    <th>Password</th>
                                     <th>Fullname</th>
-                                    <th>Detail</th>
                                     </thead>
                                     <tbody>
                                     <tr>
                                         <td>1</td>
                                         <td>dakota1</td>
-                                        <td>admin1</td>
                                         <td>Dakota Rice</td>
                                         <td>
                                             <div class="btn-group">
-                                                <button class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></button>
                                                 <button class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></button>
                                             </div>
                                         </td>
@@ -34,11 +30,9 @@
                                     <tr>
                                         <td>2</td>
                                         <td>minerva2</td>
-                                        <td>admin2</td>
                                         <td>Minerva Hooper</td>
                                         <td>
                                             <div class="btn-group">
-                                                <button class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></button>
                                                 <button class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></button>
                                             </div>
                                         </td>
@@ -46,11 +40,9 @@
                                     <tr>
                                         <td>3</td>
                                         <td>sage3</td>
-                                        <td>admin3</td>
                                         <td>Sage Rodriguez</td>
                                         <td>
                                             <div class="btn-group">
-                                                <button class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></button>
                                                 <button class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></button>
                                             </div>
                                         </td>
@@ -58,8 +50,7 @@
 
                                     </tbody>
                                 </table>
-                                <button type="submit" class="btn btn-info btn-fill btn-warning pull-right" style="margin-right: 10px">Refresh</button>
-                                <button type="submit" class="btn btn-info btn-fill pull-right" style="margin-right: 10px">Tambah</button>
+                                <a href="{{route('admin/tambahadmin')}}" type="submit" class="btn btn-info btn-fill pull-right" style="margin-right: 10px">Tambah</a>
                             </div>
                         </div>
                     </div>
