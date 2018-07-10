@@ -21,6 +21,7 @@
                         <div class="banner-info text-center wow fadeIn delay-05s">
                             <h2 class="bnr-sub-title">Cari</h2>
                             <h4 class="bnr-para">Masukkan kata kunci dari judul, pengarang atau subyek buku</h4><br>
+
                             <div class="input-group col-md-6 col-md-offset-3">
                                 <input type="text" class="form-control" id="text" placeholder="Masukkan pencarian Anda">
                                 <a class="btn btn-download" href="katalog">Cari</a>

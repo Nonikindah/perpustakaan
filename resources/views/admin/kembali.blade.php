@@ -149,6 +149,4 @@
                 <!--  End Modal -->
             </div>
         </div>
-    </div>
-</div>
 @endsection

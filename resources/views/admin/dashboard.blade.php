@@ -7,7 +7,7 @@
                     <div class="col-md-4">
                         <div class="card ">
                             <div class="card-header ">
-                                <h4 class="card-title">Email Statistics</h4>
+                                <h5 class="card-title"><img src="{{asset('/img/icon/learning.png')}}" style="width: 15%;height: 15%">Total Anggota</h5>
                             </div>
                         </div>
                     </div>
@@ -187,5 +187,6 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
 @endsection
