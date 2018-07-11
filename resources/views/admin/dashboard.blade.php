@@ -7,21 +7,21 @@
                     <div class="col-md-4">
                         <div class="card ">
                             <div class="card-header ">
-                                <h5 class="card-title"><img src="{{asset('/img/icon/learning.png')}}" style="width: 15%;height: 15%">Total Anggota</h5>
+                                <h5 class="card-title" style="font-size: 20px"><img src="{{asset('/img/icon/learning.png')}}" style="margin-bottom: 13px;width: 15%;height: 15%"> 20 Total Anggota</h5>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="card ">
                             <div class="card-header ">
-                                <h4 class="card-title">Email Statistics</h4>
+                                <h5 class="card-title" style="font-size: 20px"><img src="{{asset('/img/icon/book.png')}}" style="margin-bottom: 13px;width: 15%;height: 15%"> 20 Buku</h5>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="card ">
                             <div class="card-header ">
-                                <h4 class="card-title">Email Statistics</h4>
+                                <h5 class="card-title" style="font-size: 20px"><img src="{{asset('/img/icon/book.png')}}" style="margin-bottom: 13px;width: 15%;height: 15%"> 20 Buku</h5>
                             </div>
                         </div>
                     </div>
