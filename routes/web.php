@@ -75,8 +75,6 @@ Route::get('dbuku', function () {
 })->name('admin/buku');
 
 
-
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
