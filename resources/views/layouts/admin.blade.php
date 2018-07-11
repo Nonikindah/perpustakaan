@@ -30,7 +30,7 @@
 -->
         <div class="sidebar-wrapper">
             <div class="logo">
-                <a class="simple-text">
+                <a href="{{route('admin/dashboard')}}" class="simple-text">
                     SIPUT
                 </a>
             </div>
@@ -62,7 +62,7 @@
                 <li class="{{Route::currentRouteName() === 'admin/pinjam' ? 'active' : ''}}">
                     <a class="nav-link" href="{{route('admin/pinjam')}}">
                         <i class="nc-icon nc-atom"></i>
-                        <p>Data Peminjaman</p>
+                        <p>Histori Peminjaman</p>
                     </a>
                 </li>
             </ul>

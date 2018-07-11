@@ -47,9 +47,9 @@ Route::get('/dataadmin', function () {
 Route::get('/tambahpinjam', function () {
     return view('admin.tambahpinjam');
 })->name('admin/tambahpinjam');
-Route::get('/kembali', function () {
-    return view('admin.kembali');
-})->name('admin/editpinjam');
+Route::get('/pengembalian', function () {
+    return view('admin.pengembalian');
+})->name('admin/pengembalian');
 Route::get('/datapinjam', function () {
     return view('admin.datapinjam');
 })->name('admin/pinjam');
