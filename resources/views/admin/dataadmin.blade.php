@@ -13,14 +13,16 @@
                                 <table class="table table-hover table-striped">
                                     <thead>
                                     <th>ID</th>
-                                    <th>Username</th>
-                                    <th>Fullname</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Alamat</th>
                                     </thead>
                                     <tbody>
                                     <tr>
                                         <td>1</td>
                                         <td>dakota1</td>
                                         <td>Dakota Rice</td>
+                                        <td>Mojokerto</td>
                                         <td>
                                             <div class="btn-group">
                                                 <button class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></button>
@@ -31,6 +33,7 @@
                                         <td>2</td>
                                         <td>minerva2</td>
                                         <td>Minerva Hooper</td>
+                                        <td>Mojokerto</td>
                                         <td>
                                             <div class="btn-group">
                                                 <button class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></button>
@@ -41,6 +44,7 @@
                                         <td>3</td>
                                         <td>sage3</td>
                                         <td>Sage Rodriguez</td>
+                                        <td>Mojokerto</td>
                                         <td>
                                             <div class="btn-group">
                                                 <button class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></button>

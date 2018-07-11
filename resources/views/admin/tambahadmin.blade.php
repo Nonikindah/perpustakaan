@@ -47,25 +47,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Pekerjaan</label>
-                                                <select class="form-control" id="pekerjaan">
-                                                    <option>--Pilih Pekerjaan--</option>
-                                                    <option>PNS</option>
-                                                    <option>Pelajar/Mahasiswa</option>
-                                                    <option>Karyawan Swasta</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>No. Telp / HP</label>
-                                                <input type="text" class="form-control" placeholder="No. Telp / HP">
-                                            </div>
-                                        </div>
-                                    </div>
                                     <a href="{{route('admin/admin')}}" type="submit" class="btn btn-info btn-fill pull-right">Tambah</a>
                                     <div class="clearfix"></div>
                                 </form>
