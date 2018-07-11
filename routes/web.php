@@ -73,7 +73,9 @@ Route::get('daftarbuku', function () {
 Route::get('dbuku', function () {
     return view('admin.dbuku');
 })->name('admin/buku');
-
+Route::get('formperpanjang', function () {
+    return view('admin.formperpanjang');
+})->name('admin/perpanjang');
 
 Auth::routes();
 
