@@ -31,8 +31,8 @@
                                     <td>Dipinjam</td>
                                     <td>
                                         <div class="btn-group">
-                                            <a href="{{route('admin/pengembalian')}}" class="btn btn-info btn-sm btn-fill btn-danger pull-right">Pengembalian</a>
                                             <a href="{{route('admin/perpanjang')}}" class="btn btn-info btn-sm btn-fill pull-right">Perpanjang</a>
+                                            <a href="{{route('admin/pengembalian')}}" class="btn btn-info btn-sm btn-fill btn-danger pull-right">Pengembalian</a>
                                         </div>
                                     </td>
 
