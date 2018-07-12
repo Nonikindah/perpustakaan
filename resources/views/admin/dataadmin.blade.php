@@ -54,7 +54,7 @@
 
                                     </tbody>
                                 </table>
-                                <a href="{{route('admin/tambahadmin')}}" type="submit" class="btn btn-info btn-fill pull-right" style="margin-right: 10px">Tambah</a>
+                                <a href="{{route('admin/admin/tambahadmin')}}" type="submit" class="btn btn-info btn-fill pull-right" style="margin-right: 10px">Tambah</a>
                             </div>
                         </div>
                     </div>

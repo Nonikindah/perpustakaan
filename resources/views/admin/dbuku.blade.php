@@ -79,7 +79,7 @@
                                 </table>
                             </div>
                         </div>
-                        <a href="{{route('admin/daftarbuku')}}" class="btn btn-info btn-fill pull-right">Tambah Buku</a>
+                        <a href="{{route('admin/buku/daftarbuku')}}" class="btn btn-info btn-fill pull-right">Tambah Buku</a>
                     </div>
                 </div>
             </div>

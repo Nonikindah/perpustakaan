@@ -47,7 +47,7 @@
                                     <td>Tersedia</td>
                                     <td>
                                         <div class="btn-group">
-                                            <button class="btn btn-info btn-sm btn-warning btn-fill pull-right">Lihat Histori</button>
+                                            <a href="{{route('admin/historipinjaman')}}" class="btn btn-info btn-sm btn-warning btn-fill pull-right">Lihat Histori</a>
                                         </div>
                                     </td>
                                 </tr>
@@ -68,7 +68,7 @@
 
                                 </tbody>
                             </table>
-                            <a href="{{route('admin/tambahpinjam')}}" type="submit" class="btn btn-info btn-fill pull-right" style="margin-right: 10px">Tambah</a>
+                            <a href="{{route('admin/pinjam/tambahpinjam')}}" type="submit" class="btn btn-info btn-fill pull-right" style="margin-right: 10px">Tambah</a>
                         </div>
                     </div>
                 </div>

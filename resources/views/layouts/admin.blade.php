@@ -41,25 +41,25 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li class="{{Route::currentRouteName() === 'admin/buku' ? 'active' : ''}}">
+                <li class="{{strpos(Route::currentRouteName(), 'dmin/buku') ? 'active' : ''}}">
                     <a class="nav-link" href="{{route('admin/buku')}}">
                         <i class="nc-icon nc-notes"></i>
                         <p>Daftar Buku</p>
                     </a>
                 </li>
-                <li class="{{Route::currentRouteName() === 'admin/anggota' ? 'active' : ''}}">
+                <li class="{{strpos(Route::currentRouteName(),'dmin/anggota') ? 'active' : ''}}">
                     <a class="nav-link" href="{{route('admin/anggota')}}">
                         <i class="nc-icon nc-circle-09"></i>
                         <p>Data Anggota</p>
                     </a>
                 </li>
-                <li class="{{Route::currentRouteName() === 'admin/admin' ? 'active' : ''}}">
+                <li class="{{strpos(Route::currentRouteName(),'dmin/admin') ? 'active' : ''}}">
                     <a class="nav-link" href="{{route('admin/admin')}}">
                         <i class="nc-icon nc-paper-2"></i>
                         <p>Data Admin</p>
                     </a>
                 </li>
-                <li class="{{Route::currentRouteName() === 'admin/pinjam' ? 'active' : ''}}">
+                <li class="{{strpos(Route::currentRouteName(), 'dmin/pinjam') ? 'active' : ''}}">
                     <a class="nav-link" href="{{route('admin/pinjam')}}">
                         <i class="nc-icon nc-atom"></i>
                         <p>Histori Peminjaman</p>

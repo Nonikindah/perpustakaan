@@ -31,7 +31,7 @@
                                         <td>098765423244</td>
                                         <td>
                                             <div class="btn-group">
-                                                <a href="{{route('admin/editanggota')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></a>
+                                                <a href="{{route('admin/anggota/editanggota')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></a>
                                                 <button class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></button>
                                             </div>
                                         </td>
@@ -46,7 +46,7 @@
                                         <td>098765423244</td>
                                         <td>
                                             <div class="btn-group">
-                                                <a href="{{route('admin/editanggota')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></a>
+                                                <a href="{{route('admin/anggota/editanggota')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></a>
                                                 <button class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></button>
                                             </div>
                                         </td>
@@ -61,7 +61,7 @@
                                         <td>098765423244</td>
                                         <td>
                                             <div class="btn-group">
-                                                <a href="{{route('admin/editanggota')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></a>
+                                                <a href="{{route('admin/anggota/editanggota')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></a>
                                                 <button class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></button>
                                             </div>
                                         </td>
@@ -70,7 +70,7 @@
                                 </table>
                             </div>
                         </div>
-                        <a href="{{route('admin/daftaranggota')}}" class="btn btn-info btn-fill pull-right">Tambah Anggota</a>
+                        <a href="{{route('admin/anggota/daftaranggota')}}" class="btn btn-info btn-fill pull-right">Tambah Anggota</a>
                     </div>
                 </div>
             </div>
