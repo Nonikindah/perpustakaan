@@ -74,7 +74,7 @@
                             </form>
                         </div>
                     </div>
-                    <a href="{{route('admin/anggota')}}" class="btn btn-primary btn-fill pull-right">Update</a>
+                    <a href="{{ route('alert','successupdateanggota')}}" class="btn btn-primary btn-fill pull-right">Update</a>
                 </div>
             </div>
         </div>

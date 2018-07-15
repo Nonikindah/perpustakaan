@@ -132,7 +132,7 @@
                 </div>
             </div>
         </nav>
-
+        @include('sweet::alert' )
         @yield('content')
         <footer class="footer">
             <div class="container">
@@ -167,14 +167,14 @@
 <script src="{{asset('js/light-bootstrap-dashboard.js?v=2.0.1')}}" type="text/javascript"></script>
 <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
 <script src="{{asset('js/demo.js')}}"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        // Javascript method's body can be found in assets/js/demos.js
-        demo.initDashboardPageCharts();
+{{--<script type="text/javascript">--}}
+    {{--$(document).ready(function () {--}}
+        {{--// Javascript method's body can be found in assets/js/demos.js--}}
+        {{--demo.initDashboardPageCharts();--}}
 
-        demo.showNotification();
+        {{--demo.showNotification();--}}
 
-    });
-</script>
+    {{--});--}}
+{{--</script>--}}
 
 </html>

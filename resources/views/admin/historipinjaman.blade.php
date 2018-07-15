@@ -17,7 +17,7 @@
         </div>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="card strpied-tabled-with-hover">
                         <div style="font-size: 16px" class="card-body table-full-width table-responsive">
                             <table class="table table-hover table-striped">

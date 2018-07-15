@@ -76,7 +76,7 @@
                                 </form>
                             </div>
                         </div>
-                        <a href="{{route('admin/buku')}}" class="btn btn-primary btn-fill pull-right">Simpan</a>
+                        <a href="{{ route('alert','successtambahbuku')}}" class="btn btn-primary btn-fill pull-right">Simpan</a>
                     </div>
                 </div>
             </div>
