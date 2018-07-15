@@ -18,12 +18,39 @@ class sweetalertController extends Controller
                 Alert::message('this is basic alert');
                 return redirect('/');
                 break;
+            case 'tambahbuku':
+                Alert::success('Berhasil ditambahkan')->persistent("Ok");
+                return redirect('/dbuku');
+                break;
+            case 'updateanggota':
+                Alert::success('Berhasil diupdate')->persistent("Ok")->autoclose(1000);;
+                return redirect('/danggota');
+                break;
+            case 'perpanjang':
+                Alert::success('Masa peminjaman berhasil diperpanjang')->persistent("Ok")->autoclose(1500);;
+                return redirect('/datapinjam');
+                break;
+            case 'pengembalian':
+                Alert::success('Pengembalian buku berhasil')->persistent("Ok")->autoclose(1500);;
+                return redirect('/datapinjam');
+                break;
+            case 'tambahpinjam':
+                Alert::success('Berhasil ditambahkan')->persistent("Ok");
+                return redirect('/datapinjam');
+                break;
+            case 'hapusanggota':
             case 'success':
                 Alert::success('Berhasil menambahkan Anggota')->persistent("Ok");
  return redirect('/danggota');
  break;
             case 'info':
                 Alert::info('Anda yakin ingin menghapusnya?')->persistent("Ok");
+                return redirect('/danggota');
+                break;
+            case 'warning':
+                Alert::warning('this is warning alert');
+                return redirect('/');
+                break;
  return redirect('/danggota');
  break;
             case 'hapusadmin':
@@ -36,9 +63,8 @@ return redirect('/dataadmin');
 break;
             case 'error':
                 Alert::error('this is error alert');
- return redirect('/');
- break;
-
+                return redirect('/');
+                break;
 
             default:
                 return redirect('/');

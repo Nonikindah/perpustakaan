@@ -62,7 +62,7 @@
                             </form>
                         </div>
                     </div>
-                    <a href="{{route('admin/pinjam')}}" class="btn btn-primary btn-fill pull-right">Perpanjang</a>
+                    <a href="{{route('alert', 'perpanjang')}}" class="btn btn-primary btn-fill pull-right">Perpanjang</a>
                 </div>
             </div>
         </div>
