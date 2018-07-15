@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
+    @include('sweet::alert')
         <div class="content">
             <div class="container-fluid">
                 <div class="row justify-content-center">
@@ -25,7 +26,7 @@
                                         <td>Mojokerto</td>
                                         <td>
                                             <div class="btn-group">
-                                                <button class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></button>
+                                                <a href="{{ route('alert','hapusadmin')}}" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></a>
                                             </div>
                                         </td>
                                     </tr>

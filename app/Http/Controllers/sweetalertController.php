@@ -19,17 +19,21 @@ class sweetalertController extends Controller
                 return redirect('/');
                 break;
             case 'success':
-                Alert::success('this is success alert');
- return redirect('/');
+                Alert::success('Berhasil menambahkan Anggota')->persistent("Ok");
+ return redirect('/danggota');
  break;
             case 'info':
                 Alert::info('Anda yakin ingin menghapusnya?')->persistent("Ok");
  return redirect('/danggota');
  break;
-            case 'warning':
-                Alert::warning('this is warning alert');
- return redirect('/danggota');
+            case 'hapusadmin':
+                Alert::warning('Anda yakin ingin menghapusnya?')->persistent("Ok");
+ return redirect('/dataadmin');
  break;
+            case 'tambahadmin':
+                Alert::success('Berhasil menambahkan Anggota')->persistent("Ok");
+return redirect('/dataadmin');
+break;
             case 'error':
                 Alert::error('this is error alert');
  return redirect('/');

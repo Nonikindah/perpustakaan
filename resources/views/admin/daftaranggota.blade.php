@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
+    @include('sweet::alert')
         <div class="content">
             <div class="container-fluid">
                 <div class="row justify-content-center">
@@ -67,7 +68,7 @@
                                 </form>
                             </div>
                         </div>
-                        <a href="{{route('admin/anggota')}}" class="btn btn-primary btn-fill pull-right">Simpan</a>
+                        <a href="{{route('alert', 'success')}}" class="btn btn-primary btn-fill pull-right">Simpan</a>
                     </div>
                 </div>
             </div>
