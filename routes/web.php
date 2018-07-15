@@ -92,6 +92,7 @@ Route::get('formperpanjang', function () {
     return view('admin.formperpanjang');
 })->name('admin/perpanjang');
 
+
 Route::get('historipinjaman', function () {
     return view('admin.historipinjaman');
 })->name('admin/historipinjaman');
@@ -99,3 +100,4 @@ Route::get('historipinjaman', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('alert/{AlertType}','sweetalertController@alert')->name('alert');

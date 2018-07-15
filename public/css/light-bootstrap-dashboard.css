@@ -603,13 +603,13 @@ body>.navbar-collapse:before {
 
 .sidebar:after,
 body>.navbar-collapse:after {
-    background: #67696c;
-    background: -moz-linear-gradient(top, #67696c 50%, #67696c 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #67696c), color-stop(100%, #67696c));
-    background: -webkit-linear-gradient(top, #67696c 50%, #67696c 100%);
-    background: -o-linear-gradient(top, #67696c 50%, #67696c 100%);
-    background: -ms-linear-gradient(top, #67696c 50%, #67696c 100%);
-    background: linear-gradient(to bottom, #67696c 50%, #67696c 100%);
+    background: #2e3e4e;
+    background: -moz-linear-gradient(top, #2e3e4e 50%, #2e3e4e 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #2e3e4e), color-stop(100%, #2e3e4e));
+    background: -webkit-linear-gradient(top, #2e3e4e 50%, #2e3e4e 100%);
+    background: -o-linear-gradient(top, #2e3e4e 50%, #2e3e4e 100%);
+    background: -ms-linear-gradient(top, #2e3e4e 50%, #2e3e4e 100%);
+    background: linear-gradient(to bottom, #2e3e4e 50%, #2e3e4e 100%);
     background-size: 150% 150%;
     z-index: 3;
     opacity: 1;
@@ -624,13 +624,13 @@ body>.navbar-collapse.has-image:after {
 
 .sidebar[data-color="black"]:after,
 body>.navbar-collapse[data-color="black"]:after {
-    background: #777777;
-    background: -moz-linear-gradient(top, #777777 0%, #777777 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #777777), color-stop(100%, #777777));
-    background: -webkit-linear-gradient(top, #777777 0%, #777777 100%);
-    background: -o-linear-gradient(top, #777777 0%, #777777 100%);
-    background: -ms-linear-gradient(top, #777777 0%, #777777 100%);
-    background: linear-gradient(to bottom, #777777 0%, #777777 100%);
+    background: #2e3e4e;
+    background: -moz-linear-gradient(top, #2e3e4e 0%, #2e3e4e 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2e3e4e), color-stop(100%, #2e3e4e));
+    background: -webkit-linear-gradient(top,#2e3e4e 0%, #2e3e4e 100%);
+    background: -o-linear-gradient(top, #2e3e4e 0%, #0cc2aa 100%);
+    background: -ms-linear-gradient(top, #2e3e4e 0%, #0cc2aa 100%);
+    background: linear-gradient(to bottom, #2e3e4e 0%, #0cc2aa 100%);
     background-size: 150% 150%;
 }
 
@@ -2957,6 +2957,8 @@ Copyright (c) 2015 Daniel Eden
     margin: 30px 0 30px;
     height: 245px;
 }
+
+
 
 .card .ct-label {
     font-size: 1rem !important;

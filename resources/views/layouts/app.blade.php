@@ -21,6 +21,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/animate.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+
+
 </head>
 <body style="height: 100%">
 <div class="loader"></div>

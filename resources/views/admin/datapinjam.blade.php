@@ -28,10 +28,10 @@
                                     <td>Adil Tanpa Pandang Bulu</td>
                                     <td>06/07/2018</td>
                                     <td>09/07/2018</td>
-                                    <td>Dipinjam</td>
+                                    <td><i class="fa fa-close"></i></td>
                                     <td>
                                         <div class="btn-group">
-                                            <a href="{{route('admin/perpanjang')}}" class="btn btn-info btn-sm btn-fill pull-right">Perpanjang</a>
+                                            <a href="{{route('admin/perpanjang')}}" class="btn btn-info btn-sm btn-fill pull-right">Perpanjangan</a>
                                             <a href="{{route('admin/pengembalian')}}" class="btn btn-info btn-sm btn-fill btn-danger pull-right">Pengembalian</a>
                                         </div>
                                     </td>
@@ -44,7 +44,7 @@
                                     <td>Adil Tanpa Pandang Bulu</td>
                                     <td>06/07/2018</td>
                                     <td>09/07/2018</td>
-                                    <td>Tersedia</td>
+                                    <td><i class="fa fa-check"></i></td>
                                     <td>
                                         <div class="btn-group">
                                             <a href="{{route('admin/historipinjaman')}}" class="btn btn-info btn-sm btn-warning btn-fill pull-right">Lihat Histori</a>
@@ -58,7 +58,7 @@
                                     <td>Adil Tanpa Pandang Bulu</td>
                                     <td>06/07/2018</td>
                                     <td>09/07/2018</td>
-                                    <td>Tersedia</td>
+                                    <td><i class="fa fa-check"></i></td>
                                     <td>
                                         <div class="btn-group">
                                             <button class="btn btn-info btn-sm btn-warning btn-fill pull-right">Lihat Histori</button>
