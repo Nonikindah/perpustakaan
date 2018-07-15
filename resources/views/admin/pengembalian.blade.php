@@ -3,8 +3,8 @@
 @section('content')
     <div class="content">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
                     <div class="card">
                         <div class="card-header">
                             <div class="row">
@@ -59,26 +59,25 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Lama Hari</label>
                                             <input type="text" class="form-control">
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Jumlah Denda</label>
                                             <input type="text" class="form-control">
                                         </div>
                                     </div>
                                 </div>
-                                <a href="{{route('admin/pinjam')}}" type="submit" class="btn btn-info btn-fill pull-right">Proses</a>
                                 <div class="clearfix"></div>
                             </form>
                         </div>
                     </div>
+                    <a href="{{route('admin/pinjam')}}" class="btn btn-primary btn-fill pull-right">Proses</a>
                 </div>
-
             </div>
         </div>
     </div>

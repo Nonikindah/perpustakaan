@@ -56,9 +56,9 @@ Route::get('/datapinjam/tambahpinjam', function () {
     return view('admin.tambahpinjam');
 })->name('admin/pinjam/tambahpinjam');
 
-Route::get('/pengembalian', function () {
+Route::get('/datapinjam/pengembalian', function () {
     return view('admin.pengembalian');
-})->name('admin/pengembalian');
+})->name('admin/pinjam/pengembalian');
 
 Route::get('/detailanggota', function () {
     return view('admin.detailanggota');
@@ -68,10 +68,6 @@ Route::get('/danggota/editanggota', function () {
     return view('admin.editanggota');
 })->name('admin/anggota/editanggota');
 
-//Route::get('/editanggota', function () {
-//    return view('admin.editanggota');
-//})->name('admin/editanggota');
-
 Route::get('/danggota', function () {
     return view('admin.danggota');
 })->name('admin/anggota');
@@ -79,6 +75,10 @@ Route::get('/danggota', function () {
 Route::get('/danggota/daftaranggota', function () {
     return view('admin.daftaranggota');
 })->name('admin/anggota/daftaranggota');
+
+Route::get('/datapinjam/formperpanjang', function () {
+    return view('admin.formperpanjang');
+})->name('admin/pinjam/formperpanjang');
 
 Route::get('dbuku', function () {
     return view('admin.dbuku');
@@ -88,14 +88,9 @@ Route::get('dbuku/daftarbuku', function () {
     return view('admin.daftarbuku');
 })->name('admin/buku/daftarbuku');
 
-Route::get('formperpanjang', function () {
-    return view('admin.formperpanjang');
-})->name('admin/perpanjang');
-
-
-Route::get('historipinjaman', function () {
+Route::get('/datapinjam/historipinjaman', function () {
     return view('admin.historipinjaman');
-})->name('admin/historipinjaman');
+})->name('admin/pinjam/historipinjaman');
 
 Auth::routes();
 

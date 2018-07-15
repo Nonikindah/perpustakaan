@@ -31,8 +31,8 @@
                                     <td><i class="fa fa-close"></i></td>
                                     <td>
                                         <div class="btn-group">
-                                            <a href="{{route('admin/perpanjang')}}" class="btn btn-info btn-sm btn-fill pull-right">Perpanjangan</a>
-                                            <a href="{{route('admin/pengembalian')}}" class="btn btn-info btn-sm btn-fill btn-danger pull-right">Pengembalian</a>
+                                            <a href="{{route('admin/pinjam/formperpanjang')}}" class="btn btn-info btn-sm btn-fill pull-right">Perpanjang</a>
+                                            <a href="{{route('admin/pinjam/pengembalian')}}" class="btn btn-info btn-sm btn-fill btn-danger pull-right">Pengembalian</a>
                                         </div>
                                     </td>
 
@@ -47,7 +47,7 @@
                                     <td><i class="fa fa-check"></i></td>
                                     <td>
                                         <div class="btn-group">
-                                            <a href="{{route('admin/historipinjaman')}}" class="btn btn-info btn-sm btn-warning btn-fill pull-right">Lihat Histori</a>
+                                            <a href="{{route('admin/pinjam/historipinjaman')}}" class="btn btn-info btn-sm btn-warning btn-fill pull-right">Lihat Histori</a>
                                         </div>
                                     </td>
                                 </tr>
@@ -61,18 +61,17 @@
                                     <td><i class="fa fa-check"></i></td>
                                     <td>
                                         <div class="btn-group">
-                                            <button class="btn btn-info btn-sm btn-warning btn-fill pull-right">Lihat Histori</button>
+                                            <a href="{{route('admin/pinjam/historipinjaman')}}" class="btn btn-info btn-sm btn-warning btn-fill pull-right">Lihat Histori</a>
                                         </div>
                                     </td>
                                 </tr>
 
                                 </tbody>
                             </table>
-                            <a href="{{route('admin/pinjam/tambahpinjam')}}" type="submit" class="btn btn-info btn-fill pull-right" style="margin-right: 10px">Tambah</a>
-                        </div>
+                            </div>
                     </div>
+                    <a href="{{route('admin/pinjam/tambahpinjam')}}" class="btn btn-primary btn-fill pull-right">Tambah</a>
                 </div>
-
             </div>
         </div>
     </div>

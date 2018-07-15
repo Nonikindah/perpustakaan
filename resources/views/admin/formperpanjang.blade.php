@@ -3,8 +3,8 @@
 @section('content')
     <div class="content">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
                     <div class="card">
                         <div class="card-header">
                             <div class="row">
@@ -58,13 +58,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="{{route('admin/pinjam')}}" type="submit" class="btn btn-info btn-fill pull-right">Perpanjang</a>
                                 <div class="clearfix"></div>
                             </form>
                         </div>
                     </div>
+                    <a href="{{route('admin/pinjam')}}" class="btn btn-primary btn-fill pull-right">Perpanjang</a>
                 </div>
-
             </div>
         </div>
     </div>

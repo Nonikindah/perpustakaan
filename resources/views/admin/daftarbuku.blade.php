@@ -3,8 +3,8 @@
 @section('content')
         <div class="content">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12">
+                <div class="row justify-content-center">
+                    <div class="col-md-10">
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">Tambah Buku</h4>
@@ -18,7 +18,7 @@
                                                 <input type="text" class="form-control" placeholder="" value="">
                                             </div>
                                         </div>
-                                        <div class="col-md-6 pr-1">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Tanggal Masuk</label>
                                                 <input type="date" class="form-control" placeholder="" value="">
@@ -27,13 +27,13 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-6 pr-1">
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Pengarang</label>
                                                 <input type="text" class="form-control" placeholder="" value="">
                                             </div>
                                         </div>
-                                        <div class="col-md-6 pr-1">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Penerbit</label>
                                                 <input type="text" class="form-control" placeholder="" value="">
@@ -47,7 +47,7 @@
                                                 <input type="text" class="form-control" placeholder="" value="">
                                             </div>
                                         </div>
-                                        <div class="col-md-4 pr-1">
+                                        <div class="col-md-3">
                                             <div class="form-group">
                                                 <label>Eksemplar</label>
                                                 <select class="form-control" id="pekerjaan">
@@ -60,7 +60,7 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="col-md-4 pr-1">
+                                        <div class="col-md-3">
                                             <div class="form-group">
                                                 <label>Kondisi Buku</label>
                                                 <select class="form-control" id="pekerjaan">
@@ -72,11 +72,11 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="{{route('admin/buku')}}" class="btn btn-info btn-fill pull-right">Simpan</a>
-                                    <div class="clearfix"></div>
+                                   <div class="clearfix"></div>
                                 </form>
                             </div>
                         </div>
+                        <a href="{{route('admin/buku')}}" class="btn btn-primary btn-fill pull-right">Simpan</a>
                     </div>
                 </div>
             </div>

@@ -34,9 +34,9 @@
                                 </tr>
                                 </tbody>
                             </table>
-                            <a href="{{route('admin/tambahpinjam')}}" type="submit" class="btn btn-info btn-fill pull-right" style="margin-right: 10px">Kembali</a>
-                        </div>
+                            </div>
                     </div>
+                    <a href="{{route('admin/pinjam')}}" class="btn btn-primary btn-fill pull-right" style="margin-right: 10px">Kembali</a>
                 </div>
             </div>
         </div>

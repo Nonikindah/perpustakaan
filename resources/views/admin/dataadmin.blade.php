@@ -3,8 +3,8 @@
 @section('content')
         <div class="content">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12">
+                <div class="row justify-content-center">
+                    <div class="col-md-10">
                         <div class="card strpied-tabled-with-hover">
                             <div class="card-header ">
                                 <h4 class="card-title">DATA ADMIN PERPUSTAKAAN</h4>
@@ -54,11 +54,10 @@
 
                                     </tbody>
                                 </table>
-                                <a href="{{route('admin/admin/tambahadmin')}}" type="submit" class="btn btn-info btn-fill pull-right" style="margin-right: 10px">Tambah</a>
                             </div>
                         </div>
+                        <a href="{{route('admin/admin/tambahadmin')}}" class="btn btn-primary btn-fill pull-right">Tambah</a>
                     </div>
-
                 </div>
             </div>
         </div>

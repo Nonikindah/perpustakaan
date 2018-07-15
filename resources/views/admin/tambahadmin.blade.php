@@ -3,8 +3,8 @@
 @section('content')
         <div class="content">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12">
+                <div class="row justify-content-center">
+                    <div class="col-md-10">
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">Tambah Admin</h4>
@@ -32,7 +32,7 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-8">
                                             <div class="form-group">
                                                 <label>Fullname</label>
                                                 <input type="text" class="form-control" placeholder="Nama Lengkap">
@@ -40,20 +40,19 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-8">
                                             <div class="form-group">
                                                 <label>Alamat</label>
                                                 <input type="text" class="form-control" placeholder="Alamat Lengkap">
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="{{route('admin/admin')}}" type="submit" class="btn btn-info btn-fill pull-right">Tambah</a>
                                     <div class="clearfix"></div>
                                 </form>
                             </div>
                         </div>
+                        <a href="{{route('admin/admin')}}" class="btn btn-primary btn-fill pull-right">Tambah</a>
                     </div>
-
                 </div>
             </div>
         </div>
