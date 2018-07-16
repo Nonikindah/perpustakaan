@@ -17,9 +17,15 @@
                                             <label>No. Buku</label>
                                             <input type="text" class="form-control" placeholder="" value="">
                                         </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Tanggal Masuk</label>
+                                                <input type="date" class="form-control" placeholder="" value="">
+                                            </div>
+                                        </div>
                                     </div>
-
                                 </div>
+
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
@@ -80,10 +86,11 @@
                                         </div>
                                     </div>
                                 </div>
+                                <a href="{{ route('alert','tambahbuku')}}" class="btn btn-primary btn-fill pull-right">Simpan</a>
                             </form>
                         </div>
                     </div>
-                    <a href="{{ route('alert','tambahbuku')}}" class="btn btn-primary btn-fill pull-right">Simpan</a>
+
                 </div>
             </div>
         </div>

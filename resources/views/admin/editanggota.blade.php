@@ -70,11 +70,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="clearfix"></div>
+                                <a href="{{ route('alert','updateanggota')}}" class="btn btn-primary btn-fill pull-right">Update</a>
                             </form>
                         </div>
                     </div>
-                    <a href="{{ route('alert','updateanggota')}}" class="btn btn-primary btn-fill pull-right">Update</a>
                 </div>
             </div>
         </div>

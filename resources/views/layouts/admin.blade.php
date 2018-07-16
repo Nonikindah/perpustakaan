@@ -20,6 +20,9 @@
     <link href="{{asset('css/demo.css')}}" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.25.3/sweetalert2.min.css">
+    
+
 </head>
 
 <body>
@@ -75,40 +78,40 @@
         <nav class="navbar navbar-expand-lg " color-on-scroll="500">
             <div class=" container-fluid  ">
                 <a class="navbar-brand" href="#pablo"> Dashboard </a>
-                <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                        aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-bar burger-lines"></span>
-                    <span class="navbar-toggler-bar burger-lines"></span>
-                    <span class="navbar-toggler-bar burger-lines"></span>
-                </button>
+                {{--<button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"--}}
+                        {{--aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">--}}
+                    {{--<span class="navbar-toggler-bar burger-lines"></span>--}}
+                    {{--<span class="navbar-toggler-bar burger-lines"></span>--}}
+                    {{--<span class="navbar-toggler-bar burger-lines"></span>--}}
+                {{--</button>--}}
                 <div class="collapse navbar-collapse justify-content-end" id="navigation">
                     <ul class="nav navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="dropdown">
-                                <i class="nc-icon nc-palette"></i>
-                                <span class="d-lg-none">Dashboard</span>
-                            </a>
-                        </li>
-                        <li class="dropdown nav-item">
-                            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                                <i class="nc-icon nc-planet"></i>
-                                <span class="notification">5</span>
-                                <span class="d-lg-none">Notification</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Notification 1</a>
-                                <a class="dropdown-item" href="#">Notification 2</a>
-                                <a class="dropdown-item" href="#">Notification 3</a>
-                                <a class="dropdown-item" href="#">Notification 4</a>
-                                <a class="dropdown-item" href="#">Another notification</a>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nc-icon nc-zoom-split"></i>
-                                <span class="d-lg-block">&nbsp;Search</span>
-                            </a>
-                        </li>
+                        {{--<li class="nav-item">--}}
+                            {{--<a href="#" class="nav-link" data-toggle="dropdown">--}}
+                                {{--<i class="nc-icon nc-palette"></i>--}}
+                                {{--<span class="d-lg-none">Dashboard</span>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                        {{--<li class="dropdown nav-item">--}}
+                            {{--<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">--}}
+                                {{--<i class="nc-icon nc-planet"></i>--}}
+                                {{--<span class="notification">5</span>--}}
+                                {{--<span class="d-lg-none">Notification</span>--}}
+                            {{--</a>--}}
+                            {{--<ul class="dropdown-menu">--}}
+                                {{--<a class="dropdown-item" href="#">Notification 1</a>--}}
+                                {{--<a class="dropdown-item" href="#">Notification 2</a>--}}
+                                {{--<a class="dropdown-item" href="#">Notification 3</a>--}}
+                                {{--<a class="dropdown-item" href="#">Notification 4</a>--}}
+                                {{--<a class="dropdown-item" href="#">Another notification</a>--}}
+                            {{--</ul>--}}
+                        {{--</li>--}}
+                        {{--<li class="nav-item">--}}
+                            {{--<a href="#" class="nav-link">--}}
+                                {{--<i class="nc-icon nc-zoom-split"></i>--}}
+                                {{--<span class="d-lg-block">&nbsp;Search</span>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
                     </ul>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item dropdown">
@@ -142,7 +145,7 @@
                         <script>
                             document.write(new Date().getFullYear())
                         </script>
-                        <a href="http://www.creative-tim.com">SIPUT.com</a>
+                        <a href="#">SIPUT.com</a>
                     </p>
                 </nav>
             </div>
@@ -169,8 +172,10 @@
 <script src="{{asset('js/demo.js')}}"></script>
 <script type="text/javascript">
     $(document).ready(function () {
-        // Javascript method's body can be found in assets/js/demos.js
+
         demo.initDashboardPageCharts();
+
+        //demo.showNotification();
 
     });
 </script>

@@ -11,7 +11,8 @@
                                 <h4 class="col-md-8 card-title">Edit Profile</h4>
                                 <div class="col-md-4 pl-1 ">
                                     <div class="form-group">
-                                        <input type="text" class="form-control pull-right" disabled="" placeholder="ID Admin disabled">
+                                        <input type="text" class="form-control pull-right" disabled=""
+                                               placeholder="ID Admin disabled">
                                     </div>
                                 </div>
                             </div>
@@ -67,7 +68,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="clearfix"></div>
+                                <a href="{{route('alert','editadmin')}}" class="btn btn-primary btn-fill pull-right">Update Profile</a>
                             </form>
                         </div>
                     </div>

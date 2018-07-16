@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Anggota;
+use Auth;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -27,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -42,31 +44,49 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'nama' => 'required|string|max:255',
+//            'email' => 'required|string|email|max:255|unique:users',
+//            'password' => 'required|string|min:6|confirmed',
+            'identitas' => 'required|string|max:16',
+            'alamat' => 'required|string|max:255',
+            'jenkel' => 'required|string|max:10',
+            'pekerjaan' => 'required|int',
+            'telepon' => 'required|string|max:255'
         ]);
     }
 
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \App\User
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+        return Anggota::create([
+            'nama' => $data['name'],
+//            'email' => $data['email'],
+//            'password' => bcrypt($data['password']),
+            'identitas' => $data['identitas'],
+            'alamat' => $data['alamat'],
+            'jenkel' => $data['jenkel'],
+            'pekerjaan' => $data['pekerjaan'],
+            'telepon' => $data['telepon']
         ]);
 
+    }
+    protected function redirectTo()
+    {
+        return '/path';
+    }
+    protected function guard()
+    {
+        return Auth::guard('guard-name');
     }
 }

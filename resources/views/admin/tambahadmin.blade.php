@@ -52,10 +52,10 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <a href="{{route('alert','tambahadmin')}}" class="btn btn-primary btn-fill pull-right">Simpan</a>
                                 </form>
                             </div>
                         </div>
-                        <a href="{{route('alert','tambahadmin')}}" class="btn btn-primary btn-fill pull-right">Tambah</a>
                     </div>
                 </div>
             </div>

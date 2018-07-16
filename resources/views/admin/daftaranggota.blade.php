@@ -63,11 +63,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="clearfix"></div>
+                                    <a href="{{route('alert', 'success')}}" class="btn btn-primary btn-fill pull-right">Simpan</a>
                                 </form>
                             </div>
                         </div>
-                        <a href="{{route('alert', 'success')}}" class="btn btn-primary btn-fill pull-right">Simpan</a>
                     </div>
                 </div>
             </div>

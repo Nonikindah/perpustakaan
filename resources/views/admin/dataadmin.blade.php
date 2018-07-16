@@ -8,7 +8,12 @@
                     <div class="col-md-10">
                         <div class="card strpied-tabled-with-hover">
                             <div class="card-header ">
-                                <h4 class="card-title">DATA ADMIN PERPUSTAKAAN</h4>
+                                <div class="row form-inline">
+                                <h4 class="col-md-6 card-title ">Data Admin</h4>
+                                <div class="col-md-6">
+                                    <a href="{{route('admin/admin/tambahadmin')}}" class="btn btn-primary btn-fill pull-right" style="margin-left: 5px"><i class="fa fa-plus"></i> Tambah Admin</a>
+                                </div>
+                                </div>
                             </div>
                             <div class="card-body table-full-width table-responsive">
                                 <table class="table table-hover table-striped">
@@ -57,7 +62,7 @@
                                 </table>
                             </div>
                         </div>
-                        <a href="{{route('admin/admin/tambahadmin')}}" class="btn btn-primary btn-fill pull-right">Tambah</a>
+
                     </div>
                 </div>
             </div>
