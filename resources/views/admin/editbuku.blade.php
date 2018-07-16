@@ -7,7 +7,7 @@
                 <div class="col-md-10">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Tambah Buku</h4>
+                            <h4 class="card-title">Edit Data Buku</h4>
                         </div>
                         <div class="card-body">
                             <form>
@@ -83,7 +83,7 @@
                             </form>
                         </div>
                     </div>
-                    <a href="{{ route('alert','tambahbuku')}}" class="btn btn-primary btn-fill pull-right">Simpan</a>
+                    <a href="{{ route('alert','updatebuku')}}" class="btn btn-primary btn-fill pull-right">Update</a>
                 </div>
             </div>
         </div>

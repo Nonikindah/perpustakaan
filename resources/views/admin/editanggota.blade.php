@@ -27,8 +27,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label >Alamat</label>
-                                            <input type="text" class="form-control" placeholder="Alamat">
+                                            <label>No. Telp/HP</label>
+                                            <input type="text" class="form-control" placeholder="No. Telp/HP">
                                         </div>
                                     </div>
                                 </div>
@@ -39,15 +39,7 @@
                                             <input type="text" class="form-control" placeholder="No. Identitas">
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label>No. Telp/HP</label>
-                                            <input type="text" class="form-control" placeholder="No. Telp/HP">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Jenis Kelamin</label>
                                             <select class="form-control" id="pekerjaan">
@@ -57,8 +49,16 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-2"></div>
-                                    <div class="col-md-4">
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label >Alamat</label>
+                                            <input type="text" class="form-control" placeholder="Alamat">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Pekerjaan</label>
                                             <select class="form-control" id="pekerjaan">

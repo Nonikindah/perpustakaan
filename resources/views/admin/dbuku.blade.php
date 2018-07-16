@@ -35,6 +35,13 @@
                                             <td>
                                                 <button class="btn btn-info btn-fill" style="width: 120px">Baik</button>
                                             </td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <a href="{{route('admin/buku/editbuku')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></a>
+
+                                                    <a href="{{ route('alert','hapusbuku')}}" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></a>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>2</td>
@@ -46,6 +53,13 @@
                                             <td>
                                                 <button class="btn btn-info btn-fill" style="width: 120px">Baik</button>
                                             </td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <a href="{{route('admin/buku/editbuku')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></a>
+
+                                                    <a href="{{ route('alert','hapusbuku')}}" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></a>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>3</td>
@@ -56,6 +70,13 @@
                                             <td>3</td>
                                             <td>
                                                 <button class="btn btn-info btn-fill" style="width: 120px">Baik</button>
+                                            </td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <a href="{{route('admin/buku/editbuku')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></a>
+
+                                                    <a href="{{ route('alert','hapusbuku')}}" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></a>
+                                                </div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -70,6 +91,13 @@
                                                     Baik
                                                 </button>
                                             </td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <a href="{{route('admin/buku/editbuku')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></a>
+
+                                                    <a href="{{ route('alert','hapusbuku')}}" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></a>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>5</td>
@@ -82,6 +110,13 @@
                                                 <button class="btn btn-danger btn-fill" style="width: 120px">Rusak
                                                 </button>
                                             </td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <a href="{{route('admin/buku/editbuku')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></a>
+
+                                                    <a href="{{ route('alert','hapusbuku')}}" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></a>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>6</td>
@@ -92,6 +127,13 @@
                                             <td>3</td>
                                             <td>
                                                 <button class="btn btn-info btn-fill" style="width: 120px">Baik</button>
+                                            </td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <a href="{{route('admin/buku/editbuku')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></a>
+
+                                                    <a href="{{ route('alert','hapusbuku')}}" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></a>
+                                                </div>
                                             </td>
                                         </tr>
                                         </tbody>

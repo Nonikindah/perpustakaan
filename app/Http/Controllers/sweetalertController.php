@@ -22,6 +22,10 @@ class sweetalertController extends Controller
                 Alert::success('Berhasil ditambahkan')->persistent("Ok");
                 return redirect('/dbuku');
                 break;
+            case 'updatebuku':
+                Alert::success('Berhasil diupdate')->persistent("Ok")->autoclose(1000);;
+                return redirect('/dbuku');
+                break;
             case 'updateanggota':
                 Alert::success('Berhasil diupdate')->persistent("Ok")->autoclose(1000);;
                 return redirect('/danggota');
@@ -39,28 +43,35 @@ class sweetalertController extends Controller
                 return redirect('/datapinjam');
                 break;
             case 'hapusanggota':
+                Alert::warning('Anda yakin ingin menghapusnya?')->persistent("Ok");
+                return redirect('/danggota');
+                break;
             case 'success':
                 Alert::success('Berhasil menambahkan Anggota')->persistent("Ok");
- return redirect('/danggota');
- break;
+            return redirect('/danggota');
+            break;
             case 'info':
                 Alert::info('Anda yakin ingin menghapusnya?')->persistent("Ok");
                 return redirect('/danggota');
+                break;
+            case 'hapusbuku':
+                Alert::warning('Anda yakin ingin menghapusnya?')->persistent("Ok");
+                return redirect('/dbuku');
                 break;
             case 'warning':
                 Alert::warning('this is warning alert');
                 return redirect('/');
                 break;
- return redirect('/danggota');
- break;
+                return redirect('/danggota');
+                break;
             case 'hapusadmin':
                 Alert::warning('Anda yakin ingin menghapusnya?')->persistent("Ok");
- return redirect('/dataadmin');
- break;
+                return redirect('/dataadmin');
+                break;
             case 'tambahadmin':
-                Alert::success('Berhasil menambahkan Anggota')->persistent("Ok");
-return redirect('/dataadmin');
-break;
+                Alert::success('Berhasil menambahkan Admin')->persistent("Ok");
+                return redirect('/dataadmin');
+                break;
             case 'error':
                 Alert::error('this is error alert');
                 return redirect('/');
@@ -70,5 +81,7 @@ break;
                 return redirect('/');
                 break;
         }
+        
     }
 }
+

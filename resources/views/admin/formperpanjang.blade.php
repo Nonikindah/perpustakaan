@@ -19,46 +19,47 @@
                         <div class="card-body">
                             <form>
                                 <div class="row">
-                                    <div class="col-md-3 pr-1">
+                                    <div class="col-md-6 pr-1">
                                         <div class="form-group">
                                             <label>No. Anggota</label>
-                                            <input type="text" class="form-control" placeholder="No.Anggota">
+                                            <input type="text" class="form-control" placeholder="Nama Peminjam">
                                         </div>
                                     </div>
-                                    <div class="col-md-3 pr-1">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Tanggal Pinjam</label>
+                                            <input type="date" class="form-control"  placeholder="Kode Buku">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 pr-1">
                                         <div class="form-group">
                                             <label>Nama Peminjam</label>
                                             <input type="text" class="form-control" placeholder="Nama Peminjam">
                                         </div>
                                     </div>
-                                    <div class="col-md-3 pr-1">
+                                    <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Kode Buku</label>
-                                            <input type="text" class="form-control"  placeholder="Kode Buku">
+                                            <label>Tanggal Kembali</label>
+                                            <input type="date" class="form-control"  placeholder="Kode Buku">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-3 pr-1">
+                                    <div class="col-md-6 pr-1">
                                         <div class="form-group">
-                                            <label>Tanggal Pinjam</label>
-                                            <input type="date" class="form-control">
+                                            <label>Kode Buku</label>
+                                            <input type="text" class="form-control" placeholder="Nama Peminjam">
                                         </div>
                                     </div>
-                                    <div class="col-md-3 pr-1">
-                                        <div class="form-group">
-                                            <label>Tanggal Kembali</label>
-                                            <input type="date" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 pr-1">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Tanggal Perpanjang</label>
-                                            <input type="date" class="form-control">
+                                            <input type="date" class="form-control"  placeholder="Kode Buku">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="clearfix"></div>
                             </form>
                         </div>
                     </div>

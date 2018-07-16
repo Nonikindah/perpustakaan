@@ -88,6 +88,10 @@ Route::get('dbuku/daftarbuku', function () {
     return view('admin.daftarbuku');
 })->name('admin/buku/daftarbuku');
 
+Route::get('/dbuku/editbuku', function () {
+    return view('admin.editbuku');
+})->name('admin/buku/editbuku');
+
 Route::get('/datapinjam/historipinjaman', function () {
     return view('admin.historipinjaman');
 })->name('admin/pinjam/historipinjaman');

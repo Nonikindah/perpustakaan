@@ -21,8 +21,26 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
+                                                <label>No. HP/Telp</label>
+                                                <input type="text" class="form-control" placeholder="" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
                                                 <label>No. Identitas (KTP/SIM/KTM)</label>
                                                 <input type="text" class="form-control" placeholder="" value="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Jenis Kelamin</label>
+                                                <select class="form-control" id="jenkel">
+                                                    <option>--Pilih Jenis Kelamin Anda--</option>
+                                                    <option>Laki-laki</option>
+                                                    <option>Perempuan</option>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
@@ -33,26 +51,7 @@
                                                 <input type="text" class="form-control" placeholder="" value="">
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label>No. HP/Telp</label>
-                                                <input type="text" class="form-control" placeholder="" value="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label>Jenis Kelamin</label>
-                                                    <select class="form-control" id="jenkel">
-                                                        <option>--Pilih Jenis Kelamin Anda--</option>
-                                                        <option>Laki-laki</option>
-                                                        <option>Perempuan</option>
-                                                    </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2"></div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Pekerjaan</label>
                                                     <select class="form-control" id="pekerjaan">
