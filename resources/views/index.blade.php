@@ -10,7 +10,7 @@
                     <div class="container">
                         <div class="navbar-header" style="width:100%">
                             <a class="navbar-brand" href="#">SIPUT<span style="color: #67696c"> | </span><span class="logo-dec">Sistem Informasi Perpustakaan Daerah</span></a>
-                            <a class="btn btn-download" href="register" style="float: right;">Registrasi</a>
+                            <a class="btn btn-download" href="/daftar" style="float: right;">Registrasi</a>
                         </div>
                     </div>
                 </nav>
@@ -18,7 +18,7 @@
             <div class="wrapper">
                 <div class="container">
                     <div class="row">
-                        <div class="banner-info text-center wow fadeIn delay-05s">
+                        <div class="banner-info text-center wow fadeIn delay-05s justify-content-center">
                             <h2 class="bnr-sub-title">Cari</h2>
                             <h4 class="bnr-para">Masukkan kata kunci dari judul, pengarang atau subyek buku</h4><br>
 

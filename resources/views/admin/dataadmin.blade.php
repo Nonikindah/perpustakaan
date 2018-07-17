@@ -1,7 +1,26 @@
 @extends('layouts.admin')
 
 @section('content')
-    @include('sweet::alert')
+    <script>
+        function konfirmasi() {
+            swal({
+                title: "Apakah Anda yakin ?",
+                text: "Data akan dihapus",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        swal("Berhasil menghapus", {
+                            icon: "success",
+                        });
+                    } else {
+                        swal("Proses hapus dibatalkan");
+                    }
+                });
+        }
+    </script>
         <div class="content">
             <div class="container-fluid">
                 <div class="row justify-content-center">
@@ -31,7 +50,7 @@
                                         <td>Mojokerto</td>
                                         <td>
                                             <div class="btn-group">
-                                                <a href="{{ route('alert','hapusadmin')}}" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></a>
+                                                <a onclick="konfirmasi()" href="/dataadmin" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></a>
                                             </div>
                                         </td>
                                     </tr>
@@ -42,7 +61,7 @@
                                         <td>Mojokerto</td>
                                         <td>
                                             <div class="btn-group">
-                                                <button class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></button>
+                                                <a onclick="konfirmasi()" href="/dataadmin" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></a>
                                             </div>
                                         </td>
                                     </tr>
@@ -53,7 +72,7 @@
                                         <td>Mojokerto</td>
                                         <td>
                                             <div class="btn-group">
-                                                <button class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></button>
+                                                <a onclick="konfirmasi()" href="/dataadmin" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></a>
                                             </div>
                                         </td>
                                     </tr>

@@ -18,9 +18,9 @@
     <link href="{{asset('css/light-bootstrap-dashboard.css?v=2.0.1')}}" rel="stylesheet"/>
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="{{asset('css/demo.css')}}" rel="stylesheet"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.25.3/sweetalert2.min.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>--}}
+    {{--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">--}}
     
 
 </head>
@@ -78,11 +78,11 @@
         <nav class="navbar navbar-expand-lg " color-on-scroll="500">
             <div class=" container-fluid  ">
                 <a class="navbar-brand" href="#pablo"> Dashboard </a>
-                {{--<button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"--}}
-                        {{--aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">--}}
-                    {{--<span class="navbar-toggler-bar burger-lines"></span>--}}
-                    {{--<span class="navbar-toggler-bar burger-lines"></span>--}}
-                    {{--<span class="navbar-toggler-bar burger-lines"></span>--}}
+                <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                        aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-bar burger-lines"></span>
+                    <span class="navbar-toggler-bar burger-lines"></span>
+                    <span class="navbar-toggler-bar burger-lines"></span>
                 {{--</button>--}}
                 <div class="collapse navbar-collapse justify-content-end" id="navigation">
                     <ul class="nav navbar-nav mr-auto">
@@ -135,7 +135,6 @@
                 </div>
             </div>
         </nav>
-        @include('sweet::alert' )
         @yield('content')
         <footer class="footer">
             <div class="container">

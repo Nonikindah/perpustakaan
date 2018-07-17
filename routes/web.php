@@ -25,8 +25,8 @@ Route::get('/detail', function () {
     return view('detail');
 })->name('detail');
 
-Route::get('/register', function () {
-    return view('register');
+Route::get('/daftar', function () {
+    return view('daftar');
 });
 Route::get('/login', function () {
     return view('login');
@@ -101,5 +101,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('alert/{AlertType}','sweetalertController@alert')->name('alert');
 
-Route::get('auth/register', 'Auth\AuthController@getRegister');
-Route::post('auth/register', 'Auth\AuthController@postRegister');
+Route::get('daftar', 'DaftarController@getRegister');
+Route::post('daftar', 'DaftarController@simpan');

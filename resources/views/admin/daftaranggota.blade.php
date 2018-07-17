@@ -1,7 +1,16 @@
 @extends('layouts.admin')
 
 @section('content')
-    @include('sweet::alert')
+    <script>
+        function konfirmasi(){
+            swal({
+                title: "Berhasil!",
+                text: "Anda menambahkan Anggota",
+                icon: "success",
+                timer: 4000
+            });
+        }
+    </script>
         <div class="content">
             <div class="container-fluid">
                 <div class="row justify-content-center">
@@ -63,7 +72,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="{{route('alert', 'success')}}" class="btn btn-primary btn-fill pull-right">Simpan</a>
+                                    <a onclick="konfirmasi()" href="/danggota" class="btn btn-primary btn-fill pull-right">Simpan</a>
                                 </form>
                             </div>
                         </div>

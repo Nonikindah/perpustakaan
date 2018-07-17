@@ -18,7 +18,6 @@
                                             <input type="text" class="form-control" placeholder="" value="">
                                         </div>
                                     </div>
-
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
@@ -80,10 +79,11 @@
                                         </div>
                                     </div>
                                 </div>
+                                <a href="{{ route('alert','updatebuku')}}" class="btn btn-primary btn-fill pull-right">Update</a>
                             </form>
                         </div>
                     </div>
-                    <a href="{{ route('alert','updatebuku')}}" class="btn btn-primary btn-fill pull-right">Update</a>
+
                 </div>
             </div>
         </div>

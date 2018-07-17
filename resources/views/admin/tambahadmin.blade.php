@@ -1,7 +1,6 @@
 @extends('layouts.admin')
 
 @section('content')
-    @include('sweet::alert')
         <div class="content">
             <div class="container-fluid">
                 <div class="row justify-content-center">

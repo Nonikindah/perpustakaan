@@ -1,6 +1,15 @@
 @extends('layouts.admin')
 
 @section('content')
+    <script>
+        function konfirmasi(){
+            swal({
+                title: "Berhasil!",
+                text: "Anda menambahkan Buku",
+                icon: "success"
+            });
+        }
+    </script>
     <div class="content">
         <div class="container-fluid">
             <div class="row justify-content-center">
@@ -86,7 +95,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="{{ route('alert','tambahbuku')}}" class="btn btn-primary btn-fill pull-right">Simpan</a>
+                                <a onclick="konfirmasi()" href="/dbuku" class="btn btn-primary btn-fill pull-right">Simpan</a>
                             </form>
                         </div>
                     </div>
