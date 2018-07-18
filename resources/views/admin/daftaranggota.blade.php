@@ -25,13 +25,13 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Nama Lengkap</label>
-                                                <input type="text" class="form-control" placeholder="" value="">
+                                                <input type="text" class="form-control" placeholder="Nama Lengkap" value="">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>No. HP/Telp</label>
-                                                <input type="text" class="form-control" placeholder="" value="">
+                                                <input type="text" class="form-control" placeholder="No. HP/Telp" value="">
                                             </div>
                                         </div>
                                     </div>
@@ -39,7 +39,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>No. Identitas (KTP/SIM/KTM)</label>
-                                                <input type="text" class="form-control" placeholder="" value="">
+                                                <input type="text" class="form-control" placeholder="No. Identitas (KTP/SIM/KTM)" value="">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -57,7 +57,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Alamat</label>
-                                                <input type="text" class="form-control" placeholder="" value="">
+                                                <input type="text" class="form-control" placeholder="Alamat Lengkap" value="">
                                             </div>
                                         </div>
                                         <div class="col-md-6">

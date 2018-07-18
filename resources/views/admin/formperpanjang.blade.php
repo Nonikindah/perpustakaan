@@ -61,9 +61,9 @@
                                     </div>
                                 </div>
                             </form>
+                            <a href="{{route('alert', 'perpanjang')}}" class="btn btn-primary btn-fill pull-right">Perpanjang</a>
                         </div>
                     </div>
-                    <a href="{{route('alert', 'perpanjang')}}" class="btn btn-primary btn-fill pull-right">Perpanjang</a>
                 </div>
             </div>
         </div>

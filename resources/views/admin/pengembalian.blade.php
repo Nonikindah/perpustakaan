@@ -76,9 +76,9 @@
                                     </div>
                                 <div class="clearfix"></div>
                             </form>
+                            <a href="{{route('alert','pengembalian')}}" class="btn btn-primary btn-fill pull-right">Proses</a>
                         </div>
                     </div>
-                    <a href="{{route('alert','pengembalian')}}" class="btn btn-primary btn-fill pull-right">Proses</a>
                 </div>
             </div>
         </div>

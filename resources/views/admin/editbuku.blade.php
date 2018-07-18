@@ -81,6 +81,7 @@
                                 </div>
                                 <a href="{{ route('alert','updatebuku')}}" class="btn btn-primary btn-fill pull-right">Update</a>
                             </form>
+                            <a href="{{ route('alert','updatebuku')}}" class="btn btn-primary btn-fill pull-right">Update</a>
                         </div>
                     </div>
 
