@@ -42,15 +42,15 @@
                                                 <input type="text" class="form-control" placeholder="No. Identitas (KTP/SIM/KTM)" value="">
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Jenis Kelamin</label>
-                                                <select class="form-control" id="jenkel">
-                                                    <option>--Pilih Jenis Kelamin Anda--</option>
-                                                    <option>Laki-laki</option>
-                                                    <option>Perempuan</option>
-                                                </select>
-                                            </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Jenis Kelamin</label>
+                                            <select class="form-control" id="jenkel">
+                                                <option>--Pilih Jenis Kelamin Anda--</option>
+                                                <option>Laki-laki</option>
+                                                <option>Perempuan</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -60,24 +60,25 @@
                                                 <input type="text" class="form-control" placeholder="Alamat Lengkap" value="">
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Pekerjaan</label>
-                                                    <select class="form-control" id="pekerjaan">
-                                                        <option>--Pilih Pekerjaan Anda--</option>
-                                                        <option>PNS</option>
-                                                        <option>Pelajar/Mahasiswa</option>
-                                                        <option>Karyawan Swasta</option>
-                                                    </select>
-                                            </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Pekerjaan</label>
+                                            <select class="form-control" id="pekerjaan">
+                                                <option>--Pilih Pekerjaan Anda--</option>
+                                                <option>PNS</option>
+                                                <option>Pelajar/Mahasiswa</option>
+                                                <option>Karyawan Swasta</option>
+                                            </select>
                                         </div>
                                     </div>
-                                    <a onclick="konfirmasi()" href="/danggota" class="btn btn-primary btn-fill pull-right">Simpan</a>
-                                </form>
-                            </div>
+                                </div>
+                                <a type="button" onclick="konfirmasi()" href="/danggota" class="btn btn-primary btn-fill pull-right">Simpan</a>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 @endsection

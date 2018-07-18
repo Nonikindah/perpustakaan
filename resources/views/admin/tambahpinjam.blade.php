@@ -1,6 +1,15 @@
 @extends('layouts.admin')
 
 @section('content')
+    <script>
+        function tambahpinjam(){
+            swal({
+                title: "Berhasil!",
+                text: "Anda memperbarui data pinjam",
+                icon: "success"
+            });
+        }
+    </script>
     <div class="content">
         <div class="container-fluid">
             <div class="row justify-content-center">
@@ -8,12 +17,12 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="row">
-                            <h4 class="col-md-8 card-title">Tambah Data Peminjaman</h4>
-                            <div class="col-md-4 pl-1 ">
-                                <div class="form-group">
-                                    <input type="text" class="form-control pull-right" disabled="" placeholder="ID Pinjam disabled">
+                                <h4 class="col-md-8 card-title">Tambah Data Peminjaman</h4>
+                                <div class="col-md-4 pl-1 ">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control pull-right" disabled="" placeholder="ID Pinjam disabled">
+                                    </div>
                                 </div>
-                            </div>
                             </div>
                         </div>
                         <div class="card-body">
@@ -77,7 +86,7 @@
                             </form>
                         </div>
                     </div>
-                    <a href="{{route('alert','tambahpinjam')}}" class="btn btn-primary btn-fill pull-right">Tambah</a>
+                    <a onclick="tambahpinjam()" href="{{route('admin/pinjam')}}" class="btn btn-primary btn-fill pull-right">Tambah</a>
                 </div>
             </div>
         </div>

@@ -1,6 +1,15 @@
 @extends('layouts.admin')
 
 @section('content')
+    <script>
+        function pengembalian(){
+            swal({
+                title: "Berhasil!",
+                text: "Anda mengembalikan buku",
+                icon: "success"
+            });
+        }
+    </script>
     <div class="content">
         <div class="container-fluid">
             <div class="row justify-content-center">
@@ -60,25 +69,25 @@
                                         </div>
                                     </div>
                                 </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Tanggal Pinjam</label>
-                                                <input type="date" class="form-control" >
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Jumlah Denda</label>
-                                                <input type="text" class="form-control">
-                                            </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Tanggal Pinjam</label>
+                                            <input type="date" class="form-control" >
                                         </div>
                                     </div>
-                                <div class="clearfix"></div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Jumlah Denda</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="{{route('admin/pinjam')}}" onclick="pengembalian()" class="btn btn-primary btn-fill pull-right">Proses</a>
                             </form>
-                            <a href="{{route('alert','pengembalian')}}" class="btn btn-primary btn-fill pull-right">Proses</a>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

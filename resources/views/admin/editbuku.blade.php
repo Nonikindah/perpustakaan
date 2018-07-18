@@ -1,6 +1,15 @@
 @extends('layouts.admin')
 
 @section('content')
+    <script>
+        function editadmin(){
+            swal({
+                title: "Berhasil!",
+                text: "Anda memperbarui data Admin",
+                icon: "success"
+            });
+        }
+    </script>
     <div class="content">
         <div class="container-fluid">
             <div class="row justify-content-center">
@@ -79,7 +88,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="{{ route('alert','updatebuku')}}" class="btn btn-primary btn-fill pull-right">Update</a>
+                                <a href="{{route('admin/buku')}}" onclick="editbuku()" class="btn btn-primary btn-fill pull-right">Update</a>
                             </form>
                             <a href="{{ route('alert','updatebuku')}}" class="btn btn-primary btn-fill pull-right">Update</a>
                         </div>

@@ -1,6 +1,15 @@
 @extends('layouts.admin')
 
 @section('content')
+    <script>
+        function perpanjangan(){
+            swal({
+                title: "Berhasil!",
+                text: "Anda memperpanjang masa peminjaman buku",
+                icon: "success"
+            });
+        }
+    </script>
     <div class="content">
         <div class="container-fluid">
             <div class="row justify-content-center">
@@ -60,8 +69,8 @@
                                         </div>
                                     </div>
                                 </div>
+                                <a onclick="perpanjangan()" href="{{route('admin/pinjam')}}" class="btn btn-primary btn-fill pull-right">Perpanjang</a>
                             </form>
-                            <a href="{{route('alert', 'perpanjang')}}" class="btn btn-primary btn-fill pull-right">Perpanjang</a>
                         </div>
                     </div>
                 </div>

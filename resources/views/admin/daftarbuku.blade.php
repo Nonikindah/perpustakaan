@@ -88,7 +88,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a onclick="konfirmasi()" href="/dbuku" class="btn btn-primary btn-fill pull-right">Simpan</a>
+                                <a onclick="konfirmasi()" href="{{route('admin/buku')}}" class="btn btn-primary btn-fill pull-right">Simpan</a>
                             </form>
                         </div>
                     </div>

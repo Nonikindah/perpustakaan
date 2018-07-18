@@ -5,13 +5,13 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                            <h4>HISTORI BUKU</h4>
-                        <div style="font-size: 16px" class="card-body table-full-width table-responsive">
-                            <p>Kode Buku : 300.596.343</p>
-                            <p>Judul Buku : Adil Tanpa Pandang Bulu</p>
-                            <p>Pengarang : Ava</p>
-                            <p>Penerbit : Aca</p>
-                            </div>
+                    <h4>HISTORI BUKU</h4>
+                    <div style="font-size: 16px" class="card-body table-full-width table-responsive">
+                        <p>Kode Buku : 300.596.343</p>
+                        <p>Judul Buku : Adil Tanpa Pandang Bulu</p>
+                        <p>Pengarang : Ava</p>
+                        <p>Penerbit : Aca</p>
+                    </div>
                 </div>
             </div>
         </div>

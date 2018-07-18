@@ -2,12 +2,12 @@
 
 @section('content')
     <script>
-        function konfirmasi() {
+        function cari() {
             swal({
                 text: 'Masukkan kata kunci dari judul, pengarang atau subyek buku',
                 content: "input",
                 button: {
-                    text: "Search!",
+                    text: "Cari",
                     closeModal: false,
                 },
             })
@@ -19,7 +19,7 @@
                 .then(results => {
                     return results.json();
                 })
-                .then(json => {
+                .then(function (json) {
                     const movie = json.results[0];
 
                     if (!movie) {
@@ -35,12 +35,30 @@
                         icon: imageURL,
                     });
                 })
-                .catch(err => {
+                .catch(function (err) {
                     if (err) {
                         swal("Oh noes!", "The AJAX request failed!", "error");
                     } else {
                         swal.stopLoading();
                         swal.close();
+                    }
+                });v
+        }
+        function hapusbuku() {
+            swal({
+                title:"Apakah Anda yakin?",
+                text: "Data akan dihapus",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        swal("Berhasil dihapus", {
+                            icon: "success",
+                        });
+                    } else {
+                        swal("Hapus data dibatalkan");
                     }
                 });
         }
@@ -55,7 +73,7 @@
                                 <h4 class="col-md-4 card-title">Data Koleksi Buku</h4>
                                 <div class="col-md-8 ">
                                     <a href="{{route('admin/buku/daftarbuku')}}" class="btn btn-primary btn-fill pull-right" style="margin-left: 5px"><i class="fa fa-plus"></i> Tambah Buku</a>
-                                    <a href="#" onclick="konfirmasi()" class="btn btn-out btn-fill btn-success pull-right"><i class="fa fa-search"></i> Cari</a>
+                                    <a href="/dbuku" onclick="cari()" class="btn btn-out btn-fill btn-success pull-right"><i class="fa fa-search"></i> Cari</a>
                                     {{--<input type="text" class="form-control pull-right" style="width: 60%">--}}
                                 </div>
                                 <div class="card-body table-full-width table-responsive">
@@ -84,7 +102,7 @@
                                                 <div class="btn-group">
                                                     <a href="{{route('admin/buku/editbuku')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></a>
 
-                                                    <a href="{{ route('alert','hapusbuku')}}" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></a>
+                                                    <a href="/dbuku" onclick="hapusbuku()" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -102,7 +120,7 @@
                                                 <div class="btn-group">
                                                     <a href="{{route('admin/buku/editbuku')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></a>
 
-                                                    <a href="{{ route('alert','hapusbuku')}}" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></a>
+                                                    <a href="/dbuku" onclick="hapusbuku()" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -120,7 +138,7 @@
                                                 <div class="btn-group">
                                                     <a href="{{route('admin/buku/editbuku')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></a>
 
-                                                    <a href="{{ route('alert','hapusbuku')}}" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></a>
+                                                    <a href="/dbuku" onclick="hapusbuku()" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -140,7 +158,7 @@
                                                 <div class="btn-group">
                                                     <a href="{{route('admin/buku/editbuku')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></a>
 
-                                                    <a href="{{ route('alert','hapusbuku')}}" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></a>
+                                                    <a href="/dbuku" onclick="hapusbuku()" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -159,7 +177,7 @@
                                                 <div class="btn-group">
                                                     <a href="{{route('admin/buku/editbuku')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></a>
 
-                                                    <a href="{{ route('alert','hapusbuku')}}" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></a>
+                                                    <a href="/dbuku" onclick="hapusbuku()" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -177,7 +195,7 @@
                                                 <div class="btn-group">
                                                     <a href="{{route('admin/buku/editbuku')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></a>
 
-                                                    <a href="{{ route('alert','hapusbuku')}}" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></a>
+                                                    <a href="/dbuku" onclick="hapusbuku()" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></a>
                                                 </div>
                                             </td>
                                         </tr>
