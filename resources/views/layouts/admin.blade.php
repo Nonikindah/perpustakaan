@@ -133,7 +133,7 @@
                         </li>
                     </ul>
                 </div>
-            </div>
+                    </div>
         </nav>
         @yield('content')
         <footer class="footer">
