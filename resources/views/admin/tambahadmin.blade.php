@@ -60,7 +60,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="{{route('admin/admin')}}" onclick="tambahadmin()" class="btn btn-primary btn-fill pull-right">Simpan</a>
+                                <button type="button" href="{{route('admin/admin')}}" onclick="tambahadmin()" class="btn btn-primary btn-fill pull-right">Simpan</button>
                             </form>
                         </div>
                     </div>

@@ -83,7 +83,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="{{route('admin/pinjam')}}" onclick="pengembalian()" class="btn btn-primary btn-fill pull-right">Proses</a>
+                                <button type="button" href="{{route('admin/pinjam')}}" onclick="pengembalian()" class="btn btn-primary btn-fill pull-right">Proses</button>
                             </form>
                         </div>
                     </div>

@@ -69,7 +69,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a onclick="perpanjangan()" href="{{route('admin/pinjam')}}" class="btn btn-primary btn-fill pull-right">Perpanjang</a>
+                                <button type="button" onclick="perpanjangan()" href="{{route('admin/pinjam')}}" class="btn btn-primary btn-fill pull-right">Perpanjang</button>
                             </form>
                         </div>
                     </div>

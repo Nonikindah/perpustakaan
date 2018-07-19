@@ -25,9 +25,7 @@ Route::get('/detail', function () {
     return view('detail');
 })->name('detail');
 
-Route::get('/daftar', function () {
-    return view('daftar');
-});
+
 Route::get('/login', function () {
     return view('login');
 });
@@ -99,7 +97,15 @@ Route::get('/datapinjam/historipinjaman', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('alert/{AlertType}','sweetalertController@alert')->name('alert');
+Route::get('alert/{AlertType}', 'sweetalertController@alert')->name('alert');
 
-Route::get('daftar', 'DaftarController@getRegister');
-Route::post('daftar', 'DaftarController@simpan');
+Route::post('/daftar', 'AnggotaController@store')->name('daftar');
+
+//Route::post('/daftar', [
+//    'as' => 'daftar',
+//    'uses' => 'AnggotaController@store'
+//]);
+
+Route::get('/daftar', function () {
+    return view('daftar');
+})->name('daftar');

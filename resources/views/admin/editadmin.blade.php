@@ -77,7 +77,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="{{route('admin/admin')}}" onclick="editadmin()" class="btn btn-primary btn-fill pull-right">Update Profile</a>
+                                <button type="button" href="{{route('admin/admin')}}" onclick="editadmin()" class="btn btn-primary btn-fill pull-right">Update Profile</button>
                             </form>
                         </div>
                     </div>

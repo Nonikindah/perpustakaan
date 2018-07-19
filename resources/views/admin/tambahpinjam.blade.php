@@ -83,10 +83,10 @@
                                         </div>
                                     </div>
                                 </div>
+                                <button type="button" onclick="tambahpinjam()" href="{{route('admin/pinjam')}}" class="btn btn-primary btn-fill pull-right">Tambah</button>
                             </form>
                         </div>
                     </div>
-                    <a onclick="tambahpinjam()" href="{{route('admin/pinjam')}}" class="btn btn-primary btn-fill pull-right">Tambah</a>
                 </div>
             </div>
         </div>

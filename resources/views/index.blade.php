@@ -10,7 +10,10 @@
                     <div class="container">
                         <div class="navbar-header" style="width:100%">
                             <a class="navbar-brand" href="#">SIPUT<span style="color: #67696c"> | </span><span class="logo-dec">Sistem Informasi Perpustakaan Daerah</span></a>
-                            <a class="btn btn-download" href="/daftar" style="float: right;">Registrasi</a>
+                            <a class="btn btn-download" href="{{route('daftar')}}" style="float: right;">Registrasi</a>
+                            @if(Session::has('message'))
+                                <span class="label label-succees">{{Session::get('message')}}</span>
+                            @endif
                         </div>
                     </div>
                 </nav>

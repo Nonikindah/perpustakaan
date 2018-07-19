@@ -55,8 +55,8 @@
                                 <h4 class="col-md-4 card-title">Histori Peminjaman Buku</h4>
                                 <div class="col-md-8 ">
                                     <a href="{{route('admin/pinjam/tambahpinjam')}}" class="btn btn-primary btn-fill pull-right" style="margin-left: 5px"><i class="fa fa-plus"></i> Tambah Data</a>
-                                    <a href="{{route('admin/pinjam')}}" onclick="cari()" class="btn btn-out btn-fill btn-success pull-right"><i class="fa fa-search"></i> Cari</a>
-                                    <input type="text" class="form-control pull-right" style="width: 60%">
+                                    <button type="button" href="{{route('admin/pinjam')}}" onclick="cari()" class="btn btn-out btn-fill btn-success pull-right"><i class="fa fa-search"></i> Cari</button>
+                                    {{--<input type="text" class="form-control pull-right" style="width: 60%">--}}
                                 </div>
                             </div>
                         </div>

@@ -2,30 +2,6 @@
 
 @section('content')
 
-    <script>
-        function konfirmasi() {
-            swal({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                type: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
-            }).then((result) = > {
-                if (result.value
-        )
-            {
-                swal(
-                        'Deleted!',
-                        'Your file has been deleted.',
-                        'success'
-                )
-            }
-        })
-        }
-    </script>
-
     <div class="content">
         <div class="container-fluid">
             {{--<button class="btn btn-lg btn-danger" onclick="konfirmasi()">Halo</button>--}}

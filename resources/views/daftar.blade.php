@@ -10,14 +10,15 @@
                     </div>
 
                     <div class="panel-body">
-                        <form class="form-horizontal" method="POST" action="/daftar/{{$daftar->id}}/daftar">
+                        {{--<form class="form-horizontal" method="POST" action="/daftar/{{$daftar->id}}/daftar">--}}
+                        <form class="form-horizontal" method="POST" action="{{route('daftar')}}">
                             {{ csrf_field() }}
 
                             <div class="form-group">
                                 <label for="name" class="col-md-4 control-label">Nama Lengkap</label>
 
                                 <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control" name="name"
+                                    <input id="name" type="text" class="form-control" name="nama"
                                            value="{{ old('nama') }}" required autofocus>
 
                                     {{--@if ($errors->has('nama'))--}}
@@ -28,7 +29,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group{{ $errors->has('identitas') ? ' has-error' : '' }}">
+                            <div class="form-group">
                                 <label for="identitas" class="col-md-4 control-label">No. Identitas (KTP/
                                     SIM/KTM)</label>
 
@@ -96,7 +97,7 @@
                                 <label for="telepon" class="col-md-4 control-label">No. HP/Telp</label>
 
                                 <div class="col-md-6">
-                                    <input id="telepon" type="text" class="form-control" name="telepon"
+                                    <input id="telepon" type="text" class="form-control" name="telp"
                                            value="{{ old('telepon') }}" required autofocus>
                                     {{--@if ($errors->has('telepon'))--}}
                                     {{--<span class="help-block">--}}
@@ -109,9 +110,9 @@
 
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
-                                    <a href="/" type="submit" style="background-color: #be9e21" class="btn btn-primary">
+                                    <button type="submit" style="background-color: #be9e21" class="btn btn-primary">
                                         Register
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
                         </form>

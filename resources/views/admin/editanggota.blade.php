@@ -79,7 +79,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="{{route('admin/anggota')}}" onclick="editanggota()" class="btn btn-primary btn-fill pull-right">Update</a>
+                                <button type="button" href="{{route('admin/anggota')}}" onclick="editanggota()" class="btn btn-primary btn-fill pull-right">Update</button>
                             </form>
                         </div>
                     </div>

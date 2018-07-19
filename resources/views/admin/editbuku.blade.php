@@ -88,9 +88,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="{{route('admin/buku')}}" onclick="editbuku()" class="btn btn-primary btn-fill pull-right">Update</a>
+                                <button type="button" href="{{route('admin/buku')}}" onclick="editbuku()" class="btn btn-primary btn-fill pull-right">Update</button>
                             </form>
-                            <a href="{{ route('alert','updatebuku')}}" class="btn btn-primary btn-fill pull-right">Update</a>
                         </div>
                     </div>
 

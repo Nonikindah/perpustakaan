@@ -100,7 +100,7 @@
                                             </td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="{{route('admin/buku/editbuku')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></a>
+                                                    c
 
                                                     <a href="/dbuku" onclick="hapusbuku()" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></a>
                                                 </div>

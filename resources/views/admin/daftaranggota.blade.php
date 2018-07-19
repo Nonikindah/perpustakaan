@@ -5,10 +5,11 @@
         function konfirmasi(){
             swal({
                 title: "Berhasil!",
-                text: "Anda menambahkan Anggota",
-                icon: "success",
-                timer: 4000
-            });
+                text: "Anda menambahkan Anggota.",
+                type: "success",
+                confirmButtonText: "OK",
+                closeOnConfirm: false
+            },location.reload.bind("{{ route('admin/anggota') }}"));
         }
     </script>
         <div class="content">
@@ -72,8 +73,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                </div>
-                                <a type="button" onclick="konfirmasi()" href="/danggota" class="btn btn-primary btn-fill pull-right">Simpan</a>
+                                    <button type="button" onclick="konfirmasi()" href="" class="btn btn-primary btn-fill pull-right">Simpan</button>
                             </form>
                         </div>
                     </div>
