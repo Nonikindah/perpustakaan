@@ -1,3 +1,7 @@
 *
 !public/
 !.gitignore
+!provinsi.json
+!kabupaten.json
+!kecamatan.json
+!kelurahan.json
