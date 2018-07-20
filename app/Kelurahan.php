@@ -4,8 +4,6 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Collection;
-use App\Models\Persyaratan;
-use App\Models\Mengurus;
 
 class Kelurahan extends Model
 {
@@ -31,7 +29,7 @@ class Kelurahan extends Model
      */
     public function getKecamatan($queryReturn = true)
     {
-        $data = $this->belongsTo('App\Models\Kecamatan', 'kecamatan_id');
+        $data = $this->belongsTo('App\Kecamatan', 'kecamatan_id');
         return $queryReturn ? $data : $data->first();
     }
 
@@ -65,41 +63,6 @@ class Kelurahan extends Model
     public function getProvinsiByNo()
     {
         return Provinsi::where('no_prov', $this->no_prov)->first();
-    }
-
-    /**
-     * mendapatkan data user
-     * 
-     * @param bool $queryReturn
-     * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function getUser($queryReturn = true)
-    {
-        $data = $this->hasMany('App\Models\User', 'kelurahan_id');
-        return $queryReturn ? $data : $data->get();
-    }
-
-    /**
-     * mendapatkan kepengurusan
-     * 
-     * @param bool $queryReturn
-     * @return mixed
-     */
-    public function getMengurus($layanan)
-    {
-//        dd($layanan->nama);
-        if ($layanan instanceof Collection) {
-            return Mengurus::where('konfirmasi', true)->whereIn('layanan_id', $layanan->pluck('id')->toArray())
-            ->whereHas('getDataPersyaratan', function ($query) use ($layanan) {
-                $query->where('nama', str_replace(' ', '_', strtolower($layanan->nama)) . '.kelurahan')->where('value', $this->id);
-            });
-        }
-        else {
-            return Mengurus::where('konfirmasi', true)->where('layanan_id', $layanan->id)
-            ->whereHas('getDataPersyaratan', function ($query) use ($layanan) {
-                $query->where('nama', str_replace(' ', '_', strtolower($layanan->nama)) . '.kelurahan')->where('value', $this->id);
-            });
-        }
     }
 
     public static function findByNo($no, $no_kec, $no_kab, $no_prov)

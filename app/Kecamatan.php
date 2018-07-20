@@ -4,7 +4,6 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Collection;
-use App\Models\mengurus;
 
 class Kecamatan extends Model
 {
@@ -23,7 +22,7 @@ class Kecamatan extends Model
      */
     public function getKabupaten($queryReturn = true)
     {
-        $data = $this->belongsTo('App\Models\Kabupaten', 'kabupaten_id');
+        $data = $this->belongsTo('App\Kabupaten', 'kabupaten_id');
         return $queryReturn ? $data : $data->first();
     }
 
@@ -49,41 +48,10 @@ class Kecamatan extends Model
      */
     public function getKelurahan($queryReturn = true)
     {
-        $data = $this->hasMany('App\Models\Kelurahan', 'kecamatan_id');
+        $data = $this->hasMany('App\Kelurahan', 'kecamatan_id');
         return $queryReturn ? $data : $data->get();
     }
 
-    /**
-     * mendapatkan data user
-     * @param bool $queryReturn
-     * @return mixed
-     */
-    public function getUser($queryReturn = true)
-    {
-        $kelurahan_id = $this->getKelurahan(true)->select('id')->get()->toArray();
-        $kelurahan_id = array_flatten($kelurahan_id);
-        $data = User::whereIn('kelurahan_id', $kelurahan_id);
-        return $queryReturn ? $data : $data->get();
-    }
-
-    /**
-     * mendapatkan data kepengurusan per kecamatan
-     * @param bool $queryReturn
-     * @return mixed
-     */
-    public function getMengurus($layanan)
-    {
-        if ($layanan instanceof Collection) {
-            return Mengurus::where('konfirmasi', true)->whereIn('layanan_id', $layanan->pluck('id')->toArray())->whereHas('getDataPersyaratan', function ($query) use ($layanan) {
-                $query->where('nama', strtolower($layanan->nama) . '.kelurahan')->whereIn('value', $this->getKelurahan(false)->pluck('id')->toArray());        
-            });
-        }
-        else {
-            return Mengurus::where('konfirmasi', true)->where('layanan_id', $layanan->id)->whereHas('getDataPersyaratan', function ($query) use ($layanan) {
-                $query->where('nama', strtolower($layanan->nama) . '.kelurahan')->whereIn('value', $this->getKelurahan(false)->pluck('id')->toArray());        
-            });
-        }
-    }
 
     public static function findByNo($no, $no_kab, $no_prov)
     {

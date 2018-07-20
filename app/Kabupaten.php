@@ -22,7 +22,7 @@ class Kabupaten extends Model
      */
     public function getProvinsi($queryReturn = true)
     {
-        $data = $this->belongsTo('App\Models\Provinsi', 'provinsi_id');
+        $data = $this->belongsTo('App\Provinsi', 'provinsi_id');
         return $queryReturn ? $data : $data->first();
     }
 
@@ -33,7 +33,7 @@ class Kabupaten extends Model
      */
     public function getKecamatan($queryReturn = true)
     {
-        $data = $this->hasMany('App\Models\Kecamatan', 'kabupaten_id');
+        $data = $this->hasMany('App\Kecamatan', 'kabupaten_id');
         return $queryReturn ? $data : $data->get();
     }
 

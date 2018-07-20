@@ -17,6 +17,7 @@ class AnggotaController extends Controller
             'nama' => 'required',
             'identitas' => 'required',
             'alamat' => 'required',
+            'alamat_lengkap' => 'required',
             'jenkel' => 'required',
             'pekerjaan' => 'required',
             'telp' => 'required'
@@ -28,6 +29,7 @@ class AnggotaController extends Controller
             'nama' => $request->nama,
             'identitas' => $request->identitas,
             'alamat' => $request->alamat,
+            'alamat_lengkap' => $request->alamat_lengkap,
             'jenkel' => $request->jenkel,
             'pekerjaan' => $request->pekerjaan,
             'telp' => $request->telp,

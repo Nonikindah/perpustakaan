@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Kecamatan;
+use App\Kecamatan;
 
 class Provinsi extends Model
 {
@@ -22,7 +22,7 @@ class Provinsi extends Model
      */
     public function getKabupaten($queryReturn = true)
     {
-        $data = $this->hasMany('App\Models\Kabupaten', 'provinsi_id');
+        $data = $this->hasMany('App\Kabupaten', 'provinsi_id');
         return $queryReturn ? $data : $data->get();
     }
 

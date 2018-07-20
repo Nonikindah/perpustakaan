@@ -60,11 +60,30 @@
                                 <label for="alamat" class="col-md-4 control-label">Alamat</label>
 
                                 <div class="col-md-6">
-                                    <input id="alamat" type="text" class="form-control" name="alamat" required>
+                                    <select class="js-example-basic-single form-control" name="alamat">
+                                        @foreach(\App\Kabupaten::findByNo(7, 74)->getKelurahan()->orderBy('nama')->get() as $kelurahan)
+                                            <option value="{{ $kelurahan->id }}">{{ $kelurahan->nama }}, {{ $kelurahan->getKecamatan(false)->nama }}, {{ $kelurahan->getKabupaten(false)->nama }}</option>
+                                        @endforeach
+                                    </select>
 
                                     {{--@if ($errors->has('alamat'))--}}
                                     {{--<span class="help-block">--}}
                                     {{--<strong>{{ $errors->first('alamat') }}</strong>--}}
+                                    {{--</span>--}}
+                                    {{--@endif--}}
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="alamat_lengkap" class="col-md-4 control-label">Alamat Lengkap</label>
+
+                                <div class="col-md-6">
+                                    <input id="alamat_lengkap" type="text" class="form-control" name="alamat_lengkap"
+                                           value="{{ old('alamat_lengkap') }}" placeholder="Contoh : Jalan Kita Bersama" required>
+
+                                    {{--@if ($errors->has('identitas'))--}}
+                                    {{--<span class="help-block">--}}
+                                    {{--<strong>{{ $errors->first('identitas') }}</strong>--}}
                                     {{--</span>--}}
                                     {{--@endif--}}
                                 </div>
@@ -132,3 +151,9 @@
         </div>
     </div>
 @endsection
+
+@push('js')
+    <script>
+        $('.js-example-basic-single').select2();
+    </script>
+@endpush

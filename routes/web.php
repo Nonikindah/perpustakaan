@@ -101,11 +101,6 @@ Route::get('alert/{AlertType}', 'sweetalertController@alert')->name('alert');
 
 Route::post('/daftar', 'AnggotaController@store')->name('daftar');
 
-//Route::post('/daftar', [
-//    'as' => 'daftar',
-//    'uses' => 'AnggotaController@store'
-//]);
-
 Route::get('/daftar', function () {
     return view('daftar');
 })->name('daftar');
