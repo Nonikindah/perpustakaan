@@ -21,13 +21,12 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/animate.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
 </head>
 <body style="height: 100%">
 <div class="loader"></div>
-
-
 <!-- Right Side Of Navbar -->
 <ul class="nav navbar-nav navbar-right">
     <!-- Authentication Links -->

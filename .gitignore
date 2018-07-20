@@ -1,6 +1,10 @@
 /node_modules
 /public/hot
 /public/storage
+!provinsi.json
+!kabupaten.json
+!kecamatan.json
+!kelurahan.json
 /storage/*.key
 /vendor
 /.idea

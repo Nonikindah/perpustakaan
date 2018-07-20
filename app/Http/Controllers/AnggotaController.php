@@ -33,15 +33,6 @@ class AnggotaController extends Controller
             'telp' => $request->telp,
         ]);
 
-//        $anggota = new Anggota();
-//        $anggota->nama = Input::get('nama');
-//        $anggota->identitas = t::get('alamat');
-//        $anggota->jenkel = Input::get('jenkel');
-//        $anggota->pekerjaan = Input::get('pekerjaan');
-//        $anggota->telepon = Input::get('telepon');
-//        $Input::get('identitas');
-//        $anggota->alamat = Inpuanggota->save();
-
-        return redirect('')->with('message', 'data anggota berhasil ditambahkan');
+        return redirect('')->with('message');
     }
 }

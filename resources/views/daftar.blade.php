@@ -1,6 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+    <script>
+        function konfirmasi(){
+            swal({
+                title: "Berhasil!",
+                text: "Anda telah terdaftar sebagai Anggota",
+                type: "success",
+                confirmButtonText: "OK",
+            });
+        }
+    </script>
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2" style="margin-top: 100px">
@@ -110,7 +120,7 @@
 
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" style="background-color: #be9e21" class="btn btn-primary">
+                                    <button type="submit" onclick="konfirmasi()" style="background-color: #be9e21" class="btn btn-primary">
                                         Register
                                     </button>
                                 </div>

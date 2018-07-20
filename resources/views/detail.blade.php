@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <section id="blog" class="section-padding wow fadeInUp delay-05s">
+    <section id="blog" class="section-padding wow">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
