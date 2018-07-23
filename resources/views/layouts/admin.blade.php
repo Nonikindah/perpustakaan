@@ -18,10 +18,16 @@
     <link href="{{asset('css/light-bootstrap-dashboard.css?v=2.0.1')}}" rel="stylesheet"/>
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="{{asset('css/demo.css')}}" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>--}}
+    {{--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">--}}
+
+
 </head>
 
 <body>
-<div class="wrapper">
+<div class="wrapper form-control">
     <div class="sidebar" data-image="{{asset('img/sidebar-52.jpg')}}">
         <!--
     Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
@@ -153,7 +159,6 @@
     </div>
 </div>
 
-</body>
 <!--   Core JS Files   -->
 <script src="{{asset('js/core/jquery.3.2.1.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/core/popper.min.js')}}" type="text/javascript"></script>
@@ -171,6 +176,7 @@
 <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
 <script src="{{asset('js/demo.js')}}"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
 
@@ -190,4 +196,20 @@
     </script>
 @endif
 @stack('js')
+@stack('js')
+
+<style>
+    .form-control {
+        background-color: #FFFFFF;
+        border: 1px solid #E3E3E3;
+        border-radius: 4px;
+        color: #565656;
+        padding: 8px 12px;
+        height: 40px;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+</style>
+</body>
+
 </html>

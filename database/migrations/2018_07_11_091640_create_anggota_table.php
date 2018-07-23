@@ -17,7 +17,8 @@ class CreateAnggotaTable extends Migration
             $table->increments('id_anggota');
             $table->string('nama');
             $table->string('identitas')->unique();
-            $table->string('alamat');
+            $table->integer('kelurahan_id')->unsigned()->nullable();
+            $table->foreign('kelurahan_id')->references('id')->on('kelurahan')->onUpdate('cascade')->onDelete('set null');
             $table->string('alamat_lengkap');
             $table->string('jenkel');
             $table->string('pekerjaan');

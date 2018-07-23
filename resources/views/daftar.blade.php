@@ -21,7 +21,7 @@
 
                     <div class="panel-body">
                         {{--<form class="form-horizontal" method="POST" action="/daftar/{{$daftar->id}}/daftar">--}}
-                        <form class="form-horizontal" method="POST" action="{{route('daftar')}}">
+                        <form class="form-horizontal" method="POST" action="{{route('daftaranggota')}}">
                             {{ csrf_field() }}
 
                             <div class="form-group">
@@ -60,7 +60,7 @@
                                 <label for="alamat" class="col-md-4 control-label">Alamat</label>
 
                                 <div class="col-md-6">
-                                    <select class="js-example-basic-single form-control" name="alamat">
+                                    <select class="js-example-basic-single form-control" name="kelurahan_id">
                                         @foreach(\App\Kabupaten::findByNo(7, 74)->getKelurahan()->orderBy('nama')->get() as $kelurahan)
                                             <option value="{{ $kelurahan->id }}">{{ $kelurahan->nama }}, {{ $kelurahan->getKecamatan(false)->nama }}, {{ $kelurahan->getKabupaten(false)->nama }}</option>
                                         @endforeach
@@ -112,7 +112,7 @@
                                         <option>--Pilih Pekerjaan Anda--</option>
                                         <option value="PNS">PNS</option>
                                         <option value="Pelajar/Mahasiswa">Pelajar/Mahasiswa</option>
-                                        <option value="Karyawan Swasta<">Karyawan Swasta</option>
+                                        <option value="Karyawan Swasta">Karyawan Swasta</option>
                                     </select>
                                     {{--@if ($errors->has('pekerjaan'))--}}
                                     {{--<span class="help-block">--}}

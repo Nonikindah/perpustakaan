@@ -81,6 +81,7 @@
                                         <thead>
                                         <th>No</th>
                                         <th>Tanggal Masuk</th>
+                                        <th>Judul</th>
                                         <th>Pengarang</th>
                                         <th>Penerbit</th>
                                         <th>Tahun Terbit</th>
@@ -91,6 +92,7 @@
                                         <tr>
                                             <td>1</td>
                                             <td>12 Juni 2010</td>
+                                            <td>Hujan</td>
                                             <td>Ava</td>
                                             <td>Acap</td>
                                             <td>2009</td>
@@ -108,6 +110,7 @@
                                         <tr>
                                             <td>2</td>
                                             <td>12 Juni 2010</td>
+                                            <td>Hujan</td>
                                             <td>Ava</td>
                                             <td>Acap</td>
                                             <td>2009</td>
@@ -125,6 +128,7 @@
                                         <tr>
                                             <td>3</td>
                                             <td>12 Juni 2010</td>
+                                            <td>Hujan</td>
                                             <td>Ava</td>
                                             <td>Acap</td>
                                             <td>2009</td>
@@ -142,6 +146,7 @@
                                         <tr>
                                             <td>4</td>
                                             <td>12 Juni 2010</td>
+                                            <td>Hujan</td>
                                             <td>Ava</td>
                                             <td>Acap</td>
                                             <td>2009</td>
@@ -161,6 +166,7 @@
                                         <tr>
                                             <td>5</td>
                                             <td>12 Juni 2010</td>
+                                            <td>Hujan</td>
                                             <td>Ava</td>
                                             <td>Acap</td>
                                             <td>2009</td>
@@ -179,6 +185,7 @@
                                         <tr>
                                             <td>6</td>
                                             <td>12 Juni 2010</td>
+                                            <td>Hujan</td>
                                             <td>Ava</td>
                                             <td>Acap</td>
                                             <td>2009</td>

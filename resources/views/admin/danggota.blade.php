@@ -83,69 +83,38 @@
                                     <th>No</th>
                                     <th>Nama Lengkap</th>
                                     <th>Alamat</th>
+                                    <th>Alamat Lengkap</th>
                                     <th>No. Identitas (KTP/SIM/KTM)</th>
                                     <th>Jenis Kelamin</th>
                                     <th>Pekerjaan</th>
                                     <th>No. HP/Telp</th>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Ayu</td>
-                                        <td>Surabaya</td>
-                                        <td>1945038497747283</td>
-                                        <td>Perempuan</td>
-                                        <td>Pelajar/Mahasiswa</td>
-                                        <td>098765423244</td>
-                                        <td>
-                                            <div class="btn-group">
-                                                <a href="{{route('admin.anggota.editanggota')}}"
-                                                   class="btn btn-info btn-sm btn-fill pull-right"><i
-                                                            class="fa fa-pencil"></i></a>
-                                                <button type="button" onclick="hapusanggota()" href="{{route('admin.anggota')}}"
-                                                   class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i
-                                                            class="fa fa-trash"></i></button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Ayu</td>
-                                        <td>Surabaya</td>
-                                        <td>1945038497747283</td>
-                                        <td>Perempuan</td>
-                                        <td>Pelajar/Mahasiswa</td>
-                                        <td>098765423244</td>
-                                        <td>
-                                            <div class="btn-group">
-                                                <a href="{{route('admin.anggota.editanggota')}}"
-                                                   class="btn btn-info btn-sm btn-fill pull-right"><i
-                                                            class="fa fa-pencil"></i></a>
-                                                <button type="button" onclick="hapusanggota()" href="{{route('admin.anggota')}}"
-                                                   class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i
-                                                            class="fa fa-trash"></i></button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Ayu</td>
-                                        <td>Surabaya</td>
-                                        <td>1945038497747283</td>
-                                        <td>Perempuan</td>
-                                        <td>Pelajar/Mahasiswa</td>
-                                        <td>098765423244</td>
-                                        <td>
-                                            <div class="btn-group">
-                                                <a href="{{route('admin.anggota.editanggota')}}"
-                                                   class="btn btn-info btn-sm btn-fill pull-right"><i
-                                                            class="fa fa-pencil"></i></a>
-                                                <button type="button" onclick="hapusanggota()" href="{{route('admin.anggota')}}"
-                                                   class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i
-                                                            class="fa fa-trash"></i></button>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    @foreach($anggota as $key=>$data)
+                                        <tr>
+                                            <td>{{$data->id_anggota}}</td>
+                                            <td>{{$data->nama}}</td>
+                                            <td>
+                                                {{$data->getKelurahan(false)->nama}},
+                                                {{ $data->getKelurahan(false)->getKecamatan(false)->nama }}
+                                            </td>
+                                            <td>{{$data->alamat_lengkap}}</td>
+                                            <td>{{$data->identitas}}</td>
+                                            <td>{{$data->jenkel}}</td>
+                                            <td>{{$data->pekerjaan}}</td>
+                                            <td>{{$data->telp}}</td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <a href="{{route('admin/anggota/editanggota')}}"
+                                                       class="btn btn-info btn-sm btn-fill pull-right"><i
+                                                                class="fa fa-pencil"></i></a>
+                                                    <button type="button" onclick="hapusanggota()" href="{{route('admin/anggota')}}"
+                                                            class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i
+                                                                class="fa fa-trash"></i></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

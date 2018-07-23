@@ -34,18 +34,15 @@ Route::get('/dashboard', function () {
     return view('admin.dashboard');
 })->name('admin.dashboard');
 
-Route::get('/dataadmin/tambahadmin', function () {
-    return view('admin.tambahadmin');
-})->name('admin/admin/tambahadmin');
 
-Route::get('/editadmin', function () {
-    return view('admin.editadmin');
-})->name('admin/editadmin');
 
 Route::get('/dataadmin', function () {
     return view('admin.dataadmin');
 })->name('admin/admin');
 
+Route::get('/datapinjam', function () {
+    return view('admin.datapinjam');
+})->name('admin/pinjam');
 
 Auth::routes();
 
@@ -98,6 +95,16 @@ Route::group(['prefix' => 'anggota'], function (){
 
 });
 
+Route::post('/danggota', 'AnggotaController@daftaranggota')->name('admin.anggota');
+
+Route::get('/danggota', function (){
+    $anggota = \App\Anggota::all();
+    return view('admin.danggota',['anggota'=> $anggota]);
+})->name('admin/anggota');
+
+Route::get('/daftar', function () {
+    return view('daftar');
+})->name('daftar');
 Route::group(['prefix' => 'histori'], function (){
     Route::get('', function () {
         return view('admin.datapinjam');
@@ -118,4 +125,17 @@ Route::group(['prefix' => 'histori'], function (){
     Route::get('histori', function () {
         return view('admin.historipinjaman');
     })->name('admin.pinjam.historipinjaman');
+});
+Route::group(['prefix'=>'admin'], function (){
+    Route::get('/dataadmin/tambahadmin', function () {
+        return view('admin.tambahadmin');
+    })->name('admin/admin/tambahadmin');
+
+    Route::get('/editadmin', function () {
+        return view('admin.editadmin');
+    })->name('admin/editadmin');
+
+    Route::get('/dataadmin', function () {
+        return view('admin.dataadmin');
+    })->name('admin/admin');
 });
