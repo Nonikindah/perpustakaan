@@ -18,7 +18,7 @@ class CreateAnggotaTable extends Migration
             $table->string('nama');
             $table->string('identitas')->unique();
             $table->string('alamat');
-            $table->string('alamat_lengkap');an
+            $table->string('alamat_lengkap');
             $table->string('jenkel');
             $table->string('pekerjaan');
             $table->string('telp');

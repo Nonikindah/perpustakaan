@@ -1,15 +1,6 @@
 @extends('layouts.admin')
 
 @section('content')
-    <script>
-        function konfirmasi(){
-            swal({
-                title: "Berhasil!",
-                text: "Anda menambahkan Buku",
-                icon: "success"
-            });
-        }
-    </script>
     <div class="content">
         <div class="container-fluid">
             <div class="row justify-content-center">
@@ -19,59 +10,67 @@
                             <h4 class="card-title">Tambah Buku</h4>
                         </div>
                         <div class="card-body">
-                            <form>
+                            <form class="form-horizontal" method="POST" action="{{route('admin.buku.store')}}">
+                                @csrf
+                                {{ method_field('put') }}
                                 <div class="row">
-                                    <div class="col-md-12">
+                                    <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>No. Buku</label>
-                                            <input type="text" class="form-control" placeholder="" value="">
+                                            <label>Judul Buku</label>
+                                            <input type="text" class="form-control" placeholder="" name="judul">
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
+                                    <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Pengarang</label>
-                                            <input type="text" class="form-control" placeholder="" value="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>Penerbit</label>
-                                            <input type="text" class="form-control" placeholder="" value="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>Tahun Terbit</label>
-                                            <input type="text" class="form-control" placeholder="" value="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>Eksemplar</label>
-                                            <select class="form-control" id="pekerjaan">
-                                                <option>--Pilih Jumlah Eksemplar--</option>
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
+                                            <label>DDC / Klasifikasi</label>
+                                            <select class="form-control" name="ddc">
+                                                <option>--Pilih DDC / Klasifikasi--</option>
+                                                <option value="Filsafat">Filsafat</option>
+                                                <option value="Karya Umum">Karya Umum</option>
+                                                <option value="Metafisika">Metafisika</option>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-12">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Pengarang</label>
+                                            <input type="text" name="pengarang" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Jumlah Halaman</label>
+                                            <input type="text" name="halaman" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Penerbit</label>
+                                            <input type="text" name="penerbit" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Jumlah Cetakan</label>
+                                            <input type="text" name="cetakan" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Tahun Terbit</label>
+                                            <input type="text" name="tahun_terbit" class="form-control"  >
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Kondisi Buku</label>
-                                            <select class="form-control" id="pekerjaan">
+                                            <select class="form-control" name="kondisi">
                                                 <option>--Pilih Kondisi Buku--</option>
                                                 <option>Baik</option>
                                                 <option>Kurang Baik</option>
@@ -81,14 +80,20 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-12">
+                                    <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Tanggal Masuk</label>
-                                            <input type="date" class="form-control" placeholder="" value="">
+                                            <label>ISBN</label>
+                                            <input name="isbn" class="form-control" >
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Deskripsi</label>
+                                            <textarea name="deskripsi" class="form-control" ></textarea>
                                         </div>
                                     </div>
                                 </div>
-                                <button type="button" onclick="konfirmasi()" href="{{route('admin/buku')}}" class="btn btn-primary btn-fill pull-right">Simpan</button>
+                                <button type="submit" class="btn btn-primary btn-fill pull-right">Simpan</button>
                             </form>
                         </div>
                     </div>
@@ -98,3 +103,5 @@
         </div>
     </div>
 @endsection
+@push('js')
+@endpush

@@ -9,7 +9,9 @@
                 type: "success",
                 confirmButtonText: "OK",
                 closeOnConfirm: false
-            },location.reload.bind("{{ route('admin/anggota') }}"));
+            }, function(){
+                window.location.href = '{{route('admin.anggota')}}';
+            });
         }
     </script>
     <div class="content">
@@ -77,7 +79,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <button type="button" onclick="konfirmasi()" href="{{route('admin/anggota')}}"
+                                <button type="button" onclick="konfirmasi()" href="{{route('admin.anggota')}}"
                                         class="btn btn-primary btn-fill pull-right">Simpan
                                 </button>
                             </form>

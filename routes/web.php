@@ -32,7 +32,7 @@ Route::get('/login', function () {
 
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
-})->name('admin/dashboard');
+})->name('admin.dashboard');
 
 Route::get('/dataadmin/tambahadmin', function () {
     return view('admin.tambahadmin');
@@ -46,61 +46,76 @@ Route::get('/dataadmin', function () {
     return view('admin.dataadmin');
 })->name('admin/admin');
 
-Route::get('/datapinjam', function () {
-    return view('admin.datapinjam');
-})->name('admin/pinjam');
-
-Route::get('/datapinjam/tambahpinjam', function () {
-    return view('admin.tambahpinjam');
-})->name('admin/pinjam/tambahpinjam');
-
-Route::get('/datapinjam/pengembalian', function () {
-    return view('admin.pengembalian');
-})->name('admin/pinjam/pengembalian');
-
-Route::get('/detailanggota', function () {
-    return view('admin.detailanggota');
-})->name('admin/detailanggota');
-
-Route::get('/danggota/editanggota', function () {
-    return view('admin.editanggota');
-})->name('admin/anggota/editanggota');
-
-Route::get('/danggota', function () {
-    return view('admin.danggota');
-})->name('admin/anggota');
-
-Route::get('/danggota/daftaranggota', function () {
-    return view('admin.daftaranggota');
-})->name('admin/anggota/daftaranggota');
-
-Route::get('/datapinjam/formperpanjang', function () {
-    return view('admin.formperpanjang');
-})->name('admin/pinjam/formperpanjang');
-
-Route::get('dbuku', function () {
-    return view('admin.dbuku');
-})->name('admin/buku');
-
-Route::get('dbuku/daftarbuku', function () {
-    return view('admin.daftarbuku');
-})->name('admin/buku/daftarbuku');
-
-Route::get('/dbuku/editbuku', function () {
-    return view('admin.editbuku');
-})->name('admin/buku/editbuku');
-
-Route::get('/datapinjam/historipinjaman', function () {
-    return view('admin.historipinjaman');
-})->name('admin/pinjam/historipinjaman');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('alert/{AlertType}', 'sweetalertController@alert')->name('alert');
 
-Route::post('/daftar', 'AnggotaController@store')->name('daftar');
 
-Route::get('/daftar', function () {
-    return view('daftar');
-})->name('daftar');
+Route::get('/daftar', function () {return view('daftar');})->name('daftar');
+
+Route::group(['prefix' => 'buku'], function (){
+    Route::get('', function () {
+        return view('admin.dbuku');
+    })->name('admin.buku');
+
+    Route::get('tambah', function () {
+        return view('admin.daftarbuku');
+    })->name('admin.buku.daftarbuku');
+
+    Route::get('edit', function () {
+        return view('admin.editbuku');
+    })->name('admin.buku.editbuku');
+
+    Route::put('store', [
+        'uses' => 'BukuController@store',
+        'as' => 'admin.buku.store'
+    ]);
+});
+
+Route::group(['prefix' => 'anggota'], function (){
+    Route::get('', function () {
+        return view('admin.danggota');
+    })->name('admin.anggota');
+
+    Route::get('tambah', function () {
+        return view('admin.daftaranggota');
+    })->name('admin.anggota.daftaranggota');
+
+    Route::get('edit', function () {
+        return view('admin.editanggota');
+    })->name('admin.anggota.editanggota');
+
+    Route::get('detail', function () {
+        return view('admin.detailanggota');
+    })->name('admin.detailanggota');
+
+    Route::post('store',[
+       'uses'=> 'AnggotaController@store',
+       'as' => 'daftar'
+    ]);
+
+});
+
+Route::group(['prefix' => 'histori'], function (){
+    Route::get('', function () {
+        return view('admin.datapinjam');
+    })->name('admin.pinjam');
+
+    Route::get('tambah', function () {
+        return view('admin.tambahpinjam');
+    })->name('admin.pinjam.tambahpinjam');
+
+    Route::get('pengembalian', function () {
+        return view('admin.pengembalian');
+    })->name('admin.pinjam.pengembalian');
+
+    Route::get('perpanjangan', function () {
+        return view('admin.formperpanjang');
+    })->name('admin.pinjam.formperpanjang');
+
+    Route::get('histori', function () {
+        return view('admin.historipinjaman');
+    })->name('admin.pinjam.historipinjaman');
+});

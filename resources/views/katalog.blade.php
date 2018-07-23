@@ -13,7 +13,7 @@
                     <div class="blog-sec">
                         <div class="blog-img">
                             <a href="">
-                                <img src="{{asset('img/book4.jpg')}}" class="img-responsive; -align-center" style="width: 50%; height: 50%">
+                                <img src="{{asset('img/icon/book-icon.png')}}" class="img-responsive; -align-center" style="width: 50%; height: 50%">
                             </a>
                         </div>
                         <div class="blog-info">
@@ -26,7 +26,7 @@
                     <div class="blog-sec">
                         <div class="blog-img">
                             <a href="">
-                                <img src="{{asset('img/book2.jpg')}}" class="img-responsive" style="width: 50%; height: 50%">
+                                <img src="{{asset('img/icon/book-icon.png')}}" class="img-responsive" style="width: 50%; height: 50%">
                             </a>
                         </div>
                         <div class="blog-info">
@@ -39,7 +39,7 @@
                     <div class="blog-sec">
                         <div class="blog-img">
                             <a href="">
-                                <img src="{{asset('img/book1.jpg')}}" class="img-responsive" style="width: 50%; height: 50%">
+                                <img src="{{asset('img/icon/book-icon.png')}}" class="img-responsive" style="width: 50%; height: 50%">
                             </a>
                         </div>
                         <div class="blog-info">
@@ -52,7 +52,7 @@
                     <div class="blog-sec">
                         <div class="blog-img">
                             <a href="">
-                                <img src="{{asset('img/book3.jpg')}}" class="img-responsive" style="width: 50%; height: 50%">
+                                <img src="{{asset('img/icon/book-icon.png')}}" class="img-responsive" style="width: 50%; height: 50%">
                             </a>
                         </div>
                         <div class="blog-info">

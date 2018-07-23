@@ -24,7 +24,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>ID (disabled)</label>
-                                            <input type="text" class="form-control" disabled="" placeholder="ID user" value="ID user">
+                                            <input type="text" class="form-control" disabled="" value="ID Admin">
                                         </div>
                                     </div>
                                 </div>
@@ -69,3 +69,8 @@
         </div>
     </div>
 @endsection
+@push('js')
+    <script>
+        $('.js-example-basic-single').select2();
+    </script>
+@endpush

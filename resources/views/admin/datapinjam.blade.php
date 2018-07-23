@@ -54,8 +54,8 @@
                             <div class="row form-inline">
                                 <h4 class="col-md-4 card-title">Histori Peminjaman Buku</h4>
                                 <div class="col-md-8 ">
-                                    <a href="{{route('admin/pinjam/tambahpinjam')}}" class="btn btn-primary btn-fill pull-right" style="margin-left: 5px"><i class="fa fa-plus"></i> Tambah Data</a>
-                                    <button type="button" href="{{route('admin/pinjam')}}" onclick="cari()" class="btn btn-out btn-fill btn-success pull-right"><i class="fa fa-search"></i> Cari</button>
+                                    <a href="{{route('admin.pinjam.tambahpinjam')}}" class="btn btn-primary btn-fill pull-right" style="margin-left: 5px"><i class="fa fa-plus"></i> Tambah Data</a>
+                                    <button type="button" href="{{route('admin.pinjam')}}" onclick="cari()" class="btn btn-out btn-fill btn-success pull-right"><i class="fa fa-search"></i> Cari</button>
                                     {{--<input type="text" class="form-control pull-right" style="width: 60%">--}}
                                 </div>
                             </div>
@@ -82,8 +82,8 @@
                                     <td><i class="fa fa-close"></i></td>
                                     <td>
                                         <div class="btn-group">
-                                            <a href="{{route('admin/pinjam/formperpanjang')}}" class="btn btn-info btn-sm btn-fill pull-right">Perpanjang</a>
-                                            <a href="{{route('admin/pinjam/pengembalian')}}" class="btn btn-info btn-sm btn-fill btn-danger pull-right">Pengembalian</a>
+                                            <a href="{{route('admin.pinjam.formperpanjang')}}" class="btn btn-info btn-sm btn-fill pull-right">Perpanjang</a>
+                                            <a href="{{route('admin.pinjam.pengembalian')}}" class="btn btn-info btn-sm btn-fill btn-danger pull-right">Pengembalian</a>
                                         </div>
                                     </td>
 
@@ -98,7 +98,7 @@
                                     <td><i class="fa fa-check"></i></td>
                                     <td>
                                         <div class="btn-group">
-                                            <a href="{{route('admin/pinjam/historipinjaman')}}" class="btn btn-info btn-sm btn-warning btn-fill pull-right">Lihat Histori</a>
+                                            <a href="{{route('admin.pinjam.historipinjaman')}}" class="btn btn-info btn-sm btn-warning btn-fill pull-right">Lihat Histori</a>
                                         </div>
                                     </td>
                                 </tr>
@@ -112,7 +112,7 @@
                                     <td><i class="fa fa-check"></i></td>
                                     <td>
                                         <div class="btn-group">
-                                            <a href="{{route('admin/pinjam/historipinjaman')}}" class="btn btn-info btn-sm btn-warning btn-fill pull-right">Lihat Histori</a>
+                                            <a href="{{route('admin.pinjam.historipinjaman')}}" class="btn btn-info btn-sm btn-warning btn-fill pull-right">Lihat Histori</a>
                                         </div>
                                     </td>
                                 </tr>

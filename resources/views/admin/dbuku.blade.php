@@ -72,8 +72,8 @@
                             <div class="row form-inline">
                                 <h4 class="col-md-4 card-title">Data Koleksi Buku</h4>
                                 <div class="col-md-8 ">
-                                    <a href="{{route('admin/buku/daftarbuku')}}" class="btn btn-primary btn-fill pull-right" style="margin-left: 5px"><i class="fa fa-plus"></i> Tambah Buku</a>
-                                    <a href="/dbuku" onclick="cari()" class="btn btn-out btn-fill btn-success pull-right"><i class="fa fa-search"></i> Cari</a>
+                                    <a href="{{route('admin.buku.daftarbuku')}}" class="btn btn-primary btn-fill pull-right" style="margin-left: 5px"><i class="fa fa-plus"></i> Tambah Buku</a>
+                                    <button type="button" href="{{route('admin.buku')}}" onclick="cari()" class="btn btn-out btn-fill btn-success pull-right"><i class="fa fa-search"></i> Cari</button>
                                     {{--<input type="text" class="form-control pull-right" style="width: 60%">--}}
                                 </div>
                                 <div class="card-body table-full-width table-responsive">
@@ -100,8 +100,8 @@
                                             </td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="{{route('admin/buku/editbuku')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></a>
-                                                    <button type="button" href="{{route('admin/buku')}}" onclick="hapusbuku()" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></button>
+                                                    <a href="{{route('admin.buku.editbuku')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></a>
+                                                    <button type="button" href="{{route('admin.buku')}}" onclick="hapusbuku()" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></button>
                                                 </div>
                                             </td>
                                         </tr>
@@ -117,8 +117,8 @@
                                             </td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="{{route('admin/buku/editbuku')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></a>
-                                                    <button type="button" href="{{route('admin/buku')}}" onclick="hapusbuku()" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></button>
+                                                    <a href="{{route('admin.buku.editbuku')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></a>
+                                                    <button type="button" href="{{route('admin.buku')}}" onclick="hapusbuku()" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></button>
                                                 </div>
                                             </td>
                                         </tr>
@@ -134,8 +134,8 @@
                                             </td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="{{route('admin/buku/editbuku')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></a>
-                                                    <button type="button" href="{{route('admin/buku')}}" onclick="hapusbuku()" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></button>
+                                                    <a href="{{route('admin.buku.editbuku')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></a>
+                                                    <button type="button" href="{{route('admin.buku')}}" onclick="hapusbuku()" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></button>
                                                 </div>
                                             </td>
                                         </tr>
@@ -153,8 +153,8 @@
                                             </td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="{{route('admin/buku/editbuku')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></a>
-                                                    <button type="button" href="{{route('admin/buku')}}" onclick="hapusbuku()" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></button>
+                                                    <a href="{{route('admin.buku.editbuku')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></a>
+                                                    <button type="button" href="{{route('admin.buku')}}" onclick="hapusbuku()" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></button>
                                                 </div>
                                             </td>
                                         </tr>
@@ -171,8 +171,8 @@
                                             </td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="{{route('admin/buku/editbuku')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></a>
-                                                    <button type="button" href="{{route('admin/buku')}}" onclick="hapusbuku()" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></button>
+                                                    <a href="{{route('admin.buku.editbuku')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></a>
+                                                    <button type="button" href="{{route('admin.buku')}}" onclick="hapusbuku()" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></button>
                                                 </div>
                                             </td>
                                         </tr>
@@ -188,8 +188,8 @@
                                             </td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="{{route('admin/buku/editbuku')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></a>
-                                                    <button type="button" href="{{route('admin/buku')}}" onclick="hapusbuku()" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></button>
+                                                    <a href="{{route('admin.buku.editbuku')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></a>
+                                                    <button type="button" href="{{route('admin.buku')}}" onclick="hapusbuku()" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></button>
                                                 </div>
                                             </td>
                                         </tr>

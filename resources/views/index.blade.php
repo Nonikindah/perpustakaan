@@ -153,7 +153,7 @@
                     <div class="blog-sec">
                         <div class="blog-img">
                             <a href="">
-                                <img src="{{asset('img/book4.jpg')}}" class="img-responsive; -align-center">
+                                <img src="{{asset('img/icon/book-icon.png')}}" class="img-responsive" style="width: 60%; height: 60%">
                             </a>
                         </div>
                         <div class="blog-info">
@@ -166,7 +166,7 @@
                     <div class="blog-sec">
                         <div class="blog-img">
                             <a href="">
-                                <img src="{{asset('img/book2.jpg')}}" class="img-responsive">
+                                <img src="{{asset('img/icon/book-icon.png')}}" class="img-responsive" style="width: 60%; height: 60%">
                             </a>
                         </div>
                         <div class="blog-info">
@@ -179,7 +179,7 @@
                     <div class="blog-sec">
                         <div class="blog-img">
                             <a href="">
-                                <img src="{{asset('img/book1.jpg')}}" class="img-responsive">
+                                <img src="{{asset('img/icon/book-icon.png')}}" class="img-responsive" style="width: 60%; height: 60%">
                             </a>
                         </div>
                         <div class="blog-info">
@@ -192,7 +192,7 @@
                     <div class="blog-sec">
                         <div class="blog-img">
                             <a href="">
-                                <img src="{{asset('img/book3.jpg')}}" class="img-responsive">
+                                <img src="{{asset('img/icon/book-icon.png')}}" class="img-responsive" style="width: 60%; height: 60%">
                             </a>
                         </div>
                         <div class="blog-info">
@@ -206,3 +206,5 @@
     </section>
     </div>
 @endsection
+@push('js')
+@endpush

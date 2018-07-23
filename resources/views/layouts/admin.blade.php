@@ -18,11 +18,6 @@
     <link href="{{asset('css/light-bootstrap-dashboard.css?v=2.0.1')}}" rel="stylesheet"/>
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="{{asset('css/demo.css')}}" rel="stylesheet"/>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>--}}
-    {{--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">--}}
-    
-
 </head>
 
 <body>
@@ -35,25 +30,25 @@
 -->
         <div class="sidebar-wrapper">
             <div class="logo">
-                <a href="{{route('admin/dashboard')}}" class="simple-text">
+                <a href="{{route('admin.dashboard')}}" class="simple-text">
                     SIPUT
                 </a>
             </div>
             <ul class="nav">
-                <li class="nav-item {{Route::currentRouteName() === 'admin/dashboard' ? 'active' : ''}}">
-                    <a class="nav-link" href="{{route('admin/dashboard')}}">
+                <li class="nav-item {{Route::currentRouteName() === 'admin.dashboard' ? 'active' : ''}}">
+                    <a class="nav-link" href="{{route('admin.dashboard')}}">
                         <i class="nc-icon nc-chart-pie-35"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li class="{{strpos(Route::currentRouteName(), 'dmin/buku') ? 'active' : ''}}">
-                    <a class="nav-link" href="{{route('admin/buku')}}">
+                <li class="{{strpos(Route::currentRouteName(), 'dmin.buku') ? 'active' : ''}}">
+                    <a class="nav-link" href="{{route('admin.buku')}}">
                         <i class="nc-icon nc-notes"></i>
                         <p>Daftar Buku</p>
                     </a>
                 </li>
-                <li class="{{strpos(Route::currentRouteName(),'dmin/anggota') ? 'active' : ''}}">
-                    <a class="nav-link" href="{{route('admin/anggota')}}">
+                <li class="{{strpos(Route::currentRouteName(),'dmin.anggota') ? 'active' : ''}}">
+                    <a class="nav-link" href="{{route('admin.anggota')}}">
                         <i class="nc-icon nc-circle-09"></i>
                         <p>Data Anggota</p>
                     </a>
@@ -64,10 +59,16 @@
                         <p>Data Admin</p>
                     </a>
                 </li>
-                <li class="{{strpos(Route::currentRouteName(), 'dmin/pinjam') ? 'active' : ''}}">
-                    <a class="nav-link" href="{{route('admin/pinjam')}}">
+                <li class="{{strpos(Route::currentRouteName(), 'dmin.pinjam') ? 'active' : ''}}">
+                    <a class="nav-link" href="{{route('admin.pinjam')}}">
                         <i class="nc-icon nc-atom"></i>
                         <p>Histori Peminjaman</p>
+                    </a>
+                </li>
+                <li class="">
+                    <a class="nav-link" href="{{route('admin.pinjam')}}">
+                        <i class="nc-icon nc-bullet-list-67"></i>
+                        <p>Laporan</p>
                     </a>
                 </li>
             </ul>
@@ -169,6 +170,7 @@
 <script src="{{asset('js/light-bootstrap-dashboard.js?v=2.0.1')}}" type="text/javascript"></script>
 <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
 <script src="{{asset('js/demo.js')}}"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
 
@@ -178,5 +180,14 @@
 
     });
 </script>
-
+@if(session()->has('success'))
+    <script>
+        swal({
+            title: "Berhasil!",
+            text: "{{ session('success') }}",
+            icon: "success"
+        });
+    </script>
+@endif
+@stack('js')
 </html>
