@@ -135,8 +135,8 @@ Route::group(['prefix'=>'admin'], function (){
         return view('admin.editadmin');
     })->name('admin.editadmin');
 
-//    Route::post('store',[
-//        'uses'=> 'Auth\RegisterController@store',
-//        'as' => 'admin.store'
-//    ]);
+    Route::put('store',[
+        'uses'=> 'AdminController@store',
+        'as' => 'admin.tambah'
+    ]);
 });
