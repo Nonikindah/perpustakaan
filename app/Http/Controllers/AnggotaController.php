@@ -35,7 +35,7 @@ class AnggotaController extends Controller
             'telp' => $request->telp,
         ]);
 
-        return redirect('')->with('message');
+        return redirect('')->with('success', 'Berhasil menambahkan anggota yang bernama '.$request->nama);
     }
 
     public function daftaranggota(Request $request)
@@ -65,6 +65,6 @@ class AnggotaController extends Controller
             'telp' => $request->telp,
         ]);
 
-        return redirect('/danggota')->with('message');
+        return redirect()->route('admin.anggota')->with('success', 'Berhasil menambahkan anggota yang bernama '.$request->nama);
     }
 }

@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Anggota;
-use Auth;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -29,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/register';
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -47,15 +46,18 @@ class RegisterController extends Controller
      * @param  array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
+    public function store(Request $request)
     {
-        return Validator::make($data, [
+        dd($request->all());
+        $this->validate(request(), [
             'nama' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-            'alamat' => 'required|string|max:255',
-            'jenkel' => 'required|string|max:10',
-            'telepon' => 'required|string|max:255'
+            'password' => 'required|string|min:4|confirmed',
+            'alamat_lengkap' => 'required|string|max:255',
+            'jenkel' => 'required|string|max:255',
+            'telepon' => 'required|string|max:255',
+            'kelurahan_id' => 'required|integer',
+            'hak_akses' =>'required|integer'
         ]);
     }
 
@@ -65,21 +67,25 @@ class RegisterController extends Controller
      * @param  array $data
      * @return \App\User
      */
-    protected function create(array $data)
+    public function create(array $data)
     {
-        return Users::create([
+       User::create([
             'nama' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'alamat' => $data['alamat'],
+            'alamat_lengkap' => $data['alamat_lengkap'],
             'jenkel' => $data['jenkel'],
-            'telepon' => $data['telepon']
+            'telepon' => $data['telepon'],
+            'kelurahan_id'=> $data['kelurahan_id'],
+            'hak_akses' =>$data['hak_akses']
         ]);
+
+        return redirect('')->with('success', 'Berhasil menambahkan anggota yang bernama '.$data->name);
 
     }
     protected function redirectTo()
     {
-        return '/path';
+        return redirect()->route('admin.admin');
     }
     protected function guard()
     {

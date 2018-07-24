@@ -74,7 +74,6 @@
                                 <div class="col-md-8 ">
                                     <a href="{{route('admin.anggota.daftaranggota')}}" class="btn btn-primary btn-fill pull-right" style="margin-left: 5px"><i class="fa fa-plus"></i> Tambah Anggota</a>
                                     <button type="button" href="{{route('admin.anggota')}}" onclick="cari()" class="btn btn-out btn-fill btn-success pull-right"><i class="fa fa-search"></i> Cari</button>
-                                    {{--<input type="text" class="form-control pull-right" style="width: 60%">--}}
                                 </div>
                             </div>
                             <div class="card-body table-full-width table-responsive">
@@ -105,10 +104,10 @@
                                             <td>{{$data->telp}}</td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="{{route('admin/anggota/editanggota')}}"
+                                                    <a href="{{route('admin.anggota.editanggota')}}"
                                                        class="btn btn-info btn-sm btn-fill pull-right"><i
                                                                 class="fa fa-pencil"></i></a>
-                                                    <button type="button" onclick="hapusanggota()" href="{{route('admin/anggota')}}"
+                                                    <button type="button" onclick="hapusanggota()" href="{{route('admin.anggota')}}"
                                                             class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i
                                                                 class="fa fa-trash"></i></button>
                                                 </div>

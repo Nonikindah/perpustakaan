@@ -60,7 +60,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button type="button" href="{{route('admin/admin')}}" onclick="editadmin()" class="btn btn-primary btn-fill pull-right">Update Profile</button>
+                                <button type="button" href="{{route('admin.admin')}}" onclick="editadmin()" class="btn btn-primary btn-fill pull-right">Update Profile</button>
                             </form>
                         </div>
                     </div>

@@ -22,8 +22,6 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/animate.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-
-
 </head>
 <body style="height: 100%">
 <div class="loader"></div>

@@ -30,7 +30,9 @@
                             <div class="row form-inline">
                                 <h4 class="col-md-6 card-title ">Data Admin</h4>
                                 <div class="col-md-6">
-                                    <a href="{{route('admin/admin/tambahadmin')}}" class="btn btn-primary btn-fill pull-right" style="margin-left: 5px"><i class="fa fa-plus"></i> Tambah Admin</a>
+                                    <a href="{{route('admin.admin.register')}}"
+                                       class="btn btn-primary btn-fill pull-right" style="margin-left: 5px"><i
+                                                class="fa fa-plus"></i> Tambah Admin</a>
                                 </div>
                             </div>
                         </div>
@@ -43,40 +45,24 @@
                                 <th>Alamat</th>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>dakota1</td>
-                                    <td>Dakota Rice</td>
-                                    <td>Mojokerto</td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <button type="button" onclick="konfirmasi()" href="{{route('admin/admin')}}" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>minerva2</td>
-                                    <td>Minerva Hooper</td>
-                                    <td>Mojokerto</td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <a onclick="konfirmasi()" href="/dataadmin" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>sage3</td>
-                                    <td>Sage Rodriguez</td>
-                                    <td>Mojokerto</td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <a onclick="konfirmasi()" href="/dataadmin" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
-
+                                @foreach($admin as $key=>$data)
+                                    <tr>
+                                        <td>{{$data->id}}</td>
+                                        <td>{{$data->name}}</td>
+                                        <td>{{$data->email}}</td>
+                                        <td> {{$data->getKelurahan(false)->nama}},
+                                            {{ $data->getKelurahan(false)->getKecamatan(false)->nama }}
+                                        </td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button type="button" onclick="konfirmasi()"
+                                                        href="{{route('admin.admin')}}"
+                                                        class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i
+                                                            class="fa fa-trash"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>

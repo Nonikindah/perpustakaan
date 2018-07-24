@@ -19,11 +19,6 @@
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="{{asset('css/demo.css')}}" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>--}}
-    {{--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">--}}
-
-
 </head>
 
 <body>
@@ -59,8 +54,8 @@
                         <p>Data Anggota</p>
                     </a>
                 </li>
-                <li class="{{strpos(Route::currentRouteName(),'dmin/admin') ? 'active' : ''}}">
-                    <a class="nav-link" href="{{route('admin/admin')}}">
+                <li class="{{strpos(Route::currentRouteName(),'dmin.admin') ? 'active' : ''}}">
+                    <a class="nav-link" href="{{route('admin.admin')}}">
                         <i class="nc-icon nc-paper-2"></i>
                         <p>Data Admin</p>
                     </a>
@@ -127,7 +122,7 @@
                                 <span class="no-icon">{{\Illuminate\Support\Facades\Auth::user()->name}}</span>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="{{route('admin/editadmin')}}">Edit Profile</a>
+                                <a class="dropdown-item" href="{{route('admin.editadmin')}}">Edit Profile</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">Logout</a>
@@ -195,7 +190,6 @@
         });
     </script>
 @endif
-@stack('js')
 @stack('js')
 
 <style>

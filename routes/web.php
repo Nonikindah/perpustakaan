@@ -35,26 +35,17 @@ Route::get('/dashboard', function () {
 })->name('admin.dashboard');
 
 
-
-Route::get('/dataadmin', function () {
-    return view('admin.dataadmin');
-})->name('admin/admin');
-
-Route::get('/datapinjam', function () {
-    return view('admin.datapinjam');
-})->name('admin/pinjam');
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('alert/{AlertType}', 'sweetalertController@alert')->name('alert');
 
 
-Route::get('/daftar', function () {return view('daftar');})->name('daftar');
-
 Route::group(['prefix' => 'buku'], function (){
-    Route::get('', function () {
-        return view('admin.dbuku');
+
+    Route::get('', function (){
+        $buku = \App\Buku::all();
+        return view('admin.dbuku',['buku'=> $buku]);
     })->name('admin.buku');
 
     Route::get('tambah', function () {
@@ -72,11 +63,13 @@ Route::group(['prefix' => 'buku'], function (){
 });
 
 Route::group(['prefix' => 'anggota'], function (){
-    Route::get('', function () {
-        return view('admin.danggota');
+
+    Route::get('', function (){
+        $anggota = \App\Anggota::all();
+        return view('admin.danggota',['anggota'=> $anggota]);
     })->name('admin.anggota');
 
-    Route::get('tambah', function () {
+   Route::get('tambah', function () {
         return view('admin.daftaranggota');
     })->name('admin.anggota.daftaranggota');
 
@@ -88,23 +81,23 @@ Route::group(['prefix' => 'anggota'], function (){
         return view('admin.detailanggota');
     })->name('admin.detailanggota');
 
-    Route::post('store',[
-       'uses'=> 'AnggotaController@store',
-       'as' => 'daftar'
+    Route::put('daftaranggota', [
+        'uses'=>'AnggotaController@daftaranggota',
+        'as' => 'admin.tambahanggota'
     ]);
 
 });
 
-Route::post('/danggota', 'AnggotaController@daftaranggota')->name('admin.anggota');
-
-Route::get('/danggota', function (){
-    $anggota = \App\Anggota::all();
-    return view('admin.danggota',['anggota'=> $anggota]);
-})->name('admin/anggota');
-
 Route::get('/daftar', function () {
     return view('daftar');
 })->name('daftar');
+
+Route::post('store',[
+    'uses'=> 'AnggotaController@store',
+    'as' => 'daftar'
+]);
+
+
 Route::group(['prefix' => 'histori'], function (){
     Route::get('', function () {
         return view('admin.datapinjam');
@@ -126,16 +119,24 @@ Route::group(['prefix' => 'histori'], function (){
         return view('admin.historipinjaman');
     })->name('admin.pinjam.historipinjaman');
 });
+
 Route::group(['prefix'=>'admin'], function (){
-    Route::get('/dataadmin/tambahadmin', function () {
+
+    Route::get('', function (){
+        $admin = \App\User::all();
+        return view('admin.dataadmin',['admin'=> $admin]);
+    })->name('admin.admin');
+
+    Route::get('tambah', function () {
         return view('admin.tambahadmin');
-    })->name('admin/admin/tambahadmin');
+    })->name('admin.admin.register');
 
-    Route::get('/editadmin', function () {
+    Route::get('edit', function () {
         return view('admin.editadmin');
-    })->name('admin/editadmin');
+    })->name('admin.editadmin');
 
-    Route::get('/dataadmin', function () {
-        return view('admin.dataadmin');
-    })->name('admin/admin');
+//    Route::post('store',[
+//        'uses'=> 'Auth\RegisterController@store',
+//        'as' => 'admin.store'
+//    ]);
 });

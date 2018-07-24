@@ -16,7 +16,9 @@ class UserSeeder extends Seeder
             'name' => 'Rezky Arisan',
             'email' => 'rezky@email.com',
             'password' => bcrypt('secret'),
-            'alamat' => 'Mojokerto',
+            'alamat_lengkap' => 'Jalan Jetis Kulon Gang X',
+            'jenkel' => 'Perempuan',
+            'telp' => '0898765434567',
             'hak_akses' => 1
         ]);
     }

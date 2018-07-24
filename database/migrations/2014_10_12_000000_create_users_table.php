@@ -18,8 +18,12 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('alamat');
-            $table->integer('hak_akses');
+            $table->string('alamat_lengkap');
+            $table->string('jenkel');
+            $table->string('telp');
+            $table->integer('kelurahan_id')->unsigned()->nullable();
+            $table->foreign('kelurahan_id')->references('id')->on('kelurahan')->onUpdate('cascade')->onDelete('set null');
+            $table->integer('hak_akses')->default(2);
             $table->rememberToken();
             $table->timestamps();
         });

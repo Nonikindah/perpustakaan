@@ -15,8 +15,12 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'id','name', 'email', 'password','alamat_lengkap','hak_akses','kelurahan_id','jenkel','hak_akses'
     ];
+
+    protected $dates = ['created_at', 'updated_at'];
+
+    protected $table = 'users';
 
     /**
      * The attributes that should be hidden for arrays.
@@ -26,4 +30,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function getKelurahan($queryReturn = true)
+    {
+        $data = $this->belongsTo('App\Kelurahan', 'kelurahan_id');
+        return ($queryReturn ? $data : $data->first());
+    }
 }

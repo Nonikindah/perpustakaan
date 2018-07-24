@@ -1,19 +1,6 @@
 @extends('layouts.admin')
 
 @section('content')
-    <script>
-        function konfirmasi() {
-            swal({
-                title: "Berhasil!",
-                text: "Anda menambahkan Anggota.",
-                type: "success",
-                confirmButtonText: "OK",
-                closeOnConfirm: false
-            }, function(){
-                window.location.href = '{{route('admin.anggota')}}';
-            });
-        }
-    </script>
     <div class="content">
         <div class="container-fluid">
             <div class="row justify-content-center">
@@ -23,8 +10,9 @@
                             <h4 class="card-title">Tambah Anggota</h4>
                         </div>
                         <div class="card-body">
-                            <form method="POST" action="{{route('admin.anggota')}}">
-                                {{csrf_field()}}
+                            <form method="POST" action="{{route('admin.tambahanggota')}}">
+                                @csrf
+                                {{ method_field('put') }}
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
@@ -86,15 +74,13 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <div class="form-group{{ $errors->has('telepon') ? ' has-error' : '' }}">
+                                        <div class="form-group{{ $errors->has('telp') ? ' has-error' : '' }}">
                                             <label>No. HP/Telp</label>
-                                            <input id="telepon" type="text" name="telp" class="form-control" placeholder="No. HP/Telp" value="{{ old('telepon') }}"required autofocus>
+                                            <input type="text" name="telp" class="form-control" placeholder="No. HP/Telp" value="{{ old('telp') }}"required autofocus>
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit" onclick="konfirmasi()" href="{{route('admin/anggota')}}"
-                                        class="btn btn-primary btn-fill pull-right">Simpan
-                                </button>
+                                <button type="submit" class="btn btn-primary btn-fill pull-right">Simpan</button>
                             </form>
                         </div>
                     </div>
@@ -107,5 +93,6 @@
 @push('js')
 <script>
     $('.searchSel').select2();
+    //$('.js-example-basic-single').select2();
 </script>
 @endpush
