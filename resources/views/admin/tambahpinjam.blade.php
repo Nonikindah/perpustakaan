@@ -1,15 +1,6 @@
 @extends('layouts.admin')
 
 @section('content')
-    <script>
-        function tambahpinjam(){
-            swal({
-                title: "Berhasil!",
-                text: "Anda memperbarui data pinjam",
-                icon: "success"
-            });
-        }
-    </script>
     <div class="content">
         <div class="container-fluid">
             <div class="row justify-content-center">
@@ -18,72 +9,40 @@
                         <div class="card-header">
                             <div class="row">
                                 <h4 class="col-md-8 card-title">Tambah Data Peminjaman</h4>
-                                <div class="col-md-4 pl-1 ">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control pull-right" disabled="" placeholder="ID Pinjam disabled">
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div class="card-body">
-                            <form>
+                            <form class="form-horizontal" method="POST" action="{{route('admin.pinjam.store')}}" >
+                                @csrf
+                                {{ method_field('put') }}
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-group">
                                             <label>No. Anggota</label>
-                                            <input type="text" class="form-control" placeholder="No.Anggota">
+                                            <input type="text" class="form-control" name="anggota_id" placeholder="No.Anggota" value="{{ old('anggota_id') }}" required autofocus>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Penerbit</label>
-                                            <input type="text" class="form-control" placeholder="Penerbit">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Nama Peminjam</label>
-                                            <input type="text" class="form-control" placeholder="Nama Peminjam">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Pengarang</label>
-                                            <input type="text" class="form-control" placeholder="Pengarang">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Kode Buku</label>
-                                            <input type="text" class="form-control"  placeholder="Kode Buku">
+                                            <input type="text" class="form-control" name="buku_id" placeholder="Penerbit" value="{{ old('buku_id') }}" required autofocus>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Tanggal Pinjam</label>
-                                            <input type="date" class="form-control">
+                                            <input type="date" class="form-control" name="tgl_pinjam" value="{{ old('tgl_pinjam') }}" required autofocus>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Judul Buku</label>
-                                            <input type="text" class="form-control" placeholder="Judul Buku">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Tanggal Kembali</label>
-                                            <input type="date" class="form-control">
+                                            <input type="date" class="form-control" name="tgl_kembali" value="{{ old('tgl_kembali') }}" required autofocus>
                                         </div>
                                     </div>
+                                            <input type="hidden" name="admin_id" value="{{ Auth::user()->id }}" required autofocus>
                                 </div>
-                                <button type="button" onclick="tambahpinjam()" href="{{route('admin.pinjam')}}" class="btn btn-primary btn-fill pull-right">Tambah</button>
+                                <button type="submit" class="btn btn-primary btn-fill pull-right">Tambah</button>
                             </form>
                         </div>
                     </div>

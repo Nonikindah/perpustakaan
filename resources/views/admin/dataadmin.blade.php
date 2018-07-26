@@ -53,6 +53,7 @@
                                         <td> {{$data->getKelurahan(false)->nama}},
                                             {{ $data->getKelurahan(false)->getKecamatan(false)->nama }}
                                         </td>
+                                        @if(Auth::user()->hak_akses == 1)
                                         <td>
                                             <div class="btn-group">
                                                 <button type="button" onclick="konfirmasi()"
@@ -61,6 +62,7 @@
                                                             class="fa fa-trash"></i></button>
                                             </div>
                                         </td>
+                                        @endif
                                     </tr>
                                 @endforeach
                                 </tbody>

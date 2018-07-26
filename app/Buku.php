@@ -10,6 +10,8 @@ class Buku extends Model
         'kode_buku', 'judul', 'pengarang', 'penerbit','tahun_terbit','isbn','halaman','ddc','cetakan','kondisi','deskripsi'
     ];
     protected $primaryKey = 'kode_buku';
+
     protected $dates = ['created_at', 'updated_at'];
+
     protected $table = 'buku';
 }

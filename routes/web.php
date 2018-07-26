@@ -110,8 +110,10 @@ Route::post('store',[
 
 
 Route::group(['prefix' => 'histori'], function (){
-    Route::get('', function () {
-        return view('admin.datapinjam');
+
+    Route::get('', function (){
+        $pinjam = \App\Pinjam::all();
+        return view('admin.datapinjam',['pinjam'=> $pinjam]);
     })->name('admin.pinjam');
 
     Route::get('tambah', function () {
@@ -129,6 +131,11 @@ Route::group(['prefix' => 'histori'], function (){
     Route::get('histori', function () {
         return view('admin.historipinjaman');
     })->name('admin.pinjam.historipinjaman');
+
+    Route::put('store',[
+       'uses'=>'PinjamController@store',
+        'as'=>'admin.pinjam.store'
+    ]);
 });
 
 Route::group(['prefix'=>'admin'], function (){

@@ -72,51 +72,34 @@
                                 <th>Status</th>
                                 </thead>
                                 <tbody>
+                                @foreach($pinjam as $key=>$data)
                                 <tr>
-                                    <td>1</td>
-                                    <td>12</td>
-                                    <td>300.596.343</td>
-                                    <td>Adil Tanpa Pandang Bulu</td>
-                                    <td>06/07/2018</td>
-                                    <td>09/07/2018</td>
-                                    <td><i class="fa fa-close"></i></td>
+                                    <td>{{$data->id}}</td>
+                                    <td>{{$data->getAnggota(false)->nama}}</td>
+                                    <td>{{$data->getBuku(false)->kode_buku}}</td>
+                                    <td>{{$data->getBuku(false)->judul}}</td>
+                                    <td>{{$data->tgl_pinjam}}</td>
+                                    <td>{{$data->tgl_kembali}}</td>
+                                    @if($data->status == false)
+                                        <td>Dipinjam</td>
                                     <td>
                                         <div class="btn-group">
                                             <a href="{{route('admin.pinjam.formperpanjang')}}" class="btn btn-info btn-sm btn-fill pull-right">Perpanjang</a>
                                             <a href="{{route('admin.pinjam.pengembalian')}}" class="btn btn-info btn-sm btn-fill btn-danger pull-right">Pengembalian</a>
                                         </div>
                                     </td>
+                                    @else
+                                        <td>Dikembalikan</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <a href="{{route('admin.pinjam.historipinjaman')}}" class="btn btn-warning btn-sm btn-fill pull-right">Lihat Histori</a>
+                                            </div>
+                                        </td>
+                                    @endif
+
 
                                 </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>12</td>
-                                    <td>300.596.343</td>
-                                    <td>Adil Tanpa Pandang Bulu</td>
-                                    <td>06/07/2018</td>
-                                    <td>09/07/2018</td>
-                                    <td><i class="fa fa-check"></i></td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <a href="{{route('admin.pinjam.historipinjaman')}}" class="btn btn-info btn-sm btn-warning btn-fill pull-right">Lihat Histori</a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>12</td>
-                                    <td>300.596.343</td>
-                                    <td>Adil Tanpa Pandang Bulu</td>
-                                    <td>06/07/2018</td>
-                                    <td>09/07/2018</td>
-                                    <td><i class="fa fa-check"></i></td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <a href="{{route('admin.pinjam.historipinjaman')}}" class="btn btn-info btn-sm btn-warning btn-fill pull-right">Lihat Histori</a>
-                                        </div>
-                                    </td>
-                                </tr>
-
+                            @endforeach
                                 </tbody>
                             </table>
                         </div>
