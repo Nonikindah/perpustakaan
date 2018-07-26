@@ -51,25 +51,29 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Jenis Kelamin</label>
-                                        <select class="form-control" name="jenkel" id="jenkel">
-                                            <option>--Pilih Jenis Kelamin Anda--</option>
-                                            <option value="Laki-laki">Laki-laki</option>
-                                            <option value="Perempuan">Perempuan</option>
-                                        </select>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Jenis Kelamin</label>
+                                            <select class="form-control" name="jenkel" id="jenkel">
+                                                <option>--Pilih Jenis Kelamin Anda--</option>
+                                                <option value="Laki-laki">Laki-laki</option>
+                                                <option value="Perempuan">Perempuan</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Pekerjaan</label>
-                                        <select class="form-control" name="pekerjaan" id="pekerjaan">
-                                            <option>--Pilih Pekerjaan Anda--</option>
-                                            <option value="PNS">PNS</option>
-                                            <option value="Pelajar/Mahasiswa">Pelajar/Mahasiswa</option>
-                                            <option value="Karyawan Swasta">Karyawan Swasta</option>
-                                        </select>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Pekerjaan</label>
+                                            <select class="form-control" name="pekerjaan" id="pekerjaan">
+                                                <option>--Pilih Pekerjaan Anda--</option>
+                                                <option value="PNS">PNS</option>
+                                                <option value="Pelajar/Mahasiswa">Pelajar/Mahasiswa</option>
+                                                <option value="Karyawan Swasta">Karyawan Swasta</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">

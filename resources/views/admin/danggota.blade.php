@@ -104,13 +104,16 @@
                                             <td>{{$data->telp}}</td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="{{route('admin.anggota.editanggota')}}"
+                                                    <a href="{{route('admin.anggota.editanggota',['id'=> $data->id_anggota])}}"
                                                        class="btn btn-info btn-sm btn-fill pull-right"><i
                                                                 class="fa fa-pencil"></i></a>
-                                                    <button type="button" onclick="hapusanggota()" href="{{route('admin.anggota')}}"
-                                                            class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i
-                                                                class="fa fa-trash"></i></button>
                                                 </div>
+                                                <form action="{{ route('admin.deleteanggota', ['id'=> $data->id_anggota])}}" method="post">
+                                                    {{csrf_field()}}
+                                                    {{ method_field('DELETE') }}
+                                                    <button type="submit" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i
+                                                                class="fa fa-trash"></i></button>
+                                                </form>
                                             </td>
                                         </tr>
                                         @endforeach

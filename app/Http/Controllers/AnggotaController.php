@@ -53,8 +53,6 @@ class AnggotaController extends Controller
             'telp' => 'required'
         ]);
 
-//        dd($request->nama);
-
         Anggota::create([
             'nama' => $request->nama,
             'identitas' => $request->identitas,
@@ -66,5 +64,30 @@ class AnggotaController extends Controller
         ]);
 
         return redirect()->route('admin.anggota')->with('success', 'Berhasil menambahkan anggota yang bernama '.$request->nama);
+    }
+
+    public function editanggota(Request $request){
+        $request = Anggota::find($request->id);
+        return view('admin.editanggota')->with('anggota',$request);
+    }
+
+    public function updateanggota(Request $request){
+        $this->validate($request, [
+            'nama' => 'required',
+            'identitas' => 'required',
+            'kelurahan_id' => 'required',
+            'alamat_lengkap' => 'required',
+            'jenkel' => 'required',
+            'pekerjaan' => 'required',
+            'telp' => 'required'
+        ]);
+        $anggota = Anggota::find($request->id_anggota)->update($request->all());
+        
+        return redirect()->route('admin.anggota')->with('success', 'Berhasil mengubah data anggota');
+    }
+
+    public function deleteanggota($request){
+        $anggota = Anggota::findOrFail($request)->delete();
+        return redirect()->route('admin.anggota')->with('success', 'Anggota berhasil dihapus!');
     }
 }

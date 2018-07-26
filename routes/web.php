@@ -73,10 +73,21 @@ Route::group(['prefix' => 'anggota'], function (){
         return view('admin.daftaranggota');
     })->name('admin.anggota.daftaranggota');
 
-    Route::get('edit', function () {
-        return view('admin.editanggota');
-    })->name('admin.anggota.editanggota');
+    Route::get('edit/{id}', [
+        'uses'=>'AnggotaController@editanggota',
+        'as' => 'admin.anggota.editanggota'
+    ]);
 
+    Route::put('anggota', [
+        'uses'=>'AnggotaController@updateanggota',
+        'as' => 'admin.updateanggota'
+    ]);
+
+    Route::delete('delete/{id}', [
+        'uses'=>'AnggotaController@deleteanggota',
+        'as' => 'admin.deleteanggota'
+    ]);
+    
     Route::get('detail', function () {
         return view('admin.detailanggota');
     })->name('admin.detailanggota');
