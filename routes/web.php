@@ -45,7 +45,7 @@ Route::group(['prefix' => 'buku'], function (){
 
     Route::get('', function (){
         $buku = \App\Buku::all();
-        return view('admin.dbuku',['buku'=> $buku]);
+        return view('admin.databuku',['buku'=> $buku]);
     })->name('admin.buku');
 
     Route::get('tambah', function () {
@@ -60,13 +60,22 @@ Route::group(['prefix' => 'buku'], function (){
         'uses' => 'BukuController@store',
         'as' => 'admin.buku.store'
     ]);
+
+    Route::get('detailbuku', function (){
+        $buku = \App\Buku::all();
+        return view('admin.detailbuku',['buku'=> $buku]);
+    })->name('admin.buku.detailbuku');
+
+    Route::get('tambahitem', function () {
+        return view('admin.tambahitem');
+    })->name('admin.buku.tambahitem');
 });
 
 Route::group(['prefix' => 'anggota'], function (){
 
     Route::get('', function (){
         $anggota = \App\Anggota::all();
-        return view('admin.danggota',['anggota'=> $anggota]);
+        return view('admin.dataanggota',['anggota'=> $anggota]);
     })->name('admin.anggota');
 
    Route::get('tambah', function () {
@@ -158,3 +167,7 @@ Route::group(['prefix'=>'admin'], function (){
         'as' => 'admin.tambah'
     ]);
 });
+
+Route::get('/klasifikasi', function () {
+    return view('datamaster.klasifikasi');
+})->name('datamaster.klasifikasi');

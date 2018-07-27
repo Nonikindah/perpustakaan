@@ -78,26 +78,31 @@
                                 <div class="card-body table-full-width table-responsive">
                                     <table class="table table-hover table-striped">
                                         <thead>
-                                        <th>No</th>
                                         <th>Judul</th>
                                         <th>Pengarang</th>
                                         <th>Penerbit</th>
-                                        <th>Keterangan</th>
+                                        <th>Tempat Terbit</th>
+                                        <th>Tahun Terbit</th>
+                                        <th>No Klasifikasi</th>
+                                        <th>Subyek</th>
+                                        <th>Kolasi</th>
+                                        <th>Jumlah Item</th>
                                         </thead>
                                         <tbody>
                                         @foreach($buku as $key=>$data)
                                         <tr>
-                                            <td>{{$data->kode_buku}}</td>
                                             <td>{{$data->judul}}</td>
                                             <td>{{$data->pengarang}}</td>
                                             <td>{{$data->penerbit}}</td>
-                                            <td>
-                                                <button class="btn btn-info btn-fill" style="width: 120px">Baik</button>
-                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>{{$data->cetakan}}</td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="{{route('admin.buku.editbuku')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></a>
-                                                    <button type="button" href="{{route('admin.buku')}}" onclick="hapusbuku()" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></button>
+                                                    <a href="{{route('admin.buku.detailbuku')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-info"></i></a>
                                                 </div>
                                             </td>
                                         </tr>

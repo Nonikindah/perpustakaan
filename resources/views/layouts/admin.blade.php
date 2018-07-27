@@ -18,7 +18,17 @@
     <link href="{{asset('css/light-bootstrap-dashboard.css?v=2.0.1')}}" rel="stylesheet"/>
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="{{asset('css/demo.css')}}" rel="stylesheet"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
+
+    <style>
+        .fontsmall{
+            font-size: 10px;
+            font-weight: 100;
+            text-transform: capitalize;
+            color: #FFFFFF;
+
+        }
+    </style>
 </head>
 
 <body>
@@ -72,6 +82,51 @@
                         <p>Laporan</p>
                     </a>
                 </li>
+                <li class="">
+                    <a class="nav nav-link" data-toggle="collapse" href="#collapseExample" role="button"
+                       aria-expanded="false" aria-controls="collapseExample">
+                        <i class="nc-icon nc-paper-2"></i>
+                        <p>Data Master</p>
+                    </a>
+                    <ul class="collapse" id="collapseExample">
+                        <a class="fontsmall" href="{{route('datamaster.klasifikasi')}}">
+                            {{--<i class="nc-icon nc-paper-2"></i>--}}
+                            <p>Klasifikasi</p>
+                        </a>
+                        <a class="fontsmall" href="">
+                            {{--<i class="nc-icon nc-paper-2"></i>--}}
+                            <p>Penerbit</p>
+                        </a>
+                        <a class="fontsmall" href="">
+                            {{--<i class="nc-icon nc-paper-2"></i>--}}
+                            <p>Atribut</p>
+                        </a>
+                        <a class="fontsmall" href="">
+                            {{--<i class="nc-icon nc-paper-2"></i>--}}
+                            <p>Rak</p>
+                        </a>
+                        <a class="fontsmall" href="">
+                            {{--<i class="nc-icon nc-paper-2"></i>--}}
+                            <p>Subyek</p>
+                        </a>
+                        <a class="fontsmall" href="">
+                            {{--<i class="nc-icon nc-paper-2"></i>--}}
+                            <p>Asal Buku</p>
+                        </a>
+                        <a class="fontsmall" href="">
+                            {{--<i class="nc-icon nc-paper-2"></i>--}}
+                            <p>Jenis Buku</p>
+                        </a>
+                        <a class="fontsmall" href="">
+                            {{--<i class="nc-icon nc-paper-2"></i>--}}
+                            <p>Pekerjaan</p>
+                        </a>
+                    </ul>
+                    {{--<a class="nav-link" href="{{route('admin.pinjam')}}">--}}
+                    {{--<i class="nc-icon nc-paper-2"></i>--}}
+                    {{--<p>Data Master</p>--}}
+                    {{--</a>--}}
+                </li>
             </ul>
         </div>
     </div>
@@ -89,30 +144,30 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navigation">
                     <ul class="nav navbar-nav mr-auto">
                         {{--<li class="nav-item">--}}
-                            {{--<a href="#" class="nav-link" data-toggle="dropdown">--}}
-                                {{--<i class="nc-icon nc-palette"></i>--}}
-                                {{--<span class="d-lg-none">Dashboard</span>--}}
-                            {{--</a>--}}
+                        {{--<a href="#" class="nav-link" data-toggle="dropdown">--}}
+                        {{--<i class="nc-icon nc-palette"></i>--}}
+                        {{--<span class="d-lg-none">Dashboard</span>--}}
+                        {{--</a>--}}
                         {{--</li>--}}
                         {{--<li class="dropdown nav-item">--}}
-                            {{--<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">--}}
-                                {{--<i class="nc-icon nc-planet"></i>--}}
-                                {{--<span class="notification">5</span>--}}
-                                {{--<span class="d-lg-none">Notification</span>--}}
-                            {{--</a>--}}
-                            {{--<ul class="dropdown-menu">--}}
-                                {{--<a class="dropdown-item" href="#">Notification 1</a>--}}
-                                {{--<a class="dropdown-item" href="#">Notification 2</a>--}}
-                                {{--<a class="dropdown-item" href="#">Notification 3</a>--}}
-                                {{--<a class="dropdown-item" href="#">Notification 4</a>--}}
-                                {{--<a class="dropdown-item" href="#">Another notification</a>--}}
-                            {{--</ul>--}}
+                        {{--<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">--}}
+                        {{--<i class="nc-icon nc-planet"></i>--}}
+                        {{--<span class="notification">5</span>--}}
+                        {{--<span class="d-lg-none">Notification</span>--}}
+                        {{--</a>--}}
+                        {{--<ul class="dropdown-menu">--}}
+                        {{--<a class="dropdown-item" href="#">Notification 1</a>--}}
+                        {{--<a class="dropdown-item" href="#">Notification 2</a>--}}
+                        {{--<a class="dropdown-item" href="#">Notification 3</a>--}}
+                        {{--<a class="dropdown-item" href="#">Notification 4</a>--}}
+                        {{--<a class="dropdown-item" href="#">Another notification</a>--}}
+                        {{--</ul>--}}
                         {{--</li>--}}
                         {{--<li class="nav-item">--}}
-                            {{--<a href="#" class="nav-link">--}}
-                                {{--<i class="nc-icon nc-zoom-split"></i>--}}
-                                {{--<span class="d-lg-block">&nbsp;Search</span>--}}
-                            {{--</a>--}}
+                        {{--<a href="#" class="nav-link">--}}
+                        {{--<i class="nc-icon nc-zoom-split"></i>--}}
+                        {{--<span class="d-lg-block">&nbsp;Search</span>--}}
+                        {{--</a>--}}
                         {{--</li>--}}
                     </ul>
                     <ul class="navbar-nav ml-auto">
@@ -135,7 +190,7 @@
                         </li>
                     </ul>
                 </div>
-                    </div>
+            </div>
         </nav>
         @yield('content')
         <footer class="footer">
