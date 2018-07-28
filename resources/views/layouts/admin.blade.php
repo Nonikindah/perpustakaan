@@ -33,7 +33,7 @@
 
 <body>
 <div class="wrapper form-control">
-    <div class="sidebar" data-image="{{asset('img/sidebar-52.jpg')}}">
+    <div class="sidebar" data-image="{{asset('img/sidebar-52.jpg')}}">u
         <!--
     Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
@@ -177,7 +177,7 @@
                                 <span class="no-icon">{{\Illuminate\Support\Facades\Auth::user()->name}}</span>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="{{route('admin.editadmin')}}">Edit Profile</a>
+                                <a class="dropdown-item" href="{{route('admin.editadmin', ['id'=> Auth::user()->id])}}">Edit Profile</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">Logout</a>
@@ -236,6 +236,7 @@
 
     });
 </script>
+@stack('js')
 @if(session()->has('success'))
     <script>
         swal({
@@ -244,21 +245,28 @@
             icon: "success"
         });
     </script>
+    {{--@elseif(value('hapus'))--}}
+    {{--<script>--}}
+        {{--swal({--}}
+            {{--title: "Apakah Anda yakin ?",--}}
+            {{--text: "Data akan dihapus",--}}
+            {{--icon: "warning",--}}
+            {{--buttons: true,--}}
+            {{--dangerMode: true,--}}
+        {{--})--}}
+            {{--.then((willDelete) => {--}}
+                {{--if (willDelete) {--}}
+                    {{--swal("Berhasil menghapus", {--}}
+                        {{--icon: "success",--}}
+                    {{--});--}}
+                {{--} else {--}}
+                    {{--swal("Proses hapus dibatalkan");--}}
+                {{--}--}}
+            {{--});--}}
+    {{--</script>--}}
 @endif
-@stack('js')
 
-<style>
-    .form-control {
-        background-color: #FFFFFF;
-        border: 1px solid #E3E3E3;
-        border-radius: 4px;
-        color: #565656;
-        padding: 8px 12px;
-        height: 40px;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-    }
-</style>
+
 </body>
 
 </html>

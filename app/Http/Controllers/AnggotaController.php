@@ -88,6 +88,6 @@ class AnggotaController extends Controller
 
     public function deleteanggota($request){
         $anggota = Anggota::findOrFail($request)->delete();
-        return redirect()->route('admin.anggota')->with('success', 'Anggota berhasil dihapus!');
+        return redirect()->route('admin.anggota')->with('confirmation', 'Anggota berhasil dihapus!');
     }
 }

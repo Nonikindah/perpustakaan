@@ -15,7 +15,8 @@ class CreateItemBukuTable extends Migration
     {
         Schema::create('item_buku', function (Blueprint $table) {
             $table->increments('no_induk');
-            $table->integer('judul_id')->unsigned()->nullable();
+            $table->integer('buku_id')->unsigned()->nullable();
+            $table->foreign('buku_id')->references('kode_buku')->on('buku')->onUpdate('cascade')->onDelete('set null');
             $table->bigInteger('barcode')->nullable();
             $table->timestamps();
         });

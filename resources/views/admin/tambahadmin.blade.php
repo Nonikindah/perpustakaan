@@ -60,7 +60,6 @@
                                     <div class="form-group">
                                         <label>Jenis Kelamin</label>
                                         <select class="form-control" name="jenkel">
-                                            <option>--Pilih Jenis Kelamin Anda--</option>
                                             <option value="Laki-laki">Laki-laki</option>
                                             <option value="Perempuan">Perempuan</option>
                                         </select>
@@ -78,7 +77,6 @@
                                     <div class="form-group">
                                         <label>Hak Akses</label>
                                         <select class="form-control" name="hak_akses">
-                                            <option>--Pilih Hak Akses--</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                         </select>

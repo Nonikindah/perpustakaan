@@ -4,13 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class JenisBuku extends Model
+class Atribut extends Model
 {
     protected $fillable = [
-        'id','nama', 'keterangan'
+        'id', 'nama', 'batas_sewa','harga_sewa','denda'
     ];
 
     protected $dates = ['created_at', 'updated_at'];
 
-    protected $table = 'jenis_buku';
+    protected $table = 'atribut';
 }

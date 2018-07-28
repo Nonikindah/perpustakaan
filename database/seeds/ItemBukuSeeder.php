@@ -11,6 +11,6 @@ class ItemBukuSeeder extends Seeder
      */
     public function run()
     {
-        //
+
     }
 }

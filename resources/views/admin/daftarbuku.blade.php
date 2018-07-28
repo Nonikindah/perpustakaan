@@ -124,18 +124,12 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Ilustrator</label>
-                                            <input name="" class="form-control" >
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Jenis</label>
-                                            <select class="form-control" name="">
-                                                <option>--Pilih Jenis--</option>
-                                                <option value="Filsafat">Filsafat</option>
-                                                <option value="Karya Umum">Karya Umum</option>
-                                                <option value="Metafisika">Metafisika</option>
+                                            <label>Kondisi Buku</label>
+                                            <select class="form-control" name="kondisi">
+                                                <option>--Pilih Kondisi Buku--</option>
+                                                <option>Baik</option>
+                                                <option>Kurang Baik</option>
+                                                <option>Rusak</option>
                                             </select>
                                         </div>
                                     </div>

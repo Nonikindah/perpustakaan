@@ -31,7 +31,7 @@
                                 {{ method_field('put') }}
                                 <input type="hidden" value="{{$anggota->id_anggota}}" name="id_anggota">
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-group {{ $errors->has('nama') ? 'has-error' : '' }}">
                                             <label>Nama Lengkap</label>
                                             <input type="text" class="form-control" placeholder="Nama" name="nama" value="{{$anggota->nama}}">
@@ -42,7 +42,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-group {{ $errors->has('telp') ? 'has-error' : '' }}">
                                             <label>No. Telp/HP</label>
                                             <input type="text" class="form-control" placeholder="No. Telp/HP" name="telp" value="{{$anggota->telp}}">
@@ -53,7 +53,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-group {{ $errors->has('identitas') ? 'has-error' : '' }}">
                                             <label>No. Identitas (KTP/SIM/KTM)</label>
                                             <input type="text" class="form-control" placeholder="No. Identitas" name="identitas" value="{{$anggota->identitas}}">
@@ -64,7 +64,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-11">
+                                    <div class="col-md-12">
                                         <div class="form-group {{ $errors->has('alamat') ? ' has-error' : '' }}">
                                             <label for="alamat">Alamat</label>
                                             <select class="form-control searchSel" name="kelurahan_id" >
@@ -79,7 +79,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-group {{ $errors->has('alamat_lengkap') ? 'has-error' : '' }}">
                                             <label >Alamat</label>
                                             <input type="text" class="form-control" placeholder="Alamat" name="alamat_lengkap" value="{{$anggota->alamat_lengkap}}">
@@ -90,11 +90,10 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-group {{ $errors->has('jenkel') ? 'has-error' : '' }}">
                                             <label>Jenis Kelamin</label>
                                             <select class="form-control" name="jenkel">
-                                                <option>--Pilih Jenis Kelamin--</option>
                                                 <option value="Laki-laki" @if($anggota->jenkel=="Laki-laki")selected @endif>Laki-laki</option>
                                                 <option value="Perempuan" @if($anggota->jenkel=="Perempuan")selected @endif>Perempuan</option>
                                             </select>
@@ -105,11 +104,10 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-group {{ $errors->has('pekerjaan') ? 'has-error' : '' }}">
                                             <label>Pekerjaan</label>
                                             <select class="form-control" name="pekerjaan" id="pekerjaan" value="{{$anggota->pekerjaan}}">
-                                                <option>--Pilih Pekerjaan--</option>
                                                 <option value="PNS" @if($anggota->pekerjaan=="PNS")selected @endif>PNS</option>
                                                 <option value="Pelajar/Mahasiswa" @if($anggota->pekerjaan=="Pelajar/Mahasiswa")selected @endif>Pelajar/Mahasiswa</option>
                                                 <option value="Karyawan Swasta" @if($anggota->pekerjaan=="Karyawan Swasta")selected @endif>Karyawan Swasta</option>
@@ -129,3 +127,8 @@
         </div>
     </div>
 @endsection
+@push('js')
+    <script>
+        $('.js-example-basic-single').select2();
+    </script>
+@endpush

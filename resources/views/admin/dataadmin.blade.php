@@ -30,9 +30,11 @@
                             <div class="row form-inline">
                                 <h4 class="col-md-6 card-title ">Data Admin</h4>
                                 <div class="col-md-6">
+                                    @if(Auth::user()->hak_akses == 1)
                                     <a href="{{route('admin.admin.register')}}"
-                                       class="btn btn-primary btn-fill pull-right" style="margin-left: 5px"><i
+                                       class="btn btn-primary btn-fill pull-right" style=" margin-left: 5px"><i
                                                 class="fa fa-plus"></i> Tambah Admin</a>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -53,16 +55,19 @@
                                         <td> {{$data->getKelurahan(false)->nama}},
                                             {{ $data->getKelurahan(false)->getKecamatan(false)->nama }}
                                         </td>
-                                        @if(Auth::user()->hak_akses == 1)
+                                        @if(Auth::user()->hak_akses == 1 && Auth::user()->id != $data->id )
                                         <td>
                                             <div class="btn-group">
-                                                <button type="button" onclick="konfirmasi()"
+                                                <button type="submit"
                                                         href="{{route('admin.admin')}}"
                                                         class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i
                                                             class="fa fa-trash"></i></button>
                                             </div>
                                         </td>
+                                            @else
+                                            <td></td>
                                         @endif
+
                                     </tr>
                                 @endforeach
                                 </tbody>

@@ -74,8 +74,8 @@ Route::group(['prefix' => 'buku'], function (){
 Route::group(['prefix' => 'anggota'], function (){
 
     Route::get('', function (){
-        $anggota = \App\Anggota::all();
-        return view('admin.dataanggota',['anggota'=> $anggota]);
+        $anggota = \App\Anggota::paginate(15);
+        return view('admin.danggota',['anggota'=> $anggota]);
     })->name('admin.anggota');
 
    Route::get('tambah', function () {
@@ -87,7 +87,7 @@ Route::group(['prefix' => 'anggota'], function (){
         'as' => 'admin.anggota.editanggota'
     ]);
 
-    Route::put('anggota', [
+    Route::put('update', [
         'uses'=>'AnggotaController@updateanggota',
         'as' => 'admin.updateanggota'
     ]);
@@ -101,7 +101,7 @@ Route::group(['prefix' => 'anggota'], function (){
         return view('admin.detailanggota');
     })->name('admin.detailanggota');
 
-    Route::put('daftaranggota', [
+    Route::put('daftar', [
         'uses'=>'AnggotaController@daftaranggota',
         'as' => 'admin.tambahanggota'
     ]);
@@ -158,13 +158,18 @@ Route::group(['prefix'=>'admin'], function (){
         return view('admin.tambahadmin');
     })->name('admin.admin.register');
 
-    Route::get('edit', function () {
-        return view('admin.editadmin');
-    })->name('admin.editadmin');
+    Route::get('edit/{id}', [
+        'uses'=>'AdminController@edit',
+        'as' => 'admin.editadmin'
+    ]);
 
     Route::put('store',[
         'uses'=> 'AdminController@store',
         'as' => 'admin.tambah'
+    ]);
+    Route::put('update', [
+        'uses'=>'AdminController@update',
+        'as' => 'admin.update'
     ]);
 });
 
