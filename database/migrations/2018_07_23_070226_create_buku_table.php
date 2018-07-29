@@ -18,20 +18,6 @@ class CreateBukuTable extends Migration
             $table->string('judul');
             $table->string('judul_asli')->nullable();
             $table->string('judul_seri')->nullable();
-            $table->integer('rak_id')->unsigned()->nullable();
-            $table->foreign('rak_id')->references('id_rak')->on('rak')->onUpdate('cascade')->onDelete('set null');
-            $table->integer('penerbit_id')->unsigned()->nullable();
-            $table->foreign('penerbit_id')->references('id')->on('penerbit')->onUpdate('cascade')->onDelete('set null');
-            $table->integer('subyek_id')->unsigned()->nullable();
-            $table->foreign('subyek_id')->references('id_subyek')->on('subyek')->onUpdate('cascade')->onDelete('set null');
-            $table->integer('jenisbuku_id')->unsigned()->nullable();
-            $table->foreign('jenisbuku_id')->references('id')->on('jenis_buku')->onUpdate('cascade')->onDelete('set null');
-            $table->integer('atribut_id')->unsigned()->nullable();
-            $table->foreign('atribut_id')->references('id')->on('atribut')->onUpdate('cascade')->onDelete('set null');
-            $table->integer('asalbuku_id')->unsigned()->nullable();
-            $table->foreign('asalbuku_id')->references('id')->on('asal_buku')->onUpdate('cascade')->onDelete('set null');
-            $table->integer('kategori_id')->unsigned()->nullable();
-            $table->foreign('kategori_id')->references('id_kategori')->on('kategori')->onUpdate('cascade')->onDelete('set null');
             $table->string('pengarang1');
             $table->string('pengarang2')->nullable();
             $table->string('pengarang3')->nullable();
@@ -52,6 +38,20 @@ class CreateBukuTable extends Migration
             $table->string('kondisi');
             $table->string('abstrak');
             $table->string('gambar');
+            $table->integer('rak_id')->unsigned()->nullable();
+            $table->foreign('rak_id')->references('id_rak')->on('rak')->onUpdate('cascade')->onDelete('set null');
+            $table->integer('penerbit_id')->unsigned()->nullable();
+            $table->foreign('penerbit_id')->references('id')->on('penerbit')->onUpdate('cascade')->onDelete('set null');
+            $table->integer('subyek_id')->unsigned()->nullable();
+            $table->foreign('subyek_id')->references('id_subyek')->on('subyek')->onUpdate('cascade')->onDelete('set null');
+            $table->integer('jenisbuku_id')->unsigned()->nullable();
+            $table->foreign('jenisbuku_id')->references('id')->on('jenis_buku')->onUpdate('cascade')->onDelete('set null');
+            $table->integer('atribut_id')->unsigned()->nullable();
+            $table->foreign('atribut_id')->references('id')->on('atribut')->onUpdate('cascade')->onDelete('set null');
+            $table->integer('asalbuku_id')->unsigned()->nullable();
+            $table->foreign('asalbuku_id')->references('id')->on('asal_buku')->onUpdate('cascade')->onDelete('set null');
+            $table->integer('kategori_id')->unsigned()->nullable();
+            $table->foreign('kategori_id')->references('id_kategori')->on('kategori')->onUpdate('cascade')->onDelete('set null');
             $table->timestamps();
         });
     }
@@ -63,6 +63,6 @@ class CreateBukuTable extends Migration
      */
     public function down()
     {
-        //Schema::dropIfExists('buku');
+        Schema::dropIfExists('buku');
     }
 }

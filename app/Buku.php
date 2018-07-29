@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Buku extends Model
 {
     protected $fillable=[
-        'kode_buku', 'judul', 'judul_asli', 'judul_seri','rak_id', 'pengarang1', 'pengarang2', 'pengarang3', 'penerbit_id', 'penerjemah', 'ilustrator', 'kolasi', 'edisi', 'kata_kunci','tahun_terbit','isbn','halaman','cetakan','kondisi','abstrak', 'gambar','kategori_id','subyek_id','jenisbuku_id','asalbuku_id','tahun_entry','jenis_bacaan','bahasa','harga_beli','volume'
+        'kode_buku', 'judul', 'judul_asli', 'judul_seri', 'pengarang1', 'pengarang2', 'pengarang3',  'penerjemah', 'ilustrator', 'kolasi', 'edisi', 'kata_kunci','tahun_terbit','isbn','halaman','cetakan','kondisi','abstrak', 'gambar','tahun_entry','jenis_bacaan','bahasa','harga_beli','volume','atribut_id','rak_id','penerbit_id','kategori_id','subyek_id','jenisbuku_id','asalbuku_id',
     ];
     protected $primaryKey = 'kode_buku';
 
@@ -23,7 +23,9 @@ class Buku extends Model
     public function getRak($queryReturn = true)
     {
         $data = $this->belongsTo('App\Rak', 'rak_id');
-        return ($queryReturn ? $data : $data->first());
+        if ($queryReturn)
+            return $data;
+        return $data->first();
     }
 
     /**
@@ -34,7 +36,9 @@ class Buku extends Model
     public function getKategori($queryReturn = true)
     {
         $data = $this->belongsTo('App\Kategori', 'kategori_id');
-        return ($queryReturn ? $data : $data->first());
+        if ($queryReturn)
+            return $data;
+        return $data->first();
     }
 
     /**
@@ -45,7 +49,9 @@ class Buku extends Model
     public function getPenerbit($queryReturn = true)
     {
         $data = $this->belongsTo('App\Penerbit', 'penerbit_id');
-        return ($queryReturn ? $data : $data->first());
+        if ($queryReturn)
+            return $data;
+        return $data->first();
     }
 
     /**
@@ -56,7 +62,9 @@ class Buku extends Model
     public function getSubyek($queryReturn = true)
     {
         $data = $this->belongsTo('App\Subyek', 'subyek_id');
-        return ($queryReturn ? $data : $data->first());
+        if ($queryReturn)
+            return $data;
+        return $data->first();
     }
 
     /**
@@ -67,7 +75,9 @@ class Buku extends Model
     public function getJenisBuku($queryReturn = true)
     {
         $data = $this->belongsTo('App\JenisBuku', 'jenisbuku_id');
-        return ($queryReturn ? $data : $data->first());
+        if ($queryReturn)
+            return $data;
+        return $data->first();
     }
 
     /**
@@ -78,7 +88,9 @@ class Buku extends Model
     public function getAtribut($queryReturn = true)
     {
         $data = $this->belongsTo('App\Atribut', 'atribut_id');
-        return ($queryReturn ? $data : $data->first());
+        if ($queryReturn)
+            return $data;
+        return $data->first();
     }
 
     /**
@@ -89,6 +101,8 @@ class Buku extends Model
     public function getAsalBuku($queryReturn = true)
     {
         $data = $this->belongsTo('App\AsalBuku', 'asalbuku_id');
-        return ($queryReturn ? $data : $data->first());
+        if ($queryReturn)
+            return $data;
+        return $data->first();
     }
 }

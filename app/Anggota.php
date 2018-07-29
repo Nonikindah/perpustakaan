@@ -17,6 +17,7 @@ class Anggota extends Model
     protected $table = 'anggota';
 
     /**
+     * data kelurahan
      * @param bool $queryReturn
      * @return Model|\Illuminate\Database\Eloquent\Relations\BelongsTo|null|object|static
      */

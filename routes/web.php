@@ -75,7 +75,7 @@ Route::group(['prefix' => 'anggota'], function (){
 
     Route::get('', function (){
         $anggota = \App\Anggota::paginate(15);
-        return view('admin.danggota',['anggota'=> $anggota]);
+        return view('admin.dataanggota',['anggota'=> $anggota]);
     })->name('admin.anggota');
 
    Route::get('tambah', function () {
@@ -173,6 +173,65 @@ Route::group(['prefix'=>'admin'], function (){
     ]);
 });
 
-Route::get('/klasifikasi', function () {
-    return view('datamaster.klasifikasi');
-})->name('datamaster.klasifikasi');
+Route::group(['prefix'=>'datamaster/klasifikasi'], function (){
+
+    Route::get('', function () {
+        $klasifikasi = \App\Kategori::paginate(15);
+        return view('datamaster.dataklasifikasi',['klasifikasi'=> $klasifikasi]);
+    })->name('klasifikasi');
+
+});
+
+Route::group(['prefix'=>'datamaster/penerbit'], function (){
+
+    Route::get('', function () {
+        $penerbit = \App\Penerbit::paginate(15);
+        return view('datamaster.datapenerbit',['penerbit'=> $penerbit]);
+    })->name('penerbit');
+
+});
+
+Route::group(['prefix'=>'datamaster/atribut'], function (){
+
+    Route::get('', function () {
+        $atribut = \App\Atribut::paginate(15);
+        return view('datamaster.dataatribut',['atribut'=> $atribut]);
+    })->name('atribut');
+
+});
+
+Route::group(['prefix'=>'datamaster/rak'], function (){
+
+    Route::get('', function () {
+        $rak = \App\Rak::paginate(15);
+        return view('datamaster.datarak',['rak'=> $rak]);
+    })->name('rak');
+
+});
+
+Route::group(['prefix'=>'datamaster/subyek'], function (){
+
+    Route::get('', function () {
+        $subyek= \App\Subyek::paginate(15);
+        return view('datamaster.datasubyek',['subyek'=> $subyek]);
+    })->name('subyek');
+
+});
+
+Route::group(['prefix'=>'datamaster/asalbuku'], function (){
+
+    Route::get('', function () {
+        $asalbuku= \App\Asalbuku::paginate(15);
+        return view('datamaster.dataasalbuku',['asalbuku'=> $asalbuku]);
+    })->name('asalbuku');
+
+});
+
+Route::group(['prefix'=>'datamaster/jenisbuku'], function (){
+
+    Route::get('', function () {
+        $jenisbuku= \App\Jenisbuku::paginate(15);
+        return view('datamaster.datajenisbuku',['jenisbuku'=> $jenisbuku]);
+    })->name('jenisbuku');
+
+});

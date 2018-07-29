@@ -89,35 +89,35 @@
                         <p>Data Master</p>
                     </a>
                     <ul class="collapse" id="collapseExample">
-                        <a class="fontsmall" href="{{route('datamaster.klasifikasi')}}">
+                        <a class="fontsmall" href="{{route('klasifikasi')}}">
                             {{--<i class="nc-icon nc-paper-2"></i>--}}
                             <p>Klasifikasi</p>
                         </a>
-                        <a class="fontsmall" href="">
+                        <a class="fontsmall" href="{{route('penerbit')}}">
                             {{--<i class="nc-icon nc-paper-2"></i>--}}
                             <p>Penerbit</p>
                         </a>
-                        <a class="fontsmall" href="">
+                        <a class="fontsmall" href="{{route('atribut')}}">
                             {{--<i class="nc-icon nc-paper-2"></i>--}}
                             <p>Atribut</p>
                         </a>
-                        <a class="fontsmall" href="">
+                        <a class="fontsmall" href="{{route('rak')}}">
                             {{--<i class="nc-icon nc-paper-2"></i>--}}
                             <p>Rak</p>
                         </a>
-                        <a class="fontsmall" href="">
+                        <a class="fontsmall" href="{{route('subyek')}}">
                             {{--<i class="nc-icon nc-paper-2"></i>--}}
                             <p>Subyek</p>
                         </a>
-                        <a class="fontsmall" href="">
+                        <a class="fontsmall" href="{{route('asalbuku')}}">
                             {{--<i class="nc-icon nc-paper-2"></i>--}}
                             <p>Asal Buku</p>
                         </a>
-                        <a class="fontsmall" href="">
+                        <a class="fontsmall" href="{{route('jenisbuku')}}">
                             {{--<i class="nc-icon nc-paper-2"></i>--}}
                             <p>Jenis Buku</p>
                         </a>
-                        <a class="fontsmall" href="">
+                        <a class="fontsmall" href="{{route('atribut')}}">
                             {{--<i class="nc-icon nc-paper-2"></i>--}}
                             <p>Pekerjaan</p>
                         </a>
