@@ -42,19 +42,6 @@ class Buku extends Model
     }
 
     /**
-     * mendapatkan data penerbit
-     * @param bool $queryReturn
-     * @return Model|\Illuminate\Database\Eloquent\Relations\BelongsTo|null|object
-     */
-    public function getPenerbit($queryReturn = true)
-    {
-        $data = $this->belongsTo('App\Penerbit', 'penerbit_id');
-        if ($queryReturn)
-            return $data;
-        return $data->first();
-    }
-
-    /**
      * mendapatkan data subyek
      * @param bool $queryReturn
      * @return Model|\Illuminate\Database\Eloquent\Relations\BelongsTo|null|object
@@ -104,5 +91,18 @@ class Buku extends Model
         if ($queryReturn)
             return $data;
         return $data->first();
+    }
+
+    /**
+     * data penerbit
+     * @param bool $queryReturn
+     * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function getPenerbit($queryReturn = true){
+        $data = $this->belongsToMany('App\penerbit','penerbit_buku','buku_id','penerbit_id');
+        if($queryReturn)
+            return $data;
+        return $data->get();
+
     }
 }

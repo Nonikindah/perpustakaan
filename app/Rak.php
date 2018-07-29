@@ -15,4 +15,12 @@ class Rak extends Model
     protected $dates = ['created_at', 'updated_at'];
 
     protected $table = 'rak';
+
+    public function getBuku($queryReturn = true){
+
+        $data = $this->hasMany('App\Buku','rak_id');
+        if($queryReturn)
+            return $data;
+        return $data->get();
+    }
 }
