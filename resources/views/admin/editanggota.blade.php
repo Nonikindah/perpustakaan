@@ -127,8 +127,3 @@
         </div>
     </div>
 @endsection
-@push('js')
-    <script>
-        $('.js-example-basic-single').select2();
-    </script>
-@endpush
