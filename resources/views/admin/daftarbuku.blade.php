@@ -117,7 +117,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Tahun Terbit</label>
-                                            <input name="" class="form-control" >
+                                            <input type="date" name="" class="form-control" >
                                         </div>
                                     </div>
                                 </div>
@@ -130,6 +130,17 @@
                                                 <option>Baik</option>
                                                 <option>Kurang Baik</option>
                                                 <option>Rusak</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Jenis</label>
+                                            <select class="form-control" name="jenis">
+                                                <option>--Pilih Jenis--</option>
+                                                <option value="Anak-anak">Anak-anak</option>
+                                                <option value="Remaja">Remaja</option>
+                                                <option value="Dewasa">Dewasa</option>
                                             </select>
                                         </div>
                                     </div>
@@ -149,7 +160,20 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Bahasa</label>
-                                            <input name="" class="form-control" >
+                                            <select class="form-control" name="">
+                                                <option>--Pilih Bahasa--</option>
+                                                <option value="Arabic">Arabic</option>
+                                                <option value="Bengali">Bengali</option>
+                                                <option value="Brazilian Portuguese">Brazilian Portuguese</option>
+                                                <option value="English">English</option>
+                                                <option value="Espanol">Espanol</option>
+                                                <option value="German">German</option>
+                                                <option value="Indonesia">Indonesia</option>
+                                                <option value="Japanish">Japanish</option>
+                                                <option value="Thai">Thai</option>
+                                                <option value="Melayu">Melayu</option>
+                                                <option value="Persia">Persia</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
