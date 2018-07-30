@@ -73,7 +73,7 @@
                             <div class="row form-inline">
                                 <h4 class="col-md-4 card-title">ASAL BUKU</h4>
                                 <div class="col-md-8 ">
-                                    <a href=""
+                                    <a href="{{route('datamaster.tambahasalbuku')}}"
                                        class="btn btn-primary btn-fill pull-right" style="margin-left: 5px"><i
                                                 class="fa fa-plus"></i> Tambah Asal Buku</a>
                                     <button type="submit" href="" onclick="cari()"
@@ -97,11 +97,13 @@
                                             <td>{{$data->keterangan}}</td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href=""
+                                                    <a href="{{route('datamaster.editasalbuku', ['id'=> $data->id])}}"
                                                        class="btn btn-info btn-sm btn-fill pull-right"><i
                                                                 class="fa fa-pencil"></i></a>
                                                 </div>
-                                                <form action="" method="post">
+                                                <form action="{{ route('datamaster.deleteasalbuku', ['id'=>$data->id])}}" method="post">
+                                                    {{csrf_field()}}
+                                                    {{ method_field('DELETE') }}
                                                     <button type="submit"
                                                             class="btn btn-info btn-sm btn-fill btn-danger pull-right">
                                                         <i

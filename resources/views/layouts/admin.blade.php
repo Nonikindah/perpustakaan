@@ -117,10 +117,6 @@
                             {{--<i class="nc-icon nc-paper-2"></i>--}}
                             <p>Jenis Buku</p>
                         </a>
-                        <a class="fontsmall" href="{{route('atribut')}}">
-                            {{--<i class="nc-icon nc-paper-2"></i>--}}
-                            <p>Pekerjaan</p>
-                        </a>
                     </ul>
                     {{--<a class="nav-link" href="{{route('admin.pinjam')}}">--}}
                     {{--<i class="nc-icon nc-paper-2"></i>--}}
@@ -192,6 +188,15 @@
                 </div>
             </div>
         </nav>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         @yield('content')
         <footer class="footer">
             <div class="container">
