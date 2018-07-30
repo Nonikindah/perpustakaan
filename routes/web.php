@@ -61,14 +61,25 @@ Route::group(['prefix' => 'buku'], function (){
         'as' => 'admin.buku.store'
     ]);
 
-    Route::get('detailbuku', function (){
-        $buku = \App\Buku::all();
+    Route::get('detailbuku/{id}', function (\Illuminate\Http\Request $request){
+        $buku = \App\Buku::find(decrypt($request->id));
         return view('admin.detailbuku',['buku'=> $buku]);
     })->name('admin.buku.detailbuku');
 
     Route::get('tambahitem', function () {
         return view('admin.tambahitem');
     })->name('admin.buku.tambahitem');
+
+    Route::get('edit/{id}', [
+        'uses'=>'BukuController@edit',
+        'as' => 'admin.buku.editbuku'
+    ]);
+
+    Route::put('update', [
+        'uses'=>'BukuController@update',
+        'as' => 'admin.updatebuku'
+    ]);
+
 });
 
 Route::group(['prefix' => 'anggota'], function (){
@@ -93,6 +104,7 @@ Route::group(['prefix' => 'anggota'], function (){
     ]);
 
     Route::delete('delete/{id}', [
+
         'uses'=>'AnggotaController@deleteanggota',
         'as' => 'admin.deleteanggota'
     ]);
@@ -104,6 +116,11 @@ Route::group(['prefix' => 'anggota'], function (){
     Route::put('daftar', [
         'uses'=>'AnggotaController@daftaranggota',
         'as' => 'admin.tambahanggota'
+    ]);
+
+    Route::get('search', [
+        'uses'=>'AnggotaController@search',
+        'as' => 'admin.search'
     ]);
 
 });

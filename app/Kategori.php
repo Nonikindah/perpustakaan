@@ -15,4 +15,14 @@ class Kategori extends Model
     protected $dates = ['created_at', 'updated_at'];
 
     protected $table = 'kategori';
+
+    /**
+     * mendapatkan data buku
+     * @param bool $queryReturn
+     * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function getBuku($queryReturn = true){
+        $data = $this->hasMany('App\Buku','kategori_id');
+        return ($queryReturn ? $data : $data->get());
+    }
 }

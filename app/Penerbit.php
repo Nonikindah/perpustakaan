@@ -15,14 +15,12 @@ class Penerbit extends Model
     protected $table = 'penerbit';
 
     /**
-     * data Buku
+     * mendapatkan data buku
      * @param bool $queryReturn
-     * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Relations\BelongsToMany
+     * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function getBuku($queryReturn = true){
-        $data = $this->belongsToMany('App\Buku','penerbit_buku','penerbit_id','buku_id');
-        if($queryReturn)
-            return $data;
-        return $data->get();
+        $data = $this->hasMany('App\Buku','penerbit_id');
+        return ($queryReturn ? $data : $data->get());
     }
 }

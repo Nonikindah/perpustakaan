@@ -42,11 +42,13 @@
                         swal.stopLoading();
                         swal.close();
                     }
-                });v
+                });
+            v
         }
+
         function hapusbuku() {
             swal({
-                title:"Apakah Anda yakin?",
+                title: "Apakah Anda yakin?",
                 text: "Data akan dihapus",
                 icon: "warning",
                 buttons: true,
@@ -72,8 +74,13 @@
                             <div class="row form-inline">
                                 <h4 class="col-md-4 card-title">Data Koleksi Buku</h4>
                                 <div class="col-md-8 ">
-                                    <a href="{{route('admin.buku.daftarbuku')}}" class="btn btn-primary btn-fill pull-right" style="margin-left: 5px"><i class="fa fa-plus"></i> Tambah Buku</a>
-                                    <button type="button" href="{{route('admin.buku')}}" onclick="cari()" class="btn btn-out btn-fill btn-success pull-right"><i class="fa fa-search"></i> Cari</button>
+                                    <a href="{{route('admin.buku.daftarbuku')}}"
+                                       class="btn btn-primary btn-fill pull-right" style="margin-left: 5px"><i
+                                                class="fa fa-plus"></i> Tambah Buku</a>
+                                    <button type="button" href="{{route('admin.buku')}}" onclick="cari()"
+                                            class="btn btn-out btn-fill btn-success pull-right"><i
+                                                class="fa fa-search"></i> Cari
+                                    </button>
                                 </div>
                                 <div class="card-body table-full-width table-responsive">
                                     <table class="table table-hover table-striped">
@@ -85,27 +92,41 @@
                                         <th>Tahun Terbit</th>
                                         <th>No Klasifikasi</th>
                                         <th>Subyek</th>
-                                        <th>Kolasi</th>
-                                        <th>Jumlah Item</th>
                                         </thead>
                                         <tbody>
-                                        @foreach($buku as $key=>$data)
-                                        <tr>
-                                            <td>{{$data->judul}}</td>
-                                            <td>{{$data->pengarang}}</td>
-                                            <td>{{$data->penerbit}}</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>{{$data->cetakan}}</td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <a href="{{route('admin.buku.detailbuku')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-info"></i></a>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                        @foreach($buku as $data)
+                                            <tr>
+                                                <td>{{$data->judul}}</td>
+                                                <td>
+                                                    @if($data->pengarang2 != null)
+                                                        {{$data->pengarang1}} dan {{$data->pengarang2}}
+                                                    @elseif($data->pengarang3 != null)
+                                                        {{$data->pengarang1}},{{$data->pengarang2}},
+                                                        dan {{$data->pengarang3}}
+                                                    @else
+                                                        {{$data->pengarang1}}
+                                                     @endif
+                                                </td>
+                                                <td>
+                                                    {{App\Penerbit::find($data->penerbit_id)->nama}}
+                                                    {{--<ul>--}}
+                                                        {{--@foreach($data->getPenerbit(false) as $penerbit)--}}
+                                                        {{--<li>{{ $penerbit->nama }}</li>--}}
+                                                        {{--@endforeach--}}
+                                                    {{--</ul>--}}
+                                                </td>
+                                                <td>{{App\Penerbit::find($data->penerbit_id)->kota}}</td>
+                                                <td>{{$data->tahun_terbit}}</td>
+                                                <td>{{App\Kategori::find($data->kategori_id)->prefix}}</td>
+                                                <td>{{App\Subyek::find($data->subyek_id)->nama}}</td>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <a href="{{route('admin.buku.detailbuku',['id'=> encrypt( $data->kode_buku)])}}"
+                                                           class="btn btn-info btn-sm btn-fill pull-right"><i
+                                                                    class="fa fa-info"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
                                         @endforeach
                                         </tbody>
                                     </table>

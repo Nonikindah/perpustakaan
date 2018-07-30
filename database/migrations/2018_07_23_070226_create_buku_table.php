@@ -35,9 +35,8 @@ class CreateBukuTable extends Migration
             $table->string('isbn')->unique();
             $table->integer('halaman');
             $table->integer('cetakan');
-            $table->string('kondisi');
             $table->string('abstrak');
-            $table->string('gambar');
+            $table->string('gambar')->nullable();
             $table->integer('rak_id')->unsigned()->nullable();
             $table->foreign('rak_id')->references('id_rak')->on('rak')->onUpdate('cascade')->onDelete('set null');
             $table->integer('penerbit_id')->unsigned()->nullable();

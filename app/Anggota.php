@@ -26,4 +26,11 @@ class Anggota extends Model
         $data = $this->belongsTo('App\Kelurahan', 'kelurahan_id');
         return ($queryReturn ? $data : $data->first());
     }
+
+    public function getBuku($queryreturn = true){
+        $data = $this->belongsToMany('App\Buku','pinjam','anggota_id','buku_id');
+        if ($queryreturn)
+            return $data;
+        return $data->get();
+    }
 }

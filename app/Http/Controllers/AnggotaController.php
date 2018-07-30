@@ -90,4 +90,8 @@ class AnggotaController extends Controller
         $anggota = Anggota::findOrFail($request)->delete();
         return redirect()->route('admin.anggota')->with('confirmation', 'Anggota berhasil dihapus!');
     }
+
+    public function search($request){
+
+    }
 }

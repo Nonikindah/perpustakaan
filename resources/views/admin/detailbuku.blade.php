@@ -73,7 +73,7 @@
                                 <h4 class="col-md-4 card-title">Detail Koleksi Buku</h4>
                                 <div class="col-md-8 ">
                                     <a href="{{route('admin.buku.tambahitem')}}" class="btn btn-primary btn-fill pull-right" style="margin-left: 5px"><i class="fa fa-plus"></i> Tambah Item</a>
-                                    <button type="button" href="" onclick="cari()" class="btn btn-out btn-fill btn-success pull-right"><i class="fa fa-search"></i> Cari</button>
+                                    <a href="{{route('admin.buku.editbuku',['id'=> $buku->kode_buku])}}" class="btn btn-out btn-fill btn-success pull-right"><i class="fa fa-pencil"></i> Edit Buku</a>
                                 </div>
                                 <div class="card-body table-full-width table-responsive">
                                     <table class="table table-hover table-striped">
@@ -85,20 +85,26 @@
                                         <th>No Klasifikasi</th>
                                         </thead>
                                         <tbody>
-                                        @foreach($buku as $key=>$data)
+                                        @foreach($buku->getItemBuku(false) as $data)
                                             <tr>
-                                                <td>{{$data->kode_buku}}</td>
-                                                <td>{{$data->judul}}</td>
-                                                <td>{{$data->pengarang}}</td>
+                                                <td>{{$data->no_induk}}</td>
+                                                <td>{{$buku->judul}}</td>
+                                                <td>
+                                                    @if($buku->pengarang2 != null)
+                                                        {{$buku->pengarang1}} dan {{$buku->pengarang2}},
+                                                    @elseif($buku->pengarang3 != null)
+                                                        {{$buku->pengarang1}},{{$buku->pengarang2}},
+                                                        dan {{$buku->pengarang3}}
+                                                    @else
+                                                        {{$buku->pengarang1}}
+                                                    @endif
+                                                </td>
                                                 <td></td>
-                                                <td></td>
-                                                {{--<td>--}}
-                                                    {{--<button class="btn btn-info btn-fill" style="width: 120px">Baik</button>--}}
-                                                {{--</td>--}}
+{{--                                                {{ dd($buku->getKategori(false)) }}--}}
+                                                <td>{{$buku->getKategori(false)->first()->prefix}}</td>
                                                 <td>
                                                     <div class="btn-group">
-                                                        <a href="{{route('admin.buku.editbuku')}}" class="btn btn-info btn-sm btn-fill pull-right"><i class="fa fa-pencil"></i></a>
-                                                        <button type="button" href="{{route('admin.buku.detailbuku')}}" onclick="hapusbuku()" class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></button>
+                                                        <button type="button" href="#"  class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></button>
                                                     </div>
                                                 </td>
                                             </tr>

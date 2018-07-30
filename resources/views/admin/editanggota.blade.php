@@ -69,7 +69,7 @@
                                             <label for="alamat">Alamat</label>
                                             <select class="form-control searchSel" name="kelurahan_id" >
                                                 @foreach(\App\Kabupaten::findByNo(7, 74)->getKelurahan()->orderBy('nama')->get() as $kelurahan)
-                                                    <option value="{{ $kelurahan->id }}"  @if($anggota->kelurahan_id==$kelurahan->id)selected @endif>{{ $kelurahan->nama }}, {{ $kelurahan->getKecamatan(false)->nama }}, {{ $kelurahan->getKabupaten(false)->nama }} @if($anggota->kelurahan_id=="Laki-laki")selected @endif</option>
+                                                    <option value="{{ $kelurahan->id }}"  @if($anggota->kelurahan_id==$kelurahan->id)selected @endif>{{ $kelurahan->nama }}, {{ $kelurahan->getKecamatan(false)->nama }}, {{ $kelurahan->getKabupaten(false)->nama }} </option>
                                                 @endforeach
                                             </select>
                                             @if ($errors->has('alamat'))

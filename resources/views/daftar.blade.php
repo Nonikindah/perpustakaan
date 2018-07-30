@@ -56,7 +56,6 @@
                                 <label for="password-confirm" class="col-md-4 control-label">Jenis Kelamin</label>
                                 <div class="col-md-6">
                                     <select class="form-control" name="jenkel" id="jenkel">
-                                        <option>--Pilih Jenis Kelamin Anda--</option>
                                         <option value="Laki-laki">Laki-laki</option>
                                         <option value="Perempuan">Perempuan</option>
                                     </select>
@@ -67,7 +66,6 @@
                                 <label for="password-confirm" class="col-md-4 control-label">Pekerjaan</label>
                                 <div class="col-md-6">
                                     <select class="form-control" name="pekerjaan" id="pekerjaan">
-                                        <option>--Pilih Pekerjaan Anda--</option>
                                         <option value="PNS">PNS</option>
                                         <option value="Pelajar/Mahasiswa">Pelajar/Mahasiswa</option>
                                         <option value="Karyawan Swasta">Karyawan Swasta</option>
