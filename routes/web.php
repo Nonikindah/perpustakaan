@@ -29,11 +29,14 @@ Route::group(['prefix' => '/'], function (){
 
 });
 
-Route::get('/katalog', function () {
-    return view('katalog');
-})->name('katalog');
+Route::get('/daftar', function () {
+    return view('daftar');
+})->name('daftar');
 
-
+Route::post('store',[
+    'uses'=> 'AnggotaController@store',
+    'as' => 'daftaruser'
+]);
 
 Route::get('/login', function () {
     return view('login');
@@ -140,13 +143,10 @@ Route::group(['prefix' => 'anggota'], function (){
 
 });
 
-Route::get('/daftar', function () {
-    return view('daftar');
-})->name('daftar');
 
 Route::post('store',[
     'uses'=> 'AnggotaController@store',
-    'as' => 'daftaruser'
+    'as' => 'daftar'
 ]);
 
 

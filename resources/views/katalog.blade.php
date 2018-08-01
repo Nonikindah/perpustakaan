@@ -6,7 +6,8 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <h2 class="service-title pad-bt15">Koleksi</h2>
-                    <p class="sub-title pad-bt15">Tingkatkan Pengetahuanmu dengan Membaca Koleksi di Perpustakaan Kami.</p>
+                    <p class="sub-title pad-bt15">Tingkatkan Pengetahuanmu dengan Membaca Koleksi di Perpustakaan
+                        Kami.</p>
                     <hr class="bottom-line">
                 </div>
                 @foreach($buku as $key=> $data)

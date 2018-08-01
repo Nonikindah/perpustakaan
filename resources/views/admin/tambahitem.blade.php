@@ -3,17 +3,22 @@
 @section('content')
     <div class="content">
         <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-md-10">
+            <div class="row ">
+                <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Tambah Item Buku</h4>
+                            <div class="col-md-8 ">
+                                <nav class="nav nav-pills nav-justified">
+                                    <a class="nav-link " href="#">Detail</a>
+                                    <a class="nav-link " href="#">Item Buku</a>
+                                    <a class="nav-link active" href="{{route('admin.buku.tambahitem',['id'=> encrypt( $buku->kode_buku)])}}"></i>Tambah Item</a>
+                                </nav>
+                            </div>
                         </div>
                         <div class="card-body">
                             <form class="form-horizontal" method="POST" action="{{route('admin.buku.store')}}">
                                 @csrf
                                 {{ method_field('put') }}
-
                                 <input type="hidden" name="judul" value="{{$buku->judul}}">
                                 <input type="hidden" name="judul_asli" value="{{$buku->judul_asli}}">
                                 <input type="hidden" name="judul_seri" value="{{$buku->judul_seri}}">

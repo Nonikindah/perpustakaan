@@ -45,14 +45,6 @@
                                         </button>
                                     </div>
                                 </form>
-                                {{--<div class="input-group col-md-6 col-md-offset-3 padding-right-zero">--}}
-                                {{--<div class="form-group">--}}
-                                {{--<input type="text" class="form-control" id="text" placeholder="Masukkan pencarian Anda">--}}
-                                {{--<div class="brn-btn">--}}
-                                {{--<a class="btn btn-download" href="katalog">Cari</a>--}}
-                                {{--</div>--}}
-                                {{--</div>--}}
-                                {{--<div class="validation"></div>--}}
                             </div>
                         </div>
                     </div>

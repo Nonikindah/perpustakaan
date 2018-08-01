@@ -130,7 +130,7 @@
                     <span class="navbar-toggler-bar burger-lines"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navigation">
-                    <ul class="nav navbar-nav mr-auto">
+                    {{--<ul class="nav navbar-nav mr-auto">--}}
                         {{--<li class="nav-item">--}}
                         {{--<a href="#" class="nav-link" data-toggle="dropdown">--}}
                         {{--<i class="nc-icon nc-palette"></i>--}}
@@ -157,11 +157,10 @@
                         {{--<span class="d-lg-block">&nbsp;Search</span>--}}
                         {{--</a>--}}
                         {{--</li>--}}
-                    </ul>
+                    {{--</ul>--}}
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="no-icon">{{\Illuminate\Support\Facades\Auth::user()->name}}</span>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">

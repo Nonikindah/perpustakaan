@@ -29,7 +29,7 @@ class ItemBuku extends Model
     }
 
     public function getPinjam($queryReturn = true){
-        $data = $this->belongsToMany('App\Pinjam','pinjam','item_id','anggota_id')->withPivot('dipinjam');
+        $data = $this->belongsToMany('App\ItemBuku','pinjam','item_id','anggota_id')->withPivot('dipinjam');
         return ($queryReturn ? $data : $data->get());
     }
 

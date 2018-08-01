@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
+
     <div class="content">
         <div class="container-fluid">
             <div class="row">
@@ -34,10 +35,8 @@
                                         <th>Judul</th>
                                         <th>Pengarang</th>
                                         <th>Penerbit</th>
-                                        <th>Tempat Terbit</th>
-                                        <th>Tahun Terbit</th>
-                                        <th>No Klasifikasi</th>
-                                        <th>Subyek</th>
+                                        <th>Klasifikasi</th>
+                                        {{--<th>Subyek</th>--}}
                                         </thead>
                                         <tbody>
                                         @foreach($buku as $data)
@@ -45,10 +44,10 @@
                                                 <td>{{$data->judul}}</td>
                                                 <td>
                                                     @if($data->pengarang2 != null)
-                                                        {{$data->pengarang1}} dan {{$data->pengarang2}}
+                                                        {{$data->pengarang1}},{{$data->pengarang2}}
                                                     @elseif($data->pengarang3 != null)
                                                         {{$data->pengarang1}},{{$data->pengarang2}},
-                                                        dan {{$data->pengarang3}}
+                                                        {{$data->pengarang3}}
                                                     @else
                                                         {{$data->pengarang1}}
                                                     @endif
@@ -61,15 +60,18 @@
                                                     {{--@endforeach--}}
                                                     {{--</ul>--}}
                                                 </td>
-                                                <td>{{App\Penerbit::find($data->penerbit_id)->kota}}</td>
-                                                <td>{{$data->tahun_terbit}}</td>
-                                                <td>{{App\Kategori::find($data->kategori_id)->prefix}}</td>
-                                                <td>{{App\Subyek::find($data->subyek_id)->nama}}</td>
+                                                <td>{{App\Kategori::find($data->kategori_id)->nama}}</td>
+                                                {{--<td>{{App\Subyek::find($data->subyek_id)->nama}}</td>--}}
                                                 <td>
-                                                    <div class="btn-group">
-                                                        <a href="{{route('admin.buku.detailbuku',['id'=> encrypt( $data->kode_buku)])}}"
-                                                           class="btn btn-info btn-sm btn-fill pull-right"><i
-                                                                    class="fa fa-info"></i></a>
+                                                    <div class="nav-link btn-group dropdown nav-item">
+                                                                <a href="#" class="nav-link btn btn-info btn-sm btn-fill pull-right" data-toggle="dropdown"><i class="fa fa-bars"></i>
+                                                                </a>
+                                                                <ul class="dropdown-menu">
+                                                                    <a class="dropdown-item" href="{{route('admin.buku.detailbuku',['id'=> encrypt( $data->kode_buku)])}}">Detail</a>
+                                                                    <a class="dropdown-item" href="{{route('admin.buku.editbuku',['id'=>  $data->kode_buku])}}">Edit</a>
+                                                                    <a class="dropdown-item" href="#">Hapus</a>
+                                                                </ul>
+
                                                     </div>
                                                 </td>
                                             </tr>

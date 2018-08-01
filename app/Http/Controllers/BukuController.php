@@ -119,20 +119,12 @@ class BukuController extends Controller
     }
 
     public function searchbuku(Request $request){
-        $buku = Buku::where('judul', 'ILIKE', '%'.$request->id.'%')->paginate(10);
-        //dd($anggota);
-        //$anggota = Anggota::search($request->id)->paginate(15);
+        $buku = Buku::where('judul', 'LIKE', '%'.$request->id.'%')->paginate(10);
         return view('admin.databuku', ['buku'=> $buku]);
-
-        
     }
 
     public function usersearch(Request $request){
-        $buku = Buku::where('judul', 'ILIKE', '%'.$request->cari.'%')->paginate(10);
-        //dd($anggota);
-        //$anggota = Anggota::search($request->id)->paginate(15);
+        $buku = Buku::where('judul', 'LIKE', '%'.$request->id.'%')->paginate(10);
         return view('katalog', ['buku'=> $buku]);
-
-
     }
 }
