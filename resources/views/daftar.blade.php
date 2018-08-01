@@ -10,7 +10,7 @@
                     </div>
 
                     <div class="panel-body">
-                        <form class="form-horizontal" method="POST" action="{{route('daftar')}}">
+                        <form class="form-horizontal" method="POST" action="{{route('daftaruser')}}">
                             {{ csrf_field() }}
 
                             <div class="form-group">

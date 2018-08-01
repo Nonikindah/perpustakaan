@@ -32,15 +32,14 @@
                                 <h2 class="bnr-sub-title">Cari</h2>
                                 <h4 class="bnr-para">Masukkan kata kunci dari judul, pengarang atau subyek buku</h4><br>
                                 <br>
-                                <form action="" method="post" role="form" class="contactForm">
+                                <form action="{{route('buku.katalog')}}" method="get" role="form" class="contactForm">
                                     <div class="col-md-6 padding-right-zero col-md-offset-3">
                                         <div class="form-group">
                                             <input type="text" name="cari" class="form-control" id="name"
                                                    placeholder="Masukkan pencarian Anda" data-rule="minlen:4"
                                                    data-msg=""/>
-                                            <div class="validation"></div>
                                         </div>
-                                        <button href="katalog" type="submit" style="background: #be9e21"
+                                        <button type="submit" style="background: #be9e21"
                                                 class="btn btn-primary btn-submit"><span
                                                     style="color: white">CARI</span>
                                         </button>

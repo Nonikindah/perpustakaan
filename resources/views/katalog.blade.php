@@ -9,70 +9,22 @@
                     <p class="sub-title pad-bt15">Tingkatkan Pengetahuanmu dengan Membaca Koleksi di Perpustakaan Kami.</p>
                     <hr class="bottom-line">
                 </div>
+                @foreach($buku as $key=> $data)
                 <div class="col-md-3">
                     <div class="blog-sec">
                         <div class="blog-img">
                             <a href="">
-                                <img src="{{asset('img/icon/book-icon.png')}}" class="img-responsive; -align-center" style="width: 50%; height: 50%">
+                                <img src="{{asset('storage/'.$data->gambar)}}" class="img-responsive; -align-center" style="width: 50%; height: 50%">
                             </a>
                         </div>
                         <div class="blog-info">
-                            <h2>This is Lorem ipsum heading.</h2>
-                            <a href="" class="read-more">Selengkapnya</a>
+                            <h2>{{$data->judul}}</h2>
+                            <a href="{{route('buku.detail', ['id'=>encrypt($data->kode_buku)])}}" class="read-more">Selengkapnya</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="blog-sec">
-                        <div class="blog-img">
-                            <a href="">
-                                <img src="{{asset('img/icon/book-icon.png')}}" class="img-responsive" style="width: 50%; height: 50%">
-                            </a>
-                        </div>
-                        <div class="blog-info">
-                            <h2>This is Lorem ipsum heading.</h2>
-                            <a href="" class="read-more">Selengkapnya</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="blog-sec">
-                        <div class="blog-img">
-                            <a href="">
-                                <img src="{{asset('img/icon/book-icon.png')}}" class="img-responsive" style="width: 50%; height: 50%">
-                            </a>
-                        </div>
-                        <div class="blog-info">
-                            <h2>This is Lorem ipsum heading.</h2>
-                            <a href="" class="read-more">Selengkapnya</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="blog-sec">
-                        <div class="blog-img">
-                            <a href="">
-                                <img src="{{asset('img/icon/book-icon.png')}}" class="img-responsive" style="width: 50%; height: 50%">
-                            </a>
-                        </div>
-                        <div class="blog-info">
-                            <h2>This is Lorem ipsum heading.</h2>
-                            <a href="" class="read-more">Selengkapnya</a>
-                        </div>
-                    </div>
-                </div>
+                    @endforeach
             </div>
-        </div>
-        <div class="col-md-12 text-center">
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
-                <li class="page-item"><a class="page-link" href="/">Sebelumnya</a></li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="{{route('detail')}}">Selanjutnya</a></li>
-            </ul>
-        </nav>
         </div>
     </section>
 @endsection

@@ -93,7 +93,7 @@ class AnggotaController extends Controller
     }
 
     public function searchanggota(Request $request){
-        $anggota = Anggota::where('nama', 'LIKE', '%'.$request->id.'%')->paginate(10);
+        $anggota = Anggota::where('nama', 'ILIKE', '%'.$request->id.'%')->paginate(10);
         //dd($anggota);
         //$anggota = Anggota::search($request->id)->paginate(15);
         return view('admin.dataanggota', ['anggota'=> $anggota]);

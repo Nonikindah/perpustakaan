@@ -21,11 +21,11 @@ Route::group(['prefix' => '/'], function (){
         $buku = \App\Buku::find(decrypt($request->id));
         return view('detail',['buku'=> $buku]);
     })->name('buku.detail');
-
-//    Route::get('detail', function () {
-//        $detail = \App\Buku::all();
-//        return view('detail',['detail'=> $detail]);
-//    })->name('buku.detail');
+    
+    Route::get('carikatalog',[
+        'uses'=>'BukuController@usersearch',
+        'as'=>'buku.katalog'
+    ]);
 
 });
 
@@ -146,7 +146,7 @@ Route::get('/daftar', function () {
 
 Route::post('store',[
     'uses'=> 'AnggotaController@store',
-    'as' => 'daftar'
+    'as' => 'daftaruser'
 ]);
 
 
