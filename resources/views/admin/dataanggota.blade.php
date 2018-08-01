@@ -107,7 +107,7 @@
                                             <td>{{$data->nama}}</td>
                                             <td>
                                                 {{$data->getKelurahan(false)->nama}},
-                                                {{ $data->getKelurahan(false)->getKecamatan(false)->nama }}
+                                                {{$data->getKelurahan(false)->getKecamatan(false)->nama }}
                                             </td>
                                             <td>{{$data->alamat_lengkap}}</td>
                                             <td>{{$data->identitas}}</td>

@@ -31,7 +31,6 @@ class BukuController extends Controller
             'subyek_id' => 'required',
             'jenisbuku_id' => 'required',
             'asalbuku_id' => 'required',
-            'jumlah_buku' => 'required',
         ]);
 
 //        dd($request->nama);
@@ -75,12 +74,11 @@ class BukuController extends Controller
             'asalbuku_id' => $request->asalbuku_id,
             'gambar'=>$request->gambar = $filename,
         ]);
-//        $c = ItemBuku::orderBy('no_induk', 'desc')->first()->no_induk +1;
-//        dd($c);
-        for ($c = 1; $c <= $request->jumlah_buku; $c++){
+
+        for ($c = 0; $c <= $request->jumlah_buku; $c++){
+//            dd($c);
             ItemBuku::create([
-                'no_induk' => $c,
-                'buku_id' => $buku->kode_buku,
+                'buku_id' => $buku->kode_buku
             ]);
         }
 
@@ -126,6 +124,70 @@ class BukuController extends Controller
         //$anggota = Anggota::search($request->id)->paginate(15);
         return view('admin.databuku', ['buku'=> $buku]);
 
+        $this->validate(request(), [
+            'judul' => 'required',
+            'pengarang1' => 'required',
+            'kata_kunci' => 'required',
+            'tahun_terbit' => 'required',
+            'isbn' => 'required',
+            'halaman' => 'required',
+            'cetakan' => 'required',
+            'abstrak' => 'required',
+            'tahun_entry' => 'required',
+            'jenis_bacaan' => 'required',
+            'bahasa' => 'required',
+            'harga_beli' => 'required',
+            'volume' => 'required',
+            'atribut_id' => 'required',
+            'rak_id' => 'required',
+            'penerbit_id' => 'required',
+            'kategori_id' => 'required',
+            'subyek_id' => 'required',
+            'jenisbuku_id' => 'required',
+            'asalbuku_id' => 'required',
+        ]);
+
+
+        $buku = Buku::create([
+            'judul' => $request->judul,
+            'judul_asli' => $request->judul_asli,
+            'judul_seri' => $request->judul_seri,
+            'pengarang1' => $request->pengarang1,
+            'pengarang2' => $request->pengarang2,
+            'pengarang3' => $request->pengarang3,
+            'penerjemah' => $request->penerjemah,
+            'ilustrator' => $request->ilustrator,
+            'kolasi' => $request->kolasi,
+            'edisi' => $request->edisi,
+            'kata_kunci' => $request->kata_kunci,
+            'tahun_terbit' => $request->tahun_terbit,
+            'isbn' => $request->isbn,
+            'halaman' => $request->halaman,
+            'cetakan' => $request->cetakan,
+            'abstrak' => $request->abstrak,
+            'tahun_entry' => $request->tahun_entry,
+            'jenis_bacaan' => $request->jenis_bacaan,
+            'bahasa' => $request->bahasa,
+            'harga_beli' => $request->harga_beli,
+            'volume' => $request->volume,
+            'atribut_id' => $request->atribut_id,
+            'rak_id' => $request->rak_id,
+            'penerbit_id' => $request->penerbit_id,
+            'kategori_id' => $request->kategori_id,
+            'subyek_id' => $request->subyek_id,
+            'jenisbuku_id' => $request->jenisbuku_id,
+            'asalbuku_id' => $request->asalbuku_id,
+        ]);
+
+        for ($c = 0; $c <= $request->jumlah_buku; $c++){
+//            dd($c);
+            ItemBuku::create([
+                'buku_id' => $buku->kode_buku
+            ]);
+        }
+
+        return redirect()->route('admin.buku.detailbuku')->with('success', 'Berhasil menambahkan item buku yang berjudul '.$request->judul);
     }
-    
+
+
 }

@@ -1,50 +1,6 @@
 @extends('layouts.admin')
 
 @section('content')
-    <script>
-        function cari() {
-            swal({
-                text: 'Masukkan kata kunci dari judul, pengarang atau subyek buku',
-                content: "input",
-                button: {
-                    text: "Cari",
-                    closeModal: false,
-                },
-            })
-                .then(name => {
-                    if (!name) throw null;
-
-                    return fetch(`https://itunes.apple.com/search?term=${name}&entity=movie`);
-                })
-                .then(results => {
-                    return results.json();
-                })
-                .then(function (json) {
-                    const movie = json.results[0];
-
-                    if (!movie) {
-                        return swal("No movie was found!");
-                    }
-
-                    const name = movie.trackName;
-                    const imageURL = movie.artworkUrl100;
-
-                    swal({
-                        title: "Top result:",
-                        text: name,
-                        icon: imageURL,
-                    });
-                })
-                .catch(function (err) {
-                    if (err) {
-                        swal("Oh noes!", "The AJAX request failed!", "error");
-                    } else {
-                        swal.stopLoading();
-                        swal.close();
-                    }
-                });
-        }
-    </script>
     <div class="content">
         <div class="container-fluid">
             <div class="row">
@@ -72,21 +28,19 @@
                         <div style="font-size: 16px" class="card-body table-full-width table-responsive">
                             <table class="table table-hover table-striped">
                                 <thead>
-                                <th>ID Pinjam</th>
-                                <th>No. Anggota</th>
                                 <th>Kode Buku</th>
+                                <th>Nama Anggota</th>
                                 <th>Judul Buku</th>
                                 <th>Tanggal Pinjam</th>
                                 <th>Tanggal Kembali</th>
                                 <th>Status</th>
                                 </thead>
                                 <tbody>
-                                @foreach($pinjam as $key=>$data)
+                                @foreach($pinjam as $data)
                                 <tr>
-                                    <td>{{$data->id}}</td>
+                                    <td>{{$data->getItem(false)->no_induk or ''}}</td>
                                     <td>{{$data->getAnggota(false)->nama}}</td>
-                                    <td>{{$data->getBuku(false)->kode_buku}}</td>
-                                    <td>{{$data->getBuku(false)->judul}}</td>
+                                    <td>{{$data->getItem(false)->getBuku(false)->judul or ''}}</td>
                                     <td>{{$data->tgl_pinjam}}</td>
                                     <td>{{$data->tgl_kembali}}</td>
                                     @if($data->status == false)

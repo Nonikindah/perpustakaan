@@ -11,19 +11,28 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-Route::get('/', function () {
-    return view('index');
+Route::group(['prefix' => '/'], function (){
+    Route::get('', function (){
+        $katalog = \App\Buku::all();
+        return view('index',['katalog'=> $katalog]);
+    })->name('index');
+
+    Route::get('detail/{id}', function (\Illuminate\Http\Request $request){
+        $buku = \App\Buku::find(decrypt($request->id));
+        return view('detail',['buku'=> $buku]);
+    })->name('buku.detail');
+
+//    Route::get('detail', function () {
+//        $detail = \App\Buku::all();
+//        return view('detail',['detail'=> $detail]);
+//    })->name('buku.detail');
+
 });
+
 Route::get('/katalog', function () {
     return view('katalog');
 })->name('katalog');
 
-Route::get('/detail', function () {
-    return view('detail');
-})->name('detail');
 
 
 Route::get('/login', function () {
@@ -66,8 +75,9 @@ Route::group(['prefix' => 'buku'], function (){
         return view('admin.detailbuku',['buku'=> $buku]);
     })->name('admin.buku.detailbuku');
 
-    Route::get('tambahitem', function () {
-        return view('admin.tambahitem');
+    Route::get('tambahitem/{id}', function (\Illuminate\Http\Request $request) {
+        $buku = \App\Buku::find(decrypt($request->id));
+        return view('admin.tambahitem',['buku'=> $buku]);
     })->name('admin.buku.tambahitem');
 
     Route::get('edit/{id}', [

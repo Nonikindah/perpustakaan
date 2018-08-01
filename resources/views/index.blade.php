@@ -41,7 +41,8 @@
                                             <div class="validation"></div>
                                         </div>
                                         <button href="katalog" type="submit" style="background: #be9e21"
-                                                class="btn btn-primary btn-submit"><span style="color: white">CARI</span>
+                                                class="btn btn-primary btn-submit"><span
+                                                    style="color: white">CARI</span>
                                         </button>
                                     </div>
                                 </form>
@@ -107,7 +108,7 @@
             <div class="container section-padding">
                 <div class="row">
                     <div class="testimonial-item">
-                        <ul class="bxslider" >
+                        <ul class="bxslider">
                             <li class="center-block">
                                 <blockquote>
                                     <p>Aku rela di penjara asalkan bersama buku, karena dengan buku aku bebas.</p>
@@ -149,58 +150,23 @@
                         Perpustakaan Kami.</p>
                     <hr class="bottom-line">
                 </div>
-                <div class="col-md-3">
-                    <div class="blog-sec">
-                        <div class="blog-img">
-                            <a href="">
-                                <img src="{{asset('img/icon/book-icon.png')}}" class="img-responsive" style="width: 60%; height: 60%">
-                            </a>
-                        </div>
-                        <div class="blog-info">
-                            <h2>This is Lorem ipsum heading.</h2>
-                            <a href="detail" class="read-more">Selengkapnya</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="blog-sec">
-                        <div class="blog-img">
-                            <a href="">
-                                <img src="{{asset('img/icon/book-icon.png')}}" class="img-responsive" style="width: 60%; height: 60%">
-                            </a>
-                        </div>
-                        <div class="blog-info">
-                            <h2>This is Lorem ipsum heading.</h2>
-                            <a href="" class="read-more">Selengkapnya</a>
+
+                @foreach($katalog as $data)
+                    <div class="col-md-3">
+                        <div class="blog-sec">
+                            <div class="blog-img">
+                                <a href="">
+                                    <img src="{{ asset('storage/'.$data->gambar) }}" class="img-responsive"
+                                         style="width: 60%; height: 60%">
+                                </a>
+                            </div>
+                            <div class="blog-info">
+                                <h2>{{$data->judul}}</h2>
+                                <a href="{{route('buku.detail',['id'=> encrypt( $data->kode_buku)])}}"  class="read-more">Selengkapnya</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="blog-sec">
-                        <div class="blog-img">
-                            <a href="">
-                                <img src="{{asset('img/icon/book-icon.png')}}" class="img-responsive" style="width: 60%; height: 60%">
-                            </a>
-                        </div>
-                        <div class="blog-info">
-                            <h2>This is Lorem ipsum heading.</h2>
-                            <a href="" class="read-more">Selengkapnya →</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="blog-sec">
-                        <div class="blog-img">
-                            <a href="">
-                                <img src="{{asset('img/icon/book-icon.png')}}" class="img-responsive" style="width: 60%; height: 60%">
-                            </a>
-                        </div>
-                        <div class="blog-info">
-                            <h2>This is Lorem ipsum heading.</h2>
-                            <a href="" class="read-more">Selengkapnya</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

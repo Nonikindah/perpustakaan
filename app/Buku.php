@@ -92,16 +92,6 @@ class Buku extends Model
     }
 
     /**
-     * mendapatkan data anggota
-     * @param bool $queryReturn
-     * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Relations\BelongsToMany
-     */
-    public function getAnggota($queryReturn = true){
-        $data = $this->belongsToMany('App\Anggota','pinjam','buku_id','anggota_id');
-        return ($queryReturn ? $data : $data->get());
-    }
-
-    /**
      *mendapatkan data itembuku
      * @param bool $queryReturn
      * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Relations\HasMany

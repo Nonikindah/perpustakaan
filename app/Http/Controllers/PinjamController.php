@@ -11,7 +11,7 @@ class PinjamController extends Controller
     public function store(Request $request)
     {
         $this->validate(request(), [
-            'buku_id' => 'required',
+            'item_id' => 'required',
             'anggota_id' => 'required',
             'admin_id' => 'required',
             'tgl_pinjam' => 'required',
@@ -19,7 +19,7 @@ class PinjamController extends Controller
         ]);
 
         Pinjam::create([
-            'buku_id' => $request->buku_id,
+            'item_id' => $request->item_id,
             'anggota_id' => $request->anggota_id,
             'admin_id' =>$request->admin_id,
             'tgl_pinjam' => $request->tgl_pinjam,

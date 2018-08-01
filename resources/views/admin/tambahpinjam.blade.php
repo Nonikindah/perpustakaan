@@ -29,9 +29,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Kode Buku</label>
-                                            <input type="text" class="form-control" name="buku_id"
-                                                   placeholder="Kode Buku" value="{{ old('buku_id') }}" required
-                                                   autofocus>
+                                            <input type="text" class="form-control" name="item_id" placeholder="Penerbit" value="{{ old('item_id') }}" required autofocus>
                                         </div>
                                     </div>
                                 </div>

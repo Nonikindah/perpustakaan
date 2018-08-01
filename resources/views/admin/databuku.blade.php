@@ -95,6 +95,55 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="card-body table-full-width table-responsive">
+                                    <table class="table table-hover table-striped">
+                                        <thead>
+                                        <th>Judul</th>
+                                        <th>Pengarang</th>
+                                        <th>Penerbit</th>
+                                        <th>Kota Terbit</th>
+                                        <th>Tahun Terbit</th>
+                                        <th>No Klasifikasi</th>
+                                        <th>Subyek</th>
+                                        </thead>
+                                        <tbody>
+                                        @foreach($buku as $data)
+                                            <tr>
+                                                <td>{{$data->judul}}</td>
+                                                <td>
+                                                    @if($data->pengarang2 != null)
+                                                        {{$data->pengarang1}} dan {{$data->pengarang2}}
+                                                    @elseif($data->pengarang3 != null)
+                                                        {{$data->pengarang1}},{{$data->pengarang2}},
+                                                        dan {{$data->pengarang3}}
+                                                    @else
+                                                        {{$data->pengarang1}}
+                                                     @endif
+                                                </td>
+                                                <td>
+                                                    {{App\Penerbit::find($data->penerbit_id)->nama}}
+                                                    {{--<ul>--}}
+                                                        {{--@foreach($data->getPenerbit(false) as $penerbit)--}}
+                                                        {{--<li>{{ $penerbit->nama }}</li>--}}
+                                                        {{--@endforeach--}}
+                                                    {{--</ul>--}}
+                                                </td>
+                                                <td>{{App\Penerbit::find($data->penerbit_id)->kota}}</td>
+                                                <td>{{$data->tahun_terbit}}</td>
+                                                <td>{{App\Kategori::find($data->kategori_id)->prefix}}</td>
+                                                <td>{{App\Subyek::find($data->subyek_id)->nama}}</td>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <a href="{{route('admin.buku.detailbuku',['id'=> encrypt( $data->kode_buku)])}}"
+                                                           class="btn btn-info btn-sm btn-fill pull-right"><i
+                                                                    class="fa fa-info"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                             <div class="card-body table-full-width table-responsive">
                                 <table class="table table-hover table-striped">

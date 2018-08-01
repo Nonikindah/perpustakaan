@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Pinjam extends Model
 {
     protected $fillable = [
-        'id', 'buku_id', 'anggota_id', 'tgl_pinjam', 'tgl_kembali', 'status', 'admin_id'
+        'id', 'item_id', 'anggota_id', 'tgl_pinjam', 'tgl_kembali', 'status', 'admin_id'
     ];
 
     protected $dates = ['created_at', 'updated_at'];
@@ -19,9 +19,9 @@ class Pinjam extends Model
      * @param bool $queryReturn
      * @return \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Eloquent\Relations\BelongsTo|null|object|static
      */
-    public function getBuku($queryReturn = false)
+    public function getItem($queryReturn = false)
     {
-        $data = $this->belongsTo('App\Buku', 'buku_id');
+        $data = $this->belongsTo('App\ItemBuku', 'item_id');
         if ($queryReturn)
             return $data;
         return $data->first();

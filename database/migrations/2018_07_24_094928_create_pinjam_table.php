@@ -15,15 +15,15 @@ class CreatePinjamTable extends Migration
     {
         Schema::create('pinjam', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('buku_id')->unsigned()->nullable();
-            $table->foreign('buku_id')->references('kode_buku')->on('buku')->onUpdate('cascade')->onDelete('set null');
+            $table->integer('item_id')->unsigned()->nullable();
+            $table->foreign('item_id')->references('no_induk')->on('item_buku')->onUpdate('cascade')->onDelete('set null');
             $table->integer('anggota_id')->unsigned()->nullable();
             $table->foreign('anggota_id')->references('id_anggota')->on('anggota')->onUpdate('cascade')->onDelete('set null');
             $table->integer('admin_id')->unsigned()->nullable();
             $table->foreign('admin_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
             $table->dateTime('tgl_pinjam');
             $table->dateTime('tgl_kembali');
-            $table->boolean('status')->default(0);
+            $table->boolean('dipinjam')->default(true);
             $table->timestamps();
         });
     }

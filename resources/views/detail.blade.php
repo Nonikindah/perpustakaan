@@ -12,14 +12,23 @@
                     <div class="blog-sec">
                         <div class="blog-img">
                             <a href="">
-                                <img src="{{asset('img/icon/book-icon.png')}}" class="img-responsive; -align-center"
+                                <img src="{{ asset('storage/'.$buku->gambar) }}" class="img-responsive; -align-center"
                                      style="width: 50%; height: 50%">
                             </a>
                         </div>
                         <div class="blog-info">
-                            <h2>Judul Buku</h2>
-                            <p>Pengarang</p>
-                            <a href="/" class="read-more">Sebelumnya</a>
+                            <h2>{{$buku->judul}}</h2>
+                            <p>
+                                @if($buku->pengarang2 != null)
+                                    {{$buku->pengarang1}} dan {{$buku->pengarang2}}
+                                @elseif($buku->pengarang3 != null)
+                                    {{$buku->pengarang1}},{{$buku->pengarang2}},
+                                    dan {{$buku->pengarang3}}
+                                @else
+                                    {{$buku->pengarang1}}
+                                @endif
+                            </p>
+                            <a href="{{route('index')}}" class="read-more">Sebelumnya</a>
                         </div>
                     </div>
                 </div>
@@ -46,31 +55,27 @@
                         <tbody>
                         <tr>
                             <th>No. Buku</th>
-                            <td>1123455</td>
+                            <td>{{$buku->kode_buku}}</td>
                         </tr>
                         <tr>
                             <th>Tanggal Masuk</th>
-                            <td>1 Juli 2018</td>
-                        </tr>
-                        <tr>
-                            <th>Pengarang</th>
-                            <td>Thornton</td>
+                            <td>{{$buku->tahun_entry}}</td>
                         </tr>
                         <tr>
                             <th>Penerbit</th>
-                            <td>Thornton</td>
+                            <td>{{App\Penerbit::find($buku->penerbit_id)->nama}}</td>
                         </tr>
                         <tr>
                             <th>Tahun Terbit</th>
-                            <td>2012</td>
+                            <td>{{$buku->tahun_terbit}}</td>
                         </tr>
                         <tr>
-                            <th>Eksemplar</th>
-                            <td>5</td>
+                            <th>Jumlah Buku</th>
+                            <td></td>
                         </tr>
                         <tr>
-                            <th>Keterangan</th>
-                            <td>Tidak Rusak</td>
+                            <th>Abstrak</th>
+                            <td>{{$buku->abstrak}}</td>
                         </tr>
                         </tbody>
                     </table>

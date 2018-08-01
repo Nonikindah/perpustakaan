@@ -1,15 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <script>
-        function editadmin(){
-            swal({
-                title: "Berhasil!",
-                text: "Anda memperbarui data Admin",
-                icon: "success"
-            });
-        }
-    </script>
+
     <div class="content">
         <div class="container-fluid">
             <div class="row justify-content-center">
@@ -279,8 +271,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                {{--<input type="hidden" name="gambar" value="{{$buku->gambar}}">--}}
                                 <button type="submit" class="btn btn-primary btn-fill pull-right">Update</button>
                             </form>
                         </div>
