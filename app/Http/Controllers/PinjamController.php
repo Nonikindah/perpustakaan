@@ -28,5 +28,15 @@ class PinjamController extends Controller
         return redirect()->route('admin.pinjam')->with('success', 'Berhasil menambahkan data peminjaman');
     }
 
+    public function searchpinjam(Request $request){
+        $pinjam = Pinjam::whereHas('getBuku', function ($query) use ($request) {
+            $query->where('judul', 'LIKE', '%' . $request->id  . '%');
+        })->paginate(10);
+        //dd($anggota);
+        //$anggota = Anggota::search($request->id)->paginate(15);
+        return view('admin.datapinjam', ['pinjam'=> $pinjam]);
+
+    }
+
 }
 

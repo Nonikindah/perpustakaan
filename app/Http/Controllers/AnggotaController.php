@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Anggota;
+use Laravel\Scout;
 
 
 class AnggotaController extends Controller
@@ -91,7 +92,11 @@ class AnggotaController extends Controller
         return redirect()->route('admin.anggota')->with('confirmation', 'Anggota berhasil dihapus!');
     }
 
-    public function search($request){
+    public function searchanggota(Request $request){
+        $anggota = Anggota::where('nama', 'LIKE', '%'.$request->id.'%')->paginate(10);
+        //dd($anggota);
+        //$anggota = Anggota::search($request->id)->paginate(15);
+        return view('admin.dataanggota', ['anggota'=> $anggota]);
 
     }
 }

@@ -72,11 +72,20 @@
                     <div class="card strpied-tabled-with-hover">
                         <div class="card-header ">
                             <div class="row form-inline">
-                                <h4 class="col-md-4 card-title">Data Anggota</h4>
-                                <div class="col-md-8 ">
-                                    <a href="{{route('admin.anggota.daftaranggota')}}" class="btn btn-primary btn-fill pull-right" style="margin-left: 5px"><i class="fa fa-plus"></i> Tambah Anggota</a>
-                                    <button type="submit" href="{{route('admin.anggota')}}" onclick="cari()" class="btn btn-out btn-fill btn-success pull-right"><i class="fa fa-search"></i></button>
-                                    <input type="text" class="form-control pull-right" style="width: 60%">
+                                <h4 class="col-md-3 card-title">Data Anggota</h4>
+                                <div class="col-md-9 ">
+                                    <div class="row">
+                                        <div class="col-md-9" style="padding-right: 0">
+                                            <form action="{{route('admin.searchanggota')}}" method="GET">
+                                                {{csrf_field()}}
+                                                <button type="submit" class="btn btn-out btn-fill btn-success pull-right"><i class="fa fa-search"></i></button>
+                                                <input type="text" name="id" placeholder="Cari berdasarkan nama" class="form-control pull-right" style="width: 60%">
+                                            </form>
+                                        </div>
+                                        <div class="col-md-3" style="padding-left: 0">
+                                            <a href="{{route('admin.anggota.daftaranggota')}}" class="btn btn-primary btn-fill pull-right" style="margin-left: 5px"><i class="fa fa-plus"></i> Tambah Anggota</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="card-body table-full-width table-responsive">
@@ -104,7 +113,7 @@
                                             <td>{{$data->identitas}}</td>
                                             <td>{{$data->jenkel}}</td>
                                             <td>{{$data->pekerjaan}}</td>
-                                            <td>{{$data->telp}}</td>
+                                            <td width="15%">{{$data->telp}}</td>
                                             <td>
                                                 <div class="btn-group">
                                                     <a href="{{route('admin.anggota.editanggota',['id'=> $data->id_anggota])}}"

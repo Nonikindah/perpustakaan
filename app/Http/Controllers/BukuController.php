@@ -120,5 +120,12 @@ class BukuController extends Controller
         return redirect()->route('admin.buku')->with('success', 'Berhasil mengubah data buku');
     }
 
+    public function searchbuku(Request $request){
+        $buku = Buku::where('judul', 'LIKE', '%'.$request->id.'%')->paginate(10);
+        //dd($anggota);
+        //$anggota = Anggota::search($request->id)->paginate(15);
+        return view('admin.databuku', ['buku'=> $buku]);
 
+    }
+    
 }

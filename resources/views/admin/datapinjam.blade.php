@@ -52,11 +52,20 @@
                     <div class="card strpied-tabled-with-hover">
                         <div class="card-header ">
                             <div class="row form-inline">
-                                <h4 class="col-md-4 card-title">Histori Peminjaman Buku</h4>
-                                <div class="col-md-8 ">
-                                    <a href="{{route('admin.pinjam.tambahpinjam')}}" class="btn btn-primary btn-fill pull-right" style="margin-left: 5px"><i class="fa fa-plus"></i> Tambah Data</a>
-                                    <button type="button" href="{{route('admin.pinjam')}}" onclick="cari()" class="btn btn-out btn-fill btn-success pull-right"><i class="fa fa-search"></i> Cari</button>
-                                    {{--<input type="text" class="form-control pull-right" style="width: 60%">--}}
+                                <h4 class="col-md-3 card-title">Histori Peminjaman Buku</h4>
+                                <div class="col-md-9 ">
+                                    <div class="row">
+                                        <div class="col-md-9" style="padding-right: 0">
+                                            <form action="{{route('admin.searchpinjam')}}" method="GET">
+                                                {{csrf_field()}}
+                                                <button type="submit" class="btn btn-out btn-fill btn-success pull-right"><i class="fa fa-search"></i></button>
+                                                <input type="text" name="id" placeholder="Cari berdasarkan judul" class="form-control pull-right" style="width: 60%">
+                                            </form>
+                                        </div>
+                                        <div class="col-md-3" style="padding-left: 0">
+                                            <a href="{{route('admin.pinjam.tambahpinjam')}}" class="btn btn-primary btn-fill " style="margin-left: 5px"><i class="fa fa-plus"></i> Tambah Buku</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

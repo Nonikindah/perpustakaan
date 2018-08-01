@@ -82,46 +82,38 @@
                         <p>Laporan</p>
                     </a>
                 </li>
-                <li class="">
+                <li class="{{strpos(url()->current(), 'atamaster') ? 'active' : ''}}">
                     <a class="nav nav-link" data-toggle="collapse" href="#collapseExample" role="button"
                        aria-expanded="false" aria-controls="collapseExample">
-                        <i class="nc-icon nc-paper-2"></i>
+                        <i class="nc-icon nc-layers-3"></i>
                         <p>Data Master</p>
                     </a>
                     <ul class="collapse" id="collapseExample">
                         <a class="fontsmall" href="{{route('klasifikasi')}}">
-                            {{--<i class="nc-icon nc-paper-2"></i>--}}
                             <p>Klasifikasi</p>
                         </a>
                         <a class="fontsmall" href="{{route('penerbit')}}">
-                            {{--<i class="nc-icon nc-paper-2"></i>--}}
                             <p>Penerbit</p>
                         </a>
                         <a class="fontsmall" href="{{route('atribut')}}">
-                            {{--<i class="nc-icon nc-paper-2"></i>--}}
                             <p>Atribut</p>
                         </a>
                         <a class="fontsmall" href="{{route('rak')}}">
-                            {{--<i class="nc-icon nc-paper-2"></i>--}}
                             <p>Rak</p>
                         </a>
                         <a class="fontsmall" href="{{route('subyek')}}">
-                            {{--<i class="nc-icon nc-paper-2"></i>--}}
                             <p>Subyek</p>
                         </a>
                         <a class="fontsmall" href="{{route('asalbuku')}}">
-                            {{--<i class="nc-icon nc-paper-2"></i>--}}
                             <p>Asal Buku</p>
                         </a>
                         <a class="fontsmall" href="{{route('jenisbuku')}}">
-                            {{--<i class="nc-icon nc-paper-2"></i>--}}
                             <p>Jenis Buku</p>
                         </a>
+                        <a class="fontsmall" href="{{route('atribut')}}">
+                            <p>Pekerjaan</p>
+                        </a>
                     </ul>
-                    {{--<a class="nav-link" href="{{route('admin.pinjam')}}">--}}
-                    {{--<i class="nc-icon nc-paper-2"></i>--}}
-                    {{--<p>Data Master</p>--}}
-                    {{--</a>--}}
                 </li>
             </ul>
         </div>
@@ -188,15 +180,6 @@
                 </div>
             </div>
         </nav>
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
         @yield('content')
         <footer class="footer">
             <div class="container">

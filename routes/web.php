@@ -80,6 +80,11 @@ Route::group(['prefix' => 'buku'], function (){
         'as' => 'admin.updatebuku'
     ]);
 
+    Route::get('search',[
+        'uses'=> 'BukuController@searchbuku',
+        'as' => 'admin.searchbuku'
+    ] );
+
 });
 
 Route::group(['prefix' => 'anggota'], function (){
@@ -118,10 +123,10 @@ Route::group(['prefix' => 'anggota'], function (){
         'as' => 'admin.tambahanggota'
     ]);
 
-    Route::get('search', [
-        'uses'=>'AnggotaController@search',
-        'as' => 'admin.search'
-    ]);
+    Route::get('search',[
+        'uses'=> 'AnggotaController@searchanggota',
+        'as' => 'admin.searchanggota'
+    ] );
 
 });
 
@@ -162,6 +167,11 @@ Route::group(['prefix' => 'histori'], function (){
        'uses'=>'PinjamController@store',
         'as'=>'admin.pinjam.store'
     ]);
+
+    Route::get('searchpinjam',[
+        'uses'=> 'PinjamController@searchpinjam',
+        'as' => 'admin.searchpinjam'
+    ] );
 });
 
 Route::group(['prefix'=>'admin'], function (){
