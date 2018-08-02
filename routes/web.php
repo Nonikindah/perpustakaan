@@ -73,6 +73,11 @@ Route::group(['prefix' => 'buku'], function (){
         'as' => 'admin.buku.store'
     ]);
 
+    Route::get('itembuku/{id}', function (\Illuminate\Http\Request $request){
+        $buku = \App\Buku::find(decrypt($request->id));
+        return view('admin.itembuku',['buku'=> $buku]);
+    })->name('admin.buku.itembuku');
+
     Route::get('detailbuku/{id}', function (\Illuminate\Http\Request $request){
         $buku = \App\Buku::find(decrypt($request->id));
         return view('admin.detailbuku',['buku'=> $buku]);

@@ -7,12 +7,18 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <div class="col-md-8 ">
-                                <nav class="nav nav-pills nav-justified">
-                                    <a class="nav-link " href="#">Detail</a>
-                                    <a class="nav-link " href="#">Item Buku</a>
-                                    <a class="nav-link active" href="{{route('admin.buku.tambahitem',['id'=> encrypt( $buku->kode_buku)])}}"></i>Tambah Item</a>
-                                </nav>
+                            <div class="col-md-12 ">
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="{{route('admin.buku.detailbuku',['id'=> encrypt( $buku->kode_buku)])}}">Detail</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="{{route('admin.buku.itembuku',['id'=> encrypt( $buku->kode_buku)])}}">Item Buku</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="{{route('admin.buku.tambahitem',['id'=> encrypt( $buku->kode_buku)])}}">Tambah Buku</a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                         <div class="card-body">
@@ -45,24 +51,25 @@
                                 <input type="hidden" name="atribut_id" value="{{App\Atribut::find($buku->atribut_id)}}">
                                 <input type="hidden" name="asalbuku_id" value="{{App\AsalBuku::find($buku->asalbuku_id)}}">
                                 <input type="hidden" name="kategori_id" value="{{App\Kategori::find($buku->kategori_id)}}">
-                                <div class="row">
-                                    <div class="col-md-12">
+
+                                <div class="row justify-content-center">
+                                    <div class="col-md-8">
                                         <div class="form-group">
                                             <label>Tanggal Masuk</label>
                                             <input type="date" class="form-control" name="tahun_entry">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-12">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-8">
                                         <div class="form-group">
                                             <label>Jumlah Item</label>
                                             <input type="text" name="jumlah_buku" class="form-control">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-12">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-8">
                                         <div class="form-group">
                                             <label>Keterangan</label>
                                             <textarea type="text" name="abstrak" class="form-control"></textarea>
