@@ -12,8 +12,7 @@
                                 <div class="col-md-9 ">
                                     <div class="row">
                                         <div class="col-md-9" style="padding-right: 0">
-                                            <form action="{{route('admin.searchpinjam')}}" method="GET">
-                                                {{csrf_field()}}
+                                            <form action="{{url()->current()}}" method="GET">
                                                 <button type="submit" class="btn btn-out btn-fill btn-success pull-right"><i class="fa fa-search"></i></button>
                                                 <input type="text" name="id" placeholder="Cari berdasarkan judul" class="form-control pull-right" style="width: 60%">
                                             </form>

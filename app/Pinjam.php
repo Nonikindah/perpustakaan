@@ -19,7 +19,7 @@ class Pinjam extends Model
      * @param bool $queryReturn
      * @return \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Eloquent\Relations\BelongsTo|null|object|static
      */
-    public function getItem($queryReturn = false)
+    public function getItem($queryReturn = true)
     {
         $data = $this->belongsTo('App\ItemBuku', 'item_id');
         if ($queryReturn)

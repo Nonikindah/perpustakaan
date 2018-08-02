@@ -21,10 +21,14 @@ Route::group(['prefix' => '/'], function (){
         $buku = \App\Buku::find(decrypt($request->id));
         return view('detail',['buku'=> $buku]);
     })->name('buku.detail');
+
+//    Route::get('katalog', function (){
+//        return view('katalog');
+//    })->name('katalog');
     
     Route::get('carikatalog',[
         'uses'=>'BukuController@usersearch',
-        'as'=>'buku.katalog'
+        'as'=>'buku.carikatalog'
     ]);
 
 });
@@ -157,8 +161,16 @@ Route::post('store',[
 
 Route::group(['prefix' => 'histori'], function (){
 
-    Route::get('', function (){
-        $pinjam = \App\Pinjam::all();
+    Route::get('', function (\Symfony\Component\HttpFoundation\Request $request){
+        $pinjam = \App\Pinjam::orderBy('updated_at')->when($request->id, function ($query) use ($request){
+            $query->whereHas('getItem', function ($query) use ($request) {
+                $query->whereHas('getBuku', function ($query) use ($request){
+                    $query->where('judul', 'ILIKE', '%' . $request->id  . '%');
+                });
+            });
+        })->paginate(10)->appends($request->only('id'));
+//        return $pinjam->toSql();
+
         return view('admin.datapinjam',['pinjam'=> $pinjam]);
     })->name('admin.pinjam');
 

@@ -32,6 +32,7 @@ class PinjamController extends Controller
         $pinjam = Pinjam::whereHas('getItem', function ($query) use ($request) {
             $query->where('judul', 'ILIKE', '%' . $request->id  . '%');
         })->paginate(10);
+        dd($pinjam);
         //dd($anggota);
         //$anggota = Anggota::search($request->id)->paginate(15);
         return view('admin.datapinjam', ['pinjam'=> $pinjam]);
