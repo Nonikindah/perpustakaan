@@ -252,8 +252,8 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Abstrak</label>
-                                            <textarea type="text" style="height: 75px" name="abstrak" class="form-control">{{$buku->abstrak}}</textarea>
+                                            <label>Ilustrator</label>
+                                            <input name="ilustrator" value="{{$buku->ilustrator}}" type="text" class="form-control" >
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -264,6 +264,12 @@
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Abstrak</label>
+                                            <textarea type="text" style="height: 75px" name="abstrak" class="form-control">{{$buku->abstrak}}</textarea>
+                                        </div>
+                                    </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <img src="{{ asset('storage/'.$buku->gambar) }}">

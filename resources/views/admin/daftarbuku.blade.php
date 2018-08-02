@@ -86,8 +86,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Kota Terbit</label>
-                                            <input type="text" name="" class="form-control"  >
+                                            <label>Ilustrator</label>
+                                            <input type="text" name="ilustrator" class="form-control"  >
                                         </div>
                                     </div>
                                 </div>
