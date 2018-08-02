@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Buku extends Model
 {
     protected $fillable=[
-        'kode_buku', 'judul', 'judul_asli', 'judul_seri', 'pengarang1', 'pengarang2', 'pengarang3',  'penerjemah', 'ilustrator', 'kolasi', 'edisi', 'kata_kunci','tahun_terbit','isbn','halaman','cetakan','abstrak', 'gambar','tahun_entry','jenis_bacaan','bahasa','harga_beli','volume','atribut_id','rak_id','penerbit_id','kategori_id','subyek_id','jenisbuku_id','asalbuku_id'
+        'kode_buku', 'judul', 'judul_asli', 'judul_seri', 'pengarang1', 'pengarang2', 'pengarang3',  'penerjemah', 'ilustrator', 'kolasi', 'edisi', 'kata_kunci','tahun_terbit','isbn','halaman','cetakan','abstrak', 'gambar','tahun_entry','jenis_bacaan','bahasa','harga_beli','volume','atribut_id','rak_id','penerbit_id','kategori_id','subyek_id','jenisbuku_id','asalbuku_id', 'admin_id'
     ];
     protected $primaryKey = 'kode_buku';
 
@@ -23,6 +23,17 @@ class Buku extends Model
     public function getRak($queryReturn = true)
     {
         $data = $this->belongsTo('App\Rak', 'rak_id');
+        return ($queryReturn ? $data : $data->get());
+    }
+
+    /**
+     * mendapat data admin yang melayani
+     * @param bool $queryReturn
+     * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function getAdmin($queryReturn = true)
+    {
+        $data = $this->belongsTo('App\User', 'admin_id');
         return ($queryReturn ? $data : $data->get());
     }
 

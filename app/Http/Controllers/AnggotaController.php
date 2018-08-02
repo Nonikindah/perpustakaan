@@ -34,6 +34,7 @@ class AnggotaController extends Controller
             'jenkel' => $request->jenkel,
             'pekerjaan' => $request->pekerjaan,
             'telp' => $request->telp,
+            'admin_id' => $request->admin_id
         ]);
 
         return redirect('')->with('success', 'Berhasil menambahkan anggota yang bernama '.$request->nama);

@@ -36,7 +36,7 @@
                                         <th>Pengarang</th>
                                         <th>Penerbit</th>
                                         <th>Klasifikasi</th>
-                                        {{--<th>Subyek</th>--}}
+                                        <th>Jumlah Buku</th>
                                         </thead>
                                         <tbody>
                                         @foreach($buku as $data)
@@ -54,14 +54,11 @@
                                                 </td>
                                                 <td>
                                                     {{App\Penerbit::find($data->penerbit_id)->nama}}
-                                                    {{--<ul>--}}
-                                                    {{--@foreach($data->getPenerbit(false) as $penerbit)--}}
-                                                    {{--<li>{{ $penerbit->nama }}</li>--}}
-                                                    {{--@endforeach--}}
-                                                    {{--</ul>--}}
+
                                                 </td>
                                                 <td>{{App\Kategori::find($data->kategori_id)->nama}}</td>
-                                                {{--<td>{{App\Subyek::find($data->subyek_id)->nama}}</td>--}}
+                                                <td>{{\App\ItemBuku::where('buku_id',$data->kode_buku)->get()->count()}}</td>
+
                                                 <td>
                                                     <div class="nav-link btn-group dropdown nav-item">
                                                                 <a href="#" class="nav-link btn btn-info btn-sm btn-fill pull-right" data-toggle="dropdown"><i class="fa fa-bars"></i>

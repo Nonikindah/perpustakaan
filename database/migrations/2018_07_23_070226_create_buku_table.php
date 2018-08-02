@@ -51,6 +51,8 @@ class CreateBukuTable extends Migration
             $table->foreign('asalbuku_id')->references('id')->on('asal_buku')->onUpdate('cascade')->onDelete('set null');
             $table->integer('kategori_id')->unsigned()->nullable();
             $table->foreign('kategori_id')->references('id_kategori')->on('kategori')->onUpdate('cascade')->onDelete('set null');
+            $table->integer('admin_id')->unsigned()->nullable();
+            $table->foreign('admin_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
             $table->timestamps();
         });
     }

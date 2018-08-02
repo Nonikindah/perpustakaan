@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Anggota extends Model
 {
     protected $fillable = [
-       'id_anggota', 'nama', 'identitas','alamat_lengkap','jenkel','pekerjaan','telp', 'kelurahan_id'
+       'id_anggota', 'nama', 'identitas','alamat_lengkap','jenkel','pekerjaan','telp', 'kelurahan_id', 'admin_id'
     ];
     
     protected $primaryKey = 'id_anggota';
@@ -25,6 +25,17 @@ class Anggota extends Model
     public function getKelurahan($queryReturn = true)
     {
         $data = $this->belongsTo('App\Kelurahan', 'kelurahan_id');
+        return ($queryReturn ? $data : $data->first());
+    }
+
+    /**
+     * mendapat data admin
+     * @param bool $queryReturn
+     * @return Model|\Illuminate\Database\Eloquent\Relations\BelongsTo|null|object
+     */
+    public function getAdmin($queryReturn = true)
+    {
+        $data = $this->belongsTo('App\User', 'admin_id');
         return ($queryReturn ? $data : $data->first());
     }
 

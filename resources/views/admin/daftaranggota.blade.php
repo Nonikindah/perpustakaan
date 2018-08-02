@@ -82,6 +82,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <input type="hidden" name="admin_id" value="{{ Auth::user()->id }}" required autofocus>
                                 <button type="submit" class="btn btn-primary btn-fill pull-right">Simpan</button>
                             </form>
                         </div>

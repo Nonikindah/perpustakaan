@@ -26,8 +26,12 @@ Route::group(['prefix' => '/'], function (){
         'uses'=>'BukuController@usersearch',
         'as'=>'buku.katalog'
     ]);
-
 });
+
+//Route::controllers([
+//   'auth' => 'Auth\AuthController',
+//    'password' => 'Auth\PasswordController'
+//]);
 
 Route::get('/daftar', function () {
     return view('daftar');
@@ -148,13 +152,6 @@ Route::group(['prefix' => 'anggota'], function (){
 
 });
 
-
-Route::post('store',[
-    'uses'=> 'AnggotaController@store',
-    'as' => 'daftar'
-]);
-
-
 Route::group(['prefix' => 'histori'], function (){
 
     Route::get('', function (){
@@ -212,6 +209,10 @@ Route::group(['prefix'=>'admin'], function (){
     Route::put('update', [
         'uses'=>'AdminController@update',
         'as' => 'admin.update'
+    ]);
+    Route::put('ubahpassword', [
+        'uses'=>'AdminController@ubahPassword',
+        'as' => 'admin.ubah'
     ]);
 });
 
