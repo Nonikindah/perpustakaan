@@ -32,7 +32,7 @@ class Pinjam extends Model
      * @param bool $queryReturn
      * @return \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Eloquent\Relations\BelongsTo|null|object|static
      */
-    public function getAnggota($queryReturn = false)
+    public function getAnggota($queryReturn = true)
     {
         $data = $this->belongsTo('App\Anggota','anggota_id');
         if($queryReturn)
@@ -46,7 +46,7 @@ class Pinjam extends Model
      * @return \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Eloquent\Relations\BelongsTo|null|object|static
      */
 
-    public function getAdmin($queryReturn = false){
+    public function getAdmin($queryReturn = true){
         $data = $this->belongsTo('App\User','admin_id');
         if($queryReturn)
             return $data;

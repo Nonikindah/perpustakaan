@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\ItemBuku;
+use PDF;
 use Illuminate\Http\Request;
 use App\Buku;
 
@@ -126,5 +127,12 @@ class BukuController extends Controller
     public function usersearch(Request $request){
         $buku = Buku::where('judul', 'ILIKE', '%'.$request->cari.'%')->paginate(10);
         return view('katalog', ['buku'=> $buku]);
+    }
+
+    public function cetakdatabuku(Request $request){
+        $buku = Buku::all();
+        $pdf = PDF::loadView('admin.pdfbuku', ['buku'=>$buku]);
+        $pdf->setPaper('A4', 'landscape');
+        return $pdf->stream('LaporanBuku.pdf');
     }
 }

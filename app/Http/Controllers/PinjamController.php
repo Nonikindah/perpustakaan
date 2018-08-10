@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use PDF;
 use App\Pinjam;
 use Illuminate\Support\Facades\Auth;
 
@@ -37,6 +38,18 @@ class PinjamController extends Controller
         //$anggota = Anggota::search($request->id)->paginate(15);
         return view('admin.datapinjam', ['pinjam'=> $pinjam]);
 
+    }
+
+    public function perpanjang(Request $request){
+        $request = Pinjam::find($request->id);
+        return view('admin.formperpanjang')->with('pinjam',$request);
+    }
+
+    public function cetakdatahistori(Request $request){
+        $pinjam = Pinjam::all();
+        $pdf = PDF::loadView('admin.pdfhistori', ['pinjam'=>$pinjam]);
+        $pdf->setPaper('A4');
+        return $pdf->stream('LaporanHistori.pdf');
     }
 
 }

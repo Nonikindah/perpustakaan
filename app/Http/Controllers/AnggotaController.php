@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use PDF;
 use Illuminate\Http\Request;
 use App\Anggota;
 use Laravel\Scout;
@@ -99,5 +100,13 @@ class AnggotaController extends Controller
         //$anggota = Anggota::search($request->id)->paginate(15);
         return view('admin.dataanggota', ['anggota'=> $anggota]);
 
+    }
+
+    public function cetakdataanggota(Request $request){
+        $anggota = Anggota::all();
+        $pdf = PDF::loadView('admin.pdfanggota', ['anggota'=>$anggota]);
+        $pdf->setPaper('A4');
+        set_time_limit(300);
+        return $pdf->stream('LaporanAnggota.pdf');
     }
 }

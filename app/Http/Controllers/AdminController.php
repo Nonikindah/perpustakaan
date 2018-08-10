@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Carbon;
+use PDF;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Hash;
+
 
 class AdminController extends Controller
 {
@@ -82,5 +85,13 @@ class AdminController extends Controller
         }
 
         return redirect()->route('admin.editadmin',[Auth::user()->id])->with('success', 'Password anda berhasil diubah!');
+    }
+    
+    public function cetakdataadmin(Request $request){
+        $admin = User::all();
+        $pdf = PDF::loadView('admin.pdfadmin', ['admin'=>$admin]);
+        $pdf->setPaper('A4');
+        set_time_limit(300);
+        return $pdf->stream('LaporanAdmin.pdf');
     }
 }

@@ -76,8 +76,8 @@
                         <p>Histori Peminjaman</p>
                     </a>
                 </li>
-                <li class="">
-                    <a class="nav-link" href="{{route('admin.pinjam')}}">
+                <li class="{{strpos(Route::currentRouteName(), 'dmin.datalaporan') ? 'active' : ''}}">
+                    <a class="nav-link" href="{{route('admin.datalaporan')}}">
                         <i class="nc-icon nc-bullet-list-67"></i>
                         <p>Laporan</p>
                     </a>
