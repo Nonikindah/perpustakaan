@@ -46,4 +46,9 @@ class PenerbitController extends Controller
         return redirect()->route('penerbit')->with('confirmation', 'Penerbit berhasil dihapus!');
     }
 
+    public function searchpenerbit(Request $request){
+        $penerbit = Penerbit::where('nama', 'ILIKE', '%'.$request->id.'%')->paginate(10);
+        return view('datamaster.datapenerbit', ['penerbit'=> $penerbit]);
+    }
+
 }

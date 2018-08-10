@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Anggota extends Model
 {
     protected $fillable = [
-       'id_anggota', 'nama', 'identitas','alamat_lengkap','jenkel','pekerjaan','telp', 'kelurahan_id', 'admin_id'
+       'id_anggota', 'nama', 'identitas','alamat_lengkap','jenkel','pekerjaan','telp', 'kelurahan_id', 'admin_id','foto'
     ];
     
     protected $primaryKey = 'id_anggota';

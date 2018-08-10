@@ -24,11 +24,11 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col-md-10">
+                <div class="col-md-12">
                     <div class="card strpied-tabled-with-hover">
                         <div class="card-header ">
                             <div class="row form-inline">
-                                <h4 class="col-md-6 card-title ">Data Admin</h4>
+                                <h4 class="col-md-6 card-title "><b>Data Admin</b></h4>
                                 <div class="col-md-6">
                                     @if(Auth::user()->hak_akses == 1)
                                     <a href="{{route('admin.admin.register')}}"
@@ -37,6 +37,7 @@
                                     @endif
                                 </div>
                             </div>
+                            <hr>
                         </div>
                         <div class="card-body table-full-width table-responsive">
                             <table class="table table-hover table-striped">

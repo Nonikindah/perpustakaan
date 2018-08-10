@@ -22,10 +22,14 @@ class AnggotaController extends Controller
             'alamat_lengkap' => 'required',
             'jenkel' => 'required',
             'pekerjaan' => 'required',
-            'telp' => 'required'
+            'telp' => 'required',
+            'foto' => 'required'
         ]);
 
-//        dd($request->nama);
+        $fillnames = $request->foto->getClientOriginalName() . '' . str_random(4);
+        $filename = '/anggota/'
+            . str_slug($fillnames, '-') . '.' . $request->foto->getClientOriginalExtension();
+        $request->foto->storeAs('public', $filename);
 
         Anggota::create([
             'nama' => $request->nama,
@@ -35,7 +39,8 @@ class AnggotaController extends Controller
             'jenkel' => $request->jenkel,
             'pekerjaan' => $request->pekerjaan,
             'telp' => $request->telp,
-            'admin_id' => $request->admin_id
+            'admin_id' => $request->admin_id,
+            'foto'=>$request->foto = $filename
         ]);
 
         return redirect('')->with('success', 'Berhasil menambahkan anggota yang bernama '.$request->nama);
@@ -53,8 +58,14 @@ class AnggotaController extends Controller
             'alamat_lengkap' => 'required',
             'jenkel' => 'required',
             'pekerjaan' => 'required',
-            'telp' => 'required'
+            'telp' => 'required',
+            'foto' => 'required'
         ]);
+
+        $fillnames = $request->foto->getClientOriginalName() . '' . str_random(4);
+        $filename = '/anggota/'
+            . str_slug($fillnames, '-') . '.' . $request->foto->getClientOriginalExtension();
+        $request->foto->storeAs('public', $filename);
 
         Anggota::create([
             'nama' => $request->nama,
@@ -64,6 +75,7 @@ class AnggotaController extends Controller
             'jenkel' => $request->jenkel,
             'pekerjaan' => $request->pekerjaan,
             'telp' => $request->telp,
+            'foto'=>$request->foto = $filename
         ]);
 
         return redirect()->route('admin.anggota')->with('success', 'Berhasil menambahkan anggota yang bernama '.$request->nama);
@@ -99,7 +111,10 @@ class AnggotaController extends Controller
         //dd($anggota);
         //$anggota = Anggota::search($request->id)->paginate(15);
         return view('admin.dataanggota', ['anggota'=> $anggota]);
+    }
 
+    public function printBarcode(){
+        $anggota = Anggota::limit(12)->get();
     }
 
     public function cetakdataanggota(Request $request){

@@ -25,6 +25,7 @@ class CreateAnggotaTable extends Migration
             $table->string('jenkel');
             $table->string('pekerjaan');
             $table->string('telp');
+            $table->string('foto')->nullable();
             $table->timestamps();
         });
     }

@@ -9,34 +9,33 @@
                     <div class="card strpied-tabled-with-hover">
                         <div class="card-header ">
                             <div class="row form-inline">
-                                <h4 class="col-md-3 card-title">Data Koleksi Buku</h4>
-                                <div class="col-md-9 ">
+                                <h4 class="col-md-12 card-title"><b>Data Koleksi Buku</b><hr></h4>
+
+                                <div class="col-md-12 ">
                                     <div class="row">
-                                        <div class="col-md-9" style="padding-right: 0">
+                                        <div class="col-md-10" style="padding-right: 0">
                                             <form action="{{route('admin.searchbuku')}}" method="GET">
                                                 {{csrf_field()}}
-                                                <button type="submit"
-                                                        class="btn btn-out btn-fill btn-success pull-right"><i
-                                                            class="fa fa-search"></i></button>
-                                                <input type="text" name="id" placeholder="Cari berdasarkan judul"
-                                                       class="form-control pull-right" style="width: 60%">
+                                                <button type="submit" class="btn btn-out btn-fill btn-success pull-right" style="margin-right: 7px"><i class="fa fa-search"></i> Cari</button>
+                                                <input type="text" name="id" placeholder="Cari berdasarkan judul" class="form-control" style="width: 90%">
                                             </form>
                                         </div>
-                                        <div class="col-md-3" style="padding-left: 0">
-                                            <a href="{{route('admin.buku.daftarbuku')}}"
-                                               class="btn btn-primary btn-fill " style="margin-left: 5px"><i
-                                                        class="fa fa-plus"></i> Tambah Buku</a>
+                                        <div class="col-md-2" style="padding-left: 0">
+                                            <a href="{{route('admin.buku.daftarbuku')}}" class="btn btn-primary btn-fill pull-right" ><i class="fa fa-plus"></i> Tambah Buku</a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card-body table-full-width table-responsive">
+                                </div>
+                            <hr>
+                                <div class=" table-full-width table-responsive">
                                     <table class="table table-hover table-striped">
                                         <thead>
-                                        <th>Judul</th>
-                                        <th>Pengarang</th>
-                                        <th>Penerbit</th>
-                                        <th>Klasifikasi</th>
-                                        <th>Jumlah Buku</th>
+                                        <th><b>Judul</b></th>
+                                        <th><b>Pengarang</b></th>
+                                        <th><b>Penerbit</b></th>
+                                        <th><b>Klasifikasi</b></th>
+                                        <th><b>Jumlah Buku</b></th>
+                                        <th><b>Aksi</b></th>
                                         </thead>
                                         <tbody>
                                         @foreach($buku as $data)
@@ -44,7 +43,7 @@
                                                 <td>{{$data->judul}}</td>
                                                 <td>
                                                     @if($data->pengarang2 != null)
-                                                        {{$data->pengarang1}},{{$data->pengarang2}}
+                                                        {{$data->pengarang1}} dan {{$data->pengarang2}}
                                                     @elseif($data->pengarang3 != null)
                                                         {{$data->pengarang1}},{{$data->pengarang2}},
                                                         {{$data->pengarang3}}

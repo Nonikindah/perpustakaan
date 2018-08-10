@@ -46,4 +46,9 @@ class KategoriController extends Controller
         $klasifikasi = Kategori::findOrFail($request)->delete();
         return redirect()->route('klasifikasi')->with('confirmation', 'Kategori berhasil dihapus!');
     }
+
+    public function searchkategori(Request $request){
+        $klasifikasi = Kategori::where('nama', 'ILIKE', '%'.$request->id.'%')->paginate(10);
+        return view('datamaster.dataklasifikasi', ['klasifikasi'=> $klasifikasi]);
+    }
 }

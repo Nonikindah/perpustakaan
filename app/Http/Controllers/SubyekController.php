@@ -43,4 +43,9 @@ class SubyekController extends Controller
         $subyek = Subyek::findOrFail($request)->delete();
         return redirect()->route('subyek')->with('confirmation', 'Subyek berhasil dihapus!');
     }
+
+    public function searchsubyek(Request $request){
+        $subyek = Subyek::where('nama', 'ILIKE', '%'.$request->id.'%')->paginate(10);
+        return view('datamaster.datasubyek', ['subyek'=> $subyek]);
+    }
 }

@@ -5,47 +5,73 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="card strpied-tabled-with-hover" style="padding-right: 20px">
-                        <div class="card-header ">
-                            <div class="row form-inline">
-                                <div class="col-md-12 ">
-
-                                    <ul class="nav nav-tabs">
-                                        <li class="nav-item">
-                                            <a class="nav-link active"
-                                               href="{{route('admin.buku.detailbuku',['id'=> encrypt( $buku->kode_buku)])}}">Detail</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link "
-                                               href="{{route('admin.buku.itembuku',['id'=> encrypt( $buku->kode_buku)])}}">Item
-                                                Buku</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link "
-                                               href="{{route('admin.buku.tambahitem',['id'=> encrypt( $buku->kode_buku)])}}">Tambah
-                                                Buku</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="card-body table-full-width table-responsive">
-
-                                    <br>
-                                    <div class="row" style="margin-left: 100px">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <p style="font-family:'Arial Rounded MT Bold'; font-size: 35px">{{$buku->judul}}</p>
+                    <div class="btn-group">
+                        <div class=" form-inline">
+                            <a class="btn btn-primary btn-fill" style="border-radius: 0px"
+                               href="{{route('admin.buku.detailbuku',['id'=> encrypt( $buku->kode_buku)])}}">Detail</a>
+                            <a class="btn btn-danger btn-fill" style="border-radius: 0px"
+                               href="{{route('admin.buku.itembuku',['id'=> encrypt( $buku->kode_buku)])}}">Item Buku</a>
+                            <a class="btn btn-warning btn-fill" style="border-radius: 0px" data-toggle="collapse"
+                               href="#collapseExample" role="button" aria-expanded="false"
+                               aria-controls="collapseExample"
+                               href="{{route('admin.buku.tambahitem',['id'=> encrypt( $buku->kode_buku)])}}">Tambah
+                                Item</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="collapse" id="collapseExample">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <form class="form-horizontal" method="POST"
+                                              action="{{route('admin.buku.item')}}">
+                                            @csrf
+                                            {{ method_field('put') }}
+                                            <input type="hidden" name="buku_id" value="{{$buku->kode_buku}}">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="card-title" style="border-radius: 0px">Jumlah Item</div>
+                                                    <input type="number" style="border-radius: 0px" name="jumlah_buku"
+                                                           class="form-control">
+                                                </div>
                                             </div>
-                                            <p style="font-family: 'Baskerville Old Face'; font-size: 20px">{{$buku->pengarang1}}</p>
-                                        </div>
+                                            <button type="submit" class="btn btn-primary btn-fill"
+                                                    style="border-radius: 0px">Simpan
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card strpied-tabled-with-hover">
+                        <div class="card-header ">
+                            <h4 class="col-md-12 card-title"><b>Detail Buku</b></h4>
+                            <hr>
+                            <div class="row form-inline">
+                                <div class="card-body table-full-width table-responsive">
+                                    <div class="row" style="margin-left: 10px">
                                         <div class="col-md-6">
-                                            <div class="form-group">
-                                                <img src="{{ asset('storage/'.$buku->gambar) }}" width="30%">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <p class="card-title"
+                                                           style="font-size: 20px">{{$buku->judul}}
+                                                            - {{$buku->pengarang1}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div class="form-group">
+                                                        <img src="{{ asset('storage'.$buku->gambar) }}" width="30%">
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row" style="margin-left: 10px">
+                                    <hr>
+                                    <div class="row" style="margin-left: 1px">
                                         <div class="col-md-6">
-                                            <p style="font-family:'Arial Rounded MT Bold'; font-size: 28px">
+                                            <p class="card-title" style="font-size: 20px">
                                                 Informasi Detail Buku</p>
                                             <table class="table table-bordered">
                                                 <tbody>
@@ -55,11 +81,13 @@
                                                 </tr>
                                                 <tr>
                                                     <th>Judul Asli</th>
-                                                    <td width="100%">@if($buku->judul_asli==NULL)-@endif{{$buku->judul_asli}}</td>
+                                                    <td width="100%">@if($buku->judul_asli==NULL)
+                                                            -@endif{{$buku->judul_asli}}</td>
                                                 </tr>
                                                 <tr>
                                                     <th>Judul Seri</th>
-                                                    <td width="100%">@if($buku->judul_seri==NULL)-@endif{{$buku->judul_seri}}</td>
+                                                    <td width="100%">@if($buku->judul_seri==NULL)
+                                                            -@endif{{$buku->judul_seri}}</td>
                                                 </tr>
                                                 <tr>
                                                     <th>Pengarang 1</th>
@@ -67,15 +95,18 @@
                                                 </tr>
                                                 <tr>
                                                     <th>Pengarang 2</th>
-                                                    <td width="100%">@if($buku->pengarang2==NULL)-@endif{{$buku->pengarang2}}</td>
+                                                    <td width="100%">@if($buku->pengarang2==NULL)
+                                                            -@endif{{$buku->pengarang2}}</td>
                                                 </tr>
                                                 <tr>
                                                     <th>Pengarang 3</th>
-                                                    <td width="100%">@if($buku->pengarang3==NULL)-@endif{{$buku->pengarang3}}</td>
+                                                    <td width="100%">@if($buku->pengarang3==NULL)
+                                                            -@endif{{$buku->pengarang3}}</td>
                                                 </tr>
                                                 <tr>
                                                     <th>Penerjemah</th>
-                                                    <td width="100%">@if($buku->penerjemah==NULL)-@endif{{$buku->penerjemah}}</td>
+                                                    <td width="100%">@if($buku->penerjemah==NULL)
+                                                            -@endif{{$buku->penerjemah}}</td>
                                                 </tr>
                                                 <tr>
                                                     <th>Klasifikasi</th>
@@ -87,7 +118,8 @@
                                                 </tr>
                                                 <tr>
                                                     <th>Kolasi</th>
-                                                    <td width="100%">@if($buku->kolasi==NULL)-@endif{{$buku->kolasi}}</td>
+                                                    <td width="100%">@if($buku->kolasi==NULL)
+                                                            -@endif{{$buku->kolasi}}</td>
                                                 </tr>
                                                 <tr>
                                                     <th>Penerbit</th>
@@ -110,12 +142,10 @@
                                                     <td width="100%">{{$buku->abstrak}}</td>
                                                 </tr>
                                                 </tbody>
-                                                </tbody>
                                             </table>
                                         </div>
-                                        <div class="col-md-6" style="padding-top: 55px">
+                                        <div class="col-md-6" style="margin-top: 30px;margin-right: 0px">
                                             <div class="form-group">
-                                                <br>
                                                 <table class="table table-bordered">
                                                     <tbody>
                                                     <tr>
@@ -136,11 +166,13 @@
                                                     </tr>
                                                     <tr>
                                                         <th>Ilustrator</th>
-                                                        <td width="100%">@if($buku->ilustrator==NULL)-@endif{{$buku->ilustrator}}</td>
+                                                        <td width="100%">@if($buku->ilustrator==NULL)
+                                                                -@endif{{$buku->ilustrator}}</td>
                                                     </tr>
                                                     <tr>
                                                         <th>Kota Terbit</th>
-                                                        <td width="100%">@if(App\Penerbit::find($buku->penerbit_id)->kota==NULL)-@endif{{App\Penerbit::find($buku->penerbit_id)->kota}}</td>
+                                                        <td width="100%">@if(App\Penerbit::find($buku->penerbit_id)->kota==NULL)
+                                                                -@endif{{App\Penerbit::find($buku->penerbit_id)->kota}}</td>
                                                     </tr>
                                                     <tr>
                                                         <th>Fiksi-Non</th>
@@ -187,7 +219,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('barcode', 'HomeController@barcode');
+
 Route::group(['prefix' => '/'], function (){
     Route::get('', function (){
         $katalog = \App\Buku::all();
@@ -22,20 +24,12 @@ Route::group(['prefix' => '/'], function (){
         return view('detail',['buku'=> $buku]);
     })->name('buku.detail');
 
-//    Route::get('katalog', function (){
-//        return view('katalog');
-//    })->name('katalog');
-    
+
     Route::get('carikatalog',[
         'uses'=>'BukuController@usersearch',
         'as'=>'buku.carikatalog'
     ]);
 });
-
-//Route::controllers([
-//   'auth' => 'Auth\AuthController',
-//    'password' => 'Auth\PasswordController'
-//]);
 
 Route::get('/daftar', function () {
     return view('daftar');
@@ -96,6 +90,11 @@ Route::group(['prefix' => 'buku'], function (){
         return view('admin.tambahitem',['buku'=> $buku]);
     })->name('admin.buku.tambahitem');
 
+    Route::put('item', [
+        'uses' => 'BukuController@tambahitem',
+        'as' => 'admin.buku.item'
+    ]);
+
     Route::get('edit/{id}', [
         'uses'=>'BukuController@edit',
         'as' => 'admin.buku.editbuku'
@@ -135,13 +134,13 @@ Route::group(['prefix' => 'anggota'], function (){
     ]);
 
     Route::delete('delete/{id}', [
-
         'uses'=>'AnggotaController@deleteanggota',
         'as' => 'admin.deleteanggota'
     ]);
-    
-    Route::get('detail', function () {
-        return view('admin.detailanggota');
+
+    Route::get('detailanggota/{id}', function (\Illuminate\Http\Request $request){
+        $anggota = \App\Anggota::find(decrypt($request->id));
+        return view('admin.detailanggota',['anggota'=> $anggota]);
     })->name('admin.detailanggota');
 
     Route::put('daftar', [
@@ -197,10 +196,21 @@ Route::group(['prefix' => 'histori'], function (){
         'as' => 'admin.searchpinjam'
     ] );
 
-    Route::get('perpanjang/{id}', [
-        'uses'=>'PinjamController@perpanjang',
-        'as' => 'admin.pinjam.formperpanjang'
-    ]);
+    Route::get('perpanjangan/{id}',[
+        'uses'=> 'PinjamController@perpanjangan',
+        'as' => 'admin.pinjam.perpanjangan'
+    ] );
+
+    Route::get('pengembalian',[
+        'uses'=> 'PinjamController@pengembalian',
+        'as' => 'admin.pinjam.pengembalian'
+    ] );
+
+    Route::get('histori/{id}', function (\Illuminate\Http\Request $request){
+        $histori = \App\Pinjam::find(decrypt($request->id));
+        return view('admin.historipinjaman',['histori'=> $histori]);
+    })->name('admin.pinjam.historipinjaman');
+
 });
 
 Route::group(['prefix'=>'laporan'], function (){
@@ -291,6 +301,10 @@ Route::group(['prefix'=>'datamaster/klasifikasi'], function (){
         'as' => 'datamaster.deletekategori'
     ]);
 
+    Route::get('search',[
+        'uses'=> 'KategoriController@searchkategori',
+        'as' => 'datamaster.searchkategori'
+    ] );
 });
 
 Route::group(['prefix'=>'datamaster/penerbit'], function (){
@@ -323,6 +337,11 @@ Route::group(['prefix'=>'datamaster/penerbit'], function (){
         'uses'=>'PenerbitController@deletepenerbit',
         'as' => 'datamaster.deletepenerbit'
     ]);
+
+    Route::get('search',[
+        'uses'=> 'PenerbitController@searchpenerbit',
+        'as' => 'datamaster.searchpenerbit'
+    ] );
 
 });
 
@@ -423,6 +442,10 @@ Route::group(['prefix'=>'datamaster/subyek'], function (){
         'as' => 'datamaster.deletesubyek'
     ]);
 
+    Route::get('search',[
+        'uses'=> 'SubyekController@searchsubyek',
+        'as' => 'datamaster.searchsubyek'
+    ] );
 });
 
 Route::group(['prefix'=>'datamaster/asalbuku'], function (){
@@ -489,4 +512,8 @@ Route::group(['prefix'=>'datamaster/jenisbuku'], function (){
         'as' => 'datamaster.deletejenisbuku'
     ]);
 
+});
+
+Route::get('coba', function () {
+    return view('coba');
 });

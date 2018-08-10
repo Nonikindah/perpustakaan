@@ -17,23 +17,25 @@ class AdminController extends Controller
         $this->validate(request(), [
             'name' => 'required',
             'email' => 'required',
-            'password' => 'required',
             'alamat_lengkap' => 'required',
             'jenkel' => 'required',
             'telp' => 'required',
             'kelurahan_id' => 'required',
-            'hak_akses' =>'required'
+            'password' => 'required|string|min:3|confirmed', [
+                'required' => 'Kolom di atas harus diisi',
+                'min' => 'Kolom di atas setidaknya mengandung :digits karakter',
+                'confirmed' => 'Password yang anda masukkan tidak sama'
+            ]
         ]);
 
         User::create([
             'name' => $request['name'],
             'email' => $request['email'],
-            'password' => bcrypt($request['password']),
             'alamat_lengkap' => $request['alamat_lengkap'],
             'jenkel' => $request['jenkel'],
             'telp' => $request['telp'],
             'kelurahan_id'=> $request['kelurahan_id'],
-            'hak_akses' =>$request['hak_akses']
+            'password' => bcrypt(Hash::make($request->password))
         ]);
 
         return redirect()->route('admin.admin')->with('success', 'Berhasil menambahkan Admin yang bernama '.$request->name);
@@ -84,7 +86,7 @@ class AdminController extends Controller
                 ]);
         }
 
-        return redirect()->route('admin.editadmin',[Auth::user()->id])->with('success', 'Password anda berhasil diubah!');
+        return back()->with('success', 'Password anda berhasil diubah!');
     }
     
     public function cetakdataadmin(Request $request){

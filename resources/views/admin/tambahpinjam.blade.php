@@ -4,11 +4,11 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col-md-10">
+                <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
                             <div class="row">
-                                <h4 class="col-md-8 card-title">Tambah Data Peminjaman</h4>
+                                <h4 class="col-md-8 card-title"><b>Tambah Data Peminjaman</b><hr></h4>
                             </div>
                         </div>
                         <div class="card-body">
@@ -18,9 +18,9 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>No. Anggota</label>
+                                            <div class="card-title" style="margin-bottom: 5px">No. Anggota</div>
                                             <input type="text" class="form-control" name="anggota_id"
-                                                   placeholder="No.Anggota" value="{{ old('anggota_id') }}" required
+                                                   value="{{ old('anggota_id') }}" style="border-radius: 0px" required
                                                    autofocus>
                                         </div>
                                     </div>
@@ -28,31 +28,22 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Kode Buku</label>
-                                            <input type="text" class="form-control" name="item_id" placeholder="Penerbit" value="{{ old('item_id') }}" required autofocus>
+                                            <div class="card-title" style="margin-bottom: 5px">No Induk Buku</div>
+                                            <input type="text" class="form-control" name="item_id"  value="{{ old('item_id') }}" style="border-radius: 0px" required autofocus>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Tanggal Pinjam</label>
-                                            <input type="date" class="form-control" name="tgl_pinjam"
+                                            <div class="card-title" style="margin-bottom: 5px">Tanggal Pinjam</div>
+                                            <input type="date" class="form-control" name="tgl_pinjam" style="border-radius: 0px"
                                                    value="{{ old('tgl_pinjam') }}" required autofocus>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>Tanggal Kembali</label>
-                                            <input type="date" class="form-control" name="tgl_kembali"
-                                                   value="{{ old('tgl_kembali') }}" required autofocus>
-                                        </div>
-                                    </div>
-                                </div>
                                 <input type="hidden" name="admin_id" value="{{ Auth::user()->id }}" required autofocus>
-                                <button type="submit" class="btn btn-primary btn-fill pull-right">Tambah</button>
+                                <button type="submit" class="btn btn-primary btn-fill" style="border-radius: 0px">Tambah</button>
                             </form>
                         </div>
                     </div>

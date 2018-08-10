@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('telp');
             $table->integer('kelurahan_id')->unsigned()->nullable();
             $table->foreign('kelurahan_id')->references('id')->on('kelurahan')->onUpdate('cascade')->onDelete('set null');
-            $table->integer('hak_akses')->default(2);
+            $table->integer('hak_akses')->default (2);
             $table->rememberToken();
             $table->timestamps();
         });

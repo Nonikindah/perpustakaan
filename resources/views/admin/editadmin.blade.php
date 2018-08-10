@@ -8,16 +8,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="row">
-                                <h4 class="col-md-6 card-title">Pengaturan Akun</h4>
-                                <div class="col-md-4 pl-1 ">
-                                    <div class="form-group">
-                                        <input type="hidden" class="form-control pull-right" disabled=""
-                                               placeholder="ID Admin disabled">
-                                        @if ($errors->has('id'))
-                                            <span class="help-block">{{ $errors->first('id') }}</span>
-                                        @endif
-                                    </div>
-                                </div>
+                                <h4 class="col-md-6 card-title"><b>Pengaturan Akun</b><hr></h4>
                             </div>
                         </div>
                         <div class="card-body">
@@ -28,8 +19,8 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Nama Lengkap</label>
-                                            <input type="text" name="name" class="form-control"
+                                            <div class="card-title" style="margin-bottom: 5px">Nama Lengkap</div>
+                                            <input type="text" style="border-radius: 0px" name="name" class="form-control"
                                                    value="{{Auth::user()->name}}" required autofocus>
                                             @if ($errors->has('name'))
                                                 <div class="alert alert-danger" role="alert">{{ $errors->first('name') }}</div>
@@ -40,8 +31,8 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Email</label>
-                                            <input type="text" class="form-control" name="email"
+                                            <div class="card-title" style="margin-bottom: 5px">Email</div>
+                                            <input type="text"  style="border-radius: 0px" class="form-control" name="email"
                                                    value="{{Auth::user()->email}}" required autofocus>
                                             @if ($errors->has('email'))
                                                 <div class="alert alert-danger" role="alert">{{ $errors->first('email') }}</div>
@@ -52,8 +43,8 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group {{ $errors->has('alamat_lengkap') ? 'has-error' : '' }}">
-                                            <label>Alamat</label>
-                                            <input type="text" class="form-control" placeholder="Alamat"
+                                            <div class="card-title" style="margin-bottom: 5px">Alamat Lengkap</div>
+                                            <input type="text" style="border-radius: 0px" class="form-control" placeholder="Alamat"
                                                    name="alamat_lengkap" value="{{Auth::user()->alamat_lengkap}}">
                                             @if ($errors->has('alamat_lengkap'))
                                                 <div class="alert alert-danger" role="alert">{{ $errors->first('alamat_lengkap') }}</div>
@@ -64,8 +55,8 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group {{ $errors->has('alamat') ? ' has-error' : '' }}">
-                                            <label for="alamat">Alamat</label>
-                                            <select class="form-control searchSel" name="kelurahan_id">
+                                            <div class="card-title" style="margin-bottom: 5px">Pilih Kelurahan</div>
+                                            <select class="form-control" style="border-radius: 0px" name="kelurahan_id">
                                                 @foreach(\App\Kabupaten::findByNo(7, 74)->getKelurahan()->orderBy('nama')->get() as $kelurahan)
                                                     <option value="{{ $kelurahan->id }}"
                                                             @if(Auth::user()->kelurahan_id==$kelurahan->id)selected @endif>
@@ -84,8 +75,8 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group {{ $errors->has('jenkel') ? 'has-error' : '' }}">
-                                            <label>Jenis Kelamin</label>
-                                            <select class="form-control" name="jenkel">
+                                            <div class="card-title" style="margin-bottom: 5px">Jenis Kelamin</div>
+                                            <select class="form-control" style="border-radius: 0px" name="jenkel">
                                                 <option value="Laki-laki"
                                                         @if(Auth::user()->jenkel=="Laki-laki")selected @endif>Laki-laki
                                                 </option>
@@ -102,9 +93,9 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group {{ $errors->has('telp') ? 'has-error' : '' }}">
-                                            <label>No. Telp/HP</label>
+                                            <div class="card-title" style="margin-bottom: 5px">No. Telp/HP</div>
                                             <input type="text" class="form-control" placeholder="No. Telp/HP"
-                                                   name="telp" value="{{Auth::user()->telp}}">
+                                                   name="telp" style="border-radius: 0px" value="{{Auth::user()->telp}}">
                                             @if ($errors->has('telp'))
                                                 <div class="alert alert-danger" role="alert">{{ $errors->first('telp') }}</div>
                                             @endif
@@ -122,7 +113,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="row">
-                                <h4 class="col-md-6 card-title">Ubah Password</h4>
+                                <h4 class="col-md-6 card-title"><b>Ubah Password</b><hr></h4>
                             </div>
                         </div>
                         <div class="card-body">
@@ -132,8 +123,8 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Password Lama</label>
-                                            <input type="password" class="form-control" name="password_lama" required>
+                                            <div class="card-title" style="margin-bottom: 5px">Password Lama</div>
+                                            <input style="border-radius: 0px" type="password" class="form-control" name="password_lama" required>
                                             @if ($errors->has('password_lama'))
                                                 <div class="alert alert-danger" role="alert">{{ $errors->first('password_lama') }}</div>
                                             @endif
@@ -144,8 +135,8 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Password Baru</label>
-                                            <input type="password" class="form-control" name="password" required>
+                                            <div class="card-title" style="margin-bottom: 5px">Password Baru</div>
+                                            <input style="border-radius: 0px" type="password" class="form-control" name="password" required>
                                             @if ($errors->has('password'))
                                                 <div class="alert alert-danger" role="alert">{{ $errors->first('password') }}</div>
                                             @endif
@@ -156,7 +147,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Konfirmasi Password Baru</label>
+                                            <div class="card-title" style="margin-bottom: 5px">Konfirmasi Password Baru</div>
                                             <input type="password" class="form-control" name="password_confirmation" required>
                                             @if ($errors->has('password_confirmation'))
                                                 <div class="alert alert-danger" role="alert">{{ $errors->first('password_confirmation') }}</div>

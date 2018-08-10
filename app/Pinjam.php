@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Pinjam extends Model
 {
     protected $fillable = [
-        'id', 'item_id', 'anggota_id', 'tgl_pinjam', 'tgl_kembali', 'status', 'admin_id'
+        'id', 'item_id', 'anggota_id', 'tgl_pinjam', 'tgl_kembali', 'status', 'admin_id','tgl_haruskembali'
     ];
 
-    protected $dates = ['created_at', 'updated_at'];
+    protected $dates = ['created_at', 'updated_at','tgl_haruskembali'];
 
     protected $table = 'pinjam';
 

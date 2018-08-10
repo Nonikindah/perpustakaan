@@ -22,7 +22,8 @@ class CreatePinjamTable extends Migration
             $table->integer('admin_id')->unsigned()->nullable();
             $table->foreign('admin_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
             $table->dateTime('tgl_pinjam');
-            $table->dateTime('tgl_kembali');
+            $table->dateTime('tgl_haruskembali');
+            $table->dateTime('tgl_kembali')->nullable();
             $table->boolean('dipinjam')->default(true);
             $table->timestamps();
         });

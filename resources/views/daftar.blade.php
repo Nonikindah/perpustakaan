@@ -10,7 +10,7 @@
                     </div>
 
                     <div class="panel-body">
-                        <form class="form-horizontal" method="POST" action="{{route('daftaruser')}}">
+                        <form  enctype="multipart/form-data" class="form-horizontal" method="POST" action="{{route('daftaruser')}}">
                             {{ csrf_field() }}
 
                             <div class="form-group">
@@ -82,6 +82,12 @@
                                 </div>
                             </div>
 
+                            <div class="form-group{{ $errors->has('foto') ? ' has-error' : '' }}">
+                                <label for="foto" class="col-md-4 control-label">File Foto</label>
+                                <div class="col-md-6">
+                                    <input type="file" name="foto" class="form-control" >
+                                </div>
+                            </div>
 
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">

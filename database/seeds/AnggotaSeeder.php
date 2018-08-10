@@ -30,7 +30,7 @@ class AnggotaSeeder extends Seeder
                         'identitas' => $faker->unique()->numerify('################'),
                         'alamat_lengkap' => $faker->streetAddress,
                         'jenkel'=>$faker->randomElement($array = array ('Perempuan', 'Laki-laki')) ,
-                        'pekerjaan' => $faker->randomElement($array = array ('PNS', 'Pelajar/Mahasiswa','Karyawan Swasta', 'Lain-lain')),
+                        'pekerjaan' => $faker->randomElement($array = array ('PNS', 'Pelajar/Mahasiswa','Karyawan Swasta')),
                         'telp'=> $faker->phoneNumber
                     ]);
                 }

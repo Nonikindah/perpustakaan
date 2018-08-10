@@ -5,29 +5,50 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
+                    <div class="btn-group">
+                        <div class="dropdown form-inline">
+                            <a class="btn btn-primary btn-fill" style="border-radius: 0px"
+                               href="{{route('admin.buku.detailbuku',['id'=> encrypt( $buku->kode_buku)])}}">Detail</a>
+                            <a class="btn btn-danger btn-fill" style="border-radius: 0px"
+                               href="{{route('admin.buku.itembuku',['id'=> encrypt( $buku->kode_buku)])}}">Item Buku</a>
+                            <a class="btn btn-warning btn-fill" style="border-radius: 0px" data-toggle="collapse"
+                               href="#collapseExample" role="button" aria-expanded="false"
+                               aria-controls="collapseExample"
+                               href="{{route('admin.buku.tambahitem',['id'=> encrypt( $buku->kode_buku)])}}">Tambah
+                                Item</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="collapse" id="collapseExample">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <form class="form-horizontal" method="POST"
+                                              action="{{route('admin.buku.item')}}">
+                                            @csrf
+                                            {{ method_field('put') }}
+                                            <input type="hidden" name="buku_id" value="{{$buku->kode_buku}}">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="card-title" style="border-radius: 0px">Jumlah Item</div>
+                                                    <input type="number" style="border-radius: 0px" name="jumlah_buku"
+                                                           class="form-control">
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary btn-fill"
+                                                    style="border-radius: 0px">Simpan
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="card strpied-tabled-with-hover">
                         <div class="card-header ">
+                            <h4 class="col-md-12 card-title"><b>Item Buku</b><hr></h4>
                             <div class="row form-inline">
-                                <div class="col-md-12">
-                                    {{--<a href="{{route('admin.buku.tambahitem',['id'=> encrypt( $buku->kode_buku)])}}"--}}
-                                       {{--class="btn btn-primary btn-fill pull-right" style="margin-left: 5px"><i--}}
-                                                {{--class="fa fa-plus"></i> Tambah Item</a>--}}
-
-                                    <ul class="nav nav-tabs">
-                                        <li class="nav-item">
-                                            <a class="nav-link " href="{{route('admin.buku.detailbuku',['id'=> encrypt( $buku->kode_buku)])}}">Detail</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link active" href="{{route('admin.buku.itembuku',['id'=> encrypt( $buku->kode_buku)])}}">Item Buku</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link " href="{{route('admin.buku.tambahitem',['id'=> encrypt( $buku->kode_buku)])}}">Tambah Buku</a>
-                                        </li>
-                                    </ul>
-                                </div>
                                 <div class="card-body table-full-width table-responsive">
-
-                                    <br>
                                     <table class="table table-hover table-striped">
                                         <thead>
                                         <th>Nomer Induk</th>
@@ -52,7 +73,8 @@
                                                         {{$buku->pengarang1}}
                                                     @endif
                                                 </td>
-                                                <td></td>
+                                                <td><img src="data:image/png;base64,{{DNS1D::getBarcodePNG(
+       $data->no_induk, 'C39')}}" height="40" width="100"></td>
                                                 <td>
                                                     @if($data->isAvailable() )
                                                         Tersedia

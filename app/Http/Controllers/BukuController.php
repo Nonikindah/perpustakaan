@@ -77,7 +77,7 @@ class BukuController extends Controller
         ]);
 
         for ($c = 0; $c <= $request->jumlah_buku; $c++){
-//            dd($c);
+////            dd($c);
             ItemBuku::create([
                 'buku_id' => $buku->kode_buku
             ]);
@@ -114,6 +114,13 @@ class BukuController extends Controller
             'jenisbuku_id' => 'required',
             'asalbuku_id' => 'required',
         ]);
+
+        $fillnames = $request->gambar->getClientOriginalName() . '' . str_random(4);
+        $filename = '/buku/'
+            . str_slug($fillnames, '-') . '.' . $request->gambar->getClientOriginalExtension();
+        $request->gambar->storeAs('public', $filename);
+
+
         $buku = Buku::find($request->kode_buku)->update($request->all());
 
         return redirect()->route('admin.buku')->with('success', 'Berhasil mengubah data buku');
@@ -128,6 +135,29 @@ class BukuController extends Controller
         $buku = Buku::where('judul', 'ILIKE', '%'.$request->cari.'%')->paginate(10);
         return view('katalog', ['buku'=> $buku]);
     }
+
+    public function tambahitem(Request $request)
+    {
+        $this->validate(request(), [
+          'buku_id' => 'required'
+        ]);
+
+        $buku = ItemBuku::create([
+            'buku_id' => $request->buku_id
+        ]);
+
+        for ($c = 0; $c <= $request->jumlah_buku; $c++){
+            ItemBuku::create([
+                'buku_id' => $buku->buku_id
+            ]);
+        }
+        return redirect()->route('admin.buku.itembuku',['id'=>encrypt($buku->buku_id)])->with('success', 'Berhasil menambahkan item buku ');
+    }
+
+    public function printBarcode(){
+        $item = ItemBuku::limit(12)->get();
+    }
+
 
     public function cetakdatabuku(Request $request){
         $buku = Buku::all();

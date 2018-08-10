@@ -33,7 +33,7 @@
 
 <body>
 <div class="wrapper form-control">
-    <div class="sidebar" data-image="{{asset('img/sidebar-52.jpg')}}">u
+    <div class="sidebar" style="background: black">
         <!--
     Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
@@ -83,37 +83,38 @@
                     </a>
                 </li>
                 <li class="{{strpos(url()->current(), 'atamaster') ? 'active' : ''}}">
-                    <a class="nav nav-link" data-toggle="collapse" href="#collapseExample" role="button"
-                       aria-expanded="false" aria-controls="collapseExample">
+                    <a class="nav-link" href="{{route('klasifikasi')}}">
                         <i class="nc-icon nc-layers-3"></i>
                         <p>Data Master</p>
                     </a>
-                    <ul class="collapse" id="collapseExample">
-                        <a class="fontsmall" href="{{route('klasifikasi')}}">
-                            <p>Klasifikasi</p>
-                        </a>
-                        <a class="fontsmall" href="{{route('penerbit')}}">
-                            <p>Penerbit</p>
-                        </a>
-                        <a class="fontsmall" href="{{route('atribut')}}">
-                            <p>Atribut</p>
-                        </a>
-                        <a class="fontsmall" href="{{route('rak')}}">
-                            <p>Rak</p>
-                        </a>
-                        <a class="fontsmall" href="{{route('subyek')}}">
-                            <p>Subyek</p>
-                        </a>
-                        <a class="fontsmall" href="{{route('asalbuku')}}">
-                            <p>Asal Buku</p>
-                        </a>
-                        <a class="fontsmall" href="{{route('jenisbuku')}}">
-                            <p>Jenis Buku</p>
-                        </a>
-                        <a class="fontsmall" href="{{route('atribut')}}">
-                            <p>Pekerjaan</p>
-                        </a>
-                    </ul>
+                    {{--<a class="nav nav-link" data-toggle="collapse" href="#collapseExample" role="button"--}}
+                       {{--aria-expanded="false" aria-controls="collapseExample">--}}
+                        {{--<i class="nc-icon nc-layers-3"></i>--}}
+                        {{--<p>Data Master</p>--}}
+                    {{--</a>--}}
+                    {{--<ul class="collapse" id="collapseExample">--}}
+                        {{--<a class="fontsmall" href="{{route('klasifikasi')}}">--}}
+                            {{--<p>Klasifikasi</p>--}}
+                        {{--</a>--}}
+                        {{--<a class="fontsmall" href="{{route('penerbit')}}">--}}
+                            {{--<p>Penerbit</p>--}}
+                        {{--</a>--}}
+                        {{--<a class="fontsmall" href="{{route('atribut')}}">--}}
+                            {{--<p>Atribut</p>--}}
+                        {{--</a>--}}
+                        {{--<a class="fontsmall" href="{{route('rak')}}">--}}
+                            {{--<p>Rak</p>--}}
+                        {{--</a>--}}
+                        {{--<a class="fontsmall" href="{{route('subyek')}}">--}}
+                            {{--<p>Subyek</p>--}}
+                        {{--</a>--}}
+                        {{--<a class="fontsmall" href="{{route('asalbuku')}}">--}}
+                            {{--<p>Asal Buku</p>--}}
+                        {{--</a>--}}
+                        {{--<a class="fontsmall" href="{{route('jenisbuku')}}">--}}
+                            {{--<p>Jenis Buku</p>--}}
+                        {{--</a>--}}
+                    {{--</ul>--}}
                 </li>
             </ul>
         </div>
@@ -122,7 +123,6 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg " color-on-scroll="500">
             <div class=" container-fluid  ">
-                <a class="navbar-brand" href="#pablo"> Dashboard </a>
                 <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                         aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-bar burger-lines"></span>
@@ -168,8 +168,7 @@
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">Logout</a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                      style="display: none;">
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST">
                                     {{ csrf_field() }}
                                 </form>
 
