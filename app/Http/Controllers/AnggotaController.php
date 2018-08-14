@@ -6,6 +6,7 @@ use PDF;
 use Illuminate\Http\Request;
 use App\Anggota;
 use Laravel\Scout;
+use Illuminate\Support\Carbon;
 
 
 class AnggotaController extends Controller
@@ -118,9 +119,23 @@ class AnggotaController extends Controller
     }
 
     public function cetakdataanggota(Request $request){
+        $skip = ($request->page-1)*100;
+
         $anggota = Anggota::all();
+        $data = Anggota::skip($skip)->take(100)->get();
+
+        $pdf = PDF::loadView('admin.pdfanggota', ['anggota'=>$data]);
+        $pdf->setPaper('A4', 'landscape');
+        set_time_limit(300);
+        return $pdf->stream('LaporanAnggota.pdf');
+    }
+
+    public function cetakanggotapertangggal(Request $request){
+        $dari = Carbon::parse($request->dari_tgl);
+        $sampai = Carbon::parse($request->sampai_tgl);
+        $anggota = Anggota::whereBetween('created_at', [$dari, $sampai])->get();
         $pdf = PDF::loadView('admin.pdfanggota', ['anggota'=>$anggota]);
-        $pdf->setPaper('A4');
+        $pdf->setPaper('A4', 'landscape');
         set_time_limit(300);
         return $pdf->stream('LaporanAnggota.pdf');
     }

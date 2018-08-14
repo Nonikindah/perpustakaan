@@ -76,12 +76,13 @@
                         <p>Histori Peminjaman</p>
                     </a>
                 </li>
-                <li class="{{strpos(Route::currentRouteName(), 'dmin.datalaporan') ? 'active' : ''}}">
+                <li class="{{strpos(url()->current(), 'aporan') ? 'active' : ''}}">
                     <a class="nav-link" href="{{route('admin.datalaporan')}}">
                         <i class="nc-icon nc-bullet-list-67"></i>
                         <p>Laporan</p>
                     </a>
                 </li>
+                {{--{{strpos(Route::currentRouteName(), 'dmin.datalaporan') ? 'active' : ''}}--}}
                 <li class="{{strpos(url()->current(), 'atamaster') ? 'active' : ''}}">
                     <a class="nav-link" href="{{route('klasifikasi')}}">
                         <i class="nc-icon nc-layers-3"></i>

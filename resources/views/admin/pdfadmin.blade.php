@@ -33,16 +33,25 @@
                 <div class="row form-inline">
                     <div class="row" style="margin-left: 10px">
                         <div class="col-md-12">
-                            <div class="row" align="center"
-                                 style="font-family:'Arial Rounded MT Bold'; font-size: 24px">
-                                <p>Perpustakaan Daerah Wakatobi</p>
-                                <p style="font-family:'Arial Rounded MT Bold'; font-size: 18px">JL. Merdeka, No. 8, Wakatobi, Wangi-wangi, Wanci, Wangi-Wangi Sel., Kabupaten
-                                    Wakatobi, Sulawesi Tenggara 93791</p>
-                                <p style="font-family:'Arial Rounded MT Bold'; font-size: 18px">No.Telp: (0404) 21228</p>
-                                <u>Laporan Data Admin</u>
+                            <div class="row">
+                                <div class="col-xs-1">
+                                    <img src="{{('img/logo.png')}}" width="70">
+                                </div>
+                                <div class="col-xs-112" align="center">
+                                    <p style="font-family:'Arial Rounded MT Bold'; font-size: 22px">Perpustakaan Daerah
+                                        Wakatobi</p>
+                                    <p style="font-family:'Arial Rounded MT Bold'; font-size: 14px">JL. Merdeka, No. 8,
+                                        Wakatobi, Wangi-wangi, Wanci, Wangi-Wangi Sel., Kabupaten
+                                        Wakatobi, Sulawesi Tenggara 93791</p>
+                                    <p style="font-family:'Arial Rounded MT Bold'; font-size: 14px">No.Telp: (0404)
+                                        21228</p>
+                                    <hr style="border-top: 1px solid #333333">
+                                    <p style="font-family:'Arial Rounded MT Bold'; font-size: 18px">Laporan Data Admin</p>
+                                    <p style="font-family:'Arial Rounded MT Bold'; font-size: 16px">Jumlah Admin
+                                        : {{\App\User::all()->count()}}</p>
+                                </div>
                             </div>
-                            <br>
-                            <table class="table table-bordered">
+                            <table class="table table-bordered" style="border-color:black;">
                                 <thead>
                                 <tr>
                                     <th scope="col">No</th>
@@ -56,7 +65,7 @@
                                 <tbody>
                                 @foreach($admin as $key=>$data)
                                     <tr>
-                                        <th>{{$data->id}}</th>
+                                        <td>{{$data->id}}</td>
                                         <td>{{$data->name}}</td>
                                         <td>{{$data->email}}</td>
                                         <td> {{$data->getKelurahan(false)->nama}},
@@ -67,10 +76,11 @@
                                     </tr>
                                 @endforeach
                                 </tbody>
-                                <div  class="col-md-4">
-
-                                </div>
                             </table>
+                            <div class="col-md-3 pull-right">
+                                <p>Wakatobi, {{formatDate(\Illuminate\Support\Carbon::now())}}</p>
+                                <p style="margin-top: 90px">Kepala Perpustakaan</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -82,3 +92,6 @@
 
 </body>
 </html>
+
+
+

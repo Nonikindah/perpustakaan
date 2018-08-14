@@ -9,7 +9,6 @@ use App\User;
 use Illuminate\Support\Facades\Auth;
 use Hash;
 
-
 class AdminController extends Controller
 {
     public function store(Request $request){
@@ -92,7 +91,17 @@ class AdminController extends Controller
     public function cetakdataadmin(Request $request){
         $admin = User::all();
         $pdf = PDF::loadView('admin.pdfadmin', ['admin'=>$admin]);
-        $pdf->setPaper('A4');
+        $pdf->setPaper('A4', 'landscape');
+        set_time_limit(300);
+        return $pdf->stream('LaporanAdmin.pdf');
+    }
+
+    public function cetakadminpertangggal(Request $request){
+        $dari = Carbon::parse($request->dari_tgl);
+        $sampai = Carbon::parse($request->sampai_tgl);
+        $admin = User::whereBetween('created_at', [$dari, $sampai])->get();
+        $pdf = PDF::loadView('admin.pdfadmin', ['admin'=>$admin]);
+        $pdf->setPaper('A4', 'landscape');
         set_time_limit(300);
         return $pdf->stream('LaporanAdmin.pdf');
     }

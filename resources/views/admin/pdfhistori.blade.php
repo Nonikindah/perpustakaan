@@ -13,15 +13,23 @@
             background: white;
             color: #000000;;
         }
-        table.table-bordered{
-            border:1px solid black;
-            margin-top:20px;
+
+        table.table-bordered {
+            border: 1px solid black;
+            margin-top: 20px;
         }
-        table.table-bordered > thead > tr > th{
-            border:1px solid black;
+
+        table.table-bordered > thead > tr > th {
+            border: 1px solid black;
         }
-        table.table-bordered > tbody > tr > td{
-            border:1px solid black;
+
+        table.table-bordered > tbody > tr > td {
+            border: 1px solid black;
+        }
+
+        p.ex1 {
+            /*border: 1px solid red;*/
+            padding: 0px 10px 0px 90px;
         }
     </style>
 </head>
@@ -33,19 +41,30 @@
                 <div class="row form-inline">
                     <div class="row" style="margin-left: 10px">
                         <div class="col-md-12">
-                            <div class="row" align="center"
-                                 style="font-family:'Arial Rounded MT Bold'; font-size: 24px">
-                                <p>Perpustakaan Daerah Wakatobi</p>
-                                <p style="font-family:'Arial Rounded MT Bold'; font-size: 18px">JL. Merdeka, No. 8, Wakatobi, Wangi-wangi, Wanci, Wangi-Wangi Sel., Kabupaten
-                                    Wakatobi, Sulawesi Tenggara 93791</p>
-                                <p style="font-family:'Arial Rounded MT Bold'; font-size: 18px">No.Telp: (0404) 21228</p>
-                                <u>Laporan Histori Peminjaman Buku</u>
+                            <div class="row">
+                                <div class="col-xs-1">
+                                    <img src="{{('img/logo.png')}}" width="70">
+                                </div>
+                                <div class="col-xs-112" align="center">
+                                    <p style="font-family:'Arial Rounded MT Bold'; font-size: 22px">Perpustakaan Daerah
+                                        Wakatobi</p>
+                                    <p style="font-family:'Arial Rounded MT Bold'; font-size: 14px">JL. Merdeka, No. 8,
+                                        Wakatobi, Wangi-wangi, Wanci, Wangi-Wangi Sel., Kabupaten
+                                        Wakatobi, Sulawesi Tenggara 93791</p>
+                                    <p style="font-family:'Arial Rounded MT Bold'; font-size: 14px">No.Telp: (0404)
+                                        21228</p>
+                                    <hr style="border-top: 1px solid #333333">
+                                    <p style="font-family:'Arial Rounded MT Bold'; font-size: 18px">Laporan Data Peminjaman</p>
+                                    <p style="font-family:'Arial Rounded MT Bold'; font-size: 16px">Jumlah Peminjaman
+                                        : {{\App\Pinjam::all()->count()}}</p>
+                                </div>
                             </div>
                             <table class="table table-bordered">
                                 <thead>
                                 <tr>
                                     <th scope="col">No</th>
                                     <th scope="col">Kode Buku</th>
+                                    <th scope="col">ID Anggota</th>
                                     <th scope="col">Nama Anggota</th>
                                     <th scope="col">Judul Buku</th>
                                     <th scope="col">Tanggal Pinjam</th>
@@ -55,24 +74,29 @@
                                 <tbody>
                                 @foreach($pinjam as $key=>$data)
                                     <tr>
-                                        <th>{{$data->id}}</th>
-                                        <th>{{$data->getItem(false)->no_induk or ''}}</th>
+                                        <td>{{$data->id}}</td>
+                                        <td>{{$data->getItem(false)->no_induk or ''}}</td>
+                                        <td>{{$data->getAnggota(false)->id_anggota}}</td>
                                         <td>{{$data->getAnggota(false)->nama}}</td>
                                         <td>{{$data->getItem(false)->getBuku(false)->judul or ''}}</td>
                                         <td>{{$data->tgl_pinjam}}</td>
-                                        <td>{{$data->tgl_kembali}}</td>>
+                                        <td>{{$data->tgl_kembali}}</td>
+                                        >
                                     </tr>
                                 @endforeach
                                 </tbody>
                             </table>
+                            <br>
+                            <div class="col-md-3 pull-right">
+                                <p>Wakatobi, {{formatDate(\Illuminate\Support\Carbon::now())}}</p>
+                                <p style="margin-top: 90px">Kepala Perpustakaan</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
-
 </body>
 </html>

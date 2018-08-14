@@ -218,25 +218,69 @@ Route::group(['prefix'=>'laporan'], function (){
     Route::get('', function () {
         return view('admin.laporan');
     })->name('admin.datalaporan');
+    
+    //data admin
 
     Route::get('/cetakadmin', [
         'uses'=>'AdminController@cetakdataadmin',
         'as' => 'admin.cetakdataadmin'
     ]);
 
+    Route::get('cetakadminpertanggal', function () {
+        return view('admin.cetakadmin');
+    })->name('admin.cetakadminpertanggal');
+
+    Route::post('/cetakadminpertanggal', [
+        'uses' => 'AdminController@cetakadminpertangggal',
+        'as' => 'admin.cetakadminpertanggal'
+    ]);
+    
+    //data anggota
+
     Route::get('/cetakanggota', [
         'uses'=>'AnggotaController@cetakdataanggota',
         'as' => 'admin.cetakdataanggota'
     ]);
+
+    Route::get('cetakanggotapertanggal', function () {
+        return view('admin.cetakanggota');
+    })->name('admin.cetakanggotapertanggal');
+
+    Route::post('/cetakanggotapertanggal', [
+        'uses' => 'AnggotaController@cetakanggotapertangggal',
+        'as' => 'admin.cetakanggotapertanggal'
+    ]);
+    
+    //data buku
 
     Route::get('/cetakbuku', [
         'uses'=>'BukuController@cetakdatabuku',
         'as' => 'admin.cetakdatabuku'
     ]);
 
+    Route::get('cetakbukupertanggal', function () {
+        return view('admin.cetakbuku');
+    })->name('admin.cetakbukupertanggal');
+
+    Route::post('/cetakbukupertanggal', [
+        'uses' => 'BukuController@cetakbukupertangggal',
+        'as' => 'admin.cetakbukupertanggal'
+    ]);
+    
+    //data peminjaman
+
     Route::get('/cetakpeminjaman', [
         'uses'=>'PinjamController@cetakdatahistori',
         'as' => 'admin.cetakdatahistori'
+    ]);
+
+    Route::get('cetak', function () {
+        return view('admin.cetakpeminjaman');
+    })->name('admin.cetakpeminjaman');
+
+    Route::post('/cetakpertanggal', [
+        'uses' => 'PinjamController@cetakpertangggal',
+        'as' => 'admin.cetakpertanggal'
     ]);
 });
 

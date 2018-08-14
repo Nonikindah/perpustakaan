@@ -73,8 +73,8 @@
                                                         {{$buku->pengarang1}}
                                                     @endif
                                                 </td>
-                                                <td><img src="data:image/png;base64,{{DNS1D::getBarcodePNG(
-       $data->no_induk, 'C39')}}" height="40" width="100"></td>
+                                                {{--<td><img src="data:image/png;base64,{{DNS1D::getBarcodePNG(--}}
+       {{--$data->no_induk, 'C39')}}" height="40" width="100"></td>--}}
                                                 <td>
                                                     @if($data->isAvailable() )
                                                         Tersedia

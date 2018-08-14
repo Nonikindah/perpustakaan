@@ -6,6 +6,7 @@ use App\ItemBuku;
 use PDF;
 use Illuminate\Http\Request;
 use App\Buku;
+use Illuminate\Support\Carbon;
 
 class BukuController extends Controller
 {
@@ -163,6 +164,17 @@ class BukuController extends Controller
         $buku = Buku::all();
         $pdf = PDF::loadView('admin.pdfbuku', ['buku'=>$buku]);
         $pdf->setPaper('A4', 'landscape');
+        set_time_limit(300);
+        return $pdf->stream('LaporanBuku.pdf');
+    }
+
+    public function cetakbukupertangggal(Request $request){
+        $dari = Carbon::parse($request->dari_tgl);
+        $sampai =  Carbon::parse($request->sampai_tgl);
+        $buku = Buku::whereBetween('created_at', [$dari, $sampai])->get();
+        $pdf = PDF::loadView('admin.pdfbuku', ['buku'=>$buku]);
+        $pdf->setPaper('A4', 'landscape');
+        set_time_limit(300);
         return $pdf->stream('LaporanBuku.pdf');
     }
 }

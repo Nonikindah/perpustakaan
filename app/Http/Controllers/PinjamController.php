@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-use Carbon;
+//use Carbon;
 
 use Illuminate\Http\Request;
 use PDF;
 use App\Pinjam;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Carbon;
 
 class PinjamController extends Controller
 {
@@ -24,7 +25,7 @@ class PinjamController extends Controller
             'anggota_id' => $request->anggota_id,
             'admin_id' =>$request->admin_id,
             'tgl_pinjam' => $request->tgl_pinjam,
-            'tgl_haruskembali' => Carbon\Carbon::parse($request->tgl_pinjam)->addDays(7)
+            'tgl_haruskembali' => Carbon::parse($request->tgl_pinjam)->addDays(7)
         ]);
         return redirect()->route('admin.pinjam')->with('success', 'Berhasil menambahkan data peminjaman');
     }
@@ -49,7 +50,7 @@ class PinjamController extends Controller
 
     public function pengembalian(Request $request){
         $pengembalian = Pinjam::find(decrypt($request->id));
-        $pengembalian->tgl_kembali = Carbon\Carbon::now();
+        $pengembalian->tgl_kembali = Carbon::now();
         $pengembalian->dipinjam = false;
         $pengembalian->save();
 
@@ -60,9 +61,19 @@ class PinjamController extends Controller
     public function cetakdatahistori(Request $request){
         $pinjam = Pinjam::all();
         $pdf = PDF::loadView('admin.pdfhistori', ['pinjam'=>$pinjam]);
-        $pdf->setPaper('A4');
+        $pdf->setPaper('A4', 'landscape');
+        set_time_limit(300);
+        return $pdf->stream('LaporanHistori.pdf');
+    }
+
+    public function cetakpertangggal(Request $request){
+        $dari = Carbon::parse($request->dari_tgl);
+        $sampai = Carbon::parse($request->sampai_tgl);
+        $pinjam = Pinjam::whereBetween('created_at', [$dari, $sampai])->get();
+        $pdf = PDF::loadView('admin.pdfhistori', ['pinjam'=>$pinjam]);
+        $pdf->setPaper('A4', 'landscape');
+        set_time_limit(300);
         return $pdf->stream('LaporanHistori.pdf');
     }
 
 }
-

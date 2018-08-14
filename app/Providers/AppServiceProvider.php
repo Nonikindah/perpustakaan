@@ -13,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        require_once(dirname(__FILE__) . '/../Support/Helper.php');
     }
 
     /**
@@ -25,4 +25,5 @@ class AppServiceProvider extends ServiceProvider
     {
         //
     }
+
 }

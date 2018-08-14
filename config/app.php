@@ -178,7 +178,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         UxWeb\SweetAlert\SweetAlertServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
-        Milon\Barcode\BarcodeServiceProvider::class,
+//        Milon\Barcode\BarcodeServiceProvider::class,
 
     ],
 
