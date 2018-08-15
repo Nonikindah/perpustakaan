@@ -61,8 +61,8 @@ class AdminController extends Controller
         return redirect()->route('admin.admin')->with('success', 'Berhasil mengubah data admin');
     }
     public function delete($request){
-        $admin = User::findOrFail($request)->delete();
-        return redirect()->route('admin.admin')->with('hapus');
+        $admin = User::find($request)->delete();
+        return redirect()->route('admin.admin');
     }
 
     public function ubahPassword(Request $request){

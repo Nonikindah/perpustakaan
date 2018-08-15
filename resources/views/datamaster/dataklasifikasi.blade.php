@@ -22,7 +22,6 @@
                                href="{{route('asalbuku')}}">Asal</a>
                             <a class="btn btn-fill" style="border-radius: 0px;background-color: #943bea;border-color: #943bea"
                                href="{{route('jenisbuku')}}">Jenis</a>
-
                         </div>
                     </div>
 
@@ -41,11 +40,15 @@
                                             </form>
                                         </div>
                                         <div class="col-md-2" style="padding-left: 0">
-                                            <a href="{{route('datamaster.tambahklasifikasi')}}" class="btn btn-primary btn-fill pull-right" ><i class="fa fa-plus"></i> Tambah Klasifikasi</a>
+                                            <a href="{{route('datamaster.tambahklasifikasi')}}" class="btn btn-primary btn-fill pull-right"  ><i class="fa fa-plus"></i> Tambah Klasifikasi</a>
                                         </div>
                                     </div>
                                 </div>
-                            </div><hr>
+
+                            </div>
+
+
+                            <hr>
                             <div class="table-full-width table-responsive">
                                 <table class="table table-hover table-striped">
                                     <thead>
@@ -62,7 +65,7 @@
                                             <td>{{$data->prefix}}</td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="{{route('datamaster.editklasifikasi', ['id'=> $data->id_kategori])}}"
+                                                    <a href="{{route('datamaster.editklasifikasi', ['id'=> encrypt($data->id_kategori)])}}"
                                                        class="btn btn-info btn-sm btn-fill pull-right"><i
                                                                 class="fa fa-pencil"></i></a>
                                                 </div>

@@ -4,11 +4,11 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col-md-10">
+                <div class="col-md-12">
                     <div class="card strpied-tabled-with-hover">
                         <div class="card-header ">
                             <div class="row form-inline">
-                                <h4 class="col-md-6 card-title ">Laporan</h4>
+                                <h4 class="col-md-12 card-title "><b>Laporan</b><hr></h4>
                             </div>
                         </div>
                         <div class="card-body table-responsive">

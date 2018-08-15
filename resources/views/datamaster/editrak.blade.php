@@ -4,10 +4,10 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col-md-10">
+                <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Edit Rak</h4>
+                            <h4 class="card-title"><b>Edit Rak</b><hr></h4>
                         </div>
                         <div class="card-body">
                             <form method="POST" action="{{route('datamaster.updaterak')}}">
@@ -17,8 +17,8 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group" {{ $errors->has('nama') ? 'has-error' : '' }}>
-                                            <label>Nama</label>
-                                            <input type="text" name="nama" class="form-control" value="{{$rak->nama}}" required autofocus>
+                                            <div class="card-title" style="margin-bottom: 5px">Nama</div>
+                                            <input type="text" name="nama" class="form-control" value="{{$rak->nama}}" required autofocus style="border-radius: 0px" >
                                             @if ($errors->has('nama'))
                                                 <span class="help-block">{{ $errors->first('nama') }}</span>
                                             @endif
@@ -28,8 +28,8 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group" {{ $errors->has('kode') ? 'has-error' : '' }}>
-                                            <label>Kode</label>
-                                            <input type="text" class="form-control" name="kode" value="{{$rak->kode}}" required autofocus>
+                                            <div class="card-title" style="margin-bottom: 5px">Kode</div>
+                                            <input type="text" class="form-control" name="kode" value="{{$rak->kode}}" required autofocus style="border-radius: 0px" >
                                             @if ($errors->has('kode'))
                                                 <span class="help-block">{{ $errors->first('kode') }}</span>
                                             @endif
@@ -39,15 +39,15 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group" {{ $errors->has('keterangan') ? 'has-error' : '' }}>
-                                            <label>Keterangan</label>
-                                            <textarea type="text" class="form-control" name="keterangan"  required>{{$rak->keterangan}}</textarea>
+                                            <div class="card-title" style="margin-bottom: 5px">Keterangan</div>
+                                            <textarea type="text" class="form-control" name="keterangan" style="border-radius: 0px"  required>{{$rak->keterangan}}</textarea>
                                             @if ($errors->has('keterangan'))
                                                 <span class="help-block">{{ $errors->first('keterangan') }}</span>
                                             @endif
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary btn-fill pull-right">Update</button>
+                                <button type="submit" class="btn btn-primary btn-fill" style="border-radius: 0px" >Update</button>
                             </form>
                         </div>
                     </div>

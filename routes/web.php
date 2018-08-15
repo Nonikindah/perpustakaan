@@ -110,6 +110,15 @@ Route::group(['prefix' => 'buku'], function (){
         'as' => 'admin.searchbuku'
     ] );
 
+    Route::delete('delete/{id}', [
+        'uses'=>'BukuController@hapusitem',
+        'as' => 'admin.hapusitem'
+    ]);
+
+    Route::get('/cetaklabel', [
+        'uses'=>'BukuController@cetaklabel',
+        'as' => 'admin.cetaklabel'
+    ]);
 });
 
 Route::group(['prefix' => 'anggota'], function (){
@@ -153,6 +162,11 @@ Route::group(['prefix' => 'anggota'], function (){
         'as' => 'admin.searchanggota'
     ] );
 
+    Route::get('/cetakkta', [
+        'uses'=>'AnggotaController@cetakkartu',
+        'as' => 'admin.cetakkartu'
+    ]);
+
 });
 
 Route::group(['prefix' => 'histori'], function (){
@@ -170,21 +184,9 @@ Route::group(['prefix' => 'histori'], function (){
         return view('admin.datapinjam',['pinjam'=> $pinjam]);
     })->name('admin.pinjam');
 
-    Route::get('tambah', function () {
-        return view('admin.tambahpinjam');
-    })->name('admin.pinjam.tambahpinjam');
-
-    Route::get('pengembalian', function () {
-        return view('admin.pengembalian');
-    })->name('admin.pinjam.pengembalian');
-
-//    Route::get('perpanjangan', function () {
-//        return view('admin.formperpanjang');
-//    })->name('admin.pinjam.formperpanjang');
-
-    Route::get('histori', function () {
-        return view('admin.historipinjaman');
-    })->name('admin.pinjam.historipinjaman');
+//    Route::get('histori', function () {
+//        return view('admin.historipinjaman');
+//    })->name('admin.pinjam.historipinjaman');
 
     Route::put('store',[
        'uses'=>'PinjamController@store',
@@ -201,7 +203,7 @@ Route::group(['prefix' => 'histori'], function (){
         'as' => 'admin.pinjam.perpanjangan'
     ] );
 
-    Route::get('pengembalian',[
+    Route::get('pengembalian/{id}',[
         'uses'=> 'PinjamController@pengembalian',
         'as' => 'admin.pinjam.pengembalian'
     ] );
@@ -298,6 +300,11 @@ Route::group(['prefix'=>'admin'], function (){
     Route::get('edit/{id}', [
         'uses'=>'AdminController@edit',
         'as' => 'admin.editadmin'
+    ]);
+
+    Route::delete('delete/{id}', [
+        'uses'=>'AdminController@delete',
+        'as' => 'admin.deleteadmin'
     ]);
 
     Route::put('store',[

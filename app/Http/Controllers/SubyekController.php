@@ -24,7 +24,7 @@ class SubyekController extends Controller
 
     public function editsubyek(Request $request)
     {
-        $request = Subyek::find($request->id);
+        $request = Subyek::find(decrypt($request->id));
         return view('datamaster.editsubyek')->with('subyek',$request);
 
     }

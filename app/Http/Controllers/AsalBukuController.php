@@ -24,7 +24,7 @@ class AsalBukuController extends Controller
 
     public function editasalbuku(Request $request)
     {
-        $request = AsalBuku::find($request->id);
+        $request = AsalBuku::find(decrypt($request->id));
         return view('datamaster.editasalbuku')->with('asalbuku',$request);
 
     }

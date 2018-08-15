@@ -60,6 +60,8 @@
                                                             - {{$buku->pengarang1}}</p>
                                                     </div>
                                                 </div>
+                                                <br>
+                                                <br>
                                                 <div class="col-md-8">
                                                     <div class="form-group">
                                                         <img src="{{ asset('storage'.$buku->gambar) }}" width="30%">

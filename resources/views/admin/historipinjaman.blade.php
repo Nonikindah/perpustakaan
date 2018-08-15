@@ -4,11 +4,11 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col-md-10">
+                <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
                             <div class="row">
-                                <h4 class="col-md-8 card-title">Histori Transaksi Buku</h4>
+                                <h4 class="col-md-8 card-title"><b>Histori Transaksi Buku</b></h4>
                                 <div style="font-size: 16px">
                                     <p>Kode Buku : {{$histori->getItem(false)->no_induk}}</p>
                                     <p>Judul Buku : {{$histori->getItem(false)->getBuku(false)->judul}}</p>
@@ -30,7 +30,7 @@
                             <table class="table table-hover table-striped">
                                 <thead>
                                 <th>ID Pinjam</th>
-                                <th>Nama Peminjam</th>
+                                {{--<th>Nama Peminjam</th>--}}
                                 <th>Tanggal Pinjam</th>
                                 <th>Tanggal Kembali</th>
                                 </thead>
@@ -38,13 +38,12 @@
 
                                 <tr>
                                     <td>{{$histori->id}}</td>
-                                    <td>{{$histori->getAnggota(false)->nama}}</td>
+                                    {{--<td>{{$histori->getAnggota(false)->nama}}</td>--}}
                                     <td>{{$histori->tgl_pinjam}}</td>
                                     <td>{{$histori->tgl_kembali}}</td>
                                 </tr>
 
                             </table>
-                            <a href="{{route('admin.pinjam')}}" class="btn btn-primary btn-fill pull-right">Kembali</a>
                         </div>
                     </div>
 

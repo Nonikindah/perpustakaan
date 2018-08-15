@@ -73,7 +73,7 @@
                 <li class="{{strpos(Route::currentRouteName(), 'dmin.pinjam') ? 'active' : ''}}">
                     <a class="nav-link" href="{{route('admin.pinjam')}}">
                         <i class="nc-icon nc-atom"></i>
-                        <p>Histori Peminjaman</p>
+                        <p>Data Peminjaman</p>
                     </a>
                 </li>
                 <li class="{{strpos(url()->current(), 'aporan') ? 'active' : ''}}">
@@ -232,27 +232,27 @@
             icon: "success"
         });
     </script>
-    {{--@elseif(value('hapus'))--}}
-    {{--<script>--}}
-        {{--swal({--}}
-            {{--title: "Apakah Anda yakin ?",--}}
-            {{--text: "Data akan dihapus",--}}
-            {{--icon: "warning",--}}
-            {{--buttons: true,--}}
-            {{--dangerMode: true,--}}
-        {{--})--}}
-            {{--.then((willDelete) => {--}}
-                {{--if (willDelete) {--}}
-                    {{--swal("Berhasil menghapus", {--}}
-                        {{--icon: "success",--}}
-                    {{--});--}}
-                {{--} else {--}}
-                    {{--swal("Proses hapus dibatalkan");--}}
-                {{--}--}}
-            {{--});--}}
-    {{--</script>--}}
 @endif
-
+<script>
+    function hapus(id) {
+        event.preventDefault()
+        swal({
+            title: "Apakah Anda yakin ?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        }).then((choice) => {
+            if (choice) {
+                swal('Sedang memuat. . .', {
+                    buttons: false,
+                    closeOnClickOutside: false
+                })
+                $('#id-delete').val(id)
+                $('#hapus').submit()
+            }
+        })
+    }
+</script>
 
 </body>
 

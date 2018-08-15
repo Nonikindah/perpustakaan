@@ -88,7 +88,7 @@ class BukuController extends Controller
     }
 
     public function edit(Request $request){
-        $request = Buku::find($request->id);
+        $request = Buku::find(decrypt($request->id));
         return view('admin.editbuku')->with('buku',$request);
     }
 
@@ -143,22 +143,33 @@ class BukuController extends Controller
           'buku_id' => 'required'
         ]);
 
-        $buku = ItemBuku::create([
-            'buku_id' => $request->buku_id
-        ]);
+//        $buku = ItemBuku::create([
+//            'buku_id' => $request->buku_id
+//        ]);
 
-        for ($c = 0; $c <= $request->jumlah_buku; $c++){
-            ItemBuku::create([
+        $buku = ItemBuku::find($request->buku_id);
+
+        for ($c = 1; $c <= $request->jumlah_buku; $c++){
+            $buku = ItemBuku::create([
                 'buku_id' => $buku->buku_id
             ]);
         }
         return redirect()->route('admin.buku.itembuku',['id'=>encrypt($buku->buku_id)])->with('success', 'Berhasil menambahkan item buku ');
     }
 
-    public function printBarcode(){
-        $item = ItemBuku::limit(12)->get();
-    }
+    public function printBarcode(Request $request){
+        $barcode = new BarcodeGenerator();
+        $buku =  ItemBuku::find(decrypt($request->no_induk));
+        $barcode->setText()->$buku;
+        $barcode->setType(BarcodeGenerator::Code128);
+        $barcode->setScale(2);
+        $barcode->setThickness(25);
+        $barcode->setFontSize(10);
+        $code = $barcode->generate();
 
+        return redirect()->route('admin.buku.itembuku',['id'=>encrypt($buku->buku_id)])->with('success', 'Berhasil menambahkan item buku ');
+//        echo '<img src="data:image/png;base64,'.$code.'" />';
+    }
 
     public function cetakdatabuku(Request $request){
         $buku = Buku::all();
@@ -176,5 +187,20 @@ class BukuController extends Controller
         $pdf->setPaper('A4', 'landscape');
         set_time_limit(300);
         return $pdf->stream('LaporanBuku.pdf');
+    }
+
+    public function hapusitem($request){
+       $hapusitem =  ItemBuku::findOrFail($request)->delete();
+//        return redirect()->route('admin.buku.itembuku',['id' =>encrypt($buku->buku_id)])->with('confirmation', 'Berhasil menghapus item buku '.$buku->getBuku()->judul.'dengan nomor induk '.$buku->no_induk);
+
+        return redirect()->route('admin.buku')->with('confirmation', 'Berhasil menghapus item buku ');
+    }
+
+    public function cetaklabel(Request $request){
+        $buku = Buku::find(decrypt($request->id));
+            $pdf = PDF::loadView('admin.labelbuku', ['buku'=>$buku]);
+            $pdf->setPaper('A4','landscape');
+            set_time_limit(300);
+            return $pdf->stream('LabelBuku.pdf');
     }
 }

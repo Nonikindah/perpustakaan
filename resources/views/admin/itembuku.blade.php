@@ -46,7 +46,9 @@
                     </div>
                     <div class="card strpied-tabled-with-hover">
                         <div class="card-header ">
-                            <h4 class="col-md-12 card-title"><b>Item Buku</b><hr></h4>
+                            <h4 class="col-md-12 card-title"><b>Item Buku</b>
+                                <hr>
+                            </h4>
                             <div class="row form-inline">
                                 <div class="card-body table-full-width table-responsive">
                                     <table class="table table-hover table-striped">
@@ -57,6 +59,7 @@
                                         <th>Barcode</th>
                                         <th>Status</th>
                                         <th>Klasifikasi</th>
+                                        <th>Aksi</th>
                                         </thead>
                                         <tbody>
                                         @foreach($buku->getItemBuku(false) as $data)
@@ -73,8 +76,13 @@
                                                         {{$buku->pengarang1}}
                                                     @endif
                                                 </td>
-                                                {{--<td><img src="data:image/png;base64,{{DNS1D::getBarcodePNG(--}}
-       {{--$data->no_induk, 'C39')}}" height="40" width="100"></td>--}}
+                                                <td>
+                                                    @if($data->barcode == null)-
+                                                    @else
+                                                        {{--<img src="data:image/png;base64,{{DNS2D::getBarcodePNG(--}}
+                                                        {{--$data->no_induk, 'EAN')}}" height="40" width="100">--}}
+                                                </td>
+                                                @endif
                                                 <td>
                                                     @if($data->isAvailable() )
                                                         Tersedia
@@ -84,11 +92,14 @@
                                                 </td>
                                                 <td>{{$buku->getKategori(false)->first()->nama}}</td>
                                                 <td>
-                                                    <div class="btn-group">
-                                                        <button type="button" href="#"
+                                                    <form action="{{ route('admin.hapusitem', ['id'=> $data->no_induk])}}"
+                                                          method="post">
+                                                        {{csrf_field()}}
+                                                        {{ method_field('DELETE') }}
+                                                        <button type="submit"
                                                                 class="btn btn-info btn-sm btn-fill btn-danger pull-right">
                                                             <i class="fa fa-trash"></i></button>
-                                                    </div>
+                                                    </form>
                                                 </td>
                                             </tr>
                                         @endforeach

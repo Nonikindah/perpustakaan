@@ -51,7 +51,7 @@
                                             <td>{{$data->kode}}</td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="{{route('datamaster.editrak', ['id'=> $data->id_rak])}}"
+                                                    <a href="{{route('datamaster.editrak', ['id'=> encrypt($data->id_rak)])}}"
                                                        class="btn btn-info btn-sm btn-fill pull-right"><i
                                                                 class="fa fa-pencil"></i></a>
                                                 </div>

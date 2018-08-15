@@ -71,7 +71,7 @@
                                             <td>{{$data->kota}}</td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="{{route('datamaster.editpenerbit', ['id'=> $data->id])}}"
+                                                    <a href="{{route('datamaster.editpenerbit', ['id'=> encrypt($data->id)])}}"
                                                        class="btn btn-info btn-sm btn-fill pull-right"><i
                                                                 class="fa fa-pencil"></i></a>
                                                 </div>

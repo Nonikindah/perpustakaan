@@ -4,10 +4,10 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col-md-10">
+                <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Edit Jenis Buku</h4>
+                            <h4 class="card-title"><b>Edit Jenis Buku</b><hr></h4>
                         </div>
                         <div class="card-body">
                             <form method="POST" action="{{route('datamaster.updatejenisbuku')}}">
@@ -17,8 +17,8 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group" {{ $errors->has('nama') ? 'has-error' : '' }}>
-                                            <label>Nama</label>
-                                            <input type="text" name="nama" class="form-control" value="{{$jenisbuku->nama}}" required autofocus>
+                                            <div class="card-title" style="margin-bottom: 5px">Nama</div>
+                                            <input type="text" name="nama" class="form-control" value="{{$jenisbuku->nama}}" style="border-radius: 0px" required autofocus>
                                             @if ($errors->has('nama'))
                                                 <span class="help-block">{{ $errors->first('nama') }}</span>
                                             @endif
@@ -28,15 +28,15 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group" {{ $errors->has('keterangan') ? 'has-error' : '' }}>
-                                            <label>Keterangan</label>
-                                            <textarea type="text" class="form-control" name="keterangan"  required autofocus>{{$jenisbuku->keterangan}}</textarea>
+                                            <div class="card-title" style="margin-bottom: 5px">Keterangan</div>
+                                            <textarea type="text" class="form-control" name="keterangan" style="border-radius: 0px" required autofocus>{{$jenisbuku->keterangan}}</textarea>
                                             @if ($errors->has('keterangan'))
                                                 <span class="help-block">{{ $errors->first('keterangan') }}</span>
                                             @endif
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary btn-fill pull-right">Update</button>
+                                <button type="submit" class="btn btn-primary btn-fill" style="border-radius: 0px">Update</button>
                             </form>
                         </div>
                     </div>

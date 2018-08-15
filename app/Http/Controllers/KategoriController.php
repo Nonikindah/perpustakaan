@@ -26,7 +26,7 @@ class KategoriController extends Controller
 
     public function editkategori(Request $request)
     {
-        $request = Kategori::find($request->id);
+        $request = Kategori::find(decrypt($request->id));
         return view('datamaster.editklasifikasi')->with('klasifikasi',$request);
 
     }

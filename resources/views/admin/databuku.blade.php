@@ -1,7 +1,6 @@
 @extends('layouts.admin')
 
 @section('content')
-
     <div class="content">
         <div class="container-fluid">
             <div class="row">
@@ -25,7 +24,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                </div>
+
+                            </div>
+
                             <hr>
                                 <div class=" table-full-width table-responsive">
                                     <table class="table table-hover table-striped">
@@ -64,22 +65,21 @@
                                                                 </a>
                                                                 <ul class="dropdown-menu">
                                                                     <a class="dropdown-item" href="{{route('admin.buku.detailbuku',['id'=> encrypt( $data->kode_buku)])}}">Detail</a>
-                                                                    <a class="dropdown-item" href="{{route('admin.buku.editbuku',['id'=>  $data->kode_buku])}}">Edit</a>
+                                                                    <a class="dropdown-item" href="{{route('admin.buku.editbuku',['id'=>  encrypt($data->kode_buku)])}}">Edit</a>
                                                                     <a class="dropdown-item" href="#">Hapus</a>
+                                                                    <a class="dropdown-item" href="{{route('admin.cetaklabel', ['id' =>encrypt($data->kode_buku)])}}">Cetak Label</a>
                                                                 </ul>
-
                                                     </div>
                                                 </td>
                                             </tr>
                                         @endforeach
                                         </tbody>
                                     </table>
-                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

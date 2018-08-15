@@ -60,7 +60,7 @@
                                             <td>{{$data->keterangan}}</td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="{{route('datamaster.editsubyek', ['id'=> $data->id_subyek])}}"
+                                                    <a href="{{route('datamaster.editsubyek', ['id'=> encrypt($data->id_subyek)])}}"
                                                        class="btn btn-info btn-sm btn-fill pull-right"><i
                                                                 class="fa fa-pencil"></i></a>
                                                 </div>

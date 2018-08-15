@@ -25,7 +25,7 @@ class RakController extends Controller
 
     public function editrak(Request $request)
     {
-        $request = Rak::find($request->id);
+        $request = Rak::find(decrypt($request->id));
         return view('datamaster.editrak')->with('rak',$request);
 
     }

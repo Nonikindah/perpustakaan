@@ -30,6 +30,7 @@
                             <div class=" table-full-width table-responsive">
                                 <table class="table table-hover table-striped">
                                     <thead>
+                                    <th><b>ID</b></th>
                                     <th><b>No. Identitas</b></th>
                                     <th><b>Nama Lengkap</b></th>
                                     <th><b>Alamat Lengkap</b></th>
@@ -38,6 +39,7 @@
                                     <tbody>
                                     @foreach($anggota as $key=>$data)
                                         <tr>
+                                            <td>{{$data->id_anggota}}</td>
                                             <td>{{$data->identitas}}</td>
                                             <td>{{$data->nama}}</td>
                                             <td>{{$data->alamat_lengkap}},
@@ -54,12 +56,14 @@
                                                     </a>
                                                     <ul class="dropdown-menu">
                                                         <a class="dropdown-item" href="{{route('admin.detailanggota',['id'=> encrypt( $data->id_anggota)])}}">Detail</a>
-                                                        <a class="dropdown-item" href="{{route('admin.anggota.editanggota',['id'=> $data->id_anggota])}}">Edit</a>
-                                                        <form action="{{ route('admin.deleteanggota', ['id'=> $data->id_anggota])}}" method="post">
+                                                        <a class="dropdown-item" href="{{route('admin.anggota.editanggota',['id'=> encrypt($data->id_anggota)])}}">Edit</a>
+                                                        <a href="" class="dropdown-item" onclick="hapus('{{ $data->id_anggota }}')">Hapus</a>
+                                                        <form id="hapus" action="{{ route('admin.deleteanggota',['id' => $data->id_anggota ])}}" method="post">
                                                             {{csrf_field()}}
                                                             {{ method_field('DELETE') }}
-                                                            <button type="submit" class="dropdown-item">Hapus</button>
+                                                            <input type="hidden" name="id" id="id-delete">
                                                         </form>
+                                                        <a class="dropdown-item" href="{{route('admin.cetakkartu', ['id' =>encrypt($data->id_anggota)])}}">Cetak KTA</a>
                                                     </ul>
 
                                                 </div>

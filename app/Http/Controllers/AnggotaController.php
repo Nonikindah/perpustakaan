@@ -83,7 +83,7 @@ class AnggotaController extends Controller
     }
 
     public function editanggota(Request $request){
-        $request = Anggota::find($request->id);
+        $request = Anggota::find(decrypt($request->id));
         return view('admin.editanggota')->with('anggota',$request);
     }
 
@@ -138,5 +138,13 @@ class AnggotaController extends Controller
         $pdf->setPaper('A4', 'landscape');
         set_time_limit(300);
         return $pdf->stream('LaporanAnggota.pdf');
+    }
+
+    public function cetakkartu(Request $request){
+        $anggota = Anggota::find(decrypt($request->id));
+        $pdf = PDF::loadView('admin.cetakkta', ['anggota'=>$anggota]);
+        $pdf->setPaper([0, 0, 685.98, 396.85]);
+        set_time_limit(300);
+        return $pdf->stream('Kartu Tanda Anggota.pdf');
     }
 }

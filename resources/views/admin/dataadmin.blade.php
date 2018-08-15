@@ -2,23 +2,9 @@
 
 @section('content')
     <script>
-        function konfirmasi() {
-            swal({
-                title: "Apakah Anda yakin ?",
-                text: "Data akan dihapus",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
-                .then((willDelete) => {
-                    if (willDelete) {
-                        swal("Berhasil menghapus", {
-                            icon: "success",
-                        });
-                    } else {
-                        swal("Proses hapus dibatalkan");
-                    }
-                });
+        function myFunction() {
+            if(!confirm("Are You Sure to delete this"))
+                event.preventDefault();
         }
     </script>
     <div class="content">
@@ -59,10 +45,13 @@
                                         @if(Auth::user()->hak_akses == 1 && Auth::user()->id != $data->id )
                                         <td>
                                             <div class="btn-group">
-                                                <button type="submit"
-                                                        href="{{route('admin.admin')}}"
-                                                        class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i
-                                                            class="fa fa-trash"></i></button>
+                                                <a href="" onclick="hapus('{{ $data->id }}')"
+                                                        class="btn btn-info btn-sm btn-fill btn-danger pull-right"><i class="fa fa-trash"></i></a>
+                                                <form id="hapus" action="{{ route('admin.deleteadmin', ['id'=> $data->id])}}" method="post" >
+                                                    {{csrf_field()}}
+                                                    {{ method_field('DELETE') }}
+                                                    <input type="hidden" name="id" id="id-delete">
+                                                </form>
                                             </div>
                                         </td>
                                             @else

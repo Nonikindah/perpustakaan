@@ -25,7 +25,7 @@ class AtributController extends Controller
 
     public function editatribut(Request $request)
     {
-        $request = Atribut::find($request->id);
+        $request = Atribut::find(decrypt($request->id));
         return view('datamaster.editatribut')->with('atribut',$request);
 
     }

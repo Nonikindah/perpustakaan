@@ -27,7 +27,7 @@ class PenerbitController extends Controller
 
     public function editpenerbit(Request $request)
     {
-        $request = Penerbit::find($request->id);
+        $request = Penerbit::find(decrypt($request->id));
         return view('datamaster.editpenerbit')->with('penerbit',$request);
 
     }

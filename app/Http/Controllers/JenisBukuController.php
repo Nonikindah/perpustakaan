@@ -24,7 +24,7 @@ class JenisBukuController extends Controller
 
     public function editjenisbuku(Request $request)
     {
-        $request = JenisBuku::find($request->id);
+        $request = JenisBuku::find(decrypt($request->id));
         return view('datamaster.editjenisbuku')->with('jenisbuku',$request);
 
     }
