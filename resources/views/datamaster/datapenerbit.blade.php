@@ -33,10 +33,10 @@
                                 <div class="col-md-12 ">
                                     <div class="row">
                                         <div class="col-md-10" style="padding-right: 0">
-                                            <form action="{{route('datamaster.searchpenerbit')}}" method="GET">
+                                            <form action="{{route('penerbit')}}" method="GET">
                                                 {{csrf_field()}}
                                                 <button type="submit" class="btn btn-out btn-fill btn-success pull-right" style="margin-right: 7px"><i class="fa fa-search"></i> Cari</button>
-                                                <input type="text" name="id" placeholder="Cari berdasarkan nama penerbit" class="form-control" style="width: 90%">
+                                                <input type="text" name="keyword" placeholder="Cari berdasarkan nama, alamat atau kota penerbit" class="form-control" style="width: 90%">
                                             </form>
                                         </div>
                                         <div class="col-md-2" style="padding-left: 0">

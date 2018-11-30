@@ -57,10 +57,10 @@ Route::get('alert/{AlertType}', 'sweetalertController@alert')->name('alert');
 
 Route::group(['prefix' => 'buku'], function (){
 
-    Route::get('', function (){
-        $buku = \App\Buku::all();
-        return view('admin.databuku',['buku'=> $buku]);
-    })->name('admin.buku');
+    Route::get('', [
+        'uses' => 'BukuController@index',
+        'as' => 'admin.buku'
+    ]);
 
     Route::get('tambah', function () {
         return view('admin.daftarbuku');
@@ -105,11 +105,6 @@ Route::group(['prefix' => 'buku'], function (){
         'as' => 'admin.updatebuku'
     ]);
 
-    Route::get('search',[
-        'uses'=> 'BukuController@searchbuku',
-        'as' => 'admin.searchbuku'
-    ] );
-
     Route::delete('delete/{id}', [
         'uses'=>'BukuController@hapusitem',
         'as' => 'admin.hapusitem'
@@ -123,10 +118,10 @@ Route::group(['prefix' => 'buku'], function (){
 
 Route::group(['prefix' => 'anggota'], function (){
 
-    Route::get('', function (){
-        $anggota = \App\Anggota::paginate(15);
-        return view('admin.dataanggota',['anggota'=> $anggota]);
-    })->name('admin.anggota');
+    Route::get('', [
+        'uses' => 'AnggotaController@index',
+        'as' => 'admin.anggota'
+    ]);
 
    Route::get('tambah', function () {
         return view('admin.daftaranggota');
@@ -171,18 +166,23 @@ Route::group(['prefix' => 'anggota'], function (){
 
 Route::group(['prefix' => 'histori'], function (){
 
-    Route::get('', function (\Symfony\Component\HttpFoundation\Request $request){
-        $pinjam = \App\Pinjam::orderBy('updated_at')->when($request->id, function ($query) use ($request){
-            $query->whereHas('getItem', function ($query) use ($request) {
-                $query->whereHas('getBuku', function ($query) use ($request){
-                    $query->where('judul', 'ILIKE', '%' . $request->id  . '%');
-                });
-            });
-        })->paginate(10)->appends($request->only('id'));
-//        return $pinjam->toSql();
+//    Route::get('', function (\Symfony\Component\HttpFoundation\Request $request){
+//        $pinjam = \App\Pinjam::orderBy('updated_at')->when($request->id, function ($query) use ($request){
+//            $query->whereHas('getItem', function ($query) use ($request) {
+//                $query->whereHas('getBuku', function ($query) use ($request){
+//                    $query->where('judul', 'ILIKE', '%' . $request->id  . '%');
+//                });
+//            });
+//        })->paginate(10)->appends($request->only('id'));
+////        return $pinjam->toSql();
+//
+//        return view('admin.datapinjam',['pinjam'=> $pinjam]);
+//    })->name('admin.pinjam');
 
-        return view('admin.datapinjam',['pinjam'=> $pinjam]);
-    })->name('admin.pinjam');
+    Route::get('', [
+        'uses' => 'PinjamController@index',
+        'as' => 'admin.pinjam'
+    ]);
 
     Route::get('tambah', function () {
         return view('admin.tambahpinjam');
@@ -328,10 +328,15 @@ Route::group(['prefix'=>'admin'], function (){
 
 Route::group(['prefix'=>'datamaster/klasifikasi'], function (){
 
-    Route::get('', function () {
-        $klasifikasi = \App\Kategori::paginate(15);
-        return view('datamaster.dataklasifikasi',['klasifikasi'=> $klasifikasi]);
-    })->name('klasifikasi');
+//    Route::get('', function () {
+//        $klasifikasi = \App\Kategori::paginate(15);
+//        return view('datamaster.dataklasifikasi',['klasifikasi'=> $klasifikasi]);
+//    })->name('klasifikasi');
+
+    Route::get('', [
+        'uses' => 'KategoriController@index',
+        'as' => 'klasifikasi'
+    ]);
 
     Route::get('tambah', function () {
         return view('datamaster.tambahklasifikasi');
@@ -365,10 +370,15 @@ Route::group(['prefix'=>'datamaster/klasifikasi'], function (){
 
 Route::group(['prefix'=>'datamaster/penerbit'], function (){
 
-    Route::get('', function () {
-        $penerbit = \App\Penerbit::paginate(15);
-        return view('datamaster.datapenerbit',['penerbit'=> $penerbit]);
-    })->name('penerbit');
+//    Route::get('', function () {
+//        $penerbit = \App\Penerbit::paginate(15);
+//        return view('datamaster.datapenerbit',['penerbit'=> $penerbit]);
+//    })->name('penerbit');
+
+    Route::get('', [
+        'uses' => 'PenerbitController@index',
+        'as' => 'penerbit'
+    ]);
 
     Route::get('tambah', function () {
         return view('datamaster.tambahpenerbit');
@@ -469,10 +479,15 @@ Route::group(['prefix'=>'datamaster/rak'], function (){
 
 Route::group(['prefix'=>'datamaster/subyek'], function (){
 
-    Route::get('', function () {
-        $subyek= \App\Subyek::paginate(15);
-        return view('datamaster.datasubyek',['subyek'=> $subyek]);
-    })->name('subyek');
+//    Route::get('', function () {
+//        $subyek= \App\Subyek::paginate(15);
+//        return view('datamaster.datasubyek',['subyek'=> $subyek]);
+//    })->name('subyek');
+
+    Route::get('', [
+        'uses' => 'SubyekController@index',
+        'as' => 'subyek'
+    ]);
 
     Route::get('tambah', function () {
         return view('datamaster.tambahsubyek');

@@ -13,11 +13,16 @@ use Illuminate\Support\Facades\File;
 
 class AnggotaController extends Controller
 {
+    public function index(Request $request){
+        $data = Anggota::when($request->keyword, function ($query) use ($request) {
+            $query->where('nama', 'ILIKE', "%{$request->keyword}%")
+                ->orWhere('identitas', 'ILIKE', "%{$request->keyword}%")
+                ->orWhere('alamat_lengkap', 'ILIKE', "%{$request->keyword}%");
+        })->paginate(10)->appends($request->all());
+        return view('admin.dataanggota', ['anggota'=> $data]);
+    }
     public function store(Request $request)
     {
-
-//        dd($request->all());
-
         $this->validate(request(), [
             'nama' => 'required',
             'identitas' => 'required',
@@ -51,8 +56,6 @@ class AnggotaController extends Controller
 
     public function daftaranggota(Request $request)
     {
-
-//        dd($request->all());
 
         $this->validate(request(), [
             'nama' => 'required',

@@ -12,6 +12,34 @@ use Illuminate\Support\Carbon;
 
 class BukuController extends Controller
 {
+    public function index(Request $request)
+    {
+        $data = Buku::when($request->keyword, function ($query) use ($request) {
+            $query->where('judul', 'ILIKE', "%{$request->keyword}%")
+                ->orWhere('pengarang1', 'ILIKE', "%{$request->keyword}%")
+                ->orWhereHas('getKategori', function ($query) use ($request) {
+                    $query->where('nama', 'ILIKE', "%{$request->keyword}%");
+                })->orWhereHas('getPenerbit', function ($query) use ($request){
+                    $query->where('nama', 'ILIKE', "%{$request->keyword}%");
+                });
+        })->paginate(10)->appends($request->all());
+        return view('admin.databuku', ['buku'=> $data]);
+    }
+
+    public function katalog(Request $request)
+    {
+        $data = Buku::when($request->keyword, function ($query) use ($request) {
+            $query->where('judul', 'ILIKE', "%{$request->keyword}%")
+                ->orWhere('pengarang1', 'ILIKE', "%{$request->keyword}%")
+                ->orWhereHas('getKategori', function ($query) use ($request) {
+                    $query->where('nama', 'ILIKE', "%{$request->keyword}%");
+                })->orWhereHas('getPenerbit', function ($query) use ($request){
+                    $query->where('nama', 'ILIKE', "%{$request->keyword}%");
+                });
+        })->paginate(10)->appends($request->all());
+        return view('katalog', ['buku'=> $data]);
+    }
+    
     public function store(Request $request)
     {
         $this->validate(request(), [
@@ -162,22 +190,9 @@ class BukuController extends Controller
 
     }
 
-
-    public function imageExistStatus1($request)
-    {
-        $fimage1 = $request->file('gambar');
-        $thisName1 = $fimage1->getClientOriginalName() . '' . str_random(4);
-        $uplodePath1 = 'public/buku/' . str_slug($thisName1, '-') . '.' . $request->gambar->getClientOriginalExtension();
-        $fimage1->move($uplodePath1, $thisName1);
-        $url1 = $uplodePath1 . $thisName1;
-
-        return $url1;
-    }
-
-    public function searchbuku(Request $request)
-    {
-        $buku = Buku::where('judul', 'LIKE', '%' . $request->id . '%')->paginate(10);
-        return view('admin.databuku', ['buku' => $buku]);
+    public function usersearch(Request $request){
+        $buku = Buku::where('judul', 'ILIKE', '%'.$request->cari.'%')->paginate(10);
+        return view('katalog', ['buku'=> $buku]);
     }
 
     public function usersearch(Request $request)

@@ -7,6 +7,14 @@ use App\Subyek;
 
 class SubyekController extends Controller
 {
+    public function index(Request $request){
+        $data = Subyek::when($request->keyword, function ($query) use ($request) {
+            $query->where('nama', 'ILIKE', "%{$request->keyword}%")
+                ->orWhere('keterangan', 'ILIKE', "%{$request->keyword}%");
+        })->paginate(10)->appends($request->all());
+        return view('datamaster.datasubyek', ['subyek'=> $data]);
+    }
+
     public function daftarsubyek(Request $request)
     {
         $this->validate(request(), [
@@ -44,8 +52,8 @@ class SubyekController extends Controller
         return redirect()->route('subyek')->with('confirmation', 'Subyek berhasil dihapus!');
     }
 
-    public function searchsubyek(Request $request){
-        $subyek = Subyek::where('nama', 'LIKE', '%'.$request->id.'%')->paginate(10);
-        return view('datamaster.datasubyek', ['subyek'=> $subyek]);
-    }
+//    public function searchsubyek(Request $request){
+//        $subyek = Subyek::where('nama', 'ILIKE', '%'.$request->id.'%')->paginate(10);
+//        return view('datamaster.datasubyek', ['subyek'=> $subyek]);
+//    }
 }

@@ -8,10 +8,21 @@ use Illuminate\Http\Request;
 use PDF;
 use App\Pinjam;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Carbon;
+//use Illuminate\Support\Carbon;
 
 class PinjamController extends Controller
 {
+    public function index(Request $request){
+        $data = Pinjam::when($request->keyword, function ($query) use ($request) {
+            $query->WhereHas('getAnggota', function ($query) use ($request){
+                    $query->where('nama', 'ILIKE', "%{$request->keyword}%");
+            })->orWhereHas('getItem.getBuku', function ($query) use ($request){
+                $query->where('judul', 'ILIKE', "%{$request->keyword}%");
+            });
+        })->paginate(10)->appends($request->all());
+        return view('admin.datapinjam', ['pinjam'=> $data]);
+    }
+
     public function store(Request $request)
     {
         $this->validate(request(), [
@@ -30,18 +41,6 @@ class PinjamController extends Controller
         ]);
 
         return redirect()->route('admin.pinjam')->with('success', 'Berhasil menambahkan data peminjaman');
-    }
-
-    public function searchpinjam(Request $request)
-    {
-        $pinjam = Pinjam::whereHas('getItem', function ($query) use ($request) {
-            $query->where('judul', 'LIKE', '%' . $request->id . '%');
-        })->paginate(10);
-        dd($pinjam);
-        //dd($anggota);
-        //$anggota = Anggota::search($request->id)->paginate(15);
-        return view('admin.datapinjam', ['pinjam' => $pinjam]);
-
     }
 
     public function perpanjangan(Request $request)
@@ -81,5 +80,17 @@ class PinjamController extends Controller
         set_time_limit(300);
         return $pdf->stream('LaporanHistori.pdf');
     }
+
+    //    public function searchpinjam(Request $request)
+//    {
+//        $pinjam = Pinjam::whereHas('getItem', function ($query) use ($request) {
+//            $query->where('judul', 'ILIKE', '%' . $request->id . '%');
+//        })->paginate(10);
+//        dd($pinjam);
+//        //dd($anggota);
+//        //$anggota = Anggota::search($request->id)->paginate(15);
+//        return view('admin.datapinjam', ['pinjam' => $pinjam]);
+//
+//    }
 
 }

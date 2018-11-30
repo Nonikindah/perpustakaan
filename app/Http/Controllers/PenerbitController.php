@@ -7,6 +7,15 @@ use App\Penerbit;
 
 class PenerbitController extends Controller
 {
+    public function index(Request $request){
+        $data = Penerbit::when($request->keyword, function ($query) use ($request) {
+            $query->where('nama', 'ILIKE', "%{$request->keyword}%")
+                ->orWhere('alamat', 'ILIKE', "%{$request->keyword}%")
+                ->orWhere('kota', 'ILIKE', "%{$request->keyword}%");
+        })->paginate(10)->appends($request->all());
+        return view('datamaster.datapenerbit', ['penerbit'=> $data]);
+    }
+
     public function daftarpenerbit(Request $request)
     {
         $this->validate(request(), [
@@ -46,9 +55,9 @@ class PenerbitController extends Controller
         return redirect()->route('penerbit')->with('confirmation', 'Penerbit berhasil dihapus!');
     }
 
-    public function searchpenerbit(Request $request){
-        $penerbit = Penerbit::where('nama', 'LIKE', '%'.$request->id.'%')->paginate(10);
-        return view('datamaster.datapenerbit', ['penerbit'=> $penerbit]);
-    }
+//    public function searchpenerbit(Request $request){
+//        $penerbit = Penerbit::where('nama', 'ILIKE', '%'.$request->id.'%')->paginate(10);
+//        return view('datamaster.datapenerbit', ['penerbit'=> $penerbit]);
+//    }
 
 }

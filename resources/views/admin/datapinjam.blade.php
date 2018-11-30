@@ -21,12 +21,12 @@
                                 <div class="col-md-12 ">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <form action="{{url()->current()}}" method="GET">
+                                            <form action="{{route('admin.pinjam')}}" method="GET">
                                                 <button type="submit"
                                                         class="btn btn-out btn-fill btn-success pull-right"
                                                         style="margin-right: 7px"><i class="fa fa-search"></i> Cari
                                                 </button>
-                                                <input type="text" name="id" placeholder="Cari berdasarkan judul"
+                                                <input type="text" name="keyword" placeholder="Cari berdasarkan Nama Peminjam atau Judul Buku"
                                                        class="form-control pull-right" style="width: 90%">
                                             </form>
                                         </div>

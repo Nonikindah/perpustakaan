@@ -45,7 +45,7 @@ class Buku extends Model
     public function getKategori($queryReturn = true)
     {
         $data = $this->belongsTo('App\Kategori', 'kategori_id');
-        return ($queryReturn ? $data : $data->get());
+        return ($queryReturn ? $data : $data->first());
     }
 
     /**
@@ -99,7 +99,7 @@ class Buku extends Model
      */
     public function getPenerbit($queryReturn = true){
         $data = $this->belongsTo('App\Penerbit','penerbit_id');
-        return ($queryReturn ? $data : $data->get());
+        return ($queryReturn ? $data : $data->first());
     }
 
     /**
