@@ -8,7 +8,7 @@
                     <div class="card strpied-tabled-with-hover" style="padding-right: 20px">
                         <div class="card-header ">
                             <div class="row form-inline">
-                                <h4 class="col-md-6 card-title "><b>Detail Anggota</b><hr></h4>
+                                <h4 class="col-md-12 card-title "><b>Detail Anggota</b><hr></h4>
                                 <div class="card-body table-full-width table-responsive">
 
                                     <br>

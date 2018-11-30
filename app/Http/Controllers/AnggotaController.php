@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Anggota;
 use Laravel\Scout;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\File;
 
 
 class AnggotaController extends Controller
@@ -88,17 +90,32 @@ class AnggotaController extends Controller
     }
 
     public function updateanggota(Request $request){
-        $this->validate($request, [
-            'nama' => 'required',
-            'identitas' => 'required',
-            'kelurahan_id' => 'required',
-            'alamat_lengkap' => 'required',
-            'jenkel' => 'required',
-            'pekerjaan' => 'required',
-            'telp' => 'required'
+
+        $anggota = Anggota::findOrFail($request->id_anggota);
+
+       $anggota->update( [
+            'nama' => $request->nama,
+            'identitas' => $request->identitas,
+            'kelurahan_id' => $request->kelurahan_id,
+            'alamat_lengkap' => $request->alamat_lengkap,
+            'jenkel' => $request->jenkel,
+            'pekerjaan' => $request->pekerjaan,
+            'telp' => $request->telp,
+           'foto' => $request->temp_gambar
         ]);
-        $anggota = Anggota::find($request->id_anggota)->update($request->all());
-        
+
+        if (Input::has('foto')) {
+            $file = $anggota->foto;
+            File::delete($file);
+
+            $fillnames = $request->foto->getClientOriginalName() . '' . str_random(4);
+            $filename = '/anggota/'
+                . str_slug($fillnames, '-') . '.' . $request->foto->getClientOriginalExtension();
+            $request->foto->storeAs('public', $filename);
+            $anggota->update([
+                'foto' =>  $filename
+            ]);
+        }
         return redirect()->route('admin.anggota')->with('success', 'Berhasil mengubah data anggota');
     }
 
@@ -108,7 +125,7 @@ class AnggotaController extends Controller
     }
 
     public function searchanggota(Request $request){
-        $anggota = Anggota::where('nama', 'ILIKE', '%'.$request->id.'%')->paginate(10);
+        $anggota = Anggota::where('nama', 'LIKE', '%'.$request->id.'%')->paginate(10);
         //dd($anggota);
         //$anggota = Anggota::search($request->id)->paginate(15);
         return view('admin.dataanggota', ['anggota'=> $anggota]);
@@ -132,7 +149,7 @@ class AnggotaController extends Controller
 
     public function cetakanggotapertangggal(Request $request){
         $dari = Carbon::parse($request->dari_tgl);
-        $sampai = Carbon::parse($request->sampai_tgl);
+        $sampai = Carbon::parse($request->sampai_tgl)->addHours(23)->addMinutes(59)->addSeconds(59);
         $anggota = Anggota::whereBetween('created_at', [$dari, $sampai])->get();
         $pdf = PDF::loadView('admin.pdfanggota', ['anggota'=>$anggota]);
         $pdf->setPaper('A4', 'landscape');

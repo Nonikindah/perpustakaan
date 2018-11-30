@@ -32,7 +32,8 @@
                                 <h2 class="bnr-sub-title">Cari</h2>
                                 <h4 class="bnr-para">Masukkan kata kunci dari judul, pengarang atau subyek buku</h4><br>
                                 <br>
-                                <form action="{{route('buku.carikatalog')}}" method="get" role="form" class="contactForm">
+                                <form action="{{route('buku.carikatalog')}}" method="get" >
+                                    {{csrf_field()}}
                                     <div class="col-md-6 padding-right-zero col-md-offset-3">
                                         <div class="form-group">
                                             <input type="text" name="cari" class="form-control" id="name"

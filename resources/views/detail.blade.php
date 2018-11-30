@@ -32,22 +32,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="blog-info">
-                        <h2>Ketersediaan</h2>
-                    </div>
-                    <table class="table table-bordered">
-                        <tbody>
-                        <tr>
-                            <td>0979744</td>
-                            <td>0979744</td>
-                            <td>My Library</td>
-                            <td>Tersedia</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-md-4">
+                <div class="col-md-8">
                     <div class="blog-info">
                         <h2>Informasi Detail</h2>
                     </div>
@@ -71,7 +56,7 @@
                         </tr>
                         <tr>
                             <th>Jumlah Buku</th>
-                            <td></td>
+                            <td>{{\App\ItemBuku::where('buku_id',$buku->kode_buku)->get()->count()}}</td>
                         </tr>
                         <tr>
                             <th>Abstrak</th>

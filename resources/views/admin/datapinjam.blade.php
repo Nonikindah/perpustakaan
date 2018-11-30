@@ -7,97 +7,11 @@
                 <div class="col-md-12">
                     <div class="btn-group">
                         <div class=" form-inline">
-                            <a class="btn btn-primary btn-fill" style="border-radius: 0px" data-toggle="collapse"
-                               href="#collapseExample" role="button" aria-expanded="false"
-                               aria-controls="collapseExample">Tambah Pinjam</a>
+                            <a class="btn btn-primary btn-fill pull-right"
+                               href="{{route('admin.view.peminjaman')}}" >Tambah Pinjam</a>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="collapse" id="collapseExample">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <form class="form-horizontal" method="POST"
-                                              action="{{route('admin.pinjam.store')}}">
-                                            @csrf
-                                            {{ method_field('put') }}
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <div class="card-title" style="margin-bottom: 5px">No. Anggota
-                                                        </div>
-                                                        <input type="text" class="form-control" name="anggota_id"
-                                                               value="{{ old('anggota_id') }}"
-                                                               style="border-radius: 0px" required
-                                                               autofocus>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <div class="card-title" style="margin-bottom: 5px">No Induk Buku
-                                                            1
-                                                        </div>
-                                                        <input type="text" class="form-control" name="item_id"
-                                                               value="{{old('item_id')}}" style="border-radius: 0px"
-                                                               required autofocus>
 
-                                                        @if($errors->has('item_id'))
-                                                            <span class="alert-danger"></span>
-                                                            {{$errors->first('item_id')}}
-                                                        @endif
-
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <div class="card-title" style="margin-bottom: 5px">No Induk Buku
-                                                            2
-                                                        </div>
-                                                        <input type="text" class="form-control" name="item_id2"
-                                                               value="{{old('item_id')}}" style="border-radius: 0px"
-                                                               autofocus>
-
-                                                        @if($errors->has('item_id'))
-                                                            <span class="alert-danger"></span>
-                                                            {{$errors->first('item_id')}}
-                                                        @endif
-
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <div class="card-title" style="margin-bottom: 5px">No Induk Buku
-                                                            3
-                                                        </div>
-                                                        <input type="text" class="form-control" name="item_id3"
-                                                               value="{{old('item_id')}}" style="border-radius: 0px"
-                                                               autofocus>
-
-                                                        @if($errors->has('item_id'))
-                                                            <span class="alert-danger"></span>
-                                                            {{$errors->first('item_id')}}
-                                                        @endif
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    NB.  Peminjaman buku min 1 & maks 3 item buku
-                                                </div>
-                                            </div>
-                                            <input type="hidden" name="admin_id" value="{{ Auth::user()->id }}" required
-                                                   autofocus>
-                                            <button type="submit" class="btn btn-primary btn-fill"
-                                                    style="border-radius: 0px">Tambah
-                                            </button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="card strpied-tabled-with-hover">
                         <div class="card-header ">
                             <div class="row form-inline">
@@ -124,19 +38,21 @@
                         <div class="card-body table-full-width table-responsive">
                             <table class="table table-hover table-striped">
                                 <thead>
+                                <?php $no= 1;?>
                                 <th>No</th>
-                                <th>Kode Buku</th>
+                                <th>Item Buku</th>
                                 <th>Nama Anggota</th>
                                 <th>Judul Buku</th>
                                 <th>Tanggal Pinjam</th>
                                 <th>Tanggal Harus Kembali</th>
                                 <th>Tanggal Kembali</th>
                                 <th>Status</th>
+                                <th>Aksi</th>
                                 </thead>
                                 <tbody>
                                 @foreach($pinjam as $data)
                                     <tr>
-                                        <td>{{$data->id}}</td>
+                                        <td>  <?php echo $no++;?></td>
                                         <td>{{$data->getItem(false)->no_induk or ''}}</td>
                                         @if(empty($data->getAnggota(false)))
                                             <td>-</td>
@@ -151,10 +67,21 @@
                                             <td>Dipinjam</td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="{{route('admin.pinjam.perpanjangan', ['id' => encrypt($data->id)])}}"
-                                                       class="btn btn-info btn-sm btn-fill pull-right">Perpanjang</a>
-                                                    <a href="{{route('admin.pinjam.pengembalian', ['id' => encrypt($data->id)])}}"
-                                                       class="btn btn-info btn-sm btn-fill btn-danger pull-right">Pengembalian</a>
+                                                    {{--button perpanjangan--}}
+                                                    <a href="" onclick="perpanjangan('{{ encrypt($data->id) }}','{{$data->getItem(false)->getBuku(false)->judul}}')"  class="btn btn-info btn-sm btn-fill pull-right">Perpanjangan</a>
+                                                    <form id="perpanjangan" action="{{route('admin.pinjam.perpanjangan', ['id' => encrypt($data->id)])}}" method="post">
+                                                        {{csrf_field()}}
+                                                        {{ method_field('get') }}
+                                                        <input type="hidden" name="id" id="id-perpanjangan">
+                                                    </form>
+
+                                                    {{--button pengembalian--}}
+                                                    <a href="" onclick="pengembalian('{{encrypt($data->id)}}','{{$data->getItem(false)->getBuku(false)->judul}}')" class="btn btn-info btn-sm btn-fill btn-danger pull-right">Pengembalian</a>
+                                                    <form id="pengembalian" action="{{route('admin.pinjam.pengembalian', ['id' => encrypt($data->id)])}}" method="post">
+                                                        {{csrf_field()}}
+                                                        {{ method_field('get') }}
+                                                        <input type="hidden" name="id" id="id-pengembalian">
+                                                    </form>
                                                 </div>
                                             </td>
                                         @else
@@ -180,3 +107,43 @@
     </div>
 
 @endsection
+
+<script>
+    function perpanjangan(id, judul) {
+        event.preventDefault(id)
+        swal({
+            title: "Apakah Anda yakin memperpanjang peminjaman buku " + judul + "?",
+            icon: "info",
+            buttons: true,
+            confirm: true,
+        }).then((choice) => {
+            if (choice) {
+                swal('Sedang memuat. . .', {
+                    buttons: false,
+                    closeOnClickOutside: false
+                })
+                $('#id-perpanjangan').val(id)
+                $('#perpanjangan').submit()
+            }
+        })
+    }
+
+    function pengembalian(id, judul) {
+        event.preventDefault(id)
+        swal({
+            title: "Apakah Anda yakin mengembalikan buku " + judul + "?",
+            icon: "info",
+            buttons: true,
+            dangerMode: true,
+        }).then((choice) => {
+            if (choice) {
+                swal('Sedang memuat. . .', {
+                    buttons: false,
+                    closeOnClickOutside: false
+                })
+                $('#id-pengembalian').val(id)
+                $('#pengembalian').submit()
+            }
+        })
+    }
+</script>

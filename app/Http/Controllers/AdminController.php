@@ -47,17 +47,19 @@ class AdminController extends Controller
     }
 
     public function update(Request $request){
-        $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required',
-            'alamat_lengkap' => 'required',
-            'jenkel' => 'required',
-            'telp' => 'required',
-            'kelurahan_id' => 'required',
-            'hak_akses' =>'required'
-        ]);
-        $admin = User::find($request->id);
 
+        $admin = User::findOrFail($request->id);
+
+        $admin->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'alamat_lengkap' => $request->alamat_lengkap,
+            'jenkel' => $request->jenkel,
+            'telp' => $request->telp,
+            'kelurahan_id' => $request->kelurahan_id,
+            'hak_akses' =>$request->hak_akses
+        ]);
+        
         return redirect()->route('admin.admin')->with('success', 'Berhasil mengubah data admin');
     }
     public function delete($request){
@@ -98,7 +100,7 @@ class AdminController extends Controller
 
     public function cetakadminpertangggal(Request $request){
         $dari = Carbon::parse($request->dari_tgl);
-        $sampai = Carbon::parse($request->sampai_tgl);
+        $sampai = Carbon::parse($request->sampai_tgl)->addHours(23)->addMinutes(59)->addSeconds(59);
         $admin = User::whereBetween('created_at', [$dari, $sampai])->get();
         $pdf = PDF::loadView('admin.pdfadmin', ['admin'=>$admin]);
         $pdf->setPaper('A4', 'landscape');

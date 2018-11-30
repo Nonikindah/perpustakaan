@@ -56,7 +56,7 @@
                                         <th>Nomer Induk</th>
                                         <th>Judul</th>
                                         <th>Pengarang</th>
-                                        <th>Barcode</th>
+                                        {{--<th>Barcode</th>--}}
                                         <th>Status</th>
                                         <th>Klasifikasi</th>
                                         <th>Aksi</th>
@@ -76,13 +76,13 @@
                                                         {{$buku->pengarang1}}
                                                     @endif
                                                 </td>
-                                                <td>
-                                                    @if($data->barcode == null)-
-                                                    @else
+                                                {{--<td>--}}
+                                                    {{--@if($data->barcode == null)---}}
+                                                    {{--@else--}}
                                                         {{--<img src="data:image/png;base64,{{DNS2D::getBarcodePNG(--}}
                                                         {{--$data->no_induk, 'EAN')}}" height="40" width="100">--}}
-                                                </td>
-                                                @endif
+                                                {{--</td>--}}
+                                                {{--@endif--}}
                                                 <td>
                                                     @if($data->isAvailable() )
                                                         Tersedia

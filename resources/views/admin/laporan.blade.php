@@ -22,7 +22,7 @@
                                         </div>
                                         <div class="card-body" style="background:#4fb783">
                                             <a href="{{route('admin.cetakdataanggota')}}" style="color: #ffffff">Cetak Anggota</a>
-                                            <a href="{{route('admin.cetakanggotapertanggal')}}" style="color: #ffffff; margin-left: 55px">Cetak Pertanggal</a>
+                                            <a href="{{route('admin.cetakanggotapertanggal')}}" style="color: #ffffff; margin-left: 195px">Cetak Pertanggal</a>
                                         </div>
                                     </div>
                                 </div>
@@ -35,7 +35,7 @@
                                         </div>
                                         <div class="card-body" style="background:#51adcf">
                                             <a href="{{route('admin.cetakdatabuku')}}" style="color: #ffffff">Cetak Buku</a>
-                                            <a href="{{route('admin.cetakbukupertanggal')}}" style="color: #ffffff; margin-left: 80px">Cetak Pertanggal</a>
+                                            <a href="{{route('admin.cetakbukupertanggal')}}" style="color: #ffffff; margin-left: 215px">Cetak Pertanggal</a>
                                         </div>
                                     </div>
                                 </div>
@@ -50,7 +50,7 @@
                                         </div>
                                         <div class="card-body" style="background:#ea5455">
                                             <a href="{{route('admin.cetakdatahistori')}}" style="color: #ffffff">Cetak Peminjaman</a>
-                                            <a href="{{route('admin.cetakpeminjaman')}}" style="color: #ffffff; margin-left: 25px">Cetak Pertanggal</a>
+                                            <a href="{{route('admin.cetakpeminjaman')}}" style="color: #ffffff; margin-left: 150px">Cetak Pertanggal</a>
                                         </div>
                                     </div>
                                 </div>
@@ -63,7 +63,7 @@
                                         </div>
                                         <div class="card-body" style="background:#df8931">
                                             <a href="{{route('admin.cetakdataadmin')}}" style="color: #ffffff">Cetak Admin</a>
-                                            <a href="{{route('admin.cetakadminpertanggal')}}" style="color: #ffffff; margin-left: 70px">Cetak Pertanggal</a>
+                                            <a href="{{route('admin.cetakadminpertanggal')}}" style="color: #ffffff; margin-left: 200px">Cetak Pertanggal</a>
                                         </div>
                                     </div>
                                 </div>
@@ -77,3 +77,5 @@
     </div>
 
 @endsection
+
+

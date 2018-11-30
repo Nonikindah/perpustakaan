@@ -48,7 +48,7 @@ class KategoriController extends Controller
     }
 
     public function searchkategori(Request $request){
-        $klasifikasi = Kategori::where('nama', 'ILIKE', '%'.$request->id.'%')->paginate(10);
+        $klasifikasi = Kategori::where('nama', 'LIKE', '%'.$request->id.'%')->paginate(10);
         return view('datamaster.dataklasifikasi', ['klasifikasi'=> $klasifikasi]);
     }
 }

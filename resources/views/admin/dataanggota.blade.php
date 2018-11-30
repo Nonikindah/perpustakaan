@@ -30,8 +30,11 @@
                             <div class=" table-full-width table-responsive">
                                 <table class="table table-hover table-striped">
                                     <thead>
-                                    <th><b>ID</b></th>
-                                    <th><b>No. Identitas</b></th>
+                                    <?php
+                                            $no=1;
+                                    ?>
+                                    <th><b>No.</b></th>
+                                    <th><b>Identitas (KTP/SIM/KTM)</b></th>
                                     <th><b>Nama Lengkap</b></th>
                                     <th><b>Alamat Lengkap</b></th>
                                     <th><b>No. HP/Telp</b></th>
@@ -39,7 +42,7 @@
                                     <tbody>
                                     @foreach($anggota as $key=>$data)
                                         <tr>
-                                            <td>{{$data->id_anggota}}</td>
+                                            <td><?php echo $no++;?></td>
                                             <td>{{$data->identitas}}</td>
                                             <td>{{$data->nama}}</td>
                                             <td>{{$data->alamat_lengkap}},

@@ -45,7 +45,7 @@ class SubyekController extends Controller
     }
 
     public function searchsubyek(Request $request){
-        $subyek = Subyek::where('nama', 'ILIKE', '%'.$request->id.'%')->paginate(10);
+        $subyek = Subyek::where('nama', 'LIKE', '%'.$request->id.'%')->paginate(10);
         return view('datamaster.datasubyek', ['subyek'=> $subyek]);
     }
 }

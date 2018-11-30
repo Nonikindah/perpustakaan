@@ -67,7 +67,7 @@
                 <li class="{{strpos(Route::currentRouteName(),'dmin.admin') ? 'active' : ''}}">
                     <a class="nav-link" href="{{route('admin.admin')}}">
                         <i class="nc-icon nc-paper-2"></i>
-                        <p>Data Admin</p>
+                        <p>User Aplikasi</p>
                     </a>
                 </li>
                 <li class="{{strpos(Route::currentRouteName(), 'dmin.pinjam') ? 'active' : ''}}">

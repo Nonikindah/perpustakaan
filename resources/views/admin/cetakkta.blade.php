@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>Document</title>
+    <title>Cetak KTA</title>
     <style>
         body {
             background: url("https://wallpaperbrowse.com/media/images/546779.jpg");
@@ -38,7 +38,7 @@
                 <div class="row form-inline">
                     <div class="row" style="margin-left: 10px">
                         <div class="col-xs-2">
-                            <img src="img/icon/logo.png" width="65%">
+                            <img src="img/icon/logo.png" width="60%">
                         </div>
                             <div class="row card-title" align="center"
                                  style="font-family:'Arial Rounded MT Bold'; font-size: 22px">

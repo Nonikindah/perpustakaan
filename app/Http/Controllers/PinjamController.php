@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Carbon;
+//use Carbon;
 
 use Illuminate\Http\Request;
 use PDF;
@@ -25,28 +25,9 @@ class PinjamController extends Controller
             'item_id' => $request->item_id,
             'anggota_id' => $request->anggota_id,
             'admin_id' => $request->admin_id,
-            'tgl_pinjam' => Carbon\Carbon::now(),
-            'tgl_haruskembali' => Carbon\Carbon::parse(Carbon\Carbon::now())->addDays(3)
+            'tgl_pinjam' => Carbon::now(),
+            'tgl_haruskembali' => Carbon::parse(Carbon::now())->addDays(3)
         ]);
-
-        if ($request->item_id2 != null) {
-            Pinjam::create([
-                'item_id' => $request->item_id2,
-                'anggota_id' => $request->anggota_id,
-                'admin_id' => $request->admin_id,
-                'tgl_pinjam' => Carbon\Carbon::now(),
-                'tgl_haruskembali' => Carbon\Carbon::parse(Carbon\Carbon::now())->addDays(3)
-            ]);
-        }
-        if ($request->item_id3 != null) {
-            Pinjam::create([
-                'item_id' => $request->item_id3,
-                'anggota_id' => $request->anggota_id,
-                'admin_id' => $request->admin_id,
-                'tgl_pinjam' => Carbon\Carbon::now(),
-                'tgl_haruskembali' => Carbon\Carbon::parse(Carbon\Carbon::now())->addDays(3)
-            ]);
-        }
 
         return redirect()->route('admin.pinjam')->with('success', 'Berhasil menambahkan data peminjaman');
     }
@@ -54,7 +35,7 @@ class PinjamController extends Controller
     public function searchpinjam(Request $request)
     {
         $pinjam = Pinjam::whereHas('getItem', function ($query) use ($request) {
-            $query->where('judul', 'ILIKE', '%' . $request->id . '%');
+            $query->where('judul', 'LIKE', '%' . $request->id . '%');
         })->paginate(10);
         dd($pinjam);
         //dd($anggota);
@@ -93,7 +74,7 @@ class PinjamController extends Controller
 
     public function cetakpertangggal(Request $request){
         $dari = Carbon::parse($request->dari_tgl);
-        $sampai = Carbon::parse($request->sampai_tgl);
+        $sampai = Carbon::parse($request->sampai_tgl)->addHours(23)->addMinutes(59)->addSeconds(59);
         $pinjam = Pinjam::whereBetween('created_at', [$dari, $sampai])->get();
         $pdf = PDF::loadView('admin.pdfhistori', ['pinjam'=>$pinjam]);
         $pdf->setPaper('A4', 'landscape');

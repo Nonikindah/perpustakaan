@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>Document</title>
+    <title>Cetak Admin</title>
     <style>
         body {
             background: white;
@@ -47,13 +47,12 @@
                                         21228</p>
                                     <hr style="border-top: 1px solid #333333">
                                     <p style="font-family:'Arial Rounded MT Bold'; font-size: 18px">Laporan Data Admin</p>
-                                    <p style="font-family:'Arial Rounded MT Bold'; font-size: 16px">Jumlah Admin
-                                        : {{\App\User::all()->count()}}</p>
                                 </div>
                             </div>
                             <table class="table table-bordered" style="border-color:black;">
                                 <thead>
                                 <tr>
+                                    <?php $no = 1;?>
                                     <th scope="col">No</th>
                                     <th scope="col">Nama Lengkap</th>
                                     <th scope="col">Email</th>
@@ -65,7 +64,7 @@
                                 <tbody>
                                 @foreach($admin as $key=>$data)
                                     <tr>
-                                        <td>{{$data->id}}</td>
+                                        <td><?php echo $no++;?></td>
                                         <td>{{$data->name}}</td>
                                         <td>{{$data->email}}</td>
                                         <td> {{$data->getKelurahan(false)->nama}},

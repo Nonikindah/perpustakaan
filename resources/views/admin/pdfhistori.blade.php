@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>Document</title>
+    <title>Cetak Data Peminjaman</title>
     <style>
         body {
             background: white;
@@ -55,13 +55,12 @@
                                         21228</p>
                                     <hr style="border-top: 1px solid #333333">
                                     <p style="font-family:'Arial Rounded MT Bold'; font-size: 18px">Laporan Data Peminjaman</p>
-                                    <p style="font-family:'Arial Rounded MT Bold'; font-size: 16px">Jumlah Peminjaman
-                                        : {{\App\Pinjam::all()->count()}}</p>
                                 </div>
                             </div>
                             <table class="table table-bordered">
                                 <thead>
                                 <tr>
+                                  <?php $no=1;?>
                                     <th scope="col">No</th>
                                     <th scope="col">Kode Buku</th>
                                     <th scope="col">ID Anggota</th>
@@ -74,10 +73,19 @@
                                 <tbody>
                                 @foreach($pinjam as $key=>$data)
                                     <tr>
-                                        <td>{{$data->id}}</td>
+                                        <td><?php echo $no++;?></td>
                                         <td>{{$data->getItem(false)->no_induk or ''}}</td>
-                                        <td>{{$data->getAnggota(false)->id_anggota}}</td>
-                                        <td>{{$data->getAnggota(false)->nama}}</td>
+                                        @if(empty($data->getAnggota(false)))
+                                            <td>-</td>
+                                        @else
+                                            <td>{{$data->getAnggota(false)->id_anggota}}</td>
+                                        @endif
+
+                                        @if(empty($data->getAnggota(false)))
+                                            <td>-</td>
+                                        @else
+                                            <td>{{$data->getAnggota(false)->nama}}</td>
+                                        @endif
                                         <td>{{$data->getItem(false)->getBuku(false)->judul or ''}}</td>
                                         <td>{{$data->tgl_pinjam}}</td>
                                         <td>{{$data->tgl_kembali}}</td>

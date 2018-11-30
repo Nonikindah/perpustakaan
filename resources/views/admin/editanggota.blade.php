@@ -24,14 +24,7 @@
                             <form enctype="multipart/form-data" action="{{ route('admin.updateanggota')}}" method="post">
                                 {{csrf_field()}}
                                 {{ method_field('put') }}
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <div class="card-title" style="margin-bottom: 5px">ID. Anggota</div>
-                                            <input type="text" class="form-control pull-right" disabled="">
-                                        </div>
-                                    </div>
-                                </div>
+                                
                                 <input type="hidden" value="{{$anggota->id_anggota}}" name="id_anggota">
                                 <div class="row">
                                     <div class="col-md-12">
@@ -129,7 +122,9 @@
                                             <img src="{{ asset('storage/'.$anggota->foto) }}">
                                             @else
                                                 <img src="{{asset('img/icon/defaultuser.png')}}" width="10%" height="10%">
-                                            <input type="file" name="gambar" class="form-control-file"  >
+
+                                                <input name="temp_gambar" value="{{$anggota->foto}}" type="hidden">
+                                            <input type="file" name="foto" class="form-control-file"  >
                                           @endif
                                         </div>
                                     </div>
@@ -142,5 +137,4 @@
                 </div>
             </div>
         </div>
-    </div>
 @endsection

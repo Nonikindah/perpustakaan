@@ -184,9 +184,14 @@ Route::group(['prefix' => 'histori'], function (){
         return view('admin.datapinjam',['pinjam'=> $pinjam]);
     })->name('admin.pinjam');
 
-//    Route::get('histori', function () {
-//        return view('admin.historipinjaman');
-//    })->name('admin.pinjam.historipinjaman');
+    Route::get('tambah', function () {
+        return view('admin.tambahpinjam');
+    })->name('admin.view.peminjaman');
+
+    Route::put('daftar', [
+        'uses'=>'PinjamController@store',
+        'as' => 'admin.tambah.peminjaman'
+    ]);
 
     Route::put('store',[
        'uses'=>'PinjamController@store',
@@ -568,3 +573,6 @@ Route::group(['prefix'=>'datamaster/jenisbuku'], function (){
 Route::get('coba', function () {
     return view('coba');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

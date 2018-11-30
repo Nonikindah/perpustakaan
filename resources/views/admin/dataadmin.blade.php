@@ -28,7 +28,10 @@
                         <div class="card-body table-full-width table-responsive">
                             <table class="table table-hover table-striped">
                                 <thead>
-                                <th>ID</th>
+                                <?php
+                                        $no = 1;
+                                ?>
+                                <th>No</th>
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Alamat</th>
@@ -36,7 +39,7 @@
                                 <tbody>
                                 @foreach($admin as $key=>$data)
                                     <tr>
-                                        <td>{{$data->id}}</td>
+                                        <td><?php echo $no++; ?></td>
                                         <td>{{$data->name}}</td>
                                         <td>{{$data->email}}</td>
                                         <td> {{$data->getKelurahan(false)->nama}},

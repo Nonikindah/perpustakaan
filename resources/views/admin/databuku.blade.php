@@ -31,6 +31,10 @@
                                 <div class=" table-full-width table-responsive">
                                     <table class="table table-hover table-striped">
                                         <thead>
+                                        <?php
+                                                $no = 1;
+                                        ?>
+                                        <th><b>No. </b></th>
                                         <th><b>Judul</b></th>
                                         <th><b>Pengarang</b></th>
                                         <th><b>Penerbit</b></th>
@@ -41,6 +45,7 @@
                                         <tbody>
                                         @foreach($buku as $data)
                                             <tr>
+                                                <td><?php echo $no++;?></td>
                                                 <td>{{$data->judul}}</td>
                                                 <td>
                                                     @if($data->pengarang2 != null)

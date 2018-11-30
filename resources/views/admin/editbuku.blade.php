@@ -310,6 +310,8 @@
                                         <div class="col-md-12">
                                             <div class="form-group" >
                                                 <div class="card-title" style="margin-bottom: 5px">File Gambar</div>
+
+                                                <input name="temp_gambar" value="{{$buku->gambar}}" type="hidden">
                                                 <img src="{{ asset('storage/'.$buku->gambar) }}" style="width: 60px">
                                                 <input type="file" style="border-radius: 0px" name="gambar" class="form-control-file"  >
                                             </div>
@@ -320,7 +322,7 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary btn-fill ">Simpan</button>
+                <button type="submit" class="btn btn-primary btn-fill ">Perbarui</button>
             </form>
         </div>
     </div>

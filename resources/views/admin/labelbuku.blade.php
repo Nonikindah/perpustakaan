@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>Document</title>
+    <title>Cetak Label</title>
     <style>
         body {
             margin: -40px;
@@ -44,21 +44,22 @@
                             <div class="row">
                                 <div class="col-xs-2">
                                     @foreach($buku->getItemBuku(false) as $data)
-                                    <table class="table table-bordered text-center">
-                                        <tbody style="font-family: 'Calibri'; font-size: 10px">
-                                        <tr>
-                                            <th width="150px" style="text-align: center; vertical-align: middle;">Kantor
-                                                Perpustakaan dan Arsip Kabupaten Wakatobi
-                                            </th>
-                                        </tr>
-                                        <tr>
-                                            <th style="text-align: center; vertical-align: middle;">BARCODE</th>
-                                        </tr>
-                                        <tr>
-                                            <th style="text-align: center; vertical-align: middle;">{{$data->no_induk}}</th>
-                                        </tr>
-                                        </tbody>
-                                    </table>
+                                        <table class="table table-bordered text-center">
+                                            <tbody style="font-family: 'Calibri'; font-size: 10px">
+                                            <tr>
+                                                <th width="150px" style="text-align: center; vertical-align: middle;">
+                                                    Kantor
+                                                    Perpustakaan dan Arsip Kabupaten Wakatobi
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th style="text-align: center; vertical-align: middle;">BARCODE</th>
+                                            </tr>
+                                            <tr>
+                                                <th style="text-align: center; vertical-align: middle;">{{$data->no_induk}}</th>
+                                            </tr>
+                                            </tbody>
+                                        </table>
                                     @endforeach
                                 </div>
                             </div>
